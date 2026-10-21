@@ -2,12 +2,10 @@
 \section{常微分方程}
 \setstretch{1.75}
 
-
 \subsection{方程类型速查}
 
 考试中的解方程题目不会超出书上方程类型的范围.
 希望以下的整理将有助于同学们复习自查，并在考场上快速回忆出题目对应的方程类型.
-
 
 \subsubsection{分离变量法}
 
@@ -32,7 +30,7 @@
 \subsubsection{降阶法}
 
 (1) \textbf{不显含未知函数$y$的方程}：$F(x,y',y'')=0$.
-\textbf{提示}：令$z = y'$. 
+\textbf{提示}：令$z = y'$.
 
 (2) \textbf{不显含自变量$x$的方程}：$F(y,y',y'')=0$.
 \textbf{提示}：令$p = y'$，$y'' = p \frac{\d p}{\d y}$.
@@ -46,7 +44,7 @@
 \textbf{提示}：令$z = y^{1-\alpha}$，化为一阶线性方程.
 
 (3) \textbf{二阶线性常系数齐次线性方程}：$y'' + py' + q =0$.
-\textbf{提示}：特征根法. 需记忆特征根与特解形式的关系（书上表格）. 
+\textbf{提示}：特征根法. 需记忆特征根与特解形式的关系（书上表格）.
 
 (4) \textbf{二阶线性常系数齐次线性方程}：$y'' + py' + q = f(x)$.
 \textbf{提示}：先解对应的齐次方程，再加上非齐次方程的任意一个特解.
@@ -66,8 +64,6 @@ $a_0 x^{n} y^{(n)} + a_1 x^{n-1} y^{(n-1)}+ \cdots + a_{n-1} xy' + a_n y = 0$.
 
 \subsection{复习要点} \par
 
-
-
 \subsubsection{对于基本概念的补充}\par
 
 \textbf{常微分方程}，是指联系自变量$x$，未知的一元函数$y = y(x)$及其导数的一种函数方程.
@@ -77,7 +73,7 @@ $a_0 x^{n} y^{(n)} + a_1 x^{n-1} y^{(n-1)}+ \cdots + a_{n-1} xy' + a_n y = 0$.
 \begin{eq1}
     y'(x) = y(y(x)) \\
     y'(x) = y(x-1)
-\end{eq1} 
+\end{eq1}
 
 满足常微分方程的函数$y(x)$称为该方程的\textbf{解}.
 解所对应的图像称为\textbf{积分曲线}.
@@ -146,18 +142,18 @@ $$
     \begin{cases}
         y' = f(x,y(x))\\
         y(x_0) = y_0
-    \end{cases} 
-$$ 
+    \end{cases}
+$$
 \setstretch{1.75}
 
 该问题与以下的积分方程等价（按书上写法）：
 \begin{eq1}
-    y = y_0 + \int_{x_0}^{x} f(x,y(x))\,\d x 
+    y = y_0 + \int_{x_0}^{x} f(x,y(x))\,\d x
 \end{eq1}
 
 为了避免积分变量与$x$混淆，也可写成：
 \begin{eq1}
-    y = y_0 + \int_{x_0}^{x} f(\tau,y(\tau))\,\d \tau 
+    y = y_0 + \int_{x_0}^{x} f(\tau,y(\tau))\,\d \tau
 \end{eq1}
 
 等号右侧可视为一个积分算子$T$，
@@ -223,12 +219,11 @@ $y_0 + \int_{x_0}^{x} f(\tau,y(\tau))\,\d \tau$，
 回到皮卡序列收敛的问题.
 延续刚才的思路，我们将压缩映射原理推广到对于函数列的讨论上.
 
-\begin{figure}[H] 
+\begin{figure}[H]
     \centering
     \includegraphics[width=0.5\textwidth]{fig9-1.png}
-    \caption{构造递推数列$x_{n+1} = f(x_n)$逼近不动点} 
+    \caption{构造递推数列$x_{n+1} = f(x_n)$逼近不动点}
 \end{figure}
-
 
 我们定义$[a,b]$上两个连续函数$y_1(x)$和$y_2(x)$的距离为：
 \begin{eq1}
@@ -244,15 +239,15 @@ $y_0 + \int_{x_0}^{x} f(\tau,y(\tau))\,\d \tau$，
 \textbf{Lipschitz条件}.
 即，存在常数$L$，使得函数$f(x,y)$在定义域$D$内满足：
 \begin{eq1}
-    |f(x,y_1) - f(x,y_2)| \le L |y_1 - y_2|,~~(x,y_i) \in D,~~i = 1,2    
+    |f(x,y_1) - f(x,y_2)| \le L |y_1 - y_2|,~~(x,y_i) \in D,~~i = 1,2
 \end{eq1}
 
 这个条件正是使得积分算子$T$成为压缩映射的条件.
 事实上，若$f(x,y)$的定义域是闭矩形域$R: |x-x_0| \le a ,~|y - y_0 | \le b$时，我们有：
 \begin{eq1}
-    d \left( T[y_1(x)],T[y_2(x)] \right) 
+    d \left( T[y_1(x)],T[y_2(x)] \right)
     &= \max\limits_{|x - x_0| \le h} \left| \int_{x_0}^{x} f(x,y_1(x)) -  \int_{x_0}^{x} f(x,y_2(x))\right| \\
-    &\le h \cdot \max\limits_{|x - x_0| \le h} 
+    &\le h \cdot \max\limits_{|x - x_0| \le h}
     \left|  f(x,y_1(x)) - f(x,y_2(x)) \right| \\
     &\le Lh \cdot \max\limits_{|x - x_0| \le h} |y_1(x) - y_2(x)| \\
     &= Lh \cdot d \left( y_1(x) - y_2(x) \right)
@@ -319,7 +314,7 @@ $\bm{v}_1 = (1,1,1)$和$\bm{v}_2 = (2,1,0)$.
 
 知道了齐次方程$(1)$解的结构，$(2)$的解很容易表示.
 从图像上看，$S_2$是$S_1$向上平移$2$单位得到的.
-也就是说，$(1)$的任意一个解$\bm{v} \in S_1$向上平移$2$单位就成为了$(2)$的解，即$\bm{v} + \bm{w^{*}} \in S_2$.其中$\bm{w^{*}}=(0,0,2)$本身也是$(2)$的一个解. 
+也就是说，$(1)$的任意一个解$\bm{v} \in S_1$向上平移$2$单位就成为了$(2)$的解，即$\bm{v} + \bm{w^{*}} \in S_2$.其中$\bm{w^{*}}=(0,0,2)$本身也是$(2)$的一个解.
 反过来，设$C_1$和$C_2$为任意常数，
 则$\bm{w} = C_1 \bm{v}_1 + C_2 \bm{v}_2 + \bm{w^{*}}$就表达出了$(1)$的所有解，即$(2)$的通解.
 同时还可以发现，上述通解的结构与$\bm{w^{*}}$的具体取法是无关的，只要它是非齐次方程$(2)$的特解即可.
@@ -368,24 +363,23 @@ $\bm{v}_1 = (1,1,1)$和$\bm{v}_2 = (2,1,0)$.
 \textbf{引理}~~\textit{设$S$为$n$阶齐次线性微分方程的解集，
 则$S$是$n$维线性空间.}
 
-
 \subsection{解题方法}
 
 解微分方程的关键在于准确判断方程的类型.
 但考试题目可能不会像课本例题那样容易识别，需要经过一些变换才能看出来.
-包括：(1)对方程进行移项整理；(2)把$x$看成关于$y$的函数；$(3)$凑微分.\par
-~\par
+包括：(1)对方程进行移项整理；(2)把$x$看成关于$y$的函数；$(3)$凑微分.
 
 \begin{example}
-    {1}{
-        \textit{解微分方程：$(x^3 + 2y)~\d x = x~\d y$}.
-    }
+\label{ex:ch09-01}
+解微分方程：$(x^3 + 2y)~\d x = x~\d y$.
 \end{example}
-\begin{remark}
-    整理后发现该方程是一阶线性方程.
-\end{remark}
+
+\begin{analysis}
+整理后发现该方程是一阶线性方程.
+\end{analysis}
+
 \begin{solution}
-    整理得到：
+整理得到：
     \begin{eq1}
         y' - \frac{2}{x} y = x^3
     \end{eq1}
@@ -395,20 +389,20 @@ $\bm{v}_1 = (1,1,1)$和$\bm{v}_2 = (2,1,0)$.
     求得通解：
     \begin{eq1}
         y = x^3 + Cx^2
-    \end{eq1} \qed \par
+    \end{eq1}
 \end{solution}
-~\par
 
-\begin{example}
-    {2(2023)}{
-        求方程$(xy -x^3y^3)~\d x + (1+x^2)~\d y = 0$满足条件$y(0)=1$的解.
-    }
+\begin{example}[2023]
+\label{ex:ch09-02}
+求方程$(xy -x^3y^3)~\d x + (1+x^2)~\d y = 0$满足条件$y(0)=1$的解.
 \end{example}
-\begin{remark}
-    整理后发现该方程是伯努利方程（如果没看出来的话则会变成白努力方程（被打））.
-\end{remark}
+
+\begin{analysis}
+整理后发现该方程是伯努利方程（如果没看出来的话则会变成白努力方程（被打））.
+\end{analysis}
+
 \begin{solution}
-    改写方程的形式：
+改写方程的形式：
 \begin{eq1}
     y' + \frac{x}{1+x^2}\cdot y = \frac{x^3}{1+x^2} \cdot y^3
 \end{eq1}
@@ -427,21 +421,21 @@ $\bm{v}_1 = (1,1,1)$和$\bm{v}_2 = (2,1,0)$.
 故满足条件的解为：
 \begin{eq1}
     y = \frac{1}{\sqrt{2x^2 + 1 - (1+x^2) \ln (1+x^2)}}
-\end{eq1} \qed \par
+\end{eq1}
 \end{solution}
-~\par
 
 \begin{example}
-    {3}{
-        求微分方程$(x^3 - y^2)~\d x + (x^2 y + xy)~\d y = 0$的通解.
-    }
+\label{ex:ch09-03}
+求微分方程$(x^3 - y^2)~\d x + (x^2 y + xy)~\d y = 0$的通解.
 \end{example}
-\begin{remark}
-    仅通过简单的移项无法将方程转化为已知的方程类型.
-    此题需要凑微分.
-\end{remark}
 
-\textbf{解答I}~~凑微分$2y ~\d y = \d y^2$.
+\begin{analysis}
+仅通过简单的移项无法将方程转化为已知的方程类型.
+    此题需要凑微分.
+\end{analysis}
+
+\begin{solution}[解法一]
+凑微分$2y ~\d y = \d y^2$.
 令$u = y^2$. 则原方程化为：
 \begin{eq1}
     \frac{\d u}{\d x} = \frac{2u}{x^2 + x} - \frac{2x^2}{x^2 + 1}
@@ -455,9 +449,11 @@ $\bm{v}_1 = (1,1,1)$和$\bm{v}_2 = (2,1,0)$.
 即：
 \begin{eq1}
     \left( \frac{1+x}{x}\right)^2 y^2 + (1+x)^2 = C
-\end{eq1} \qed \par \vspace{0.5em}
+\end{eq1}
+\end{solution}
 
-\textbf{解答II}~~原方程可化为：
+\begin{solution}[解法二]
+原方程可化为：
 \begin{eq1}
     x~\d x + y~\d y + y \cdot \frac{x~\d y - y ~\d x}{x^2} = 0
 \end{eq1}
@@ -469,13 +465,13 @@ $\bm{v}_1 = (1,1,1)$和$\bm{v}_2 = (2,1,0)$.
 
 两边同时除以$\sqrt{x^2 + y^2}$，得：
 \begin{eq1}
-    \frac{1}{2} \cdot \frac{\d (x^2 + y^2)}{\sqrt{x^2 + y^2}} + 
+    \frac{1}{2} \cdot \frac{\d (x^2 + y^2)}{\sqrt{x^2 + y^2}} +
     \frac{1}{\sqrt{1+ (\frac{y}{x})^2}} \cdot \frac{y}{x} \cdot \d ~ \left( \frac{y}{x}\right) = 0
 \end{eq1}
 
 即：
 \begin{eq1}
-    \d ~ \left( \sqrt{x^2 + y^2} \right) + 
+    \d ~ \left( \sqrt{x^2 + y^2} \right) +
     \d ~ \left( \sqrt{1 + \left( \dfrac{y}{x} \right)^2 } \right) = 0
 \end{eq1}
 
@@ -487,21 +483,20 @@ $\bm{v}_1 = (1,1,1)$和$\bm{v}_2 = (2,1,0)$.
 即：
 \begin{eq1}
     (1+x)\sqrt{x^2 + y^2} = Cx
-\end{eq1} \qed \par
-~\par
+\end{eq1}
+\end{solution}
 
 \begin{example}
-    {4}{
-        求方程$y' = \frac{y}{x+y^3}$的通解.
-    }
-\end{example} \vspace{0.5em}
+\label{ex:ch09-04}
+求方程$y' = \frac{y}{x+y^3}$的通解.
+\end{example}
 
-\begin{remark}
-    此题形式简单，欲分离变量，但是必须要将$x$视为$y$的函数.
-\end{remark}\vspace{0.5em}
+\begin{analysis}
+此题形式简单，欲分离变量，但是必须要将$x$视为$y$的函数.
+\end{analysis}
 
 \begin{solution}
-    原方程化为：
+原方程化为：
     \begin{eq1}
         \frac{\d x}{\d y} - \frac{1}{y}x = y^2
     \end{eq1}
@@ -509,22 +504,20 @@ $\bm{v}_1 = (1,1,1)$和$\bm{v}_2 = (2,1,0)$.
     此为关于$x=x(y)$的一阶线性非齐次方程. 通解为：
     \begin{eq1}
         x = y \left( \frac{y^2}{2}+C \right)
-    \end{eq1} \qed \par 
+    \end{eq1}
 \end{solution}
-~\par
 
 \begin{example}
-    {5}{
-        求微分方程$y' + \frac{1}{x} = x e^{-y}$
-    }
-\end{example}\vspace{0.25em}
+\label{ex:ch09-05}
+求微分方程$y' + \frac{1}{x} = x e^{-y}$
+\end{example}
 
-\begin{remark}
-    用凑微分法处理掉$y$的指数项，转化为线性方程.
-\end{remark}\vspace{0.25em}
+\begin{analysis}
+用凑微分法处理掉$y$的指数项，转化为线性方程.
+\end{analysis}
 
 \begin{solution}
-    原方程化为：
+原方程化为：
     \begin{eq1}
         e^y \frac{\d y}{\d x} + \frac{1}{x} e^y = x
     \end{eq1}
@@ -541,19 +534,20 @@ $\bm{v}_1 = (1,1,1)$和$\bm{v}_2 = (2,1,0)$.
     即：
     \begin{eq1}
         y = \ln \left[ \frac{1}{x} \left( \frac{1}{3}x^3 + C \right) \right]
-    \end{eq1} \qed \par
-\end{solution} \vspace{0.5em}
+    \end{eq1}
+\end{solution}
 
 \begin{example}
-    {6}{
-        解微分方程$(x^2 + y^2 + 3)\frac{\d y}{\d x} = 2x \left( 2y - \frac{x^2}{y} \right)$.
-    }
+\label{ex:ch09-06}
+解微分方程$(x^2 + y^2 + 3)\frac{\d y}{\d x} = 2x \left( 2y - \frac{x^2}{y} \right)$.
 \end{example}
-\begin{remark}
-    通过凑微分转化为齐次方程.
-\end{remark}
+
+\begin{analysis}
+通过凑微分转化为齐次方程.
+\end{analysis}
+
 \begin{solution}
-    原方程化为：
+原方程化为：
     \begin{eq1}
         \frac{y}{x} \cdot \frac{\d y}{\d x} = \frac{2(2y^2 - x^2)}{x^2 + y^2 + 3}.
     \end{eq1}
@@ -578,28 +572,25 @@ $\bm{v}_1 = (1,1,1)$和$\bm{v}_2 = (2,1,0)$.
     这是变量分离方程，解得$U(W-2)^3 = C(W-1)^2$，回代得：
     \begin{eq1}
         (y^2 - 2x^2 -3)^3 = C(y^2 - x^2 -1)^2
-    \end{eq1} \qed \par
+    \end{eq1}
 \end{solution}
-~\par
 
-以下补充一些更加特殊的例题，供参考.\par
-~\par
+以下补充一些更加特殊的例题，供参考.
 
-\begin{example}
-    {7(应用题，2022)}{
-        假设平面直角坐标系第一象限中有一条曲线 \( L = \{(x, y(x)) \mid x \geq1 0\} \)，
+\begin{example}[2022]
+\label{ex:ch09-07}
+\textbf{应用题}\quad 假设平面直角坐标系第一象限中有一条曲线 \( L = \{(x, y(x)) \mid x \geq1 0\} \)，
         其中 \( y(0) = 1 \)，\( y(x) \) 是严格递减的、正的、可导函数.
         任取 \( L \) 上一点 \( M \)，\( L \) 在 \( M \) 点的切线交于 \( x \) 轴于点 \( A \)，
         假定从 \( M \) 到 \( A \) 的直线段的长度恒为 1.
         求出 \( y = y(x) \) 所满足的一阶常微分方程，并且解出这个方程的初值问题 \( y(0) = 1 \).
-    }
-\end{example} \vspace{0.5em}
+\end{example}
 
 \begin{solution}
-    设 \( M = (x, y(x)) \). 
+设 \( M = (x, y(x)) \).
     曲线 \( L \) 在 \( M \) 点的切线方程为：
     \begin{eq}
-        Y - y = y'(x)(X - x) 
+        Y - y = y'(x)(X - x)
     \end{eq}
 
     此切线与 \( x \) 轴的交点 \( A \) 满足 \( Y = 0 \)，因此：
@@ -614,7 +605,7 @@ $\bm{v}_1 = (1,1,1)$和$\bm{v}_2 = (2,1,0)$.
 
 从 \( M = (x, y) \) 到 \( A = \left(x - \frac{y}{y'(x)}, 0\right) \) 的直线段长度为：
 \begin{eq1}
-    \sqrt{\left(\frac{y}{y'(x)}\right)^2 + y^2} 
+    \sqrt{\left(\frac{y}{y'(x)}\right)^2 + y^2}
 \end{eq1}
 
 根据题意，该长度恒为 $1$：
@@ -629,7 +620,7 @@ $\bm{v}_1 = (1,1,1)$和$\bm{v}_2 = (2,1,0)$.
 
 整理得：
 \begin{eq1}
-    (y'(x))^2 = \frac{y^2}{1 - y^2} 
+    (y'(x))^2 = \frac{y^2}{1 - y^2}
 \end{eq1}
 
 由于 \( y(x) \) 严格递减且为正函数，
@@ -640,18 +631,18 @@ $\bm{v}_1 = (1,1,1)$和$\bm{v}_2 = (2,1,0)$.
 
 这是一阶常微分方程：
 \begin{eq1}
-    \frac{\d y}{\d x} = -\frac{y}{\sqrt{1 - y^2}} 
+    \frac{\d y}{\d x} = -\frac{y}{\sqrt{1 - y^2}}
 \end{eq1}
 
 分离变量并积分：
 \begin{eq1}
-    -\frac{\sqrt{1 - y^2}}{y} \d y = \d x 
+    -\frac{\sqrt{1 - y^2}}{y} \d y = \d x
 \end{eq1}
 
 令 \( y = \sin t \)，
 则 \( \d y = \cos t ~\d t \)，代入得：
 \begin{eq1}
-    -\frac{\sqrt{1 - \sin^2 t}}{\sin t} \cos t \,& \d t = \d x 
+    -\frac{\sqrt{1 - \sin^2 t}}{\sin t} \cos t \,& \d t = \d x
 \end{eq1}
 
 整理得：
@@ -661,7 +652,7 @@ $\bm{v}_1 = (1,1,1)$和$\bm{v}_2 = (2,1,0)$.
 
 两边积分，解得：
 \begin{eq1}
-     x = -\sqrt{1 - y^2} + 
+     x = -\sqrt{1 - y^2} +
     \ln\left(1 + \sqrt{1 - y^2}\right) - \ln y + C
 \end{eq1}
 
@@ -669,31 +660,29 @@ $\bm{v}_1 = (1,1,1)$和$\bm{v}_2 = (2,1,0)$.
 \begin{eq1}
     0 = -\sqrt{1 - 1} + \ln(1 +& \sqrt{1 - 1}) - \ln 1 + C \\
     0 = 0 + \ln 1 & - 0 + C \\
-    C =& ~0 
+    C =& ~0
 \end{eq1}
 
 因此，解为：
 \begin{eq1}
     x = -\sqrt{1 - y^2} + \ln\left(1 + \sqrt{1 - y^2}\right) - \ln y
-\end{eq1} \qed \par
-\end{solution} 
-~\par
+\end{eq1}
+\end{solution}
 
 \begin{example}
-    {8(解的存在唯一性定理)}{
-        考虑定义在矩形区域$R = \{ (t,x) \in \mathbb{R}^2 \mid |t|\le 1 ,~|x| \le 1 \}$
+\label{ex:ch09-08}
+\textbf{解的存在唯一性定理}\quad 考虑定义在矩形区域$R = \{ (t,x) \in \mathbb{R}^2 \mid |t|\le 1 ,~|x| \le 1 \}$
         上的初值问题：
         \begin{eq1}
             \frac{\d x}{\d t} = x+1,~~~x(0)=0
         \end{eq1}
-    }
+
+(a)根据解的存在唯一性定理，说明该初值问题的解存在且唯一，并给出解的存在区间.
+
+(b)写出该初值问题的皮卡序列，并通过对皮卡序列取极限求出初值问题的解.
 \end{example}
-\textit{(a)根据解的存在唯一性定理，说明该初值问题的解存在且唯一，并给出解的存在区间.} 
 
-\textit{(b)写出该初值问题的皮卡序列，并通过对皮卡序列取极限求出初值问题的解}. \vspace{0.5em}
-
-\textbf{解答}~~
-
+\begin{solution}
 $\bm{(a)}$~~初值问题右端函数$f(t,x)=x+1$在$R$中满足：
 \begin{eq1}
     \frac{|f(t,x_1) - f(t,x_2)|}{|x_1 - x_2|} = \frac{|(x_1 + 1) - (x_2 + 1)|}{|x_1 - x_2|} = 1
@@ -702,7 +691,7 @@ $\bm{(a)}$~~初值问题右端函数$f(t,x)=x+1$在$R$中满足：
 这蕴含着$|f(t,x_1) - f(t,x_2)| \le |x_1 - x_2|$，即$L=1$的Lipschitz条件.
 而$f(t,x)$在$R$中的最大值$M=2$.
 故$h = \min\{a,\frac{b}{M}\} = \frac{1}{2}$.
-因此上述初值问题在$\left[ -\frac{1}{2} , \frac{1}{2} \right] $的解存在且唯一.\vspace{0.5em}
+因此上述初值问题在$\left[ -\frac{1}{2} , \frac{1}{2} \right] $的解存在且唯一.
 
 $\bm{(b)}$~~将初值问题改写为积分方程：
 \begin{eq1}
@@ -736,27 +725,27 @@ $x_{n}(t) = t + \frac{t^2}{2!} + \frac{t^3}{3!} + \cdots + \frac{t^n}{n!}$.
     x(t) = \lim\limits_{n \to \infty} x_{n}(t)
     &= \lim\limits_{n \to \infty} \left(t + \frac{t^2}{2!} + \frac{t^3}{3!} + \cdots + \frac{t^n}{n!}\right) \\
     &= e^t - 1
-\end{eq1} \qed \par
-~\par
+\end{eq1}
+\end{solution}
 
 \begin{example}
-    {9}{
-        可微函数$f(x)$满足$f'(x) = f(x) + \int_0^1 f(x) ~\d x$，
+\label{ex:ch09-09}
+可微函数$f(x)$满足$f'(x) = f(x) + \int_0^1 f(x) ~\d x$，
         且$f(0) = 1$. 求$f(x)$.
-    }
-\end{example}\vspace{0.5em}
+\end{example}
 
-\begin{remark}
-    注意方程右侧的定积分虽然也含$f(x)$，但是定积分的值本身只是一个常数而已.
-\end{remark}\vspace{0.5em}
+\begin{analysis}
+注意方程右侧的定积分虽然也含$f(x)$，但是定积分的值本身只是一个常数而已.
+\end{analysis}
 
-\textbf{解答}~~令$\int_0^1 f(x) \d x = a$.
+\begin{solution}
+令$\int_0^1 f(x) \d x = a$.
 则原方程化为：
 \begin{eq1}
     \left(  f(x) - a\right)' = f(x)-a
 \end{eq1}
 
-因而可视为关于$f(x)-a$的一阶线性齐次方程. 
+因而可视为关于$f(x)-a$的一阶线性齐次方程.
 其通解为：
 \begin{eq1}
     f(x) - a = Ce^x
@@ -775,14 +764,17 @@ $x_{n}(t) = t + \frac{t^2}{2!} + \frac{t^3}{3!} + \cdots + \frac{t^n}{n!}$.
 解得$a = \frac{e-1}{3-e}$，$C = \frac{2}{3-e}$，即：
 \begin{eq1}
     f(x) = \frac{2e^x -e + 1}{3-e}
-\end{eq1} \qed \par
-~\par
+\end{eq1}
+\end{solution}
 
 \begin{example}
-    {10}{已知微分方程$y'+y = e^{\sin x}$.
-        证明：方程存在唯一的以$2\pi$为周期的解.}
+\label{ex:ch09-10}
+已知微分方程$y'+y = e^{\sin x}$.
+        证明：方程存在唯一的以$2\pi$为周期的解.
 \end{example}
-\textbf{证明}~~这是一阶线性非齐次方程.
+
+\begin{proof}
+这是一阶线性非齐次方程.
 其通解为：
 \begin{eq1}
     y(x) = e^{-x} \left( \int_0^x e^{\sin t} e^t ~\d t +C \right)
@@ -790,7 +782,7 @@ $x_{n}(t) = t + \frac{t^2}{2!} + \frac{t^3}{3!} + \cdots + \frac{t^n}{n!}$.
 
 则：
 \begin{eq1}
-    y(x+2\pi) - y(x) 
+    y(x+2\pi) - y(x)
     &= e^{-(x+2 \pi)} \left( \int_0^{x+2\pi} e^{\sin t} e^t ~\d t +C \right)
     -e^{-x} \left( \int_0^x e^{\sin t} e^t ~\d t +C \right) \\
     &= e^{-x} \left[
@@ -826,4 +818,5 @@ $y(x)$以$2\pi$为周期当且仅当$y(x+2\pi) - y(x) = 0$，即：
 \end{eq1}
 
 解得唯一的$C = \frac{1}{e^{2\pi} -1 } \int_{0}^{2\pi} e^{\sin t}e^t ~\d t$.
-故方程存在唯一的以$2\pi$为周期的解. \qed \par
+故方程存在唯一的以$2\pi$为周期的解.
+\end{proof}

@@ -22,7 +22,7 @@
     \setlength\abovedisplayskip{6pt}
     \setlength\belowdisplayskip{6pt}
     \sec x \tan x~\d x = \d (\sec x)~~~~~~\csc x \cot x~\d x= -\d (\csc x) \\
-    \sec^2x~\d x = \d (\tan x)~~~~~~\csc^2x~\d x = -\d (\cot x) 
+    \sec^2x~\d x = \d (\tan x)~~~~~~\csc^2x~\d x = -\d (\cot x)
     \nonumber
 \end{gather*}\par
 \textbf{2.~~分母为二次式}\vspace{0.25em}
@@ -30,22 +30,22 @@
 处理有理函数积分时，常常能遇到以下两个不定积分：
 \begin{gather*}
     \int \frac{\d x}{x^2+a^2} = \frac{1}{a} \arctan \frac{x}{a}+C  \\
-    \int \frac{\d x}{a^2-x^2} = \frac{1}{2a} \ln \left| \frac{x+a}{x-a} \right|  +C 
+    \int \frac{\d x}{a^2-x^2} = \frac{1}{2a} \ln \left| \frac{x+a}{x-a} \right|  +C
     \nonumber
-\end{gather*} 
+\end{gather*}
 
 分母上含有$x$的一次式时，可以通过换元转化成以上两种情况之一.\vspace{0.5em}
 
 \textbf{3.~~分母为根号下二次式}\vspace{0.25em}
 
-以下两个不定积分比较常见，可用三角换元来做. 
+以下两个不定积分比较常见，可用三角换元来做.
 \begin{gather*}
     \int \frac{\d x}{\sqrt{x^2 \pm a^2}} = \ln \left| x + \sqrt{x^2 \pm a^2}  \right|+C \\
     \int \frac{\d x}{\sqrt{a^2 - x^2}} = \arcsin \frac{x}{a} +C
     \nonumber
 \end{gather*}
 
-\subsubsection{定积分的若干应用（教材3.5节）} 
+\subsubsection{定积分的若干应用（教材3.5节）}
 
 不论是纯计算题还是应用题，做不定积分的功夫深才是关键，这也是本章讲义后续讲解的重点.
 对于定积分的应用题，其实无非是套用几个公式. 在此基础上，最好掌握\textbf{微元法}的数学思想.
@@ -62,17 +62,16 @@
 *（8）Guldin定理.\par
 ~\par
 
-
 \subsection{不定积分解题方法}
 解不定积分的技巧有三：
 （1）凑微分法（第一换元法）；
 （2）换元法（第二换元法）；
 （3）分部积分法. \par
 
-通过平时的作业题，同学们应该已经大致知道了三种方法的应用场景. 
+通过平时的作业题，同学们应该已经大致知道了三种方法的应用场景.
 但是，如果遇到一个未曾见过的积分，应该如何下手呢？
-其实除了经验积累以外，还是有一定规律可循的. 
-以下我们将分别讲解这三个方法. 
+其实除了经验积累以外，还是有一定规律可循的.
+以下我们将分别讲解这三个方法.
 在讲解时，我们会先整理常见题型，然后基于这些常见题型概括出更一般的方法. \par
 \subsubsection{预备知识——有理积分}
 在开始复习积分技巧之前，我们建议同学首先复习教材3.3节“有理式的不定积分与有理化方法”.
@@ -85,57 +84,69 @@
 
 我们在做陌生的不定积分时，应尽量想办法将其转化为那些我们自信“一定能做出来”的积分. 根据这个思想，
 如果我们的方法把函数中的对数、反三角函数等不易积分的东西转化成了有理式，那说明我们的做法可能是正确的.\par
-对于上述四种积分的处理，有一些经过“伪装”的情况，这里通过两道题目来让同学们掌握.\par
-~\par
+对于上述四种积分的处理，有一些经过“伪装”的情况，这里通过两道题目来让同学们掌握.
 
-\textbf{例3.1}~~\textit{计算$\int \frac{\sqrt{x}}{1+\sqrt[3]{x}}~\d x$}.\par \vspace{0.3em}
-\textbf{分析}~~被积函数同时含有二次根号和三次根号这两种不同的根式，看起来不符合书上所说的“可有理化”的条件.
+\begin{example}
+\label{ex:ch03-01}
+计算$\int \frac{\sqrt{x}}{1+\sqrt[3]{x}}~\d x$.
+\end{example}
+
+\begin{analysis}
+被积函数同时含有二次根号和三次根号这两种不同的根式，看起来不符合书上所说的“可有理化”的条件.
 但实际上，$\sqrt[3]{x}$可看成$\sqrt[6]{x}$的$2$次方，$\sqrt{x}$可看成$\sqrt[6]{x}$的$3$次方，因此可以
-把$\sqrt[6]{x}$换元掉.\par
-\textbf{解答}~~
+把$\sqrt[6]{x}$换元掉.
+\end{analysis}
 
+\begin{solution}
 \begin{equation}
-    \setlength\abovedisplayskip{6pt}
-    \setlength\belowdisplayskip{6pt}
     \begin{aligned}
-        \int \frac{\sqrt{x}}{1+\sqrt[3]{x}}~\d x 
-        &\xlongequal{t=\sqrt[6]{x}} 
+        \int \frac{\sqrt{x}}{1+\sqrt[3]{x}}~\d x
+        &\xlongequal{t=\sqrt[6]{x}}
          \int \frac{t^3}{1+t^2}~\d(t^6) \\
         &= 6\int \frac{t^8}{1+t^2}~\d t \\
         &= 6\int \frac{t^8+t^6-t^6-t^4+t^4+t^2-t^2-1+1}{1+t^2}~\d t \\
         &= 6\int t^6 - t^4 + t^2 -1 + \frac{1}{1+t^2}~\d t \\
         &= \frac{6}{7}t^7 - \frac{6}{5}t^5 + 2t^3 - 6t +6\arctan{t} +C \\
-        &= \frac{6}{7}x^{\frac{7}{6}} - \frac{6}{5}x^{\frac{5}{6}} + 2x^{\frac{1}{2}} - 6x^{\frac{1}{6}} +6\arctan{x^{\frac{1}{6}}} +C 
+        &= \frac{6}{7}x^{\frac{7}{6}} - \frac{6}{5}x^{\frac{5}{6}} + 2x^{\frac{1}{2}} - 6x^{\frac{1}{6}} +6\arctan{x^{\frac{1}{6}}} +C
         \nonumber
     \end{aligned}
-\end{equation} \qed
+\end{equation}
+\end{solution}
 
-~\par
+\begin{example}
+\label{ex:ch03-02}
+计算$\int \frac{\d x}{\sqrt[3]{(x+1)(x-1)^5}}$.
+\end{example}
 
-\textbf{例3.2}~~\textit{计算$\int \frac{\d x}{\sqrt[3]{(x+1)(x-1)^5}}$.}\par \vspace{0.5em}
+\begin{analysis}
+被积函数分母的三次根号内不是一次式，也不是一次分式，看起来不符合书上所说的“可有理化”的条件.
+但实际上，可以通过从根号内提出一个$(x-1)^6$，产生根号下的一次分式$\sqrt[3]{\frac{x+1}{x-1}}$. 令它为$t$换元即可.
+\end{analysis}
 
-\textbf{分析}~~被积函数分母的三次根号内不是一次式，也不是一次分式，看起来不符合书上所说的“可有理化”的条件.
-但实际上，可以通过从根号内提出一个$(x-1)^6$，产生根号下的一次分式$\sqrt[3]{\frac{x+1}{x-1}}$. 令它为$t$换元即可.\par \vspace{1em}
-
-\textbf{解答}~~令$t = \sqrt[3]{\frac{x+1}{x-1}}$，则$x = \frac{t^3 +1 }{t^3 -1}$，$\d x = -\frac{6t^2}{(t^3-1)^2}~\d t$.
+\begin{solution}
+令$t = \sqrt[3]{\frac{x+1}{x-1}}$，则$x = \frac{t^3 +1 }{t^3 -1}$，$\d x = -\frac{6t^2}{(t^3-1)^2}~\d t$.
 \begin{align*}
-        \int \frac{\d x}{\sqrt[3]{(x+1)(x-1)^5}} 
+        \int \frac{\d x}{\sqrt[3]{(x+1)(x-1)^5}}
         &\xlongequal{t = \sqrt[3]{\frac{x+1}{x-1}}}
          \int \frac{1}{t \cdot (\displaystyle\frac{2}{t^3-1})^2 }\cdot \left( -\frac{6t^2}{(t^3-1)^2} \right) ~\d t \\
         &= \int -\frac{3t}{2}~\d t \\
         &= -\frac{3}{4}t^2 + C \\
-        &= -\frac{3}{4}\left( \frac{x+1}{x-1} \right)^{\frac{2}{3}} + C 
-\end{align*} \qed
-~\par
+        &= -\frac{3}{4}\left( \frac{x+1}{x-1} \right)^{\frac{2}{3}} + C
+\end{align*}
+\end{solution}
 
 \subsubsection{凑微分法}\par
 凑微分法的技巧性比较强，依赖经验.
 以下整理常见的凑微分套路.\vspace{0.5em}
 
-\textbf{1.~~凑线性项：$~\d x = \frac{1}{a}~\d (ax+b)$}\par \vspace{1em}
+\textbf{1.~~凑线性项：$~\d x = \frac{1}{a}~\d (ax+b)$}
 
-\textbf{例3.3}~~\textit{计算}$\int \frac{\d x}{x^2+2x+3}$.\par
-\textbf{解答}~~
+\begin{example}
+\label{ex:ch03-03}
+计算$\int \frac{\d x}{x^2+2x+3}$.
+\end{example}
+
+\begin{solution}
 \begin{equation}
     \begin{aligned}
         \int \frac{\d x}{x^2+2x+3}
@@ -145,88 +156,106 @@
         &= \frac{1}{\sqrt{2}} \arctan{\frac{x+1}{\sqrt{2}}} +C
         \nonumber
     \end{aligned}
-\end{equation} \qed
-~\par
+\end{equation}
+\end{solution}
 
-\textbf{2.~~凑幂函数：$x^{n-1}~\d x =\frac{1}{n} \cdot \d (x^{n})$}\vspace{1em}
+\textbf{2.~~凑幂函数：$x^{n-1}~\d x =\frac{1}{n} \cdot \d (x^{n})$}
 
-\textbf{例3.4}~~\textit{计算}$\int \frac{x^4}{(1+x^5)^3}~\d x$.\par
-\textbf{解答}~~
+\begin{example}
+\label{ex:ch03-04}
+计算$\int \frac{x^4}{(1+x^5)^3}~\d x$.
+\end{example}
+
+\begin{solution}
 \begin{align*}
     \begin{aligned}
-        \int \frac{x^4}{(1+x^5)^3}~\d x 
+        \int \frac{x^4}{(1+x^5)^3}~\d x
         &= \int \frac{1}{(1+x^5)^3}\cdot \frac{1}{5}\d (x^5) \\
         &\xlongequal{u=x^5+1} \frac{1}{5} \int \frac{\d u}{u^3} \\
         &= -\frac{u^{-2}}{10} +C \\
-        &= \frac{1}{10(x^5+1)^2} + C 
+        &= \frac{1}{10(x^5+1)^2} + C
         \nonumber
     \end{aligned}
-\end{align*} \qed
+\end{align*}
+\end{solution}
 
 \clearpage
 
-\textbf{3.~~把分母上的根号捞起来：$\frac{1}{\sqrt{x}}~\d x = \d (2\sqrt{x})$}.\par \vspace{0.75em}
-\textbf{例3.5}~~\textit{计算}$\int \frac{\sin(\sqrt{x})}{\sqrt{x}}~\d x$.\par
-\textbf{解答}
+\textbf{3.~~把分母上的根号捞起来：$\frac{1}{\sqrt{x}}~\d x = \d (2\sqrt{x})$}.
+
+\begin{example}
+\label{ex:ch03-05}
+计算$\int \frac{\sin(\sqrt{x})}{\sqrt{x}}~\d x$.
+\end{example}
+
+\begin{solution}
 \begin{equation}
     \begin{aligned}
-        \int \frac{\sin(\sqrt{x})}{\sqrt{x}}~\d x 
+        \int \frac{\sin(\sqrt{x})}{\sqrt{x}}~\d x
         &= \int \sin(\sqrt{x})~\d(2\sqrt{x}) \\
         &\xlongequal{u=\sqrt{x}}  2\int \sin{u} ~\d u \\
         &= -2\cos{u} + C \\
-        &= -2\cos{\sqrt{x}} +C 
+        &= -2\cos{\sqrt{x}} +C
         \nonumber
     \end{aligned}
-\end{equation} \qed
-~\par
+\end{equation}
+\end{solution}
 
+\textbf{4.回收落单的三角函数：利用常见三角函数积分}
 
-\textbf{4.回收落单的三角函数：利用常见三角函数积分}\vspace{1em}
+\begin{example}
+\label{ex:ch03-06}
+计算$\int \sin^3 x \cos^3 x ~\d x$.
+\end{example}
 
-\textbf{例3.6}~~\textit{计算}$\int \sin^3 x \cos^3 x ~\d x$.\par
-\textbf{解答}
+\begin{solution}
 \begin{equation}
     \begin{aligned}
-        \int \sin^3 x \cos^3 x ~\d x 
+        \int \sin^3 x \cos^3 x ~\d x
         &= \int \sin^3 x (1-\sin^2 x) ~\d (\sin x) \\
         &\xlongequal{u = \sin x} \int u^3(1-u^2) ~\d u \\
         &= \frac{u^4}{4}-\frac{u^6}{6} +C \\
-        &= \frac{\sin^4 x}{4} - \frac{\sin^6 x}{6} + C 
+        &= \frac{\sin^4 x}{4} - \frac{\sin^6 x}{6} + C
         \nonumber
     \end{aligned}
-\end{equation} \qed
-~\par
+\end{equation}
+\end{solution}
 
+\textbf{5.~~凑反三角函数：利用常见反三角函数积分}
 
-\textbf{5.~~凑反三角函数：利用常见反三角函数积分}\vspace{1em}
+\begin{example}
+\label{ex:ch03-07}
+计算$\int \frac{\arctan x}{1+x^2}~\d x$.
+\end{example}
 
-\textbf{例3.7}~~\textit{计算}$\int \frac{\arctan x}{1+x^2}~\d x$.
-
-\textbf{解答}
+\begin{solution}
 \begin{equation}
     \begin{aligned}
-        \int \frac{\arctan x}{1+x^2}~\d x 
+        \int \frac{\arctan x}{1+x^2}~\d x
         &= \int \arctan x ~\d(\arctan x) \\
         &\xlongequal{u=\arctan x} \int u ~\d u \\
         &= \frac{u^2}{2} +C \\
-        &= \frac{(\arctan x)^2}{2} + C 
+        &= \frac{(\arctan x)^2}{2} + C
         \nonumber
     \end{aligned}
-\end{equation} \qed
-~\par
+\end{equation}
+\end{solution}
 
 \clearpage
 
 作为拓展，我们额外介绍两种有系统性的凑微分方法.\par
 ~\par
-\textbf{*6.~~有理积分的捷径：凑$\d \left(x \pm \frac{1}{x} \right)$.}\par \vspace{1em}
+\textbf{*6.~~有理积分的捷径：凑$\d \left(x \pm \frac{1}{x} \right)$.}
 
-\textbf{例3.8}~~计算$\int \frac{1+x^2}{1+x^4} ~\d x$.
+\begin{example}
+\label{ex:ch03-08}
+计算$\int \frac{1+x^2}{1+x^4} ~\d x$.
+\end{example}
 
-\textbf{解答}
+\begin{solution}
 \begin{equation}
     \begin{aligned}
-        \int \frac{1+x^2}{1+x^4} ~\d x 
+        \int \frac{1+x^2}{1+x^4} ~\d x
         &= \int \frac{\displaystyle\frac{1}{x^2}+1}{x^2+\displaystyle\frac{1}{x^2}}~\d x \\
         &= \int \frac{\d (x-\displaystyle\frac{1}{x})}{(x-\displaystyle\frac{1}{x})^2+2} \\
         &\xlongequal{u = x - \frac{1}{x}} \int \frac{\d u}{u^2 + 2}~\d u \\
@@ -234,12 +263,15 @@
         &= \frac{1}{\sqrt{2}}\arctan{\frac{x-\frac{1}{x}}{\sqrt{2}}} +C
         \nonumber
     \end{aligned}
-\end{equation} \qed
-~\par
-~\par
-\textbf{例3.9}~~计算$\int \frac{1-x^2}{1+x^4} ~ \d x $.
+\end{equation}
+\end{solution}
 
-\textit{解答}
+\begin{example}
+\label{ex:ch03-09}
+计算$\int \frac{1-x^2}{1+x^4} ~ \d x $.
+\end{example}
+
+\begin{solution}
 \begin{align*}
     \int \frac{1-x^2}{1+x^4} ~\d x
     &= \int \frac{\displaystyle\frac{1}{x^2}-1}{x^2+\displaystyle\frac{1}{x^2}}~\d x \\
@@ -247,18 +279,21 @@
     &\xlongequal{u = x + \frac{1}{x}} -\int \frac{\d u}{u^2 - 2}~\d u \\
     &= \frac{1}{2\sqrt{2}} \ln \left| \frac{x + \frac{1}{x}+\sqrt{2}}{x + \frac{1}{x}-\sqrt{2}} \right| +C \\
     &= \frac{1}{2\sqrt{2}} \ln \left| \frac{x + \frac{1}{x}+\sqrt{2}}{x + \frac{1}{x}-\sqrt{2}} \right| +C
-\end{align*} \qed
-~\par
+\end{align*}
+\end{solution}
 
-\clearpage
+\begin{example}
+\label{ex:ch03-10}
+计算$\int \frac{1}{1+x^4}~\d x$.
+\end{example}
 
-\textbf{例3.10}~~\textit{计算}$\int \frac{1}{1+x^4}~\d x$.\par \vspace{0.5em}
-\textbf{解答}~~将该积分进行拆分：
+\begin{solution}
+将该积分进行拆分：
 \begin{equation}
     \begin{aligned}
-        \int \frac{1}{1+x^4}~\d x 
+        \int \frac{1}{1+x^4}~\d x
         &= \frac{1}{2} \int \frac{1+x^2+1-x^2}{1+x^4} ~\d x\\
-        &= \frac{1}{2} \int \frac{1+x^2}{1+x^4} ~\d x + \frac{1}{2} \int \frac{1-x^2}{1+x^4} ~\d x 
+        &= \frac{1}{2} \int \frac{1+x^2}{1+x^4} ~\d x + \frac{1}{2} \int \frac{1-x^2}{1+x^4} ~\d x
         \nonumber
     \end{aligned}
 \end{equation} \par
@@ -266,37 +301,44 @@
 拆出的两个不定积分正是3.8和3.9两道例题做过的，这里直接引用它们的结论，得到：
 $$
 \int \frac{1}{1+x^4} ~\d x = \frac{1}{2\sqrt{2}}\arctan{\frac{x-\frac{1}{x}}{\sqrt{2}}}
-+\frac{1}{4\sqrt{2}} \ln \left| \frac{x + \frac{1}{x}+\sqrt{2}}{x + \frac{1}{x}-\sqrt{2}} \right| +C 
-$$ \qed
-~\par
++\frac{1}{4\sqrt{2}} \ln \left| \frac{x + \frac{1}{x}+\sqrt{2}}{x + \frac{1}{x}-\sqrt{2}} \right| +C
+$$
+\end{solution}
 
 \textbf{*7.~~三角函数有理式凑正切：利用$\frac{1}{\cos^2 x}~\d x = \d (\tan x)$}.\vspace{1em}
 
 \setstretch{1.75}
 
-遇到三角函数有理式，立即想到有一个保底方法是用万能公式转化为有理式. 但是有时也可以用凑微分法. \vspace{1em}
+遇到三角函数有理式，立即想到有一个保底方法是用万能公式转化为有理式. 但是有时也可以用凑微分法.
 
-\textbf{例3.11}~~\textit{计算}$\int \frac{\d x}{\sin^2 x + 2\cos^2 x}$.\vspace{0.5em}
+\begin{example}
+\label{ex:ch03-11}
+计算$\int \frac{\d x}{\sin^2 x + 2\cos^2 x}$.
+\end{example}
 
-\textbf{解答}
+\begin{solution}
 \begin{equation}
     \begin{aligned}
-        \int \frac{\d x}{\sin^2 x + 2\cos^2 x} 
+        \int \frac{\d x}{\sin^2 x + 2\cos^2 x}
         &= \int \frac{\d x}{\tan^2 x +2} \cdot \frac{1}{\cos^2 x} \\
         &= \int \frac{\d(\tan x)}{\tan^2 x +2} \\
         &\xlongequal{u = \tan x} \int \frac{1}{u^2+2} ~\d u  \\
         &= \frac{1}{\sqrt{2}}\arctan{\frac{u}{\sqrt{2}}} +C \\
-        &= \frac{1}{\sqrt{2}}\arctan{\frac{\tan x}{\sqrt{2}}} +C 
+        &= \frac{1}{\sqrt{2}}\arctan{\frac{\tan x}{\sqrt{2}}} +C
         \nonumber
     \end{aligned}
-\end{equation} \qed
-~\par \vspace{0.5em}
+\end{equation}
+\end{solution}
 
 上例展示了凑$\d(\tan x)$的一种典型情况，即分母上是关于三角函数的二次齐次有理式. 利用$\sin^2 x +\cos^2 x =1$
-以及二倍角公式，可以把多种三角函数有理式转化成这种情况. \par
-~\par
-\textbf{例3.12}~~\textit{计算}$\int \frac{\d x}{1+\sin x}$.\par
-\textbf{解答}
+以及二倍角公式，可以把多种三角函数有理式转化成这种情况.
+
+\begin{example}
+\label{ex:ch03-12}
+计算$\int \frac{\d x}{1+\sin x}$.
+\end{example}
+
+\begin{solution}
 \begin{align*}
         \int \frac{\d x}{1+\sin x}
         &= \int \frac{\d x}{\sin^2{\displaystyle\frac{x}{2}}+\cos^2{\displaystyle\frac{x}{2}}+2\sin\displaystyle\frac{x}{2}\cos{\displaystyle\frac{x}{2}}} \\
@@ -305,20 +347,24 @@ $$ \qed
         &\xlongequal{u=\tan{\displaystyle\frac{x}{2}}} \int \frac{2 \d u}{(u+1)^2} \\
         &= \frac{-2}{u+1} + C \\
         &= -\frac{2}{\tan{\displaystyle\frac{x}{2}}+1} + C
-\end{align*} \qed
-~\par
+\end{align*}
+\end{solution}
 
 \subsubsection{第二换元法}\par
 第二换元法有几个固定的使用套路.\vspace{1em}
 
 \textbf{1.~~三角换元}\vspace{0.25em}
 
-这应该是同学们最熟悉的方法. 
-常用于处理根号下的平方和差. \vspace{1em}
+这应该是同学们最熟悉的方法.
+常用于处理根号下的平方和差.
 
-\textbf{例3.13}~~\textit{计算}$\int \sqrt{x^2+a^2}~\d x$.\vspace{1em}
+\begin{example}
+\label{ex:ch03-13}
+计算$\int \sqrt{x^2+a^2}~\d x$.
+\end{example}
 
-\textbf{解答}~~令$x = a\tan\theta$，$\theta \in \left(-\frac{\pi}{2},~\frac{\pi}{2}\right)$.
+\begin{solution}
+令$x = a\tan\theta$，$\theta \in \left(-\frac{\pi}{2},~\frac{\pi}{2}\right)$.
 \begin{equation}
     \begin{aligned}
         \int \sqrt{x^2+a^2}~\d x
@@ -329,82 +375,95 @@ $$ \qed
         &\xlongequal{\text{有理式积分}} -\frac{a^2 u}{2(u^2-1)} + \frac{a^2}{4} \ln \left| \frac{u+1}{u-1} \right| +C \\
         &= \frac{a^2 \tan \theta \sec \theta}{2} + \frac{a^2}{4} \ln \left| \frac{1+\sin \theta}{1 - \sin \theta} \right| +C \\
         &= \frac{a^2 \tan \theta \sec \theta}{2} + \frac{a^2}{2} \ln \left| \sec \theta + \tan \theta \right| +C  \\
-        &= \frac{x\sqrt{x^2+a^2}}{2} + \frac{a^2}{2} \ln \left| x+\sqrt{x^2+a^2} \right| +C 
+        &= \frac{x\sqrt{x^2+a^2}}{2} + \frac{a^2}{2} \ln \left| x+\sqrt{x^2+a^2} \right| +C
         \nonumber
     \end{aligned}
-\end{equation} \qed
-~\par \vspace{1em}
+\end{equation}
+\end{solution}
 
-从这道题可以看出，三角换元的基本思路是将带根号下的二次式转化为有理式积分，而有理式积分一定是可以做出来的. 
+从这道题可以看出，三角换元的基本思路是将带根号下的二次式转化为有理式积分，而有理式积分一定是可以做出来的.
 但是，有些积分（例如上一题）转化成有理式积分之后非常繁琐. 所以，即便是“一眼三角换元”的题目。如果有其他好的方法也最好掌握.\vspace{1em}
 
 \textbf{2.指数换元}\vspace{0.25em}
 
 如果被积函数中含有$e^x$，
-令$t=e^x$来换元往往能够成功. 
+令$t=e^x$来换元往往能够成功.
 这是因为$\d x = \d (\ln t) = \frac{\d t}{t}$，
 而原函数中的$e^x$也都变成了$t$，
-这样有可能把被积分函数中的一些结构转化成有理式. \par
-~\par
-\textbf{例3.14}~~\textit{计算}$\int \frac{e^x}{\sqrt{1+e^x}}~\d x$.\par
-\textbf{解答}
+这样有可能把被积分函数中的一些结构转化成有理式.
+
+\begin{example}
+\label{ex:ch03-14}
+计算$\int \frac{e^x}{\sqrt{1+e^x}}~\d x$.
+\end{example}
+
+\begin{solution}
 \begin{equation}
     \begin{aligned}
         \int \frac{e^x}{\sqrt{1+e^x}}~\d x
         &\xlongequal{t=e^x} \int \frac{t}{\sqrt{1+t}}~\d(\ln t) \\
         &= \int \frac{1}{\sqrt{1+t}} ~\d t \\
         &=  2\sqrt{1+t} +C  \\
-        &=  2\sqrt{1+e^x} +C 
+        &=  2\sqrt{1+e^x} +C
         \nonumber
     \end{aligned}
-\end{equation} \qed
-~\par
-
+\end{equation}
+\end{solution}
 
 \textbf{3.~~对数换元}\vspace{0.25em}
 
 如果被积函数含有$\ln x$，
-可以考虑令$t=\ln x$来换元. 
+可以考虑令$t=\ln x$来换元.
 这样换元的结果会产生额外的$e^t$，
 因为$\d x = \d (e^t) = e^t~\d t$，
-而被积函数中一些落单的$x$也变成了$e^t$. 
-但是，一些特定的函数与$e^t$相组合是容易积分的（具体做法见第3节分部积分）. \par
-~\par
-\textbf{例3.15}~~\textit{计算}$\int \left( \frac{\ln x}{x} \right)^2 ~\d x$.\vspace{0.5em}
+而被积函数中一些落单的$x$也变成了$e^t$.
+但是，一些特定的函数与$e^t$相组合是容易积分的（具体做法见第3节分部积分）.
 
-\textbf{解答}
+\begin{example}
+\label{ex:ch03-15}
+计算$\int \left( \frac{\ln x}{x} \right)^2 ~\d x$.
+\end{example}
+
+\begin{solution}
 \begin{equation}
     \begin{aligned}
         \int \left( \frac{\ln x}{x} \right)^2 ~\d x
         &\xlongequal{t=\ln x} \int \frac{t^2}{e^{2t}} ~\d (e^t) \\
         &= \int t^2 e^{-t} ~\d t \\
-        &\xlongequal{\text{连续分部积分}}  -t^2 e^{-t} -2t e^{-t} -2 e^{-t} + C ~~~\text{（具体过程见例3.20）}\\
-        &= -\frac{(\ln x)^2}{x} - \frac{2\ln x}{x} -\frac{2}{x} +C 
+        &\xlongequal{\text{连续分部积分}}  -t^2 e^{-t} -2t e^{-t} -2 e^{-t} + C ~~~\text{（具体过程见例\ref{ex:ch03-20}）}\\
+        &= -\frac{(\ln x)^2}{x} - \frac{2\ln x}{x} -\frac{2}{x} +C
         \nonumber
     \end{aligned}
-\end{equation} \qed
+\end{equation}
+\end{solution}
 
-~\par
 \textbf{4.~~反三角换元}\vspace{0.25em}
 
 如果被积函数含有反三角函数，
-可以令它等于$t$.\par
-~\par
-\textbf{例3.16}~~\textit{计算}$\int x \arcsin x ~\d x$.\par \vspace{0.5em}
-\textbf{解答}
+可以令它等于$t$.
+
+\begin{example}
+\label{ex:ch03-16}
+计算$\int x \arcsin x ~\d x$.
+\end{example}
+
+\begin{solution}
 \begin{align*}
         \int x \arcsin x ~\d x
         &\xlongequal{t= \arcsin x} \int t\sin t ~\d (\sin t) \\
         &= \int t \sin t \cos t ~\d t \\
         &= \frac{1}{2} \int t \sin {2t} ~\d t \\
-        &\xlongequal{\text{连续分部积分}} -\frac{1}{4}t \cos{2t} +\frac{1}{8} \sin {2t} +C ~~~\text{（具体过程见例3.21）}\\
-        &= -\frac{1}{4} (1-2x^2) \arcsin x + \frac{1}{4} x\sqrt{1-x^2} +C 
-\end{align*}\qed
-~\par
+        &\xlongequal{\text{连续分部积分}} -\frac{1}{4}t \cos{2t} +\frac{1}{8} \sin {2t} +C ~~~\text{（具体过程见例\ref{ex:ch03-21}）}\\
+        &= -\frac{1}{4} (1-2x^2) \arcsin x + \frac{1}{4} x\sqrt{1-x^2} +C
+\end{align*}
+\end{solution}
 
-\textbf{例3.17}~~\textit{计算}$\int \frac{\arccos x}{x^2\sqrt{1-x^2}}$，$x \in (0,1)$.\vspace{0.5em}
+\begin{example}
+\label{ex:ch03-17}
+计算$\int \frac{\arccos x}{x^2\sqrt{1-x^2}}$，$x \in (0,1)$.
+\end{example}
 
-\textbf{解答}
+\begin{solution}
 \begin{equation}
     \begin{aligned}
         \int \frac{\arccos x}{x^2\sqrt{1-x^2}}
@@ -413,22 +472,28 @@ $$ \qed
         &= -\int t ~\d(\tan t) \\
         &= -t\tan t +\int \tan t ~\d t \\
         &= -t \tan t -\ln |\cos t| +C \\
-        &= -\frac{\sqrt{1-x^2}}{x}\arccos{x} -\ln x +C 
+        &= -\frac{\sqrt{1-x^2}}{x}\arccos{x} -\ln x +C
         \nonumber
     \end{aligned}
-\end{equation} \qed \par
-~\par
+\end{equation}
+\end{solution}
+
 以上的套路有一个共同特征.
 当被积函数的主体结构为有理式和根式，
-但是混入了指数、对数和反三角函数等“异端”时，我们就令这些“异端”等于$t$. 
+但是混入了指数、对数和反三角函数等“异端”时，我们就令这些“异端”等于$t$.
 这样就非常简单粗暴地消灭了“异端”. 由此我们得到了换元法的一种通用准则——
-如果被积函数中有特别恶心的东西，就用换元法把它换掉，眼不见为净.\par
-~\par
-\textbf{例3.18}~~\textit{计算}$\int (\tan x )^{\frac{3}{2}}~\d x$. \vspace{0.5em}
+如果被积函数中有特别恶心的东西，就用换元法把它换掉，眼不见为净.
 
-\textbf{分析}~~被积函数十分恶心，因此考虑把整个被积函数令为$t$.\vspace{0.5em}
+\begin{example}
+\label{ex:ch03-18}
+计算$\int (\tan x )^{\frac{3}{2}}~\d x$.
+\end{example}
 
-\textbf{解答}
+\begin{analysis}
+被积函数十分恶心，因此考虑把整个被积函数令为$t$.
+\end{analysis}
+
+\begin{solution}
 \begin{equation}
     \begin{aligned}
         \int (\tan x )^{\frac{3}{2}}~\d x
@@ -440,80 +505,97 @@ $$ \qed
         \nonumber
     \end{aligned}
 \end{equation}
-这里我们引用例3.10的结论，得到：
+这里我们引用例\ref{ex:ch03-10}的结论，得到：
 \begin{equation}
     \begin{aligned}
         \int (\tan x )^{\frac{3}{2}}~\d x
         &= 2u - \frac{1}{\sqrt{2}}\arctan{\frac{u-\frac{1}{u}}{\sqrt{2}}}
         -\frac{1}{2\sqrt{2}} \ln \left| \frac{u + \frac{1}{u}+\sqrt{2}}{u + \frac{1}{u}-\sqrt{2}} \right| +C \\
         &= 2\sqrt{\tan x} - \frac{1}{\sqrt{2}}\arctan{\frac{\tan x -1}{\sqrt{2 \tan x}}}
-        -\frac{1}{2\sqrt{2}} \ln \left(  \frac{\tan x + 1 + \sqrt{2\tan x}}{\tan x + 1 - \sqrt{2\tan x}}  \right) +C 
+        -\frac{1}{2\sqrt{2}} \ln \left(  \frac{\tan x + 1 + \sqrt{2\tan x}}{\tan x + 1 - \sqrt{2\tan x}}  \right) +C
         \nonumber
     \end{aligned}
-\end{equation} \qed \par
-~\par
+\end{equation}
+\end{solution}
+
 解完题后复盘发现，其实一开始令$t= (\tan x)^{\frac{1}{2}}$就可以.
 上面给出的“无脑换元”法其实是绕了远路，
-但最后也殊途同归了. \par
-~\par
-\textbf{例3.19}~~\textit{计算}$\int \cos(\ln x +1) ~\d x$.\par \vspace{0.5em}
+但最后也殊途同归了.
 
-\textbf{分析}~~一般来说，三角函数里混着别的函数是没法处理的，需要把三角函数里的东西令为$t$.\vspace{0.5em}
+\begin{example}
+\label{ex:ch03-19}
+计算$\int \cos(\ln x +1) ~\d x$.
+\end{example}
 
-\textbf{解答}
+\begin{analysis}
+一般来说，三角函数里混着别的函数是没法处理的，需要把三角函数里的东西令为$t$.
+\end{analysis}
+
+\begin{solution}
 \begin{equation}
     \begin{aligned}
         \int \cos(\ln x +1) ~\d x
         &\xlongequal{t = \ln x +1} \int \cos{t} ~\d (e^{t-1}) \\
         &= \int e^{t-1} \cos t ~\d t \\
-        &\xlongequal{\text{两次分部积分}}  \frac{1}{2} e^{t-1} (\sin t + \cos t) +C ~~\text{（具体过程见例3.22）} \\
-        &= \frac{1}{2} x \left( \sin(\ln x +1) + \cos (\ln x +1) \right) +C 
+        &\xlongequal{\text{两次分部积分}}  \frac{1}{2} e^{t-1} (\sin t + \cos t) +C ~~\text{（具体过程见例\ref{ex:ch03-22}）} \\
+        &= \frac{1}{2} x \left( \sin(\ln x +1) + \cos (\ln x +1) \right) +C
         \nonumber
     \end{aligned}
-\end{equation} \qed
-~\par
+\end{equation}
+\end{solution}
 
 \subsubsection{分部积分法}\par
 分部积分法也有几个固定的使用套路. \vspace{1em}
 
-\textbf{1.~~多项式×指数型：连续分部积分}\par \vspace{1em}
+\textbf{1.~~多项式×指数型：连续分部积分}
 
-\textbf{例3.20}~~\textit{计算}$\int t^2 e^{-t}~\d t$.\par
-\textbf{解答}
+\begin{example}
+\label{ex:ch03-20}
+计算$\int t^2 e^{-t}~\d t$.
+\end{example}
+
+\begin{solution}
 \begin{equation}
     \begin{aligned}
-        \int t^2 e^{-t}~\d t 
+        \int t^2 e^{-t}~\d t
         &= \int -t^2~\d(e^{-t}) \\
         &= -t^2e^{-t} + \int  e^{-t}~\d(t^2) \\
         &= -t^2e^{-t} - \int 2t~\d(e^{-t}) \\
         &= -t^2e^{-t} -2te^{-t} +2 \int e^{-t} ~\d t \\
-        &= -t^2e^{-t} -2te^{-t} -2e^{-t} +C 
+        &= -t^2e^{-t} -2te^{-t} -2e^{-t} +C
         \nonumber
     \end{aligned}
-\end{equation} \qed
+\end{equation}
+\end{solution}
 
-\textbf{2.~~多项式×三角函数型：连续分部积分} \vspace{1em}
+\textbf{2.~~多项式×三角函数型：连续分部积分}
 
-\textbf{例3.21}~~\textit{计算}$\int t\sin 2t ~\d t$.\vspace{0.5em}
+\begin{example}
+\label{ex:ch03-21}
+计算$\int t\sin 2t ~\d t$.
+\end{example}
 
-\textbf{解答}
+\begin{solution}
 \begin{equation}
     \begin{aligned}
-        \int t\sin 2t ~\d t 
+        \int t\sin 2t ~\d t
         &= -\frac{1}{2} \int t ~\d(\cos 2t) \\
         &= -\frac{1}{2}t\cos 2t + \frac{1}{2} \int \cos 2t ~\d t \\
-        &= -\frac{1}{2}t\cos 2t + \frac{1}{4}\sin 2t +C 
+        &= -\frac{1}{2}t\cos 2t + \frac{1}{4}\sin 2t +C
         \nonumber
     \end{aligned}
-\end{equation} \qed
-~\par
-~\par
+\end{equation}
+\end{solution}
 
-\textbf{3.~~指数×三角函数型：两次分部积分重现原积分}\vspace{1em}
+\textbf{3.~~指数×三角函数型：两次分部积分重现原积分}
 
-\textbf{例3.22}~~\textit{计算}$\int e^{t-1} \cos t ~\d t$.\vspace{0.75em}
+\begin{example}
+\label{ex:ch03-22}
+计算$\int e^{t-1} \cos t ~\d t$.
+\end{example}
 
-\textbf{解答}~~设待求的不定积分为$I(t)$，则：
+\begin{solution}
+设待求的不定积分为$I(t)$，则：
 \begin{align*}
         I(t) &= \int e^{t-1} ~\d(\sin t) \\
         &= e^{t-1}\sin t - \int e^{t-1} \sin t ~\d t \\
@@ -524,20 +606,16 @@ $$ \qed
 \end{align*} \par
 将等式看成关于$I(t)$的函数方程，即：
 $$
-\setlength\abovedisplayskip{6pt}
-    \setlength\belowdisplayskip{6pt}
 I(t) = e^{t-1}\sin t +e^{t-1}\cos t +C -I(t)
 $$
 
 整理即得：
 $$
-\setlength\abovedisplayskip{6pt}
-    \setlength\belowdisplayskip{6pt}
 I(t) = \frac{1}{2} e^{t-1} (\sin t + \cos t) + C
-$$ \qed \par
-~\par
+$$
+\end{solution}
 
-相比于换元法，分部积分的套路化题型较少，同学们在遇到陌生的积分时，第一时间可能不容易想到分部积分. 
+相比于换元法，分部积分的套路化题型较少，同学们在遇到陌生的积分时，第一时间可能不容易想到分部积分.
 但事实上，分部积分是拆解复杂积分的利器. 请同学们观察分部积分的公式：
 $$
 \int u(x)v(x)~\d x = \int u(x)~\d V(x) =  u(x)\cdot V(x) - \int V(x) u'(x) ~\d x
@@ -549,47 +627,54 @@ $$
 \textbf{4.~~容易积分×不容易积分型：积一半导一半}\vspace{0.5em}
 
 如果被积函数中的一部分$u(x)$看起来比较恶心，而其余部分$v(x)$可以积分，可以先单独计算出后者的不定积分
-$V(x)$，从而强行完成分部积分. 所谓“比较恶心”的东西，一般是对数和反三角函数，而它们的导函数则更便于处理. 
-特别地，当$v(x)=1$时，即整个被积函数都很恶心，无从下手时，除了之前讲过的换元法以外，也要能想到分部积分的方法. 
-\par
-~\par
-\textbf{例3.23}~~\textit{计算}$\int \frac{\ln x}{(x+3)^2} ~\d x$.\vspace{0.5em}
+$V(x)$，从而强行完成分部积分. 所谓“比较恶心”的东西，一般是对数和反三角函数，而它们的导函数则更便于处理.
+特别地，当$v(x)=1$时，即整个被积函数都很恶心，无从下手时，除了之前讲过的换元法以外，也要能想到分部积分的方法.
 
-\textbf{分析}~~$u(x)=\ln x$对数函数恶心，而$v(x)=\frac{1}{(x+3)^2}$是有理式，容易积.\vspace{0.5em}
+\begin{example}
+\label{ex:ch03-23}
+计算$\int \frac{\ln x}{(x+3)^2} ~\d x$.
+\end{example}
 
-\textbf{解答}~~先试积分$\frac{1}{(x+3)^2}$，得到$\frac{\d x}{(x+3)^2} = - \d \left( \frac{1}{x+3} \right)$. 
+\begin{analysis}
+$u(x)=\ln x$对数函数恶心，而$v(x)=\frac{1}{(x+3)^2}$是有理式，容易积.
+\end{analysis}
+
+\begin{solution}
+先试积分$\frac{1}{(x+3)^2}$，得到$\frac{\d x}{(x+3)^2} = - \d \left( \frac{1}{x+3} \right)$.
 于是有：
 \begin{equation}
     \begin{aligned}
-        \int \frac{\ln x}{(x+3)^2} ~\d x 
+        \int \frac{\ln x}{(x+3)^2} ~\d x
         &= - \int \ln x ~\d \left( \frac{1}{x+3} \right) \\
         &= -\frac{\ln x}{x+3} +\int \frac{1}{x+3} ~\d (\ln x) \\
         &= -\frac{\ln x}{x+3} +\int \frac{1}{x(x+3)} ~\d x\\
-        &\xlongequal{\text{有理式积分}} -\frac{\ln x}{x+3} +\frac{1}{3}\ln x -\frac{1}{3}\ln (x+3) +C 
+        &\xlongequal{\text{有理式积分}} -\frac{\ln x}{x+3} +\frac{1}{3}\ln x -\frac{1}{3}\ln (x+3) +C
         \nonumber
     \end{aligned}
-\end{equation} \qed
-~\par 
+\end{equation}
+\end{solution}
 
-\textbf{例3.24}~~\textit{计算}$\int \frac{x \arctan x}{\sqrt{1-x^2}}~\d x$.\vspace{0.5em}
+\begin{example}
+\label{ex:ch03-24}
+计算$\int \frac{x \arctan x}{\sqrt{1-x^2}}~\d x$.
+\end{example}
 
-\textbf{分析}~~$u(x)=\arctan x$反三角函数恶心，而$v(x)=\frac{x}{\sqrt{1-x^2}}$容易积.\vspace{0.25em}
+\begin{analysis}
+$u(x)=\arctan x$反三角函数恶心，而$v(x)=\frac{x}{\sqrt{1-x^2}}$容易积.
+\end{analysis}
 
-\textbf{解答}~~先试积分$v(x)=\frac{x}{\sqrt{1-x^2}}$：
+\begin{solution}
+先试积分$v(x)=\frac{x}{\sqrt{1-x^2}}$：
 \begin{equation}
-    \setlength\abovedisplayskip{6pt}
-    \setlength\belowdisplayskip{6pt}
     \begin{aligned}
-        \int \frac{x}{\sqrt{1-x^2}} ~\d x 
+        \int \frac{x}{\sqrt{1-x^2}} ~\d x
         &= \frac{1}{2} \int \frac{1}{\sqrt{1-x^2}} ~\d (x^2) \\
-        &= - \sqrt{1-x^2}+ C 
+        &= - \sqrt{1-x^2}+ C
         \nonumber
     \end{aligned}
 \end{equation} \par
 于是有：
 \begin{equation}
-    \setlength\abovedisplayskip{10pt}
-    \setlength\belowdisplayskip{10pt}
     \begin{aligned}
         \int \frac{x \arctan x}{\sqrt{1-x^2}}~\d x
         &= \int \arctan x ~\d (-\sqrt{1-x^2}) \\
@@ -601,105 +686,109 @@ $V(x)$，从而强行完成分部积分. 所谓“比较恶心”的东西，一
 新出现的积分有很多种方法可以解决. 这里使用讲义前文提到的一种凑微分技巧：
 
 \begin{equation}
-    \setlength\abovedisplayskip{10pt}
-    \setlength\belowdisplayskip{10pt}
     \begin{aligned}
-        \int \frac{\sqrt{1-x^2}}{1+x^2} ~\d x 
+        \int \frac{\sqrt{1-x^2}}{1+x^2} ~\d x
         &\xlongequal{x = \sin \theta} \int \frac {\cos^2 \theta}{1+\sin^2 \theta}~\d \theta \\
         &= \int \frac{1}{1 + \tan^2 \theta} \cdot \frac{1}{2\tan^2 \theta + 1}  ~\d (\tan \theta) \\
         &\xlongequal{u=\tan \theta} \int \frac{1}{(1+u^2)(1+2u^2)}~\d u \\
         &= \int \frac{2}{1+2u^2} -\frac{1}{1+u^2} ~\d u \\
         &= \sqrt{2} \arctan(\sqrt{2}u) -\arctan{u} +C \\
-        &= \sqrt{2} \arctan \left( \frac{\sqrt{2}x}{\sqrt{1-x^2}} \right) -\arcsin x +C 
+        &= \sqrt{2} \arctan \left( \frac{\sqrt{2}x}{\sqrt{1-x^2}} \right) -\arcsin x +C
         \nonumber
     \end{aligned}
 \end{equation}
 将这个积分的计算结果代入之前的计算，得到：
 $$
-\setlength\abovedisplayskip{10pt}
-    \setlength\belowdisplayskip{10pt}
 \int \frac{x \arctan x}{\sqrt{1-x^2}}~\d x = -\sqrt{1-x^2}\arctan x
-+\sqrt{2} \arctan(\frac{\sqrt{2}x}{\sqrt{1-x^2}}) -\arcsin x +C 
-$$ \qed \par
-~\par
++\sqrt{2} \arctan(\frac{\sqrt{2}x}{\sqrt{1-x^2}}) -\arcsin x +C
+$$
+\end{solution}
 
+\begin{example}
+\label{ex:ch03-25}
+计算$\int \frac{x \cos x}{\sin^2 x}~\d x$.
+\end{example}
 
-\textbf{例3.25}~~\textit{计算}$\int \frac{x \cos x}{\sin^2 x}~\d x$.\par \vspace{0.5em}
-\textbf{分析}~~如果去掉分子上的$x$，这个积分显然可以用凑微分法. 因此将$\frac{\cos x}{\sin^2 x}$视为$v(x)$，分部积分一次之后$u(x)=x$就被求导而消失了.\par \vspace{0.5em}
-\textbf{解答}~~先试积分$\frac{\cos x}{\sin^2 x}$，得到$\frac{\cos x}{\sin^2 x} = \d (-\frac{1}{\sin x})$. 于是有：
+\begin{analysis}
+如果去掉分子上的$x$，这个积分显然可以用凑微分法. 因此将$\frac{\cos x}{\sin^2 x}$视为$v(x)$，分部积分一次之后$u(x)=x$就被求导而消失了.
+\end{analysis}
+
+\begin{solution}
+先试积分$\frac{\cos x}{\sin^2 x}$，得到$\frac{\cos x}{\sin^2 x} = \d (-\frac{1}{\sin x})$. 于是有：
 \begin{equation}
-    \setlength\abovedisplayskip{6pt}
-    \setlength\belowdisplayskip{6pt}
     \begin{aligned}
-        \int \frac{x \cos x}{\sin^2 x}~\d x 
+        \int \frac{x \cos x}{\sin^2 x}~\d x
         &= -\int x ~\d (\frac{1}{\sin x}) \\
         &= -\frac{x}{\sin x} + \int \frac{1}{\sin x} ~\d x \\
         &= -\frac{x}{\sin x} + \ln |\csc x - \cot x| +C
         \nonumber
     \end{aligned}
-\end{equation} \qed \par
-~\par
+\end{equation}
+\end{solution}
 
-\textbf{例3.26}~~\textit{计算}$\int x \cdot \arctan x \cdot  \ln (1+x^2)~\d x$.\par \vspace{0.5em}
-\textbf{分析}~~被积函数中既有反三角函数又有对数函数，需要谨慎地选择$u(x)$和$v(x)$. 
-选$v(x)$的标准是它要容易积分. 据此我们发现，如果让$u(x)=\arctan x$，其余部分是$v(x)$，是可行的.  \vspace{0.5em}
+\begin{example}
+\label{ex:ch03-26}
+计算$\int x \cdot \arctan x \cdot  \ln (1+x^2)~\d x$.
+\end{example}
 
-\textbf{解答}~~先试积分$x \ln (1+x^2)$:
+\begin{analysis}
+被积函数中既有反三角函数又有对数函数，需要谨慎地选择$u(x)$和$v(x)$.
+选$v(x)$的标准是它要容易积分. 据此我们发现，如果让$u(x)=\arctan x$，其余部分是$v(x)$，是可行的.
+\end{analysis}
+
+\begin{solution}
+先试积分$x \ln (1+x^2)$:
 \begin{equation}
-    \setlength\abovedisplayskip{10pt}
-    \setlength\belowdisplayskip{6pt}
     \begin{aligned}
-        \int x \ln (1+x^2) ~\d x 
+        \int x \ln (1+x^2) ~\d x
         &= \frac{1}{2} \int \ln (1+x^2) ~\d (x^2) \\
         &\xlongequal{u = x^2+1} \frac{1}{2} \int \ln u ~\d u \\
         &= u\ln u - u +C \\
-        &= (x^2+1)\ln (x^2+1) -(x^2+1) +C  
+        &= (x^2+1)\ln (x^2+1) -(x^2+1) +C
         \nonumber
     \end{aligned}
 \end{equation} \par
 因此有：
 \begin{equation}
-    \setlength\abovedisplayskip{12pt}
-    \setlength\belowdisplayskip{12pt}
     \begin{aligned}
-        \int x \cdot \arctan x \cdot & \ln (1+x^2)~\d x 
+        \int x \cdot \arctan x \cdot & \ln (1+x^2)~\d x
         = \frac{1}{2} \int \arctan x ~\d [ (x^2+1)\ln (x^2+1) -(x^2+1) ] \\
-        &= \frac{1}{2} [ (x^2+1)\ln (x^2+1) -(x^2+1) ]  \arctan x -\frac{1}{2} \int \frac{ (x^2+1)\ln (x^2+1) -(x^2+1) }{x^2+1} ~\d x \\
+        &= \frac{1}{2} [ (x^2+1)\ln (x^2+1) -(x^2+1) ]  \arctan x \\
+        &\quad -\frac{1}{2} \int \frac{ (x^2+1)\ln (x^2+1) -(x^2+1) }{x^2+1} ~\d x \\
         &= \frac{1}{2} [ (x^2+1)\ln (x^2+1) -(x^2+1) ]  \arctan x -\frac{1}{2} \int (\ln(x^2+1)-1)~\d x \\
-        &= \frac{1}{2} [ (x^2+1)\ln (x^2+1) -(x^2+1) ]  \arctan x +\frac{x}{2} -\frac{1}{2} \int \ln(1+x^2) ~\d x 
+        &= \frac{1}{2} [ (x^2+1)\ln (x^2+1) -(x^2+1) ]  \arctan x +\frac{x}{2} -\frac{1}{2} \int \ln(1+x^2) ~\d x
         \nonumber
     \end{aligned}
 \end{equation} \par
 
-现在只需解决积分$\int \ln(1+x^2) ~\d x$. 
+现在只需解决积分$\int \ln(1+x^2) ~\d x$.
 这里整个被积函数都无从下手，可整个视作$u(x)$，直接分部积分：
 \begin{equation}
-    \setlength\abovedisplayskip{12pt}
-    \setlength\belowdisplayskip{12pt}
     \begin{aligned}
-        \int \ln(1+x^2) ~\d x 
+        \int \ln(1+x^2) ~\d x
         &= x\ln(1+x^2) -\int x ~\d (\ln(1+x^2)) \\
         &= x\ln(1+x^2) -\int \frac{2x^2}{1+x^2} \\
         &= x\ln(1+x^2) -2\int 1-\frac{1}{1+x^2} ~\d x \\
-        &= x\ln(1+x^2) -2x + 2\arctan x +C  
+        &= x\ln(1+x^2) -2x + 2\arctan x +C
         \nonumber
     \end{aligned}
 \end{equation}
 
 将该结果代入，得到：
 $$
-\setlength\abovedisplayskip{12pt}
-    \setlength\belowdisplayskip{12pt}
-\int x \cdot \arctan x \cdot  \ln (1+x^2)~\d x  = 
-\frac{(x^2+1)\ln (x^2+1) -(x^2+3)}{2} \arctan x +\frac{3x}{2} -\frac{1}{2}x\ln(1+x^2) +C 
-$$ \qed 
-~\par
+\int x \cdot \arctan x \cdot  \ln (1+x^2)~\d x  =
+\frac{(x^2+1)\ln (x^2+1) -(x^2+3)}{2} \arctan x +\frac{3x}{2} -\frac{1}{2}x\ln(1+x^2) +C
+$$
+\end{solution}
 
-之前用换元法解决的一些例题，也可以用分部积分法解决.\par
-~\par
-\textbf{例3.27}~~\textit{计算}$\int \left( \frac{\ln x}{x} \right)^2 ~\d x$.\vspace{0.5em}
+之前用换元法解决的一些例题，也可以用分部积分法解决.
 
-\textbf{解答}
+\begin{example}
+\label{ex:ch03-27}
+计算$\int \left( \frac{\ln x}{x} \right)^2 ~\d x$.
+\end{example}
+
+\begin{solution}
 \begin{equation}
     \begin{aligned}
         \int \left( \frac{\ln x}{x} \right)^2 ~\d x
@@ -709,22 +798,25 @@ $$ \qed
         &= -\frac{(\ln x)^2}{x} + \int 2\ln x ~\d \left(-\frac{1}{x} \right)  \\
         &= -\frac{(\ln x)^2}{x} - \frac{2 \ln x}{x} +\int \frac{2}{x} ~\d (\ln x) \\
         &= -\frac{(\ln x)^2}{x} - \frac{2 \ln x}{x} +\int \frac{2}{x^2} ~\d x \\
-        &= -\frac{(\ln x)^2}{x} - \frac{2 \ln x}{x} -\frac{2}{x} +C 
+        &= -\frac{(\ln x)^2}{x} - \frac{2 \ln x}{x} -\frac{2}{x} +C
         \nonumber
     \end{aligned}
-\end{equation} \qed \par
-~\par
+\end{equation}
+\end{solution}
 
-事实上，例3.15和3.27做法都必须使用连续的分部积分. 在3.15中，我们通过换元将被积函数转化成了需要连续分部积分的经典形式.
-而上面的解法说明，如果用分部积分切中被积函数的“要害”，可以省去换元的步骤. 
+事实上，例\ref{ex:ch03-15}和例\ref{ex:ch03-27}的做法都必须使用连续的分部积分. 在例\ref{ex:ch03-15}中，我们通过换元将被积函数转化成了需要连续分部积分的经典形式.
+而上面的解法说明，如果用分部积分切中被积函数的“要害”，可以省去换元的步骤.
 
-~\par
+\begin{example}
+\label{ex:ch03-28}
+计算$\int x \arcsin x ~\d x$.
+\end{example}
 
-\textbf{例3.28}~~\textit{计算}$\int x \arcsin x ~\d x$.\vspace{0.5em}
+\begin{analysis}
+$u(x)=\arcsin x$反三角函数恶心，而$v(x)=x$显然太容易积分了.
+\end{analysis}
 
-\textbf{分析}~~$u(x)=\arcsin x$反三角函数恶心，而$v(x)=x$显然太容易积分了. \vspace{0.5em}
-
-\textbf{解答}
+\begin{solution}
 \begin{equation}
     \begin{aligned}
         \int x \arcsin x ~\d x
@@ -738,63 +830,61 @@ $$ \qed
         &= \frac{1}{2} x^2 \arcsin x-\frac{1}{4}\arcsin x +\frac{1}{4}x\sqrt{1-x^2} + C
         \nonumber
     \end{aligned}
-\end{equation} \qed 
-~\par
+\end{equation}
+\end{solution}
 
+\begin{example}
+\label{ex:ch03-29}
+计算$\int \sqrt{a^2 + x^2} ~\d x$.
+\end{example}
 
-\textbf{例3.29}~~\textit{计算}$\int \sqrt{a^2 + x^2} ~\d x$.\vspace{0.5em}
+\begin{analysis}
+整个被积函数都无从下手，可整个视作$u(x)$，直接分部积分.
+\end{analysis}
 
-\textbf{分析}~~整个被积函数都无从下手，可整个视作$u(x)$，直接分部积分.\vspace{0.5em}
-
-\textbf{解答}~~设待求积分为$I(x)$,则：
+\begin{solution}
+设待求积分为$I(x)$,则：
 \begin{equation}
-    \setlength\abovedisplayskip{6pt}
-    \setlength\belowdisplayskip{6pt}
     \begin{aligned}
-        I(x) 
+        I(x)
         &= x\sqrt{a^2 + x^2} -\int x ~\d \sqrt{a^2 + x^2} \\
         &= x\sqrt{a^2 + x^2} -\int \frac{x^2}{\sqrt{a^2 + x^2}} ~\d x \\
         &= x\sqrt{a^2 + x^2} -\int \sqrt{a^2 + x^2} ~\d x + \int \frac{a^x}{\sqrt{a^2 + x^2}} ~\d x \\
-        &= x\sqrt{a^2 + x^2} -I(x) +a^2 \ln |x+\sqrt{x^2+a^2}| + C 
+        &= x\sqrt{a^2 + x^2} -I(x) +a^2 \ln |x+\sqrt{x^2+a^2}| + C
         \nonumber
     \end{aligned}
 \end{equation} \par
 将等式看成关于$I(x)$的函数方程，即：
 $$
-\setlength\abovedisplayskip{6pt}
-\setlength\belowdisplayskip{6pt}
 I(x) = x\sqrt{a^2 + x^2} -I(x) +a^2 \ln |x+\sqrt{x^2+a^2}| + C
 $$
 
 整理后得到：
 $$
-\setlength\abovedisplayskip{6pt}
-    \setlength\belowdisplayskip{6pt}
 I(x) = \frac{1}{2}x\sqrt{a^2 + x^2} + \frac{a^2}{2} \ln |x+\sqrt{x^2+a^2}| + C
-$$ \qed
+$$
+\end{solution}
 
 \clearpage
 
-
-如果在考场上拿到一个复杂的积分，不知从何下手，可以参照讲义中的方法先尝试进行“解剖”. 
+如果在考场上拿到一个复杂的积分，不知从何下手，可以参照讲义中的方法先尝试进行“解剖”.
 我们当然不能保证用这些方法一定可以“一击命中”，但是与漫无目的地乱凑乱试相比，我们提供的思路更加清晰，
 更有可能把我们引导到正确的道路上去. 至于换元法和分部积分应该首选哪个，个人认为这是没有定论的. 在许多情况下，
 两种方法都能解决问题. 关键是，如果一种方法失败了，要能够迅速想到并动手尝试另一种方法，而不是在一个方法上死磕.\par
-
 
 \subsection{特殊的定积分}\par
 遇到定积分，一般先尝试用牛顿莱布尼茨公式. 这实际上就是在考验不定积分的功力，我们不再重复叙述了. 唯一要提醒的是，若使用换元法，
 不能忘记积分上下限也要相应地改变.
 
-本节主要关注不能使用牛顿莱布尼茨公式的定积分. 
+本节主要关注不能使用牛顿莱布尼茨公式的定积分.
 这主要是指被积函数没有初等原函数，
-或者原函数特别复杂的情况. 
+或者原函数特别复杂的情况.
 一个难点在于，
 我们目前并没有办法证明一个函数的原函数没有初等表达式，
 因此我们可能无法直接判断一个定积分应该用牛顿莱布尼茨公式做，
-还是应该用其他特殊的办法. 
+还是应该用其他特殊的办法.
 好消息是，以我们目前所学的知识，
-求定积分的“旁门左道”是非常有限的. 
+求定积分的“旁门左道”是非常有限的.
 因此，同学们一旦发现求不定积分有困难，
 就可以先试试本节所讲的方法.
 即使行不通，也不至于会浪费太多时间.
@@ -811,12 +901,14 @@ $$ \qed
         \nonumber
     \end{aligned}
 \end{equation}
-~\par
-\textbf{例3.30}~~\textit{计算}$\int_{0}^{1} x^4\sqrt{1-x^2}~\d x$.\par \vspace{0.5em}
-\textbf{解答}
+
+\begin{example}
+\label{ex:ch03-30}
+计算$\int_{0}^{1} x^4\sqrt{1-x^2}~\d x$.
+\end{example}
+
+\begin{solution}
 \begin{equation}
-    \setlength\abovedisplayskip{6pt}
-    \setlength\belowdisplayskip{6pt}
     \begin{aligned}
         \int_{0}^{1} x^4\sqrt{1-x^2}~\d x
         &\xlongequal{x = \sin \theta} \int_{0}^{\frac{\pi}{2}} \sin^4 \theta \cos \theta ~\d (\sin \theta) \\
@@ -826,10 +918,8 @@ $$ \qed
         &= \frac{\pi}{32}
         \nonumber
     \end{aligned}
-\end{equation} \qed
-~\par
-
-
+\end{equation}
+\end{solution}
 
 \subsubsection{奇偶函数的对称性}\par
 利用对称性是巧解定积分的核心思路（没有之一）. 这一小节介绍一种最容易注意到的情形：函数关于原点有对称性，而且积分区间也关于原点对称.\par
@@ -846,38 +936,42 @@ $$
 \int_{-a}^{a} f(x)~\d x = 2\int_{0}^{a} f(x)~\d x
 $$\par
 其中，关于奇函数的结论特别重要. 在积分区域对称时，它可以帮助我们极大地简化被积函数. 关于偶函数的结论
-虽然没有简化被积函数，但是也可以缩小积分区间，也可以带来一些方便.\par
-~\par
-\textbf{例3.31}~~\textit{计算}$\int_{-1}^{1} \sin x + \sin^2 x + \sin^3 x ~\d x$.\par \vspace{0.5em}
-\textbf{解答}~~注意到积分区间关于原点对称，而$\sin x$和$\sin^3 x$是奇函数，对定积分的值没有任何贡献. 因此有：
+虽然没有简化被积函数，但是也可以缩小积分区间，也可以带来一些方便.
+
+\begin{example}
+\label{ex:ch03-31}
+计算$\int_{-1}^{1} \sin x + \sin^2 x + \sin^3 x ~\d x$.
+\end{example}
+
+\begin{solution}
+注意到积分区间关于原点对称，而$\sin x$和$\sin^3 x$是奇函数，对定积分的值没有任何贡献. 因此有：
 \begin{equation}
-    \setlength\abovedisplayskip{10pt}
-    \setlength\belowdisplayskip{10pt}
     \begin{aligned}
         \int_{-1}^{1} \sin x + \sin^2 x + \sin^3 x ~\d x
         &= \int_{-1}^{1} \sin^2 x ~\d x \\
         &= 2 \int_{0}^{1} \sin^2 x ~\d x \\
         &=  \int_{0}^{1} 1 - \cos 2x ~\d x\\
         &= \left( x - \frac{\sin 2x}{2} \right) \bigg|_{x=0}^{x=1} \\
-        &= 1- \frac{\sin 2}{2} 
+        &= 1- \frac{\sin 2}{2}
         \nonumber
     \end{aligned}
-\end{equation} \qed \vspace{0.5em}
+\end{equation}
+\end{solution}
 
-\textbf{例3.32}~~\textit{网传南航食堂的wifi密码由下列定积分数值的前8位给出，求wifi密码：}
+\begin{example}
+\label{ex:ch03-32}
+网传南航食堂的wifi密码由下列定积分数值的前8位给出，求wifi密码：
 $$
-\setlength\abovedisplayskip{10pt}
-    \setlength\belowdisplayskip{10pt}
 \int_{-2}^{2} \left( x^3 \cos\frac{1}{x} +\frac{1}{2}\right)\sqrt{4-x^2}~\d x
-$$\par \vspace{0.5em}
+$$
+\end{example}
 
-\textbf{解答}~~注意到积分区间关于原点对称，
+\begin{solution}
+注意到积分区间关于原点对称，
 而$x^3 \cos{\frac{1}{x}}\sqrt{4-x^2}$是奇函数，
-对定积分的值没有任何贡献. 
+对定积分的值没有任何贡献.
 因此有：
 \begin{equation}
-    \setlength\abovedisplayskip{12pt}
-    \setlength\belowdisplayskip{12pt}
     \begin{aligned}
         \int_{-2}^{2} \left( x^3 \cos\frac{1}{x} +\frac{1}{2}\right)\sqrt{4-x^2}~\d x
         &= \frac{1}{2} \int_{-2}^{2}  \sqrt{4-x^2} ~\d x
@@ -885,27 +979,26 @@ $$\par \vspace{0.5em}
     \end{aligned}
 \end{equation} \par
 现在被积函数的图像是以原点为圆心，
-$2$为半径的圆弧. 
+$2$为半径的圆弧.
 因此原积分的值应为圆面积的$\frac{1}{4}$，即：
 $$
-\setlength\abovedisplayskip{12pt}
-    \setlength\belowdisplayskip{12pt}
 \int_{-2}^{2} \left( x^3 \cos\frac{1}{x} +\frac{1}{2}\right)\sqrt{4-x^2}~\d x
 = \frac{1}{4} \cdot \pi \cdot 2^2 = \pi \approx 3.1415926
 $$
 
-因此wifi密码是$31415926$. \qed \par
-~\par
+因此wifi密码是$31415926$.
+\end{solution}
 
 通过换元法左右移动积分区间和被积函数，可以把被积函数的对称中心或对称轴移动到$x=0$处，从而转化为奇函数或者偶函数处理.
-当然，如果足够熟练，不用换元法也可以直接写.\par
-~\par
-\textbf{例3.33}~~\textit{计算}$\int_{0}^{\pi} \cos x +\cos 2x +\cos 3x ~\d x$.\vspace{0.5em}
+当然，如果足够熟练，不用换元法也可以直接写.
 
-\textbf{解答}~~
+\begin{example}
+\label{ex:ch03-33}
+计算$\int_{0}^{\pi} \cos x +\cos 2x +\cos 3x ~\d x$.
+\end{example}
+
+\begin{solution}
 \begin{equation}
-    \setlength\abovedisplayskip{6pt}
-    \setlength\belowdisplayskip{6pt}
     \begin{aligned}
         \int_{0}^{\pi} \cos x +\cos 2x +\cos 3x ~\d x
         &\xlongequal{t=x-\frac{\pi}{2}} \int_{-\frac{\pi}{2}}^{\frac{\pi}{2}} \sin t -\cos 2t -\sin 3t ~\d t \\
@@ -914,8 +1007,8 @@ $$
         &= 0
         \nonumber
     \end{aligned}
-\end{equation}  \qed
-~\par
+\end{equation}
+\end{solution}
 
 \subsubsection{任意函数的对称性}\par
 基于上述关于奇偶函数的讨论，我们可以推出更一般的结论. 设$f(x)$是定义在区间$[-a,~a]$上的任意可积函数，则$f(x)$一定可以分解为
@@ -924,11 +1017,11 @@ $$
 f(x) = \frac{f(x)+f(-x)}{2}+\frac{f(x)-f(-x)}{2}
 $$
 
-显然，其中的$\frac{f(x)+f(-x)}{2}$是偶函数，$\frac{f(x)-f(-x)}{2}$是奇函数. 
+显然，其中的$\frac{f(x)+f(-x)}{2}$是偶函数，$\frac{f(x)-f(-x)}{2}$是奇函数.
 那么根据上一小节的结论，我们有：\vspace{0.5em}
 
 \begin{eq1}
-    \int_{-a}^{a} f(x) ~\d x 
+    \int_{-a}^{a} f(x) ~\d x
         &= \int_{-a}^{a} \frac{f(x)+f(-x)}{2}+\frac{f(x)-f(-x)}{2} ~\d x \\
         &= 2\int_{0}^{a} \frac{f(x)+f(-x)}{2} ~\d x \\
         &= \int_{0}^{a} f(x) + f(-x) ~\d x
@@ -937,10 +1030,14 @@ $$
 上面的公式对任意的可积函数$f(x)$成立，泛用性强. 有时被积函数$f(x)$不容易处理，但是$f(x)+f(-x)$形式却比较简单，那么
 这个公式就很有用了. 事实上，教材P149例7用的正是这个方法，只不过是利用区间拆分和换元法来完成的，显得技巧性比较强而已.
 同学们只要掌握了这个公式，就可以随时随地查看一下$f(x)+f(-x)$长什么样，如果发现它的形式比较简单，那就捡到大便宜了.
-就算没有成功，也不会花费很多时间.\par
-~\par
-\textbf{例3.34}~~\textit{计算}$\int_{-\pi}^{\pi}\frac{\cos x}{1+e^x}~\d x$.\par
-\textbf{解答}~~
+就算没有成功，也不会花费很多时间.
+
+\begin{example}
+\label{ex:ch03-34}
+计算$\int_{-\pi}^{\pi}\frac{\cos x}{1+e^x}~\d x$.
+\end{example}
+
+\begin{solution}
 \begin{equation}
     \begin{aligned}
         \int_{-\pi}^{\pi}\frac{\cos x}{1+e^x}~\d x
@@ -950,8 +1047,8 @@ $$
         &= 0
         \nonumber
     \end{aligned}
-\end{equation} \qed
-~\par
+\end{equation}
+\end{solution}
 
 \subsubsection{*区间再现}\par
 其实，定积分本身就蕴含着一种对称性. 直观表现为：对于同一个函数曲线围出的面积，从左往右“扫描”和从右往左“扫描”，
@@ -969,15 +1066,17 @@ $$
 \int_{a}^{b} f(x)~\d x = \int_{a}^{b} f(a+b-t)~\d t = \frac{1}{2} \int_{a}^{b} f(x) + f(a+b-x) ~\d x
 $$\par
 这个转化的技巧称为区间再现，因为换元之后积分区间没有发生改变.可以发现，上一小节所叙述的关于$f(x)+f(-x)$的结论，其实是区间再现
-的一个特例. \par
-~\par
-\textbf{例3.35}~~\textit{证明：}$\int_{0}^{\pi} xf(\sin x)~\d x =\frac{\pi}{2} \int_{0}^{\pi} f(\sin x) ~\d x$.\par \vspace{0.75em}
+的一个特例.
 
-\textbf{解答}~~记左式为$I$，则有：
+\begin{example}
+\label{ex:ch03-35}
+证明：$\int_{0}^{\pi} xf(\sin x)~\d x =\frac{\pi}{2} \int_{0}^{\pi} f(\sin x) ~\d x$.
+\end{example}
+
+\begin{solution}
+记左式为$I$，则有：
 
 \begin{equation}
-    \setlength\abovedisplayskip{6pt}
-    \setlength\belowdisplayskip{6pt}
     \begin{aligned}
         I
         &\xlongequal{t = \pi -x} \int_{\pi}^{0} (\pi -t)f(\sin(\pi -t)) ~\d(\pi -t)\\
@@ -990,43 +1089,48 @@ $$\par
 整理可得：
 $$
 I = \frac{\pi}{2} \int_{0}^{\pi} f(\sin x) ~\d x
-$$ \qed \par
-~\par
+$$
+\end{solution}
 
-\textbf{例3.36}~~\textit{计算}$\int_{0}^{\frac{\pi}{2}} \frac{\sin x}{\sin x +\cos x}~\d x$. \par \vspace{0.75em}
-\textbf{解答}~~记代求积分值为$I$，则有：
+\begin{example}
+\label{ex:ch03-36}
+计算$\int_{0}^{\frac{\pi}{2}} \frac{\sin x}{\sin x +\cos x}~\d x$.
+\end{example}
+
+\begin{solution}
+记代求积分值为$I$，则有：
 \begin{equation}
-    \setlength\abovedisplayskip{10pt}
-    \setlength\belowdisplayskip{10pt}
     \begin{aligned}
         I = &\xlongequal{t = \frac{\pi}{2}-x} \int_{\frac{\pi}{2}}^{0} \frac{\sin(\frac{\pi}{2}-t)}{\sin(\frac{\pi}{2}-t)+\cos(\frac{\pi}{2}-t)}~\d \left(\frac{\pi}{2}-t \right) \\
-        &= \int_{0}^{\frac{\pi}{2}} \frac{\cos t}{\cos t +\sin t} ~\d t 
+        &= \int_{0}^{\frac{\pi}{2}} \frac{\cos t}{\cos t +\sin t} ~\d t
         \nonumber
     \end{aligned}
 \end{equation}
 
 这样得到了$I$的另一个表达式，于是又有：
 \begin{equation}
-    \setlength\abovedisplayskip{10pt}
-    \setlength\belowdisplayskip{10pt}
     \begin{aligned}
-        I 
+        I
         &= \frac{1}{2}(I+I) \\
         &= \frac{1}{2} \int_{0}^{\frac{\pi}{2}} \frac{\sin x}{\sin x +\cos x} ~\d x +\frac{1}{2} \int_{0}^{\frac{\pi}{2}} \frac{\cos x}{\sin x +\cos x} ~\d x \\
         &= \frac{1}{2} \int_{0}^{\frac{\pi}{2}} 1 ~\d x \\
         &= \frac{\pi}{2}
         \nonumber
     \end{aligned}
-\end{equation} \qed
-~\par
+\end{equation}
+\end{solution}
 
 \subsubsection{周期性}\par
 
 若$f(x)$是以$T$为周期的周期函数，则它在任意长度为$T$的区间内的积分值都相同. 另外要注意，周期函数的不定积分/变上限定积分
-一般不是周期函数. 下面这道题目的结论可以作为参考：\par
-~\par
-\textbf{例3.37}~~\textit{设函数$f(x)$在$\mathbb{R}$上连续，以$T$为周期，证明：函数$F(x) = \frac{x}{T}\int_{0}^{T}f(t)~\d t - \int_{0}^{x}f(t) ~\d t$也以$T$为周期.}\par
-\textbf{证明}~~
+一般不是周期函数. 下面这道题目的结论可以作为参考：
+
+\begin{example}
+\label{ex:ch03-37}
+设函数$f(x)$在$\mathbb{R}$上连续，以$T$为周期，证明：函数$F(x) = \frac{x}{T}\int_{0}^{T}f(t)~\d t - \int_{0}^{x}f(t) ~\d t$也以$T$为周期.
+\end{example}
+
+\begin{proof}
 \begin{equation}
     \begin{aligned}
         F(x+T)
@@ -1037,46 +1141,45 @@ $$ \qed \par
         &= F(x)
         \nonumber
     \end{aligned}
-\end{equation} \qed \par
-~\par
-\textbf{例3.38}~~\textit{设}$A(r) = \int_{0}^{2\pi} \ln ( 1- 2r \cos x +r^2) ~\d x $. \par \vspace{0.5em}
-\textit{(1)~证明：对于$r\in (-1,~1)$，有$2A(r) = A(r^2)$ }. \par
-\textit{(2)~证明：$A(r)$在$\left( -\frac{1}{2},~\frac{1}{2}\right)$上为有界函数}. \par
-\textit{(3)~对于任意$r\in (-1,~1)$，从(1)和(2)出发推算出$A(r)$的值}. \vspace{0.5em}
+\end{equation}
+\end{proof}
 
-\textbf{分析}~~本题的第$(1)$问最难. 
-显然$A(r)$不容易通过直接做不定积分来化简，因此考虑利用周期性、对称性等特殊性质. 
-但是如果直接令$t = 2\pi -x$来进行区间再现，会发现被积函数没有变化，无法实现像例3.35那样的效果. 
-因此，必须借助周期性来寻找突破口. \vspace{0.5em}
+\begin{example}
+\label{ex:ch03-38}
+设$A(r) = \int_{0}^{2\pi} \ln ( 1- 2r \cos x +r^2) ~\d x $. \par
+(1)~证明：对于$r\in (-1,~1)$，有$2A(r) = A(r^2)$ . \par
+(2)~证明：$A(r)$在$\left( -\frac{1}{2},~\frac{1}{2}\right)$上为有界函数. \par
+(3)~对于任意$r\in (-1,~1)$，从(1)和(2)出发推算出$A(r)$的值.
+\end{example}
 
-\textbf{证明}~~
+\begin{analysis}
+本题的第$(1)$问最难.
+显然$A(r)$不容易通过直接做不定积分来化简，因此考虑利用周期性、对称性等特殊性质.
+但是如果直接令$t = 2\pi -x$来进行区间再现，会发现被积函数没有变化，无法实现像例\ref{ex:ch03-35}那样的效果.
+因此，必须借助周期性来寻找突破口.
+\end{analysis}
 
-(1)~~$A(r)$中的被积函数（被积变量是$x$）是以$2\pi$为周期的周期函数，而积分区间的长度正好也是$2\pi$. 
+\begin{proof}
+(1)~~$A(r)$中的被积函数（被积变量是$x$）是以$2\pi$为周期的周期函数，而积分区间的长度正好也是$2\pi$.
 根据周期函数积分的性质，可以将积分区间向左平移$\pi$，而积分值$A(r)$不变：
 $$
-\setlength\abovedisplayskip{10pt}
-    \setlength\belowdisplayskip{10pt}
 A(r) = \int_{-\pi}^{\pi} \ln ( 1- 2r \cos x +r^2) ~\d x
 $$ \par
 另一方面，要实现“平移”的操作，也可以用换元法，得到：
 \begin{equation}
-    \setlength\abovedisplayskip{10pt}
-    \setlength\belowdisplayskip{10pt}
     \begin{aligned}
-        A(r) 
+        A(r)
         &\xlongequal{t = x-\pi} \int_{-\pi}^{\pi} \ln ( 1- 2r \cos (t+\pi) +r^2) ~\d (t+\pi) \\
         &= \int_{-\pi}^{\pi} \ln ( 1+ 2r \cos t +r^2) ~\d t \\
         &= \int_{-\pi}^{\pi} \ln ( 1+ 2r \cos x +r^2) ~\d x
         \nonumber
     \end{aligned}
-\end{equation} 
+\end{equation}
 
 至此，我们得到了两个$A(r)$的表达式，两相比较发现了一个诡异的情况：$A(r)$中$\cos x$之前的负号变成了正号，竟然还是$A(r)$.
 我们自然要对此大加利用.
 将两个不同$A(r)$的表达式一齐代入，即：
 \begin{equation}
-    \setlength\abovedisplayskip{6pt}
-    \setlength\belowdisplayskip{6pt}
     \begin{aligned}
         2A(r)
         &= A(r)+A(r) \\
@@ -1089,42 +1192,36 @@ $$ \par
         &= A(r^2)
         \nonumber
     \end{aligned}
-\end{equation}  \vspace{0.5em}
+\end{equation}
 
 (2)
 
-（$A(r)$中有一个定积分，证明它有界可以分两步. 
-首先，对于任意取定的$r$，确定定积分值的上下界. 这个上下界可以是关于$r$的函数. 
-然后，只需要处理一元初等函数即可. 
+（$A(r)$中有一个定积分，证明它有界可以分两步.
+首先，对于任意取定的$r$，确定定积分值的上下界. 这个上下界可以是关于$r$的函数.
+然后，只需要处理一元初等函数即可.
 由于只是证明有界，不需要精确地求取值范围，我们完全不用担心放缩地太大. ） \par
 因为$-1 \le \cos x \le 1$，对于被积函数，我们有：
 $$
-\setlength\abovedisplayskip{10pt}
-    \setlength\belowdisplayskip{10pt}
 \ln(1- 2|r| +r^2) \le \ln(1-2r \cos x +r^2) \le \ln(1+2|r| +r^2)
 $$ \par
 稍加整理可得：
 $$
-\setlength\abovedisplayskip{10pt}
-    \setlength\belowdisplayskip{10pt}
 2\ln(1-|r|) \le \ln(1-2r \cos x +r^2) \le 2\ln(1+|r|)
-$$ 
+$$
 
 因为$|r|<\frac{1}{2}$，
 可对不等式链的左右两侧进一步放缩，得到：
 $$
-\setlength\abovedisplayskip{10pt}
-    \setlength\belowdisplayskip{10pt}
 2\ln \left( 1-\frac{1}{2} \right) \le \ln(1-2r \cos x +r^2) \le 2\ln \left( 1+\frac{1}{2} \right)
-$$ 
+$$
 
 于是
 $$
-\int_{0}^{2\pi} 2\ln \left( 1-\frac{1}{2} \right) ~\d x 
-\le A(r) = \int_{0}^{2\pi} \ln ( 1- 2r \cos x +r^2) ~\d x 
-\le \int_{0}^{2\pi} 2\ln \left( 1+\frac{1}{2} \right) ~\d x 
+\int_{0}^{2\pi} 2\ln \left( 1-\frac{1}{2} \right) ~\d x
+\le A(r) = \int_{0}^{2\pi} \ln ( 1- 2r \cos x +r^2) ~\d x
+\le \int_{0}^{2\pi} 2\ln \left( 1+\frac{1}{2} \right) ~\d x
 $$ \par
-不等式链的最左侧和最右侧都是常数，因而分别是$A(r)$的一个下界和一个上界，也就证明了$A(r)$有界. \par \vspace{0.75em}
+不等式链的最左侧和最右侧都是常数，因而分别是$A(r)$的一个下界和一个上界，也就证明了$A(r)$有界. \par
 
 (3)
 
@@ -1133,7 +1230,7 @@ $$
 A(r) = \frac{1}{2} A(r^2) = \frac{1}{4}A(r^4) = \cdots = \frac{1}{2^n}A(r^{2n})
 $$
 
-其中$n$为任意正整数. 
+其中$n$为任意正整数.
 设数列$A_{n}=\frac{1}{2^n}A(r^{2n})$，
 由上述可知，
 它实际上为一常数列$A_{n}=A(r)$.
@@ -1141,9 +1238,6 @@ $$
 由(2)的结论，
 $A(r^{2n})$在$n$充分大时有界. 则有：
 $$
-\setlength\abovedisplayskip{10pt}
-    \setlength\belowdisplayskip{10pt}
 A(r) = \limn A(r) = \limn A_{n} = \limn \frac{1}{2^n}A(r^{2n}) = 0
-$$\qed
-~\par
-
+$$
+\end{proof}

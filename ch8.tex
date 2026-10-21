@@ -63,10 +63,9 @@ $$
         E = \bm{r}_u \cdot \bm{r}_u = x_u^2 + y_u^2 + z_u^2 \\
         F = \bm{r}_u \cdot \bm{r}_v = x_u x_v +y_u y_v + z_u z_v\\
         G = \bm{r}_v \cdot \bm{r}_v = x_v^2 + y_v^2 + z_v^2
-    \end{cases} 
+    \end{cases}
 $$
 \setstretch{1.75}
-
 
 \subsubsection{第二型曲线积分}\par
 
@@ -74,7 +73,7 @@ $$
 不过，两种“第二型”积分区别较大，因此分成1.1.2和1.1.4两个小节来讲.
 1.1.5小节作为补充内容，将讨论两种“第二型”积分如何在形式上统一.
 
-\textbf{第二型曲线积分}的背景是变力做功问题. 
+\textbf{第二型曲线积分}的背景是变力做功问题.
 在学习时，不需要掌握严格定义（书上的定义看得我头晕）.
 首先应掌握积分的“写法”.
 设向量函数（也称\textbf{向量场}）$\bm{F}(x,y) = (P(x,y),~Q(x,y))$，
@@ -115,7 +114,7 @@ $L:\overset{\frown}{AB}$代表质点运动的轨迹.
 \begin{eq1}
 \int_{\overset{\frown}{AB}} P~\d x + Q ~\d y
 &=
-\int_{\alpha}^{\beta} P(x(t),y(t))~\d x(t) + 
+\int_{\alpha}^{\beta} P(x(t),y(t))~\d x(t) +
 Q(x(t),y(t))~\d y(t) \\
 &= \int_{\alpha}^{\beta}
 P(x(t),y(t))\cdot x'(t) + Q(x(t),y(t))\cdot y'(t) ~\d t
@@ -145,7 +144,7 @@ P(x(t),y(t))\cdot x'(t) + Q(x(t),y(t))\cdot y'(t) ~\d t
 ~\par \vspace{1em}
 \textbf{定理（格林公式）}~~设函数$P(x,y)$，$Q(x,y)$在有界闭区域$D$上有连续的一阶偏导数，$D$的边界$L$是逐段光滑的，则有格林公式：
 \begin{eq1}
-\oint_{L^{+}} P~\d x + Q ~\d y = 
+\oint_{L^{+}} P~\d x + Q ~\d y =
 \iint_{D} \left( \frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y} \right)~\d x \d y
 \end{eq1} \par \vspace{1.2em}
 
@@ -188,7 +187,7 @@ P(x(t),y(t))\cdot x'(t) + Q(x(t),y(t))\cdot y'(t) ~\d t
 而第二型曲面积分是“垂直于”曲面的方向做积分.
 因此在物理意义上就有很大的不同.
 \textit{第二型曲面积分计算的是“流量”或“通量”这样的物理量.
-书中举的例子是水流量. 
+书中举的例子是水流量.
 也可以通过电通量和磁通量来理解.}
 
 我们的第一步是定义曲面的方向.
@@ -209,7 +208,7 @@ $\bm{F}(x,y,z) = (P(x,y,z),~Q(x,y,z),~R(x,y,z))$是曲面$S$上的向量函数�
 \begin{eq1}
     \iint_{S} \bm{F}(x,y,z) \cdot \bm{n}(x,y,z)~\d S
     ~~~~\text{或}~~~
-    \iint_{S} \bm{F}(x,y,z) \cdot \d \bm{S} 
+    \iint_{S} \bm{F}(x,y,z) \cdot \d \bm{S}
 \end{eq1}
 
 此外，平时更多遇见的是用坐标形式来书写：
@@ -219,7 +218,6 @@ $\bm{F}(x,y,z) = (P(x,y,z),~Q(x,y,z),~R(x,y,z))$是曲面$S$上的向量函数�
 
 三种写法相比，可见$\d ~ \bm{S} = \bm{n}(x,y,z)~\d S = (\d y \d z, \d z \d x , \d x \d y)$.
 若遇到$S$为封闭曲面，应在积分号上加一个“圈”，写成$\oiint$.
-
 
 \textit{设向量场$\bm{F}$代表磁感应强度$\bm{B}$，则第二型曲面积分的值就代表磁通量$\Phi$.
 直观上就是磁感线通过曲面$S$的一种“流量”.}\par \vspace{1em}
@@ -241,7 +239,7 @@ $\bm{F}(x,y,z) = (P(x,y,z),~Q(x,y,z),~R(x,y,z))$是曲面$S$上的向量函数�
 但是我们又有面积微元$\d S = \sqrt{1 + f_x^{2} + f_{y}^{2}} ~ \d \sigma$，一乘一除可以相互抵消.
 于是得到了第二型曲面积分直接转为二重积分的简便算法：
 \begin{eq1}
-    \iint_{S} \bm{F}(x,y,z) \cdot \bm{n}(x,y,z)~\d S 
+    \iint_{S} \bm{F}(x,y,z) \cdot \bm{n}(x,y,z)~\d S
     &= \iint_{S} \bm{F}(x,y,z) \cdot \pm (-f_x , -f_y, 1)~\d \sigma \\
     &= \pm \iint_{D} P \cdot (-f_x) + Q \cdot (-f_y) + R ~\d \sigma
 \end{eq1}
@@ -260,9 +258,9 @@ $\bm{r}_u \times \bm{r}_v$的模长为$\sqrt{EG-F^2}$，
 而参数方程下的面积微元表示为$\d S = \sqrt{EG - F^2}~\d \sigma$.
 二者代入积分表达式中一乘一除两相抵消，因此有参数方程下第二型曲面积分直接转为二重积分的简便算法：
 \begin{eq1}
-    \iint_{S} \bm{F}(x,y,z) \cdot \bm{n}(x,y,z)~\d S 
+    \iint_{S} \bm{F}(x,y,z) \cdot \bm{n}(x,y,z)~\d S
     &= \pm \iint_{D} \bm{F} \cdot (\bm{r}_u \times \bm{r}_v) ~\d \sigma \\
-    &= \pm \iint_{D} 
+    &= \pm \iint_{D}
     \begin{vmatrix}
         P & Q & R  \\[-4pt]
         x_u & y_u & z_u \\[-4pt]
@@ -276,8 +274,6 @@ $\bm{r}_u \times \bm{r}_v$的模长为$\sqrt{EG-F^2}$，
 （注：教材上给出的法向量$(A,B,C)$的计算公式是将所有分量直接展开了，看起来比较繁琐.
 如果熟悉向量叉乘和三阶行列式计算的话，按$\bm{r}_u \times \bm{r}_v$来记忆应该会更轻松.）
 
-
-
 \subsubsection{*“通量型”第二型曲线积分与格林公式}\par
 
 （注：本小节将改写第二型曲线积分与格林公式的形式，以展现曲线积分和曲面积分的深层联系.
@@ -286,7 +282,7 @@ $\bm{r}_u \times \bm{r}_v$的模长为$\sqrt{EG-F^2}$，
 
 之前我们看到，第一型的曲线积分和第一型曲面积分形式类似，
 都是由“直”到“曲”的推广，\textit{而且都蕴含着“对密度求积分即得质量”的物理意义.}
-但是第二型曲线积分和第二型曲面积分却很不同. 
+但是第二型曲线积分和第二型曲面积分却很不同.
 前者是“沿着”曲线的方向，后者是“垂直于”曲面的方向.
 \textit{前者是求“功”或“势能”，后者是求“通量”或“流量”.}
 那么能否将二者统一一下呢？
@@ -297,7 +293,6 @@ $\bm{r}_u \times \bm{r}_v$的模长为$\sqrt{EG-F^2}$，
 因为对于曲面上一点，切平面上的任何一个向量都可以是“方向向量”，因此“沿着曲面方向”的意义是不明确的.
 而前一种想法不仅可行，而且具有普遍意义，可以按照着这个思路扩展至$n$维的第二型“超曲面”积分.
 不过在这里我们暂且不把目光放那么远，还是来看看如何写“垂直于”曲线方向的第二型曲线积分.\par \vspace{1em}
-
 
 运用与第二型曲面积分相同的思想，对于平面曲线$L$，可以通过$L$的单位法向量$\bm{n}$来指定曲线的定向为“上侧”或者“下侧”，
 特别地，当$L$为封闭曲线，可以指定其方向为“外侧”（记为$L^{+}$）或“内侧”.
@@ -351,9 +346,9 @@ $\bm{r}_u \times \bm{r}_v$的模长为$\sqrt{EG-F^2}$，
 函数$P(x,y,z)$，$Q(x,y,z)$，$R(x,y,z)$在$\Omega \cup S$上有一阶连续偏导数，
 则有高斯公式：}
 \begin{eq1}
-    \oiint_{S^{+}} \bm{F} \cdot \bm{n}~ \d S 
+    \oiint_{S^{+}} \bm{F} \cdot \bm{n}~ \d S
     =
-    \oiint_{S^{+}} P~\d y \d z + Q ~\d z \d x + R ~\d x \d y 
+    \oiint_{S^{+}} P~\d y \d z + Q ~\d z \d x + R ~\d x \d y
     = \iiint_{\Omega} \left( \frac{\partial P}{\partial x} + \frac{\partial Q}{\partial y} + \frac{\partial R}{\partial z} \right) ~\d V
 \end{eq1} \par \vspace{1.2em}
 
@@ -383,8 +378,8 @@ $\nabla = (\frac{\partial}{\partial x}, ~\frac{\partial}{\partial y}, ~\frac{\pa
 我们把$\nabla \cdot \bm{F}$称为\textbf{散度}，也记作div$ \bm{F}$.
 高斯公式等三条公式的意义可以用文字简单地表述为：向量场$\bm{F}$通过区域边界的通量等于区域内部散度的积分.
 
-\textit{散度可以看成区域内每一点附近极小体积内的流量或通量. 
-如果将向量场比作水流（即每点处的$\bm{F}$视为该点水流的速度向量），则散度大于$0$表示该点附近水的流出多于流入，如同一个泉眼. 
+\textit{散度可以看成区域内每一点附近极小体积内的流量或通量.
+如果将向量场比作水流（即每点处的$\bm{F}$视为该点水流的速度向量），则散度大于$0$表示该点附近水的流出多于流入，如同一个泉眼.
 因此这样的点形象地称为“源”.
 而散度小于$0$的点相反，水的流入多于流出，如同一个地漏.
 这样的点就称为“漏”.
@@ -402,22 +397,23 @@ $\nabla = (\frac{\partial}{\partial x}, ~\frac{\partial}{\partial y}, ~\frac{\pa
 若$\bm{F}(x,y,z) = (P(x,y,z),Q(x,y,z),R(x,y,z))$在$R+L$上有一阶连续偏导数，则有斯托克斯公式：}
 \begin{eq1}
     \oint_{L^{+}} P~\d x + Q~\d y + R ~\d z
-    &= \iint_{S^{+}} 
+    &= \iint_{S^{+}}
     \begin{vmatrix}
         \d y \d z & \d z \d x & \d x \d y  \\
     \frac{\partial}{\partial x} & \frac{\partial}{\partial y} & \frac{\partial}{\partial z} \\
-    P & Q & R    
+    P & Q & R
     \end{vmatrix} \\
-    &= \iint_{S^{+}} \left( \frac{\partial R}{\partial y} - \frac{\partial Q}{\partial z}\right) ~\d y \d z 
+    &= \iint_{S^{+}} \left( \frac{\partial R}{\partial y} - \frac{\partial Q}{\partial z}\right) ~\d y \d z
     + \left( \frac{\partial P}{\partial z} - \frac{\partial R}{\partial x}\right) ~\d z \d x
-    + \left( \frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y}\right) ~\d x \d y
+    \\
+    &\quad + \left( \frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y}\right) ~\d x \d y
 \end{eq1} \vspace{1em}
 
 将斯托克斯公式与格林公式放在一起比较：
 \begin{eq1}
-    \oint_{L^{+}} P~\d x + Q ~\d y = 
+    \oint_{L^{+}} P~\d x + Q ~\d y =
     \iint_{D} \left( \frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y} \right)~\d x \d y
-\end{eq1} \par 
+\end{eq1} \par
 
 二者形式也是非常相似的.
 事实上，格林公式可以视作斯托克斯公式限制在$z = 0$子空间上的特殊情况（$R = 0$，$\d z = 0$）.
@@ -427,7 +423,7 @@ $\nabla = (\frac{\partial}{\partial x}, ~\frac{\partial}{\partial y}, ~\frac{\pa
     \begin{vmatrix}
         \bm{i} & \bm{j} & \bm{k}  \\
     \frac{\partial}{\partial x} & \frac{\partial}{\partial y} & \frac{\partial}{\partial z} \\
-    P & Q & R    
+    P & Q & R
     \end{vmatrix}
     = \left( \frac{\partial}{\partial x} , ~\frac{\partial}{\partial y} , ~\frac{\partial}{\partial z} \right)
     \times (P,Q,R)
@@ -442,7 +438,7 @@ $\nabla = (\frac{\partial}{\partial x}, ~\frac{\partial}{\partial y}, ~\frac{\pa
 \textit{在计算右侧的第二型曲面积分时，被积分的rot$\bm{F}$还需与单位法向量$\bm{n}$点乘，才能转化为第一型曲面积分.
 rot$\bm{F} \cdot \bm{n}$称为沿$\bm{n}$的\textbf{方向旋量}.
 这个方向旋量可以理解为区域内每一点“自转”的程度.
-这里仍然将向量场比作水流. 
+这里仍然将向量场比作水流.
 若它在区域边界的环量非零，表明这片区域类似于一个“漩涡”，
 而旋量非零的点如同漩涡的中心，因此形象地称为向量场的“旋”.
 在电磁学中，磁场虽然无源无漏，但是有“旋”，而且“旋”的位置恰是激发磁场的电流所穿过的位置.
@@ -452,18 +448,17 @@ rot$\bm{F} \cdot \bm{n}$称为沿$\bm{n}$的\textbf{方向旋量}.
 
 \subsubsection{常规计算题}
 
-\begin{example}{1}
-    {
-        设$\varGamma $是球面$x^2 + y^2 + z^2 =1$与平面$x=y$的交线，求$\oint_{\varGamma} (x^2 + y^2) ~\d s$的值.
-    }
-\end{example}    \vspace{0.5em}
+\begin{example}
+\label{ex:ch08-01}
+设$\varGamma $是球面$x^2 + y^2 + z^2 =1$与平面$x=y$的交线，求$\oint_{\varGamma} (x^2 + y^2) ~\d s$的值.
+\end{example}
 
-\begin{remark}
-    此为空间第一型曲线积分，为了转化为一元函数定积分，需要先写出$\varGamma$的参数方程.
-\end{remark}  \vspace{0.5em}
+\begin{analysis}
+此为空间第一型曲线积分，为了转化为一元函数定积分，需要先写出$\varGamma$的参数方程.
+\end{analysis}
 
 \begin{solution}
-    $\varGamma$的参数方程为：
+$\varGamma$的参数方程为：
     \[
     \begin{cases}
         x = \frac{1}{\sqrt{2}} \cos t \\
@@ -474,10 +469,10 @@ rot$\bm{F} \cdot \bm{n}$称为沿$\bm{n}$的\textbf{方向旋量}.
 
     计算弧微元：
     \begin{eq1}
-        \d s = \sqrt{[x'(t)]^2+[y'(t)]^2+[z'(t)]^2} ~\d t 
-        = \sqrt{\left( - \frac{1}{\sqrt{2}} \sin t \right)^2 
+        \d s = \sqrt{[x'(t)]^2+[y'(t)]^2+[z'(t)]^2} ~\d t
+        = \sqrt{\left( - \frac{1}{\sqrt{2}} \sin t \right)^2
         + \left( - \frac{1}{\sqrt{2}} \sin t \right)^2
-        + \cos^2 t} ~\d t 
+        + \cos^2 t} ~\d t
         = \d t
     \end{eq1}
 
@@ -487,35 +482,33 @@ rot$\bm{F} \cdot \bm{n}$称为沿$\bm{n}$的\textbf{方向旋量}.
         &= \int_{0}^{2\pi} \cos^2 t ~\d t \\
         &= \frac{1}{2} \int_0^{2 \pi} (1 + \cos 2t) ~\d t \\
         &= \pi
-    \end{eq1} \qed
+    \end{eq1}
 \end{solution}
 
-
-
-\begin{example}{2}
-    {
-        设 \(\varGamma\) 是空间圆周
+\begin{example}
+\label{ex:ch08-02}
+设 \(\varGamma\) 是空间圆周
 $
-\begin{cases} 
+\begin{cases}
     \setstretch{1.25}
 x^2 + y^2 + z^2 = a^2 \\[-6pt]
-x + y + z = \frac{3}{2}a 
+x + y + z = \frac{3}{2}a
 \end{cases}
 $（$a > 0$），计算
 $
 I = \oint_{\varGamma} (2yz + 2zx + 2xy) \, \d s
 $
-    } 
-\end{example}\vspace{0.5em}
-\setstretch{1.75}
 
-\begin{remark}
-    这题的做法比较取巧.
+\setstretch{1.75}
+\end{example}
+
+\begin{analysis}
+这题的做法比较取巧.
     提示同学们代入曲线方程时，注意被积函数与曲线之间的联系.
-\end{remark} \vspace{0.5em}
+\end{analysis}
 
 \begin{solution}
-    利用恒等式 \((x + y + z)^2 = x^2 + y^2 + z^2 + 2xy + 2yz + 2zx\)，并代入已知条件 \(x + y + z = \frac{3a}{2}\) 和 \(x^2 + y^2 + z^2 = a^2\)，积分可改写为：
+利用恒等式 \((x + y + z)^2 = x^2 + y^2 + z^2 + 2xy + 2yz + 2zx\)，并代入已知条件 \(x + y + z = \frac{3a}{2}\) 和 \(x^2 + y^2 + z^2 = a^2\)，积分可改写为：
     \begin{eq1}
     I
     &= \oint_{\varGamma} \left[ (x + y + z)^2 - (x^2 + y^2 + z^2) \right] \d s \\
@@ -528,7 +521,7 @@ $
     \[
     d = \left| \frac{0 + 0 + 0 - \dfrac{3a}{2}}{\sqrt{1^2 + 1^2 + 1^2}} \right| = \frac{\sqrt{3}}{2} a
     \]
-    
+
     则圆 \(\varGamma\) 的半径为：
     $
     r = \sqrt{a^2 - \left( \frac{\sqrt{3}a}{2} \right)^2} = \frac{a}{2}.
@@ -538,23 +531,21 @@ $
     最终积分的结果为：
     \[
     I = \frac{5}{4} a^2 \cdot \pi a = \frac{5}{4} \pi a^3
-    \] \qed
+    \]
 \end{solution}
 
-
 \begin{example}
-    {3}{
-        求圆柱面 \( x^2 + y^2 = ax \) 在球 \( x^2 + y^2 + z^2 = a^2 \) 内的部分的面积.
-    }
-\end{example} \vspace{0.5em}
+\label{ex:ch08-03}
+求圆柱面 \( x^2 + y^2 = ax \) 在球 \( x^2 + y^2 + z^2 = a^2 \) 内的部分的面积.
+\end{example}
 
-\begin{remark}
-    求曲面的面积一般会用第一型曲面积分.
+\begin{analysis}
+求曲面的面积一般会用第一型曲面积分.
     但是对于曲顶柱面而言，用第一型曲线积分就够了.
-\end{remark} \vspace{0.5em}
+\end{analysis}
 
 \begin{solution}
-    首先将曲线方程转换为柱坐标下的参数方程：
+首先将曲线方程转换为柱坐标下的参数方程：
     \begin{eq1}
         \setstretch{1.5}
         \begin{cases}
@@ -564,14 +555,14 @@ $
     \end{eq1}
     \setstretch{1.75}
 
-   柱面在$xOy$上的投影曲线$L:~r = a \cos\theta$，$z=0$（图1）的弧微元为：  
+   柱面在$xOy$上的投影曲线$L:~r = a \cos\theta$，$z=0$（图1）的弧微元为：
    \begin{eq1}
    \d s = \sqrt{\left( \frac{dr}{d\theta} \right)^2 + r^2} \, d\theta = \sqrt{a^2 \sin^2\theta + a^2 \cos^2\theta} \, d\theta = a \, d\theta.
    \end{eq1}
 
    由于球内部分关于$xOy$平面对称，曲面的面积元素$\d A$就是：
    \begin{eq1}
-       \d A = 2 \cdot |z| \cdot \d s = 
+       \d A = 2 \cdot |z| \cdot \d s =
        2a^2 \sin \theta \, d\theta
    \end{eq1}
 
@@ -580,32 +571,30 @@ $
       S = \int_{L} \d A &= 2 \int_{-\pi / 2}^{\pi / 2} 2a^2 | \sin \theta | ~\d \theta \\
       &= 4 \int_{0}^{\pi / 2} a^2 \sin \theta ~\d \theta \\
       &= 4a^2
-   \end{eq1} \qed
+   \end{eq1}
 \end{solution}
 
-\begin{figure}[H] 
+\begin{figure}[H]
     \centering
     \includegraphics[width=1\textwidth]{fig8-1.jpg}
-    \caption{例3曲面图} 
+    \caption{例\ref{ex:ch08-03}曲面图}
 \end{figure}
 
-\clearpage
-
-
-
-\begin{example}
-    {4(2021)}{
-        计算曲面积分 
+\begin{example}[2021]
+\label{ex:ch08-04}
+计算曲面积分
     $
     I = \iint_{\Sigma} \left( x^{2}y^{2} + y^{2}z^{2} + z^{2}x^{2} \right) \, \d S
-    $.\vspace{0.5em}
-    }
+    $.
 \end{example}
-\begin{remark}
-    这是一道平平无奇的第一型曲面积分.
-    解答1和解答2分别展示曲面采用直角坐标方程和参数方程表示的做法，最终殊途同归.
-\end{remark}  \vspace{0.5em}
-\textbf{解答1（直角坐标系）}~~圆锥面方程为 \( z = \sqrt{x^{2} + y^{2}} \)，
+
+\begin{analysis}
+这是一道平平无奇的第一型曲面积分.
+    解法一和解法二分别展示曲面采用直角坐标方程和参数方程表示的做法，最终殊途同归.
+\end{analysis}
+
+\begin{solution}[解法一（直角坐标系）]
+圆锥面方程为 \( z = \sqrt{x^{2} + y^{2}} \)，
 投影区域 \( D \) 为 \( x^{2} + y^{2} \le 1 \).
 为了计算面积微元$\d S$，先计算$z$的两个偏导数：
 \begin{eq1}
@@ -614,7 +603,7 @@ $
 
 则面积微元：
 \begin{eq1}
-    \d S = 
+    \d S =
     \sqrt{1 + \left( \frac{\partial z}{\partial x} \right)^{2} + \left( \frac{\partial z}{\partial y} \right)^{2}} \, \d x \d y = \sqrt{2} \, \d x \d y
 \end{eq1}
 
@@ -628,9 +617,11 @@ $
     &= \frac{\sqrt{2}}{6} \int_{0}^{2\pi} \left( 1 + \frac{1 - \cos 4\theta}{8}\right) ~\d \theta \\
     &= \frac{\sqrt{2}}{6} \int_{0}^{2\pi} \frac{9}{8} ~\d \theta \\
     &= \frac{\sqrt{2}}{6} \cdot \frac{9}{8} \cdot 2 \pi = \frac{3\sqrt{2} \pi }{8}
-\end{eq1} \vspace{0.5em}
+\end{eq1}
+\end{solution}
 
-\textbf{解答2（参数方程）}~~将曲面$S$用参数方程表示：
+\begin{solution}[解法二（参数方程）]
+将曲面$S$用参数方程表示：
 $$
 \setstretch{1.25}
     \begin{cases}
@@ -647,8 +638,8 @@ $$
     \begin{cases}
         E = x_r^2 + y_r^2 + z_r^2 = \cos^2 \theta + \sin^2 \theta + 1 = 2\\
         F = x_r x_\theta +y_r y_\theta + z_r z_\theta = -r \cos \theta \sin \theta + r \sin \theta \cos \theta =0 \\
-        G = x_\theta^2 + y_\theta^2 + z_\theta^2 = r^2 \sin^2 \theta + r^2 \cos^2 \theta = r^2 
-    \end{cases} 
+        G = x_\theta^2 + y_\theta^2 + z_\theta^2 = r^2 \sin^2 \theta + r^2 \cos^2 \theta = r^2
+    \end{cases}
 $$
 \setstretch{1.75}
 
@@ -662,23 +653,22 @@ $$
 上的二重积分：
 \begin{eq1}
     I = \iint_{D} \left( r^4 \cos^2 \theta \sin^2 \theta + r^4 \right)\cdot \sqrt{2} r~ \d r \d \theta = \frac{3\sqrt{2} \pi }{8}
-\end{eq1} \qed \par
-~\par
+\end{eq1}
+\end{solution}
 
 \begin{example}
-    {5}{
-        计算曲线积分$I = \oint_{L} y^2 ~\d x + z^2 ~\d y + x^2 ~\d z$.
+\label{ex:ch08-05}
+计算曲线积分$I = \oint_{L} y^2 ~\d x + z^2 ~\d y + x^2 ~\d z$.
         其中$L$是曲面$x^2 + y^2 = x$与与三维空间的单位球的交线在$z>0$的部分，
         方向是从$z$轴正向往负向看的逆时针方向.
-    }
-\end{example} \vspace{0.5em}
+\end{example}
 
-\begin{remark}
-    此为第二型曲线积分，为了转化为一元函数定积分，需要先写出$L$的参数方程.
-\end{remark} \vspace{0.5em}
+\begin{analysis}
+此为第二型曲线积分，为了转化为一元函数定积分，需要先写出$L$的参数方程.
+\end{analysis}
 
 \begin{solution}
-    为了得到曲线$L$的参数方程，
+为了得到曲线$L$的参数方程，
     我们将单位球面和柱面$x^2 + y^2 = x$的方程都写成柱坐标的形式:
     \begin{eq1}
         \setstretch{1.25}
@@ -703,7 +693,6 @@ $$
     \end{eq1}
     \setstretch{1.75}
 
-
 为了计算曲线积分，我们需要对参数方程求导.
 而考虑到 \(z\) 关于 \(\theta\) 的表达式带有绝对值，我们需要分 \(\theta\) 的符号计算导数：
 \begin{eq1}
@@ -727,10 +716,10 @@ z'(\theta) = -\cos\theta
     &= \int_0^{\frac{\pi}{2}} \left( -\cos^2\theta \sin^2\theta \sin 2\theta + \sin^2\theta \cos 2\theta + \cos^5\theta \right) \d \theta \\
     &~~~~+ \int_{-\frac{\pi}{2}}^0 \left( -\cos^2\theta \sin^2\theta \sin 2\theta + \sin^2\theta \cos 2\theta - \cos^5\theta \right) \d \theta \\
     &= 2 \int_0^{\frac{\pi}{2}} \sin^2\theta \cos 2\theta d\theta \\
-    &= 2 \int_0^{\frac{\pi}{2}} (\sin^2\theta - 2\sin^4\theta) d\theta = -\frac{\pi}{4} 
-\end{align*}\qed 
-
+    &= 2 \int_0^{\frac{\pi}{2}} (\sin^2\theta - 2\sin^4\theta) d\theta = -\frac{\pi}{4}
+\end{align*}
 \end{solution}
+
 （摘抄xyt学长对此题的remark：
 “特别指出，即便本题的曲线$L$关于$xOz$坐标平面对称，
 这不意味着可以将积分分为$xOz$平面两侧的两段使用对称性计算积分，
@@ -748,28 +737,29 @@ z'(\theta) = -\cos\theta
 反映在定积分的计算中，
 我们可以看到$x$和$z$分量的定积分是可以消去的，
 $y$分量的则不行.”
-）\par
-~\par
+）
+
 \begin{example}
-    {6}{
-        求第二型曲面积分：
+\label{ex:ch08-06}
+求第二型曲面积分：
         $I = \iint_{S} (y-z)~\d y \d z + (z-x)~\d z \d x + (x-y) ~\d x \d y$.
         其中$S$是上半球面$x^2 + y^2 + z^2 = 2Rx ~(z \ge 0)$
         被柱面$x^2 + y^2 = 2rx$所截部分的上侧.
-    }
-\end{example} \vspace{0.5em}
-\begin{remark}
-    这道题展示第二型曲面积分化为第一型曲面积分的方法：既可以计算法向量直接转化，也可以用公式法.
-    两种方法没有本质区别，一般推荐后一种.
-\end{remark} \vspace{0.5em}
+\end{example}
 
-\begin{figure}[H] 
+\begin{analysis}
+这道题展示第二型曲面积分化为第一型曲面积分的方法：既可以计算法向量直接转化，也可以用公式法.
+    两种方法没有本质区别，一般推荐后一种.
+\end{analysis}
+
+\begin{figure}[H]
     \centering
     \includegraphics[width=0.8\textwidth]{fig8-2.jpg}
-    \caption{例6曲面图} 
-\end{figure}\par
+    \caption{例\ref{ex:ch08-06}曲面图}
+\end{figure}
 
-\textbf{解答1（直接化为第一型曲面积分）}~~改写球面方程为：
+\begin{solution}[解法一（直接化为第一型曲面积分）]
+改写球面方程为：
 \begin{eq1}
     (x-R)^2 + y^2 + z^2 = R^2
 \end{eq1}
@@ -777,21 +767,23 @@ $y$分量的则不行.”
 其外侧单位法向量$\bm{n} = (\frac{x-R}{R}, \frac{y}{R}, \frac{z}{R})$，将所求的第二型曲面积分转化为第一型曲面积分，即：
 
 \begin{eq1}
-    I = \iint_{S} \bm{F} \cdot \bm{n} ~\d S 
+    I = \iint_{S} \bm{F} \cdot \bm{n} ~\d S
     &= \iint_{S} (y-z, z-x, x-y)\cdot (\frac{x-R}{R}, \frac{y}{R}, \frac{z}{R}) ~\d S \\
-    &= \int_{S} (z-y) ~\d S  
+    &= \int_{S} (z-y) ~\d S
 \end{eq1}
 
 因为$S$关于$xOz$平面对称，而函数$y$是关于$y$的奇函数，所以$\iint_{S} y ~\d S = 0$.
 又$D_{xy}: x^2 + y^2 \le 2rx$的面积为$\pi r^2$.
 于是有：
 \begin{eq1}
-    I = \int_{S} z ~\d S 
+    I = \int_{S} z ~\d S
     &= \iint_{D_{xy}} \sqrt{2Rx - x^2 -y^2} \cdot \frac{R}{\sqrt{2Rx - x^2 -y^2}} ~\d x \d y \\
     &= R \int_{D_{xy}} ~\d x \d y = \pi r^2 R
-\end{eq1}\qed
+\end{eq1}
+\end{solution}
 
-\textbf{解答2（公式法，直角坐标系）}~~改写球面方程为：
+\begin{solution}[解法二（公式法，直角坐标系）]
+改写球面方程为：
 \begin{eq}
     z = f(x,y)= \sqrt{2Rx - x^2 - y^2}
 \end{eq}
@@ -807,20 +799,18 @@ $y$分量的则不行.”
 \begin{eq1}
     I &= \iint_{D_{xy}} (y-z, z-x, x-y) \cdot  (-f_x , -f_y, 1)~\d x \d y \\
     &= \iint_{D_{xy}} \frac{(x-R)(y-z)}{z} + \frac{y(z-x)}{z}+ \frac{z(x-y)}{z} ~\d x \d y \\
-    &=\iint_{D_{xy}} \left(R - \frac{y}{z} \right) ~\d x \d y = \pi r^2 R  
-\end{eq1} \qed 
-
-~\par
+    &=\iint_{D_{xy}} \left(R - \frac{y}{z} \right) ~\d x \d y = \pi r^2 R
+\end{eq1}
+\end{solution}
 
 \begin{example}
-    {7}{
-        求$\iint_{S} \frac{x~\d y \d z + z^2 ~\d x \d y}{x^2 + y^2 +z^2}$，
+\label{ex:ch08-07}
+求$\iint_{S} \frac{x~\d y \d z + z^2 ~\d x \d y}{x^2 + y^2 +z^2}$，
         其中$S$为柱面$x^2 + y^2 = R^2$及$z=-R$，$z=R$所围成的立体表面外侧.
-    }
-\end{example} \vspace{0.5em}
+\end{example}
 
-\begin{remark}
-    $P = \frac{x}{x^2 + y^2 + z^2}$和$R = \frac{z^2}{x^2 + y^2 + z^2}$
+\begin{analysis}
+$P = \frac{x}{x^2 + y^2 + z^2}$和$R = \frac{z^2}{x^2 + y^2 + z^2}$
     在$(0,0,0)$处不连续，不能用高斯公式.
     因此还得转化为二重积分计算.
     本题的曲面包括三部分：底面$S_1$，$S_2$和侧面$S_3$（图3），需要分别计算.
@@ -830,15 +820,15 @@ $y$分量的则不行.”
     又如$S_3$是竖直的曲面，则其上的$R ~\d x \d y$恒为$0$，
     只需要计算$P ~\d y \d z$的积分即可.
 
-    \begin{figure}[H] 
+    \begin{figure}[H]
         \centering
         \includegraphics[width=0.5\textwidth]{fig8-3.jpg}
-        \caption{例7曲面图} 
-    \end{figure}\par
+        \caption{例\ref{ex:ch08-07}曲面图}
+    \end{figure}
+\end{analysis}
 
-\end{remark}
 \begin{solution}
-    将所求积分拆项为：
+将所求积分拆项为：
     \begin{eq1}
         \iint_{S} \frac{x~\d y \d z + z^2 ~\d x \d y}{x^2 + y^2 +z^2}
         = \iint_{S} \frac{x~\d y \d z}{x^2 + y^2 +z^2}
@@ -854,7 +844,7 @@ $y$分量的则不行.”
     它到$yOz$的投影面$D_{yx}$为：
     \begin{eq1}
         \setstretch{1.25}
-            D_{yz} : 
+            D_{yz} :
 \begin{cases}
 -R \leq y \leq R \\
 -R \leq z \leq R
@@ -864,7 +854,7 @@ $y$分量的则不行.”
 
     则第一项在$S_3$上的积分：
     \begin{eq1}
-        \iint_{S_3} \frac{x ~\d y \d z}{x^2 + y^2 + z^2} 
+        \iint_{S_3} \frac{x ~\d y \d z}{x^2 + y^2 + z^2}
         &= \iint_{S_3 \text{前}} \frac{\sqrt{R^2 - y^2} ~\d y \d z}{R^2 + z^2} + \iint_{S_3 \text{后}} \frac{ - \sqrt{R^2 - y^2} ~\d y \d z}{R^2 + z^2} \\
         &= \iint_{D_{yz}} \frac{\sqrt{R^2 - y^2} ~\d y \d z}{R^2 + z^2} - \iint_{D_{yz}} \frac{\sqrt{R^2 - y^2} ~\d y \d z}{R^2 + z^2} \\
         &= 2 \iint_{D_{yz}} \frac{\sqrt{R^2 - y^2}~\d y \d z}{R^2 + z^2} \\
@@ -880,126 +870,115 @@ $y$分量的则不行.”
     \end{eq1}
 
     \begin{eq}
-        \iint_{S_1 + S_2} \frac{z^2 ~\d x \d y}{x^2 + y^2 + z^2} 
-        = \iint_{D_{xy}} \frac{R^2}{x^2 + y^2 + R^2} ~\d x \d y 
+        \iint_{S_1 + S_2} \frac{z^2 ~\d x \d y}{x^2 + y^2 + z^2}
+        = \iint_{D_{xy}} \frac{R^2}{x^2 + y^2 + R^2} ~\d x \d y
         - \iint_{D_{xy}} \frac{R^2}{x^2 + y^2 + R^2} ~\d x \d y  = 0
     \end{eq}
     \begin{eq1}
         \iint_{S_3} \frac{z^2 ~\d x \d y}{x^2 + y^2 + z^2}  = 0 ~~\text{（注意  $\d x \d y = 0$）}
     \end{eq1}
 
-    综上所述，原积分的值为$\frac{1}{2}\pi^2 R $. \qed
+    综上所述，原积分的值为$\frac{1}{2}\pi^2 R $.
 \end{solution}
-
-~\par
 
 \subsubsection{利用对称性简化计算}
 
 第一型积分要化成一元函数定积分和重积分来计算，
 因此对称性的利用和第三章、第七章所讲述过的类似.
-这里通过几个例子再熟悉一下.\par
-~\par
+这里通过几个例子再熟悉一下.
 
 \begin{example}
-    {8}{
-        设$S$为空间中的单位球面$x^2 + y^2 + z^2 = 1$.
+\label{ex:ch08-08}
+设$S$为空间中的单位球面$x^2 + y^2 + z^2 = 1$.
         计算曲面积分：$I = \iint_{S} (x+y+z)^2 ~\d S$.
-    }
-\end{example} \vspace{0.5em}
-\begin{remark}
-    曲面$S$具有完美的对称性.
+\end{example}
+
+\begin{analysis}
+曲面$S$具有完美的对称性.
     将被积函数展开：
     \begin{eq}
         (x+y+z)^2 = x^2 + y^2 + z^2 + 2xy + 2yz + 2zx
     \end{eq}
-    
+
     可知后三项都是奇函数，在曲面$S$上的积分为$0$，故可以直接从积分中划去.
-\end{remark} \vspace{0.5em}
+\end{analysis}
 
 \begin{solution}
-    \begin{eq1}
+\begin{eq1}
         I &= \iint_{S} x^2 + y^2 + z^2 + 2xy + 2yz + 2zx ~\d S \\
         &=  \iint_{S} x^2 + y^2 + z^2 ~\d S \\
         &= \iint_{S} ~\d S = 4\pi
-    \end{eq1} \qed
-\end{solution} 
+    \end{eq1}
+\end{solution}
 
-~\par
-
-\begin{example}
-    {9(2022)}{
-        设 \( E \) 是椭圆 \(\{(x,y) \in \mathbb{R}^2 \mid x^2 + \frac{y^2}{4} = 1, -1 \leq x \leq 1, -2 \leq y \leq 2\}\).
+\begin{example}[2022]
+\label{ex:ch08-09}
+设 \( E \) 是椭圆 \(\{(x,y) \in \mathbb{R}^2 \mid x^2 + \frac{y^2}{4} = 1, -1 \leq x \leq 1, -2 \leq y \leq 2\}\).
         求第一型曲线积分 \(\int_E |xy| \, \d s\)
-    }
-\end{example} \vspace{0.5em}
+\end{example}
 
-\begin{remark}
-    被积函数带绝对值，则是关于$x$和$y$的偶函数.
+\begin{analysis}
+被积函数带绝对值，则是关于$x$和$y$的偶函数.
     而椭圆关于$x$轴和$y$轴对称.
     因此只需计算第一象限内的积分，再乘$4$即可.
     这样也自然地拆开了绝对值符号.
-\end{remark} \vspace{0.5em}
+\end{analysis}
 
 \begin{solution}
-    \( E \) 的参数方程为 \( x = \cos t \)，\( y = 2 \sin t \)，其中 \( 0 \leq t \leq 2\pi \).
+\( E \) 的参数方程为 \( x = \cos t \)，\( y = 2 \sin t \)，其中 \( 0 \leq t \leq 2\pi \).
     由对称性得：
 
 \begin{eq1}
-    \int_E |xy| \, \d s 
+    \int_E |xy| \, \d s
     &= 4 \int_0^{\frac{\pi}{2}} xy \, \sqrt{(\cos t)^2 + (2 \sin t)^2} \, \d t \\
 &= 4 \int_0^{\frac{\pi}{2}} 2 \cos t \sin t \, \sqrt{\sin^2 t + 4 \cos^2 t} \, \d t \\
 &= 4 \int_0^{\frac{\pi}{2}} \sin 2t \, \sqrt{1 + 3 \cos^2 t} \, \d t \\
-&= 4 \int_0^{\frac{\pi}{2}} \sin 2t \, \sqrt{\frac{5}{2} + \frac{3}{2} \cos 2t} \, \d t 
+&= 4 \int_0^{\frac{\pi}{2}} \sin 2t \, \sqrt{\frac{5}{2} + \frac{3}{2} \cos 2t} \, \d t
 \end{eq1}
 
 令 \( u = \cos 2t \)，则 \( \d u = -2 \sin 2t \, \d t \)，
-所以上述积分等于：\vspace{0.5em}
+所以上述积分等于：
 \begin{eq1}
-    \int_E |xy| \, ds 
+    \int_E |xy| \, ds
     &= -2 \int_1^{-1} \sqrt{\frac{5}{2} + \frac{3}{2}u} \, du = 2 \int_{-1}^1 \sqrt{\frac{5}{2} + \frac{3}{2}u} \, \d u \\
     &= 2 \left[ \frac{2}{3} \cdot \frac{2}{3} \left( \frac{5}{2} + \frac{3}{2}u \right)^{\frac{3}{2}} \right]_{-1}^1 \\
     &= \frac{8}{9} \left( 4^{\frac{3}{2}} - 1^{\frac{3}{2}} \right) = \frac{56}{9}
-\end{eq1} \qed 
+\end{eq1}
 \end{solution}
 
-~\par
-
 \begin{example}
-    {10}{
-        设 \(\varGamma\) 为圆周
+\label{ex:ch08-10}
+设 \(\varGamma\) 为圆周
 $
-\begin{cases} 
+\begin{cases}
     \setstretch{1.25}
     x^2 + y^2 + z^2 = a^2 \\[-6pt]
-    x + y + z = a 
+    x + y + z = a
 \end{cases}
 $（$a > 0$），
 计算空间第一型曲线积分：
-$\oint_{\varGamma} x^2 ~\d s$. \vspace{0.5em}
-    }
-\end{example} \vspace{0.5em}
+$\oint_{\varGamma} x^2 ~\d s$.
+\end{example}
 
-\begin{remark}
-    本题的曲线$\varGamma$关于$(x,y,z)$有轮换对称性.
+\begin{analysis}
+本题的曲线$\varGamma$关于$(x,y,z)$有轮换对称性.
     借鉴第七章利用轮换对称性进行组合积分的思路.
-\end{remark} \vspace{0.25em}
-
+\end{analysis}
 
 \begin{solution}
-    由轮换对称性知：
+由轮换对称性知：
     \begin{eq1}
-        \oint_{\varGamma} x^2 ~\d s 
-        = \oint_{\varGamma} y^2 ~\d s 
-        = \oint_{\varGamma} z^2 ~\d s 
+        \oint_{\varGamma} x^2 ~\d s
+        = \oint_{\varGamma} y^2 ~\d s
+        = \oint_{\varGamma} z^2 ~\d s
     \end{eq1}
 
     所以：
     \begin{eq1}
-        \oint_{\varGamma} x^2 ~\d s 
+        \oint_{\varGamma} x^2 ~\d s
         = \frac{1}{3} \oint_{\varGamma} (x^2 + y^2 + z^2)~\d s
-        = \frac{a^2}{3} \oint_{\varGamma} ~\d s  
+        = \frac{a^2}{3} \oint_{\varGamma} ~\d s
     \end{eq1}
-
 
 其中$\oint_{\varGamma} ~\d s $即为$\varGamma$的全长.
 $\varGamma$是平面$x+y+z=a$上的圆周，点$O(0,0,0)$到此平面的距离$d = \frac{a}{\sqrt{3}}$.
@@ -1010,10 +989,9 @@ $\varGamma$是平面$x+y+z=a$上的圆周，点$O(0,0,0)$到此平面的距离$d
 
 所以：
 \begin{eq1}
-    \oint_{\varGamma} ~\d s = 2 \pi R = \frac{2\sqrt{6}}{9} \pi a^2  
-\end{eq1} \qed
-
-\end{solution} \vspace{0.5em}
+    \oint_{\varGamma} ~\d s = 2 \pi R = \frac{2\sqrt{6}}{9} \pi a^2
+\end{eq1}
+\end{solution}
 
 第二型积分涉及向量值函数，在研究对称性时，需要综合考虑三点：
 
@@ -1026,19 +1004,15 @@ $\varGamma$是平面$x+y+z=a$上的圆周，点$O(0,0,0)$到此平面的距离$d
 不同分量的对称性质可能亦有不同，因此在使用时需要谨慎地检查.
 最保险的方法是画出曲线/曲面的图来，在它的一组对称点上标出曲线/曲面的定向，
 再标出被积函数的分量.
-这样虽然麻烦，但是如果用对了，相比于不顾对称性死算一切题目还是有很大的时间优势.~\par
-~\par
-
-\begin{example}
-    {11}{
-        计算曲线积分$\oint_{L} \frac{\d x + \d y}{|x|+|y|}$.
+这样虽然麻烦，但是如果用对了，相比于不顾对称性死算一切题目还是有很大的时间优势.\begin{example}
+\label{ex:ch08-11}
+计算曲线积分$\oint_{L} \frac{\d x + \d y}{|x|+|y|}$.
         其中$L$其中$L$是由四个点
         $(2,0)$，$(-2,0)$，$(0,2)$和$(0,-2)$围成的正方形的边界的逆时针方向.
-    }
-\end{example} \vspace{0.5em}
+\end{example}
 
 \begin{solution}
-    正方形边界$L$关于原点$O$中心对称.
+正方形边界$L$关于原点$O$中心对称.
     考虑$L$上任意关于$O$中心对称的两个点$A_1(x_0,y_0)$和$A_2(-x_0,-y_0)$.
     在这两点处沿$L$的单位方向向量$\bm{t}$平行反向，而
     被积函数$\bm{F} = (P(x,y),Q(x,y)) = \left(\frac{1}{|x|+|y|}, \frac{1}{|x|+|y|}\right)$
@@ -1048,36 +1022,36 @@ $\varGamma$是平面$x+y+z=a$上的圆周，点$O(0,0,0)$到此平面的距离$d
     \begin{eq1}
         \oint_{L} \frac{\d x + \d y}{|x|+|y|}
         = \oint_{L} \bm{F} \cdot \bm{t} ~\d s = 0
-    \end{eq1} \qed
+    \end{eq1}
 \end{solution}
 
-~\par
-
-\textbf{例12(2023)}~~\textit{设曲面 \( S \) 是柱体  
+\begin{example}[2023]
+\label{ex:ch08-12}
+设曲面 \( S \) 是柱体
     $\Omega = \{(x,y,z) \mid x^2 + y^2 \leq 1, \, 0 \leq z \leq 1\}$
     表面的外侧（同时包含上表面、下表面、侧面）.
-    计算下列积分：}
-    
-    \textit{(a)} $I_1 = \iint_S (y - z) |x| \, \d y \, \d z + (z - x)|y| \, \d z \, \d x + (x - y)|z| \, \d x \, \d y$.\vspace{0.25em}
-    
-    \textit{(b)} $I_2 = \iint_S (y - z)x^2 \, \d y \, \d z + (z - x)y^2 \, \d z \, \d x + (x - y)z^2 \, \d x \, \d y$.\vspace{0.25em}
-    
-    \textit{(c)} $I_3 = \iint_S (y - z)x^3 \, \d y \, \d z + (z - x)y^3 \, \d z \, \d x + (x - y)z^3 \, \d x \, \d y$.\vspace{0.75em}
+    计算下列积分：
 
-\begin{remark}
-    这道题可以利用高斯公式简化计算.
+    (a) $I_1 = \iint_S (y - z) |x| \, \d y \, \d z + (z - x)|y| \, \d z \, \d x + (x - y)|z| \, \d x \, \d y$.
+
+    (b) $I_2 = \iint_S (y - z)x^2 \, \d y \, \d z + (z - x)y^2 \, \d z \, \d x + (x - y)z^2 \, \d x \, \d y$.
+
+    (c) $I_3 = \iint_S (y - z)x^3 \, \d y \, \d z + (z - x)y^3 \, \d z \, \d x + (x - y)z^3 \, \d x \, \d y$.
+\end{example}
+
+\begin{analysis}
+这道题可以利用高斯公式简化计算.
     但在这里我们先展示不使用高斯公式的做法.
     关键是仔细分析图形和被积函数$\bm{F}$的对称性.
-\end{remark} \vspace{0.5em}
+\end{analysis}
 
 \begin{solution}
-    我们将$\Omega$的上表面，下表面和侧面分别记为$S_1$，$S_2$和$S_3$：
+我们将$\Omega$的上表面，下表面和侧面分别记为$S_1$，$S_2$和$S_3$：
     \begin{eq1}
         S_1 &= \{ (x,y,z) \mid x^2 + y^2 \le 1, z=1 \} \\
         S_2 &= \{ (x,y,z) \mid x^2 + y^2 \le 1, z=0 \} \\
         S_3 =& \{ (x,y,z) \mid x^2 + y^2 = 1, 0 \le z \le 1 \}
     \end{eq1}
-\end{solution}
 
 故$S$上的第二型曲面积分$I$总是可以分解为：
 \begin{eq1}
@@ -1090,15 +1064,15 @@ $\varGamma$是平面$x+y+z=a$上的圆周，点$O(0,0,0)$到此平面的距离$d
 故积分中可以先消去一些项：
 \begin{eq1}
     I = \iint_{S_1+S_2} R~\d x \d y
-    + \iint_{S_3} P~\d y \d z + Q ~\d z \d x 
+    + \iint_{S_3} P~\d y \d z + Q ~\d z \d x
 \end{eq1}
 
-接下来分析每个小问：\vspace{0.5em}
+接下来分析每个小问：
 
 $\bm{(a)}$~~
 \begin{eq1}
     I_1 = \iint_{S_1+S_2} (x-y)|z|~\d x \d y
-    + \iint_{S_3} (y-z)|x|~\d y \d z + (z-x)|y| ~\d z \d x 
+    + \iint_{S_3} (y-z)|x|~\d y \d z + (z-x)|y| ~\d z \d x
 \end{eq1}
 
 对于$S_1$和$S_2$上的积分，
@@ -1127,19 +1101,19 @@ $S_3$上的积分涉及到两个分量.
 这说明：
 \begin{eq1}
     \iint_{S_3} (y-z)|x|~\d y \d z
-    &= \iint_{S_{3\text{前}}} (y-z)|x|~\d y \d z + 
+    &= \iint_{S_{3\text{前}}} (y-z)|x|~\d y \d z +
     \iint_{S_{3\text{后}}} (y-z)|x|~\d y \d z
-    = 0 
+    = 0
 \end{eq1}
 同理可知：
 \begin{eq1}
     \iint_{S_3} (z-x)|y| ~\d z \d x
-    &= \iint_{S_{3\text{左}}} (z-x)|y| ~\d z \d x + 
+    &= \iint_{S_{3\text{左}}} (z-x)|y| ~\d z \d x +
     \iint_{S_{3\text{右}}}(z-x)|y| ~\d z \d x
-    = 0 
+    = 0
 \end{eq1}
 故$S_3$上的积分为$0$.
-综上所述，$I_1 =0$.\vspace{0.5em}
+综上所述，$I_1 =0$.
 
 $\bm{(b)}$~~基于与$(a)$完全相同的理由，$I_2 = 0$.
 
@@ -1174,13 +1148,13 @@ $\bm{(c)}$~~基于与$(a)$完全相同的理由，我们依然能得到：
 故$S_3$上的积分化简为：
 \begin{eq1}
     \iint_{S_3} (y-z)x^3 ~\d y \d z + (z-x)y^3 ~\d z \d x =
-    \iint_{S_3} -z x^3 ~\d y \d z + zy^3 ~\d z \d x 
+    \iint_{S_3} -z x^3 ~\d y \d z + zy^3 ~\d z \d x
 \end{eq1}
 
 观察剩余的这两部分积分：
 \begin{eq1}
     \iint_{S_3} z x^3 ~\d y \d z~~,~~
-    \iint_{S_3} zy^3 ~\d z \d x 
+    \iint_{S_3} zy^3 ~\d z \d x
 \end{eq1}
 
 我们发现二者是完全相同的，只不过$x$和$y$交换了位置.
@@ -1191,7 +1165,8 @@ $\bm{(c)}$~~基于与$(a)$完全相同的理由，我们依然能得到：
     \iint_{S_3} -z x^3 ~\d y \d z + zy^3 ~\d z \d x =0
 \end{eq1}
 
-综上所述，$I_3 = 0$. \qed \par
+综上所述，$I_3 = 0$.
+\end{solution}
 
 \subsubsection{利用格林公式、高斯公式和斯托克斯公式转化}
 
@@ -1216,50 +1191,48 @@ $\bm{(c)}$~~基于与$(a)$完全相同的理由，我们依然能得到：
 但是并不意味着只有遇到封闭曲线/封闭曲面的积分时才会想到用这些公式.
 对于不封闭的曲线/曲面，我们可以补加一段曲线/一片曲面，
 使之变为封闭的，再代入公式.
-最后减去我们所补加的部分即可.\par
-~\par
+最后减去我们所补加的部分即可.
 
 \begin{example}
-    {17}{
-        求$I= \int_{L} (x+y)^3 ~\d x - (x-y)^3 ~\d y$，
+\label{ex:ch08-13}
+求$I= \int_{L} (x+y)^3 ~\d x - (x-y)^3 ~\d y$，
         其中$L$为图$4$所示的两个上半圆周连成的曲线$AOB$.
-    }
-\end{example}
 
-\begin{figure}[H] 
+\begin{figure}[H]
     \centering
     \includegraphics[width=0.5\textwidth]{fig8-4.jpg}
-    \caption{例17题图} 
-\end{figure}\par
+    \caption{例\ref{ex:ch08-13}题图}
+\end{figure}
+\end{example}
 
-\begin{remark}
-    此题直接计算比较麻烦.
+\begin{analysis}
+此题直接计算比较麻烦.
     而将其连成闭合回路只需连接$AB$.
     因此利用格林公式转化成二重积分可能是一个更好的选择.
-\end{remark} \vspace{0.5em}
+\end{analysis}
 
 \begin{solution}
-    记$P(x,y) = (x+y)^3$，$Q(x,y) = -(x - y)^3$.
+记$P(x,y) = (x+y)^3$，$Q(x,y) = -(x - y)^3$.
     则有：
     \begin{eq1}
-        \frac{\partial}{\partial x}Q(x,y) - \frac{\partial}{\partial y} P(x,y) 
+        \frac{\partial}{\partial x}Q(x,y) - \frac{\partial}{\partial y} P(x,y)
         &= -3(x-y)^2 - 3(x+y)^2 \\
-        &= -6x^2 - 6y^2 
+        &= -6x^2 - 6y^2
     \end{eq1}
 
     添加有向线段$\overrightarrow{BA}$，
     则$L + \overrightarrow{BA}$成一闭曲线，
     所围区域记为$D$.
-    $P(x,y)$和$Q(x,y)$都是一阶连续可偏导的函数. 
+    $P(x,y)$和$Q(x,y)$都是一阶连续可偏导的函数.
     由格林公式有：
     \begin{eq1}
-        I + \int_{\overrightarrow{BA}}  (x+y)^3 ~\d x - (x-y)^3 ~\d y 
+        I + \int_{\overrightarrow{BA}}  (x+y)^3 ~\d x - (x-y)^3 ~\d y
         = 6 \iint_{D} \left( x^2 + y^2 \right) ~\d x \d y
     \end{eq1}
-    
+
     其中：
     \begin{eq1}
-        \int_{\overrightarrow{BA}}  (x+y)^3 ~\d x - (x-y)^3 ~\d y 
+        \int_{\overrightarrow{BA}}  (x+y)^3 ~\d x - (x-y)^3 ~\d y
         = \int_2^4 x^3 ~\d x = -60
     \end{eq1}
     \begin{eq1}
@@ -1271,31 +1244,29 @@ $\bm{(c)}$~~基于与$(a)$完全相同的理由，我们依然能得到：
     即得：
     \begin{eq1}
         I = 60 + 6 \iint_{D} \left( x^2 + y^2 \right)~\d x \d y = 60 + \frac{135}{2}\pi
-    \end{eq1} \qed
-\end{solution} \par
-~\par
+    \end{eq1}
+\end{solution}
 
-
-\begin{example}
-    {18(2022)}{
-        设 \( n \) 是正整数，
-        从点 \( (0, 0) \) 到点 \( (n\pi, 0) \) 
+\begin{example}[2022]
+\label{ex:ch08-14}
+设 \( n \) 是正整数，
+        从点 \( (0, 0) \) 到点 \( (n\pi, 0) \)
         的有向曲线 \( L_n = \{(t, |\sin t|) \mid 0 \leq t \leq n\pi \} \).
         计算出下面第二型曲线积分在 \( n \to \infty \) 下的极限：
         \begin{eq1}
         \lim_{n \to \infty} \int_{L_n} e^{y^2 - x^2} \cos(2xy) \, \d x + e^{y^2 - x^2} \sin(2xy) \, \d y
-        \end{eq1}  
-    }
+        \end{eq1}
 \end{example}
-\begin{remark}
-    遇到复杂的第一型曲线积分，
+
+\begin{analysis}
+遇到复杂的第一型曲线积分，
     而且$P$和$Q$都是一阶连续可偏导的，
     一定要尝试计算看看$Q_x - P_y$是不是很简单的东西.
     这样就可以用格林公式.
-\end{remark} \vspace{0.5em}
+\end{analysis}
 
 \begin{solution}
-    首先验证：
+首先验证：
     \begin{eq1}
     &~~~~\frac{\partial (e^{y^2 - x^2} \sin(2xy))}{\partial x} - \frac{\partial (e^{y^2 - x^2} \cos(2xy))}{\partial y} \\
     &= e^{y^2 - x^2} (-2x) \sin(2xy) + e^{y^2 - x^2} \cos(2xy) \cdot 2y \\
@@ -1308,7 +1279,7 @@ $\bm{(c)}$~~基于与$(a)$完全相同的理由，我们依然能得到：
         \omega = e^{y^2 - x^2} & \cos(2xy) \, \d x + e^{y^2 - x^2} \sin(2xy) \, \d y \\
         I_n &= \{(t, 0) \mid 0 \leq t \leq n\pi \}
     \end{eq1}
-    
+
     \(\mathbb{R}^2\) 是单连通区域，因此根据第二型曲线积分与路径无关的定理：
     \begin{eq1}
     \int_{L_n} \omega = \int_{I_n} \omega = \int_0^{n\pi} e^{-x^2} \, \d x
@@ -1320,19 +1291,17 @@ $\bm{(c)}$~~基于与$(a)$完全相同的理由，我们依然能得到：
     \end{eq1}
 
     此为Gauss积分，可以通过组合出二重积分来计算它的值（见第七章讲义）.
-    结果为$\frac{\sqrt{\pi}}{2}$. \qed
-\end{solution}\par
-~\par
+    结果为$\frac{\sqrt{\pi}}{2}$.
+\end{solution}
 
 \begin{example}
-    {19}{
-        计算曲线积分$I = \oint_{L} \frac{x~\d y - y ~\d x }{4x^2 + y^2}$.
-        其中$L$是圆周$(x-1)^2 + y^2 = 2$的逆时针方向.\vspace{0.5em}
-    }
-\end{example} \vspace{0.5em}
+\label{ex:ch08-15}
+计算曲线积分$I = \oint_{L} \frac{x~\d y - y ~\d x }{4x^2 + y^2}$.
+        其中$L$是圆周$(x-1)^2 + y^2 = 2$的逆时针方向.
+\end{example}
 
-\begin{remark}
-    注意到$Q_x = P_y$，欲用格林公式解决此题，但是发现$P$和$Q$在$(0,0)$点并不可导！
+\begin{analysis}
+注意到$Q_x = P_y$，欲用格林公式解决此题，但是发现$P$和$Q$在$(0,0)$点并不可导！
     但是从$L$的内部挖去原点的一个小邻域$C$之后，剩余的部分就满足格林公式的条件了，
     同时也得到曲线积分与路径无关.
     换句话说，虽然路径$L$内部有$(0,0)$这一个“奇点”破坏了可导性，
@@ -1345,10 +1314,10 @@ $\bm{(c)}$~~基于与$(a)$完全相同的理由，我们依然能得到：
     注意“洞”的形状是由我们任意选择的，应使其尽量方便我们的计算.
     在此题中，被积函数上分母有$4x^2 + y^2$，因此不妨就让$C$的边界为椭圆$4x^2 + y^2 = 1$，
     这样恰好能把分母替换成常数.
-\end{remark}  \vspace{0.5em}
+\end{analysis}
 
 \begin{solution}
-    设被积函数$\bm{F} = (\frac{-y}{4x^2 + y^2}, \frac{x}{4x^2 + y^2})$.
+设被积函数$\bm{F} = (\frac{-y}{4x^2 + y^2}, \frac{x}{4x^2 + y^2})$.
     注意到它在$(0,0)$处不存在一阶偏导.
     取一椭圆区域$C : 4x^2 + y^2 \le 1$.
     其正向边界为椭圆$L_1 : 4x^2 + y^2 = 1$.
@@ -1357,92 +1326,93 @@ $\bm{(c)}$~~基于与$(a)$完全相同的理由，我们依然能得到：
     \begin{eq1}
         Q_x = P_y = -\frac{4x^2 - y^2}{(4x^2 + y^2 )}
     \end{eq1}
-    
+
     即第二型曲线积分与路径无关.
     我们得到：
     \begin{eq1}
         \oint_{L} P~\d x + Q ~\d y =
-        \oint_{L_1} P~\d x + Q ~\d y 
+        \oint_{L_1} P~\d x + Q ~\d y
     \end{eq1}
 
     直接计算$L_1$上的曲线积分.
     首先代入椭圆方程$4x^2 + y^2 = 1$.
     结果新的被积函数在椭圆内部又变成一阶连续可偏导的了，
-    从而可以再用格林公式. 
+    从而可以再用格林公式.
     \begin{eq1}
-        \oint_{L_1} P~\d x + Q ~\d y 
+        \oint_{L_1} P~\d x + Q ~\d y
         &= \oint_{L_1} -y ~\d x + x ~\d y\\
         &= \iint_{C} \left( 1 + 1\right) ~\d x \d y \\
         &= 2 \iint_{C} ~\d x \d y
     \end{eq1}
 
-    因此积分结果为区域$C$面积的$2$倍，即$\pi$. \qed\par
+    因此积分结果为区域$C$面积的$2$倍，即$\pi$.
 \end{solution}
-~\par \vspace{1em}
 
-\begin{example}
-    {20(2023)}{
-        计算积分$I = \oint_\varGamma \left( \frac{y^2 + y + 4x^2}{4x^2 + y^2} + \sin x^2 \right)~\d x + \left( \frac{4x^2 - x + y^2}{4x^2 + y^2} + \sin y^2 \right)~\d y,$
+\begin{example}[2023]
+\label{ex:ch08-16}
+计算积分
+\begin{eq1}
+I &= \oint_\varGamma \left( \frac{y^2 + y + 4x^2}{4x^2 + y^2} + \sin x^2 \right)~\d x \\
+    &\quad + \left( \frac{4x^2 - x + y^2}{4x^2 + y^2} + \sin y^2 \right)~\d y,
+\end{eq1}
+
 其中闭曲线 \(\varGamma\) 由上半圆 \(x^2 + y^2 = 9 \ (y \ge 0)\) 和下半椭圆 \(\frac{x^2}{9} + \frac{y^2}{16} = 1 \ (y \le 0)\) 组成，方向为逆时针.
-    }
 \end{example}
 
-\begin{remark}
-    仔细观察发现此题与上例其实并无区别.
+\begin{analysis}
+仔细观察发现此题与上例其实并无区别.
     但是这里需注意，宜先把符合格林公式条件（即区域内处处一阶连续可偏导）的部分
     取出来单独处理掉，再对剩下的部分“挖洞”.
     否则，像$\sin(x^2)$，$\sin(y^2)$这样的函数，
     即便一起享受“挖洞”的待遇，也没有什么用处.
-\end{remark} \vspace{0.5em}
-
+\end{analysis}
 
 \begin{solution}
-    该积分可以拆分为如下的两部分：
+该积分可以拆分为如下的两部分：
     \begin{eq1}
         I &= \oint_{\varGamma} \left( 1 + \sin x^2 \right)~\d x + \left( 1 + \sin y^2 \right)~\d y \\
-        &~~~~ +\oint_{\varGamma} \frac{y}{4x^2 + y^2}~\d x + \frac{-x}{4x^2 + y^2} ~\d y 
+        &~~~~ +\oint_{\varGamma} \frac{y}{4x^2 + y^2}~\d x + \frac{-x}{4x^2 + y^2} ~\d y
     \end{eq1}
-\end{solution}
 
 可以验证，第一个积分在$\varGamma$内部满足积分与路径无关的条件，故积分值为$0$.
-第二个积分由上例可知，其值为$- \pi$. 故$I = - \pi$.\qed\par
-~\par
+第二个积分由上例可知，其值为$- \pi$. 故$I = - \pi$.
+\end{solution}
 
-\begin{example}
-    {21(2022)}{
-        求第二型曲面积分$\iint_{S} x ~\d y ~\d z + y ~\d z \d x + z ~\d x \d y$.
+\begin{example}[2022]
+\label{ex:ch08-17}
+求第二型曲面积分$\iint_{S} x ~\d y ~\d z + y ~\d z \d x + z ~\d x \d y$.
         其中$S$为单位球面$x^2 + y^2 + z^2 = 1$的外侧.
-    }
 \end{example}
-\begin{remark}
-    从想起高斯公式到解出答案只需$5$秒钟.
-\end{remark}
+
+\begin{analysis}
+从想起高斯公式到解出答案只需$5$秒钟.
+\end{analysis}
+
 \begin{solution}
-    用高斯公式得到：
+用高斯公式得到：
     \begin{eq1}
         \iint_{S} x ~\d y \d z + y ~\d z \d x + z ~\d x \d y
         &= \iiint_{x^2 + y^2 + z^2 \le 1} \left( \frac{\partial x}{\partial x}+ \frac{\partial y}{\partial y}+\frac{\partial z}{\partial z}\right) ~\d x \d y \d z \\
         &= 3 \iiint_{x^2 + y^2 + z^2 \le 1} ~\d x\d y\d z \\
         &= 3 \times \text{单位球体的体积} = 4\pi
-    \end{eq1} \qed\par
+    \end{eq1}
 \end{solution}
 
 \begin{example}
-    {22}{
-        计算曲面积分$\iint_{S} x ~\d y \d z + y ~\d z \d x + z ~\d x \d y$.
+\label{ex:ch08-18}
+计算曲面积分$\iint_{S} x ~\d y \d z + y ~\d z \d x + z ~\d x \d y$.
         其中$S$为抛物面$z = x^2 + y^2$被平面$z=4$所截部分的外侧.
-    }
-\end{example} \vspace{0.5em}
+\end{example}
 
-\begin{remark}
-    通过上例我们发现，这种积分如果用高斯公式转化为三重积分是很简单的.
+\begin{analysis}
+通过上例我们发现，这种积分如果用高斯公式转化为三重积分是很简单的.
     但是此题的$S$并非封闭曲面.
     因此我们不妨给这个曲面盖个“盖子”，使之构成封闭曲面.
-    利用高斯公式计算之后，再减去“盖子”上的积分.\vspace{0.5em}
-\end{remark} \vspace{0.75em}
+    利用高斯公式计算之后，再减去“盖子”上的积分.
+\end{analysis}
 
 \begin{solution}
-    \setstretch{1.25} 
+\setstretch{1.25}
     记$S_1$为曲面~$
     \begin{cases}
         z=4 \\[-4pt]
@@ -1455,8 +1425,8 @@ $\bm{(c)}$~~基于与$(a)$完全相同的理由，我们依然能得到：
     其中$V$为$S$与$S_1$所围立体. 分别计算上式中的积分：
 
     \begin{eq1}
-        \iint_{S_1} z ~\d x \d y 
-        = \int_{x^2 + y^2 \le 4} 4 ~\d x \d y 
+        \iint_{S_1} z ~\d x \d y
+        = \int_{x^2 + y^2 \le 4} 4 ~\d x \d y
         = 16\pi
     \end{eq1}
     \begin{eq1}
@@ -1466,12 +1436,12 @@ $\bm{(c)}$~~基于与$(a)$完全相同的理由，我们依然能得到：
         &= 8 \pi
     \end{eq1}
 
-    故$I = 8\pi - 16\pi = -8\pi$. \qed\par
+    故$I = 8\pi - 16\pi = -8\pi$.
 \end{solution}
-~\par \vspace{1em}
 
 \begin{example}
-    {23}{\setstretch{1.25}
+\label{ex:ch08-19}
+\setstretch{1.25}
         设 \( L \) 为空间曲线~$
         \begin{cases}
             x^2 + y^2 =1 \\[-4pt]
@@ -1480,19 +1450,17 @@ $\bm{(c)}$~~基于与$(a)$完全相同的理由，我们依然能得到：
         \setstretch{1.75}，
         其正向为自 \( z \) 轴正向看下来的逆时针方向.
         计算积分$I = \int_L (y - z + \sin^2 x)~\d x + (z - x + \sin^2 y)~\d y + (x - y + \sin^2 z)~\d z$.
-    }\vspace{0.5em}
-\end{example} \vspace{0.5em}
+\end{example}
 
-\begin{remark}
-    此题利用对称性，或者利用斯托克斯公式皆可.
-\end{remark} \vspace{0.5em}
+\begin{analysis}
+此题利用对称性，或者利用斯托克斯公式皆可.
+\end{analysis}
 
-\textbf{解答1（利用一元函数定积分对称性）}~~
-    将曲线$L$改写为参数方程：
+\begin{solution}[解法一（利用一元函数定积分对称性）]
+将曲线$L$改写为参数方程：
 \begin{eq1}
     x = \cos\theta, \quad y = \sin\theta, \quad z = 1 - \cos\theta \quad (0 \leq \theta \leq 2\pi).
 \end{eq1}
-
 
 计算微分：
 \begin{eq}
@@ -1512,16 +1480,17 @@ I &= \int_0^{2\pi} (\sin \theta - 1 + \cos \theta + \sin^2 (\cos \theta))(-\sin\
 \begin{eq1}
     I  &=  \int_{-\pi}^{\pi} \left( -2\sin^2\theta - 2\cos^2\theta \right) ~\d \theta
     = \int_0^{2\pi} (-2) \, \d \theta  = -4\pi
-\end{eq1} \qed 
+\end{eq1}
+\end{solution}
 
 \clearpage
 
-\textbf{解答2（斯托克斯公式）}~~
+\begin{solution}[解法二（斯托克斯公式）]
 被积函数$\bm{F} = (P,Q,R) = (y-z + \sin^2 x , z-x+\sin^2 y , x-y+\sin^2 z) $.
-代入斯托克斯公式：\vspace{0.25em}
+代入斯托克斯公式：
 \begin{eq1}
     \oint_{L^{+}} P~\d x + Q~\d y + R ~\d z
-    &= \iint_{S^{+}} \left( \frac{\partial R}{\partial y} - \frac{\partial Q}{\partial z}\right) \d y \d z 
+    &= \iint_{S^{+}} \left( \frac{\partial R}{\partial y} - \frac{\partial Q}{\partial z}\right) \d y \d z
     + \left( \frac{\partial P}{\partial z} - \frac{\partial R}{\partial x}\right) \d z \d x
     + \left( \frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y}\right) \d x \d y \\
     &= \iint_{S^{+}} -2 ~\d y \d z - 2 ~\d z \d x - 2 ~\d x \d y
@@ -1532,7 +1501,7 @@ I &= \int_0^{2\pi} (\sin \theta - 1 + \cos \theta + \sin^2 (\cos \theta))(-\sin\
 则单位法向量为常向量$\bm{n} = (\frac{\sqrt{2}}{2} , 0 , \frac{\sqrt{2}}{2})$.
 恰好曲面积分的被积函数$\bm{G} = (-2,-2,-2)$，转换成第一型曲面积分十分方便：
 \begin{eq1}
-    I = \iint_{S^{+}} \bm{G} \cdot \bm{n}~\d S =  \iint_{S^{+}} -2\sqrt{2}~\d S 
+    I = \iint_{S^{+}} \bm{G} \cdot \bm{n}~\d S =  \iint_{S^{+}} -2\sqrt{2}~\d S
 \end{eq1}
 
 因此我们只需要计算曲面$S^{+}$的面积.
@@ -1541,36 +1510,38 @@ I &= \int_0^{2\pi} (\sin \theta - 1 + \cos \theta + \sin^2 (\cos \theta))(-\sin\
 即：
 \begin{eq1}
     I = -2\sqrt{2} \iint_{S^{+}} ~\d S = -2 \sqrt{2} \cdot \sqrt{2} \cdot \pi r^2 = -4 \pi
-\end{eq1} \qed \par
-~\par
+\end{eq1}
+\end{solution}
 
-\textbf{例24(2023)}~~\textit{设曲面 \( S \) 是柱体  
+\begin{example}[2023]
+\label{ex:ch08-20}
+设曲面 \( S \) 是柱体
     $\Omega = \{(x,y,z) \mid x^2 + y^2 \leq 1, \, 0 \leq z \leq 1\}$
-    表面的外侧（同时包含上表面、下表面、侧面）.}
-    \textit{计算下列积分：}
-    
-    \textit{(a)} $I_1 = \iint_S (y - z) |x| \, \d y \, \d z + (z - x)|y| \, \d z \, \d x + (x - y)|z| \, \d x \, \d y$;\vspace{0.25em}
-    
-    \textit{(b)} $I_2 = \iint_S (y - z)x^2 \, \d y \, \d z + (z - x)y^2 \, \d z \, \d x + (x - y)z^2 \, \d x \, \d y$;\vspace{0.25em}
-    
-    \textit{(c)} $I_3 = \iint_S (y - z)x^3 \, \d y \, \d z + (z - x)y^3 \, \d z \, \d x + (x - y)z^3 \, \d x \, \d y$.\vspace{0.75em}
+    表面的外侧（同时包含上表面、下表面、侧面）.
+    计算下列积分：
 
-\begin{remark}
-    $\Omega$是封闭曲面，指向外侧，很适合用高斯公式计算第二型曲面积分.
+    (a) $I_1 = \iint_S (y - z) |x| \, \d y \, \d z + (z - x)|y| \, \d z \, \d x + (x - y)|z| \, \d x \, \d y$;
+
+    (b) $I_2 = \iint_S (y - z)x^2 \, \d y \, \d z + (z - x)y^2 \, \d z \, \d x + (x - y)z^2 \, \d x \, \d y$;
+
+    (c) $I_3 = \iint_S (y - z)x^3 \, \d y \, \d z + (z - x)y^3 \, \d z \, \d x + (x - y)z^3 \, \d x \, \d y$.
+\end{example}
+
+\begin{analysis}
+$\Omega$是封闭曲面，指向外侧，很适合用高斯公式计算第二型曲面积分.
     但是仍需注意被积函数是否符合一阶连续可偏导的要求.
-\end{remark} \vspace{0.5em}
+\end{analysis}
 
-\textbf{解答}~~
-
+\begin{solution}
 $\bm{(a)}$~~注意被积函数中含有绝对值，在$x=0$，$y=0$和$z=0$处不可导.
-故不能使用高斯公式. 还是应当按照例12的方法来解决. 结果为$I_1 = 0$. \vspace{0.25em}
+故不能使用高斯公式. 还是应当按照例\ref{ex:ch08-12}的方法来解决. 结果为$I_1 = 0$.
 
 $\bm{(b)}$~~被积函数$\bm{F} = (P,Q,R) = ((y-z)x^2 , (z-x)y^2 , (x-y)z^2)$.
 由高斯公式：
 \begin{eq1}
     I_2 &= \iiint_{\Omega \text{内侧}} P_x + Q_y + R_z ~\d x \d y \d z \\
-    &= \iiint_{\Omega \text{内侧}} 2x(y-z) + 2y(z-x) + 2z(x-y) ~\d x \d y \d z = 0 
-\end{eq1} \vspace{0.25em}
+    &= \iiint_{\Omega \text{内侧}} 2x(y-z) + 2y(z-x) + 2z(x-y) ~\d x \d y \d z = 0
+\end{eq1}
 
 $\bm{(c)}$~~被积函数$\bm{F} = (P,Q,R) = ((y-z)x^3 , (z-x)y^3 , (x-y)z^3)$.
 由高斯公式：
@@ -1590,9 +1561,9 @@ $\bm{(c)}$~~被积函数$\bm{F} = (P,Q,R) = ((y-z)x^3 , (z-x)y^3 , (x-y)z^3)$.
     = \iiint_{\Omega \text{内侧}} z (3x^2 - 3y^2) ~\d x \d y \d z
 \end{eq1}
 
-注意到交换前后两式互为相反数，故$I_3 = 0$.\qed \par \vspace{0.5em}
+注意到交换前后两式互为相反数，故$I_3 = 0$.
+\end{solution}
 
 综合起来看，此题的最佳解法似乎是：
-(a)问和(b)问利用对称性解决（讲义例12），
-(c)问利用高斯公式（讲义例24）.
-
+(a)问和(b)问利用对称性解决（讲义例\ref{ex:ch08-12}），
+(c)问利用高斯公式（讲义例\ref{ex:ch08-20}）.

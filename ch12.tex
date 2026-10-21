@@ -22,7 +22,7 @@ f(x) \sim \frac{a_0}{2} + \ss \left( a_n \cos nx + b_n \sin nx \right)
 
 展开成傅里叶余弦级数：
 \begin{eq1}
-f(x) \sim \frac{a_0}{2} + \ss a_n \cos nx 
+f(x) \sim \frac{a_0}{2} + \ss a_n \cos nx
 \end{eq1}
 
 傅里叶系数：
@@ -36,7 +36,7 @@ f(x) \sim \frac{a_0}{2} + \ss a_n \cos nx
 
 展开成傅里叶正弦级数：
 \begin{eq1}
-f(x) \sim \ss b_n \sin nx 
+f(x) \sim \ss b_n \sin nx
 \end{eq1}
 
 傅里叶系数：
@@ -73,7 +73,7 @@ $f(x)$的傅里叶级数的和函数$S(x)$是什么？
 即$f(x)$在$[-\pi,\pi]$上分段连续且分段单调，则$f(x)$的傅里叶级数在任意一点$x$处均收敛，且其和函数为：}
 \begin{eq1}
     \setstretch{1.25}
-    S(x) = 
+    S(x) =
     \begin{cases}
         f(x)  \quad &x\text{为}f(x)\text{的连续点} \\[6pt]
         \frac{f(x+0) + f(x-0)}{2} \quad &  x\text{为}f(x)\text{的间断点}
@@ -87,7 +87,6 @@ $f(x)$的傅里叶级数的和函数$S(x)$是什么？
 则$f(x)$的傅里叶级数在任意一点$x$处均收敛到和函数$S(x)$.
 $S(x)$的形式同上.}\vspace{1em}
 
-
 在得到了傅里叶级数及其和函数之后，可以进一步计算某些数项级数的和.
 这是高数中比较偏重的一类应用.
 具体实现方法有两种：
@@ -98,7 +97,6 @@ $S(x)$的形式同上.}\vspace{1em}
 使得它的傅里叶系数是我们想要的形式，
 这一步比较困难的，
 不过在具体题目中一般会有前一小问的提示.
-
 
 \subsubsection{*内积空间}
 
@@ -207,11 +205,11 @@ $S(x)$的形式同上.}\vspace{1em}
 所谓单位正交系，是指范数（模长）为$1$，且两两之间内积为$0$（正交）的一组向量. 即：
 \begin{eq1}
     \setstretch{1.25}
-    (\bm{e}_i , \bm{e}_j) = \delta_{ij} = 
+    (\bm{e}_i , \bm{e}_j) = \delta_{ij} =
     \begin{cases}
         1\quad i = j \\
         0\quad i \ne j
-    \end{cases} 
+    \end{cases}
 \end{eq1}
 
 \setstretch{1.75}
@@ -231,7 +229,7 @@ $S(x)$的形式同上.}\vspace{1em}
 
 代入进去：
 \begin{eq1}
-    \bm{x} = 
+    \bm{x} =
     (\bm{x}, \bm{e}_1) \bm{e}_1
     + (\bm{x}, \bm{e}_2) \bm{e}_2
     + (\bm{x}, \bm{e}_3) \bm{e}_3
@@ -277,7 +275,7 @@ $f$的傅里叶级数在间断点处也不收敛到$f$.
 为了定义它，我们回到旅途的起点.
 回顾序列$\{ x_n \}$收敛到$x_0$的$\epsilon-\delta$定义：
 \begin{eq}
-    \forall \epsilon > 0 ,~ \exists N \in \mathbb{N^{*}},~ \text{当}n \ge N\text{时}, ~|x_n - x_0|< \epsilon 
+    \forall \epsilon > 0 ,~ \exists N \in \mathbb{N^{*}},~ \text{当}n \ge N\text{时}, ~|x_n - x_0|< \epsilon
 \end{eq}
 
 在这个定义中，我们用绝对值表示了$x_n$和$x_0$之间的距离（度量），
@@ -288,7 +286,7 @@ $f$的傅里叶级数在间断点处也不收敛到$f$.
 以及一个元素$\bm{x}_0$.
 可以完全仿照实数序列的极限定义，写出$\bm{x}_n \to \bm{x}_0$的定义：
 \begin{eq1}
-    \forall \epsilon > 0 ,~ \exists N \in \mathbb{N^{*}},~ \text{当}n \ge N\text{时}, ~d(\bm{x}_n , \bm{x}_0) = \Vert \bm{x}_n - \bm{x}_0 \Vert < \epsilon 
+    \forall \epsilon > 0 ,~ \exists N \in \mathbb{N^{*}},~ \text{当}n \ge N\text{时}, ~d(\bm{x}_n , \bm{x}_0) = \Vert \bm{x}_n - \bm{x}_0 \Vert < \epsilon
 \end{eq1}
 
 这个定义等同于当$n \to \infty$时，实数序列$d(\bm{x}_n , \bm{x}_0)$趋向于$0$.
@@ -316,7 +314,6 @@ $f$的傅里叶级数在间断点处也不收敛到$f$.
 \textbf{对于$f \in R[-\pi,\pi]$，
 $f$的傅里叶级数一定（均方）收敛到$f$.}
 
-
 \subsubsection{*单位正交基、帕塞瓦尔等式}
 
 我们深入解读一下“$f$的傅里叶级数一定均方收敛到$f$”这个结论.
@@ -332,7 +329,7 @@ $\{ \bm{e}_1 , \bm{e}_2 , \bm{e}_3 \}$，
 但是，任意的向量$\bm{x} $在这种单位正交系上却不一定能彻底地正交分解. 例如，若把$\bm{x} = [a_1,a_2,a_3]~(a_3 \ne 0)$分解到$\{ \bm{e}_1 , \bm{e}_2  \}$上，
 会发现分解后的向量并不等于$\bm{x}$：
 \begin{eq1}
-    [a_1,a_2,a_3] = \bm{x} \ne 
+    [a_1,a_2,a_3] = \bm{x} \ne
     (\bm{x}, \bm{e}_1) \bm{e}_1
     + (\bm{x}, \bm{e}_2) \bm{e}_2
     = [a_1,a_2,0]
@@ -361,7 +358,7 @@ $\{ \bm{e}_1 , \bm{e}_2 , \bm{e}_3 \}$，
 
 如果$\{ \bm{e}_i \}$是单位正交基，则不等号可以改为等号：
 \begin{eq1}
-     \sum_{i=1}^{\infty} |(\bm{x},\bm{e}_i)|^2  = \Vert \bm{x} \Vert^2 
+     \sum_{i=1}^{\infty} |(\bm{x},\bm{e}_i)|^2  = \Vert \bm{x} \Vert^2
 \end{eq1}
 
 这就是\textbf{贝塞尔不等式}和\textbf{帕塞瓦尔等式}.
@@ -375,7 +372,7 @@ $\{ \bm{e}_1 , \bm{e}_2 , \bm{e}_3 \}$，
 
 \textbf{定理}~~\textit{设$\{ \bm{e}_i \}$是完备内积空间$H$（指柯西收敛原理成立的空间）中的一个单位正交系，
 $\{ \alpha_i \}$是一个实数列，
-则级数$\sum_{i=1}^{\infty} \alpha_i \bm{e}_i $收敛的充要条件是级数$\sum_{i=1}^{\infty} |\alpha_i|^2$收敛. 
+则级数$\sum_{i=1}^{\infty} \alpha_i \bm{e}_i $收敛的充要条件是级数$\sum_{i=1}^{\infty} |\alpha_i|^2$收敛.
 并且在上述条件下，有：}
 \begin{eq1}
     \Vert \sum_{i=1}^{\infty} \alpha_i \bm{e}_i \Vert^2 = \sum_{i=1}^{\infty} |\alpha_i|^2
@@ -385,7 +382,6 @@ $\{ \alpha_i \}$是一个实数列，
 有了收敛性的保证，
 本节的主旨可以总结如下——
 \vspace{1em}
-
 
 \textbf{定理}~~\textit{设$\{ \bm{e}_i \}$是完备内积空间$H$中的一个单位正交系.
 则下列叙述是等价的：}
@@ -406,42 +402,30 @@ $\Vert \bm{x} \Vert^2 = \sum_{i=1}^{\infty} | (\bm{x},\bm{e}_i) |^2$，即帕塞
 大致思路是：先证明对任意$[-\pi,\pi]$上的连续函数$g$，
 都存在三角多项式（均方）收敛到$g$（Stone-Weierstrass逼近定理）；再证明任意$f \in V$都可以用$[-\pi,\pi]$上的连续函数列$\{ g_n \}$来（均方）逼近.
 
-
-
-
-
-
-
 \subsection{解题方法}
 
 \subsubsection{计算傅里叶级数}
 
-常规方法（例1$\sim$例3）是按部就班地用正交投影的公式展开.
+常规方法（例\ref{ex:ch12-01}$\sim$例\ref{ex:ch12-03}）是按部就班地用正交投影的公式展开.
 计算积分的过程中，常用分部积分法，务必熟练.
-例4是一道用来搞笑的题目（？）.
-例5介绍待定系数法.
+例\ref{ex:ch12-04}是一道用来搞笑的题目（？）.
+例\ref{ex:ch12-05}介绍待定系数法.
 如果除了计算傅里叶级数之外，
 还要求和函数，
 那么需要引用狄利克雷定理（或者另一个分段可微条件下的定理）来说明.
 
-\par
-~\par
+\begin{example}[2021]
+\label{ex:ch12-01}
+(1)~~设 \( p \) 是非整数的实数，\((-\infty, +\infty)\) 上的函数 \( f(x) \) 以 \( 2\pi \) 为周期，它在 \([-\pi, \pi]\) 等于 \(\cos(px)\).求出 \( f(x) \) 的傅里叶级数，及其和函数.
 
-\begin{example}
-    {1(2021)}{
-        ~
-    }
-\end{example}
-\textit{(1)~~设 \( p \) 是非整数的实数，\((-\infty, +\infty)\) 上的函数 \( f(x) \) 以 \( 2\pi \) 为周期，它在 \([-\pi, \pi]\) 等于 \(\cos(px)\).求出 \( f(x) \) 的傅里叶级数，及其和函数.}
-
-\textit{(2)~~明确写出从上面 (1) 中 \(\cos(px)\) 的傅里叶展开式推出下面等式的详细推导过程：当 \( t \in \mathbb{R} \)，\( t/\pi \) 不是整数时，有：}
+(2)~~明确写出从上面 (1) 中 \(\cos(px)\) 的傅里叶展开式推出下面等式的详细推导过程：当 \( t \in \mathbb{R} \)，\( t/\pi \) 不是整数时，有：
 \begin{eq1}
     \frac{1}{\sin t} = \frac{1}{t} + \sum_{n=1}^{\infty} (-1)^n \left( \frac{1}{t+n\pi} + \frac{1}{t-n\pi} \right)
 \end{eq1}
+\end{example}
 
 \begin{solution}
-
-    (1)~~\( f(x) \) 是偶函数，所以当 \( n>0 \) 时，傅里叶系数 \( b_n = 0 \). 
+(1)~~\( f(x) \) 是偶函数，所以当 \( n>0 \) 时，傅里叶系数 \( b_n = 0 \).
     当$n=0$时：
     \begin{eq1}
         a_0 = \frac{2}{\pi}\int_{0}^{\pi}\cos(px)  ~\d x = \frac{2 \sin(p\pi)}{p\pi}
@@ -463,7 +447,7 @@ $\Vert \bm{x} \Vert^2 = \sum_{i=1}^{\infty} | (\bm{x},\bm{e}_i) |^2$，即帕塞
     在$[-\pi,\pi]$上$f(x)$的傅里叶级数的和函数是$\cos px$，即：
     \begin{eq1}
         \cos(px) = \frac{\sin(p\pi)}{p\pi} + \sum_{n=1}^{\infty} (-1)^n \left( \frac{1}{p+n} + \frac{1}{p-n} \right) \frac{\sin(p\pi)}{\pi} \cos(nx)
-    \end{eq1} \vspace{0.5em}
+    \end{eq1}
 
     (2)~~在傅里叶展开式中令 \( x = 0 \):
     \begin{eq1}
@@ -474,37 +458,36 @@ $\Vert \bm{x} \Vert^2 = \sum_{i=1}^{\infty} | (\bm{x},\bm{e}_i) |^2$，即帕塞
     \begin{eq1}
         \frac{1}{\sin(p\pi)} = \frac{1}{p\pi} + \sum_{n=1}^{\infty} (-1)^n \left( \frac{1}{p\pi + n\pi} + \frac{1}{p\pi - n\pi} \right)
     \end{eq1}
-    
+
     令 \( t = p\pi \) 得到：当$\frac{t}{\pi}=p$不是整数时，有：
     \begin{eq1}
         \frac{1}{\sin t} = \frac{1}{t} + \sum_{n=1}^{\infty} (-1)^n \left( \frac{1}{t+n\pi} + \frac{1}{t-n\pi} \right)
-    \end{eq1} \qed \par
+    \end{eq1}
 \end{solution}
-~\par
 
-\begin{example}
-    {2(2022)}{
-        设 \( f : \mathbb{R} \rightarrow \mathbb{R} \) 是周期为 \( 2\pi \) 的函数，\( f(x) \) 在 \((-\pi, \pi]\) 上等于 \( e^x \).
+\begin{example}[2022]
+\label{ex:ch12-02}
+设 \( f : \mathbb{R} \rightarrow \mathbb{R} \) 是周期为 \( 2\pi \) 的函数，\( f(x) \) 在 \((-\pi, \pi]\) 上等于 \( e^x \).
         求 \( f(x) \) 的傅里叶级数，以及此傅里叶级数在 \( x = \pi \) 处的收敛值.
-    }
 \end{example}
+
 \begin{solution}
-    $n=0$：
+$n=0$：
     \begin{eq1}
          a_0 = \frac{1}{\pi} \int_{-\pi}^{\pi} e^x ~\d x = \frac{1}{\pi} (e^{\pi} - e^{-\pi})
     \end{eq1}
 
     当$n>0$时，用分部积分法求出：
     \[
-        a_n = \frac{1}{\pi} \int_{-\pi}^{\pi} e^x \cos(nx) ~\d x 
+        a_n = \frac{1}{\pi} \int_{-\pi}^{\pi} e^x \cos(nx) ~\d x
         = \frac{1}{\pi} \left[ \frac{\cos(nx) + n \sin(nx)}{1+n^2} e^x \right]_{-\pi}^{\pi}
         = (-1)^n \frac{e^{\pi} - e^{-\pi}}{\pi (1+n^2)}
     \]
 
     以及：
     \[
-         b_n = \frac{1}{\pi} \int_{-\pi}^{\pi} e^x \sin(nx) ~\d x 
-         = \frac{1}{\pi} \left[ \frac{\sin(nx) - n \cos(nx)}{1+n^2} e^x \right]_{-\pi}^{\pi} 
+         b_n = \frac{1}{\pi} \int_{-\pi}^{\pi} e^x \sin(nx) ~\d x
+         = \frac{1}{\pi} \left[ \frac{\sin(nx) - n \cos(nx)}{1+n^2} e^x \right]_{-\pi}^{\pi}
          = (-1)^{n-1} \frac{n(e^{\pi} - e^{-\pi})}{\pi (1+n^2)}
     \]
 
@@ -516,41 +499,36 @@ $\Vert \bm{x} \Vert^2 = \sum_{i=1}^{\infty} | (\bm{x},\bm{e}_i) |^2$，即帕塞
     $f(x)$在$[-\pi,\pi]$上分段连续，分段单调.
     因此，根据狄利克雷定理得：
     在$x = \pi$处，
-    $f(x)$的傅里叶级数的收敛值是$\frac{e^{-\pi} + e^{\pi}}{2}$. \qed \par
+    $f(x)$的傅里叶级数的收敛值是$\frac{e^{-\pi} + e^{\pi}}{2}$.
 \end{solution}
-~\par
 
-\begin{example}
-    {3(2023)}{
-        设 \( 2\pi \) 周期函数$\vphantom{\ss}$ \( f(x) \) 在 \([-\pi, \pi]\) 上的表达式为 \( f(x) = x^2 \)，求 \( f(x) \) 所对应的 Fourier 级数及其和函数，
+\begin{example}[2023]
+\label{ex:ch12-03}
+设 \( 2\pi \) 周期函数$\vphantom{\ss}$ \( f(x) \) 在 \([-\pi, \pi]\) 上的表达式为 \( f(x) = x^2 \)，求 \( f(x) \) 所对应的 Fourier 级数及其和函数，
         并给出级数$\sum_{n=1}^{\infty} \frac{1}{n^2}, \quad \sum_{n=1}^{\infty} \frac{(-1)^n}{n^2}, \quad \sum_{n=1}^{\infty} \frac{1}{n^4}$的值.
-    }
-\end{example}\vspace{0.5em}
+\end{example}
 
 \begin{solution}
-    
-    (1)由于 \( f(x) = x^2 \) 是偶函数，故 \( b_n = 0 \).
+(1)由于 \( f(x) = x^2 \) 是偶函数，故 \( b_n = 0 \).
     只需计算 \( a_0 \) 和 \( a_n \).
-\end{solution}
-
 
     计算 \( a_0 \)：
     \[
-    a_0 = \frac{1}{\pi} \int_{-\pi}^{\pi} x^2  ~\d x 
-    = \frac{2}{\pi} \int_{0}^{\pi} x^2  ~\d x 
+    a_0 = \frac{1}{\pi} \int_{-\pi}^{\pi} x^2  ~\d x
+    = \frac{2}{\pi} \int_{0}^{\pi} x^2  ~\d x
     = \frac{2}{\pi} \left[ \frac{x^3}{3} \right]_0^{\pi} = \frac{2}{\pi} \cdot \frac{\pi^3}{3} = \frac{2\pi^2}{3}
     \]
-    
+
     计算 \( a_n \) (\( n \geq1 1 \))：
     \begin{eq1}
-        a_n = 
-        \frac{1}{\pi} \int_{-\pi}^{\pi} x^2 \cos(nx) ~\d x 
+        a_n =
+        \frac{1}{\pi} \int_{-\pi}^{\pi} x^2 \cos(nx) ~\d x
         = \frac{2}{\pi} \int_{0}^{\pi} x^2 \cos(nx)  ~\d x
     \end{eq1}
 
     使用分部积分法：
     \begin{eq1}
-        \int x^2 \cos(nx)  ~\d x 
+        \int x^2 \cos(nx)  ~\d x
         &= \frac{x^2 \sin(nx)}{n} - \frac{2}{n} \int x \sin(nx)  ~\d x \\
         &= \frac{x^2 \sin(nx)}{n} - \frac{2}{n} \left( -\frac{x \cos(nx)}{n} + \frac{1}{n} \int \cos(nx)  ~\d x \right) \\
         &= \frac{x^2 \sin(nx)}{n} + \frac{2x \cos(nx)}{n^2} - \frac{2 \sin(nx)}{n^3}
@@ -558,7 +536,7 @@ $\Vert \bm{x} \Vert^2 = \sum_{i=1}^{\infty} | (\bm{x},\bm{e}_i) |^2$，即帕塞
 
     代入积分限：
     \begin{eq1}
-        \int_{0}^{\pi} x^2 \cos(nx)  ~\d x 
+        \int_{0}^{\pi} x^2 \cos(nx)  ~\d x
         &= \left[ \frac{x^2 \sin(nx)}{n} + \frac{2x \cos(nx)}{n^2} - \frac{2 \sin(nx)}{n^3} \right]_0^{\pi} \\
         &= \frac{\pi^2 \sin(n\pi)}{n} + \frac{2\pi \cos(n\pi)}{n^2} - \frac{2 \sin(n\pi)}{n^3} \\
         &= \frac{2\pi (-1)^n}{n^2}
@@ -568,7 +546,7 @@ $\Vert \bm{x} \Vert^2 = \sum_{i=1}^{\infty} | (\bm{x},\bm{e}_i) |^2$，即帕塞
     \[
     a_n = \frac{2}{\pi} \cdot \frac{2\pi (-1)^n}{n^2} = \frac{4(-1)^n}{n^2}
     \]
-    
+
     傅里叶级数为：
     \begin{eq1}
         f(x) \sim \frac{a_0}{2} + \sum_{n=1}^{\infty} a_n \cos(nx) = \frac{\pi^2}{3} + \sum_{n=1}^{\infty} \frac{4(-1)^n}{n^2} \cos(nx)
@@ -583,14 +561,14 @@ $\Vert \bm{x} \Vert^2 = \sum_{i=1}^{\infty} | (\bm{x},\bm{e}_i) |^2$，即帕塞
     \[
     S(x) = f(x) = (x-2k\pi)^2 ,\quad k \in \mathbb{Z}
     \]
-    
+
     (2)~~
     求 \( \sum_{n=1}^{\infty} \frac{1}{n^2} \)：
     取 \( x = \pi \)，代入傅里叶级数：
     \begin{eq1}
         S(\pi) = \pi^2 = \frac{\pi^2}{3} + \sum_{n=1}^{\infty} \frac{4(-1)^n}{n^2} \cos(n\pi) = \frac{\pi^2}{3} + \sum_{n=1}^{\infty} \frac{4(-1)^n}{n^2} (-1)^n = \frac{\pi^2}{3} + 4 \sum_{n=1}^{\infty} \frac{1}{n^2}
     \end{eq1}
-  
+
     解得：
     \[
     4 \sum_{n=1}^{\infty} \frac{1}{n^2} = \pi^2 - \frac{\pi^2}{3} = \frac{2\pi^2}{3} \implies \sum_{n=1}^{\infty} \frac{1}{n^2} = \frac{\pi^2}{6}
@@ -614,11 +592,11 @@ $\Vert \bm{x} \Vert^2 = \sum_{i=1}^{\infty} | (\bm{x},\bm{e}_i) |^2$，即帕塞
     \begin{eq1}
         \frac{1}{\pi} \int_{-\pi}^{\pi} [f(x)]^2  dx = \frac{a_0^2}{2} + \sum_{n=1}^{\infty} a_n^2
     \end{eq1}
-    
+
     左边：
     \[
-    \frac{1}{\pi} \int_{-\pi}^{\pi} x^4  ~\d x = 
-    \frac{2}{\pi} \left[ \frac{x^5}{5} \right]_0^{\pi} 
+    \frac{1}{\pi} \int_{-\pi}^{\pi} x^4  ~\d x =
+    \frac{2}{\pi} \left[ \frac{x^5}{5} \right]_0^{\pi}
     = \frac{2\pi^4}{5}
     \]
 
@@ -635,35 +613,34 @@ $\Vert \bm{x} \Vert^2 = \sum_{i=1}^{\infty} | (\bm{x},\bm{e}_i) |^2$，即帕塞
     解得：
     \[
     16 \sum_{n=1}^{\infty} \frac{1}{n^4} = \frac{2\pi^4}{5} - \frac{2\pi^4}{9} = \frac{8\pi^4}{45} \implies \sum_{n=1}^{\infty} \frac{1}{n^4} = \frac{\pi^4}{90}
-    \] \qed \par
-
-    ~\par
+    \]
+\end{solution}
 
 \begin{example}
-    {4}{
-        计算下列函数的傅里叶级数（周期为$2\pi$）：$f(x) = \sin^4 x$.
-    }
+\label{ex:ch12-04}
+计算下列函数的傅里叶级数（周期为$2\pi$）：$f(x) = \sin^4 x$.
 \end{example}
-\begin{remark}
-    不要真的去算积分.
-\end{remark}
+
+\begin{analysis}
+不要真的去算积分.
+\end{analysis}
+
 \begin{solution}
-    \begin{eq1}
-        \sin^4 x &= \left( \frac{1-\cos 2x}{2} \right)^2 
+\begin{eq1}
+        \sin^4 x &= \left( \frac{1-\cos 2x}{2} \right)^2
         = \frac{1 -2\cos 2x + \cos^2 2x}{4}  \\
         &= \frac{1}{4} - \frac{1}{2}\cos 2x + \frac{1+\cos 4x}{8} \\
         &= \frac{3}{8} - \frac{1}{2} \cos 2x + \frac{1}{8}\cos 4x
     \end{eq1}
-\end{solution} \qed \par
-~\par
+\end{solution}
 
 \begin{example}
-    {5}{
-        计算下列函数的傅里叶级数（周期为$2\pi$）：$f(x) = \frac{1-r^2}{1-2r\cos x + r^2} ~(|r|<1)$.
-    }
-\end{example}\vspace{0.5em}
+\label{ex:ch12-05}
+计算下列函数的傅里叶级数（周期为$2\pi$）：$f(x) = \frac{1-r^2}{1-2r\cos x + r^2} ~(|r|<1)$.
+\end{example}
+
 \begin{solution}
-    注意到$f(x)$是偶函数，可以展开成余弦级数.设为：$f(x) \sim \sum_{n=0}^{\infty} a_n \cos nx$.
+注意到$f(x)$是偶函数，可以展开成余弦级数.设为：$f(x) \sim \sum_{n=0}^{\infty} a_n \cos nx$.
     又因为$f(x)$在$\mathbb{R}$上连续，
     根据狄利克雷定理，
     $f(x)$的傅里叶级数收敛到$f(x)$：
@@ -674,15 +651,15 @@ $\Vert \bm{x} \Vert^2 = \sum_{i=1}^{\infty} | (\bm{x},\bm{e}_i) |^2$，即帕塞
 把$f(x)$的分母乘上去，整理：
 \begin{eq1}
     1-r^2 &= (1-2r\cos x + r^2) \sum_{n=0}^{\infty} a_n \cos nx \\
-    &= \sum_{n=0}^{\infty} (1+r^2) a_n \cos nx 
+    &= \sum_{n=0}^{\infty} (1+r^2) a_n \cos nx
     - \sum_{n=0}^{\infty} 2r a_n \cos nx \cos x \\
-    &= \sum_{n=0}^{\infty} (1+r^2) a_n \cos nx 
-    - \sum_{n=0}^{\infty} r a_n [\cos (n+1)x + \cos (n-1)x] 
+    &= \sum_{n=0}^{\infty} (1+r^2) a_n \cos nx
+    - \sum_{n=0}^{\infty} r a_n [\cos (n+1)x + \cos (n-1)x]
 \end{eq1}
 
 调整求和的指标，以使$\cos$下$x$的倍数一致（便于确定系数）：
 \begin{eq1}
-    1-r^2 = \sum_{n=0}^{\infty} (1+r^2) a_n \cos nx 
+    1-r^2 = \sum_{n=0}^{\infty} (1+r^2) a_n \cos nx
     - \sum_{n=-1}^{\infty} r a_{n+1} \cos nx
     - \sum_{n=1}^{\infty} r a_{n-1} \cos nx
 \end{eq1}
@@ -727,9 +704,5 @@ $a_0$可直接用公式计算（定积分计算过程省略）：
 将各项系数代入余弦级数，就得到：
 \begin{eq1}
     f(x) = 1 + \ss 2r^n \cos nx
-\end{eq1} \qed \par
-
+\end{eq1}
 \end{solution}
-
-~\par
-

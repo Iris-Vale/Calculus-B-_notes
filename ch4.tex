@@ -5,7 +5,7 @@
 
 \subsubsection{微分中值定理}
 
-(1)~\textbf{罗尔中值定理}~~\textit{设$y=f(x)$在闭区间$[a,b]$上连续，且$f(a)=f(b)$. 
+(1)~\textbf{罗尔中值定理}~~\textit{设$y=f(x)$在闭区间$[a,b]$上连续，且$f(a)=f(b)$.
 又设$y=f(x)$在开区间$(a,b)$内可导，则必存在一点$\xi \in (a,b)$，使得$f'(\xi)=0$.}
 \par
 
@@ -17,29 +17,29 @@
 则必存在一点$\xi \in (a,b)$，使得$\frac{f(b)-f(a)}{g(b)-g(a)}=\frac{f'(\xi)}{g'(\xi)}$.}
 \par
 ~\par
- 
-以上三条定理均有“闭区间连续，开区间可导”的条件. 
+
+以上三条定理均有“闭区间连续，开区间可导”的条件.
 注意若将“闭区间连续”改为“开区间连续”，
 定理就不再成立（可试举出反例）.
 
-这三条定理的联系十分紧密：拉格朗日中值定理是罗尔中值定理的“倾斜”版本，而柯西中值定理是拉格朗日中值定理的参数方程形式. 
-三者放在一起记忆会比较容易. 
-另外，建议熟悉这三个定理的证明方法. 
+这三条定理的联系十分紧密：拉格朗日中值定理是罗尔中值定理的“倾斜”版本，而柯西中值定理是拉格朗日中值定理的参数方程形式.
+三者放在一起记忆会比较容易.
+另外，建议熟悉这三个定理的证明方法.
 对于罗尔中值定理，
 如果同学们想要自己写证明，
 可以直接使用费马定理（可导函数在开区间内取最值处导数为$0$），
 不必像书中那样论证$f'(c)=0$.
 对于拉格朗日中值定理，应该熟悉证明过程中辅助函数的构造方式.\vspace{1em}
 
-接下来我们通过一些讨论来加深对微分中值定理的理解. 
+接下来我们通过一些讨论来加深对微分中值定理的理解.
 设函数$f(x)$在闭区间$[x_{0},x]$内可导（从而也在开区间$(x_0,x)$内连续），
 应用拉格朗日中值定理，可知存在$\xi \in (x_0,x)$，
 使得$f(x)-f(x_0)=(x-x_0)f'(\xi)$.
 显然，当$x$取不同的值时，
 $\xi$的取值也会相应地变化.
 因此，$\xi$实际上可以视为关于$x$的函数，
-记作$\xi(x)$. 
-当$x \to x_0$时，$\xi(x)$也趋向于$x_0$. 
+记作$\xi(x)$.
+当$x \to x_0$时，$\xi(x)$也趋向于$x_0$.
 对于一个给定的函数$f(x)$，我们可以问这样的问题：$\xi(x)$趋向于$x_{0}$的速度有多快？比$x$趋向$x_{0}$的速率更快吗？
 特别地，若$x_{0}=0$，我们可以更具体地问：$\xi(x)$是$x$的高阶/同阶无穷小量吗？\par
 顺着上面讨论的思路，
@@ -54,9 +54,9 @@ $\xi$的取值也会相应地变化.
 直观上理解，$\theta$表示了$\xi$在区间$(x_0,x)$中的相对位置.
 仿照刚才的讨论，
 $\theta$也可以视为关于$x$的函数，
-记作$\theta(x)$. 
+记作$\theta(x)$.
 注意，当$x \to x_0$时，
-$\theta(x)$一般是不趋向$0$的. 
+$\theta(x)$一般是不趋向$0$的.
 我们可以去计算$\limx0 \theta(x)$的值，
 以此刻画中值$\xi$的收敛速度.\vspace{1em}
 
@@ -67,7 +67,7 @@ $\theta(x)$一般是不趋向$0$的.
 在闭区间$[0,x]$内使用拉格朗日中值定理，
 有：
 $f(x)-f(0)=(x-0)f'(\xi)=3\xi^2 x$，
-其中$\xi \in (0,x)$. 
+其中$\xi \in (0,x)$.
 所以$3\xi^2 x$作为对$f(x)=x^3$的估计值，
 其取值范围是$(0,3x^3)$，
 误差实在是大得离谱.
@@ -75,7 +75,7 @@ $f(x)-f(0)=(x-0)f'(\xi)=3\xi^2 x$，
 一是微分中值定理只告诉我们存在中值$\xi$，
 无法告诉我们它的具体取值；
 二是这种估计方法的本质仍然是把函数局部近似为线性函数，
-而在较大的区间内这种近似显然很不精确. 
+而在较大的区间内这种近似显然很不精确.
 这引出了本章的下一个话题：泰勒公式.\par
 
 \subsubsection{泰勒公式} \par
@@ -120,7 +120,7 @@ $$
 \frac{1}{1+x} = 1 - x + x^2 -x^3 + \cdots +(-1)^{n}x^n + o(x^n) ~~~(x \to 0)
 $$
 
-皮亚诺余项的意义是：对函数$f(x)$泰勒展开到任意$n$项时，泰勒多项式$T_{n}(x)$对函数值$f(x)$的估计误差是高阶无穷小量. 
+皮亚诺余项的意义是：对函数$f(x)$泰勒展开到任意$n$项时，泰勒多项式$T_{n}(x)$对函数值$f(x)$的估计误差是高阶无穷小量.
 这里特别请同学们关注$n=1$的情况. 以$\ln (x+1)$在$x=0$处为例，此时泰勒展开的结果写成：
 $$
 \setlength\abovedisplayskip{6pt}
@@ -133,10 +133,10 @@ $$
     \setlength\belowdisplayskip{6pt}
 \ln (1+x) \sim x
 $$
-这其实就是之前所学的等价无穷小量. 
+这其实就是之前所学的等价无穷小量.
 
 由于皮亚诺余项准确地描述了余项作为无穷小量的性质，
-所以在求极限的问题中十分方便. 
+所以在求极限的问题中十分方便.
 它的缺点在于没有提供任何数值信息. 在实际问题中使用泰勒公式计算近似值的同时，还必须给出近似误差的范围.
 因此必须介绍\textbf{拉格朗日余项}：\par \vspace{1em}
 
@@ -149,10 +149,10 @@ f(x) =  f(x_0) + \frac{f'(x_0)}{1!}(x-x_0) + \frac{f''(x_0)}{2!}(x-x_0)^2 + \cdo
 + \frac{f^{(n+1)}(\xi)}{(n+1)!}(x-x_0)^{n+1}
 $$
 
-\textit{其中$\xi$是介于$x_0$与$x$之间的一点. 
+\textit{其中$\xi$是介于$x_0$与$x$之间的一点.
 $R_n(x) = \frac{f^{(n+1)}(\xi)}{(n+1)!}(x-x_0)^{n+1}$称为\textbf{拉格朗日余项}.}\vspace{1em}
 
-由于$\xi$的范围是受限制的，拉格朗日余项中的$f^{(n+1)}(\xi)$的范围也是受限制的. 
+由于$\xi$的范围是受限制的，拉格朗日余项中的$f^{(n+1)}(\xi)$的范围也是受限制的.
 设$\left| f^{(n+1)}(\xi) \right|$有上界$M$，则可以得到拉格朗日余项的范围
 $$
 \setlength\abovedisplayskip{12pt}
@@ -161,7 +161,7 @@ $$
 $$\par
 带拉格朗日余项的泰勒公式展开到一阶，
 则成为拉格朗日中值定理.
-因此前者是后者的推广. 
+因此前者是后者的推广.
 用它来估计函数值，
 比拉格朗日中值定理更精确，
 还能估计误差大小（见本讲义4.2.6节）.
@@ -172,19 +172,19 @@ $$
 \setlength\belowdisplayskip{12pt}
 R_{n}(x) = \frac{f^{(n+1)}(x_0 + \theta(x - x_0))}{(n+1)!}(x-x_0)^{n+1}
 $$\par
-其中$\theta \in (0,1)$. 
+其中$\theta \in (0,1)$.
 同样，当$x \to x_0$时，
 我们也能讨论$\theta$的极限值，
-以刻画中值在区间内的相对位置（见本讲义例4.50）.
+以刻画中值在区间内的相对位置（见本讲义例\ref{ex:ch04-50}）.
 
 \subsubsection{洛必达法则}
 
-同学们可能在高中就知道了洛必达法则. 
+同学们可能在高中就知道了洛必达法则.
 但现在学习了高数，
-应该了解前置条件的必要性. 
+应该了解前置条件的必要性.
 $\frac{f(x)}{g(x)}$型的极限
 （$x \to a$）若使用洛必达法则计算，
-需满足以下$4$个条件，缺一不可.\vspace{1em} 
+需满足以下$4$个条件，缺一不可.\vspace{1em}
 
 (1)~必须是$0/0$或者$\infty  /  \infty$型的未定式；\par
 (2)~$f(x)$和$g(x)$在$a$的去心邻域内有定义且可导（若$a$为无穷，需在充分远处可导）；\par
@@ -192,10 +192,10 @@ $\frac{f(x)}{g(x)}$型的极限
 (4)~$\frac{f'(x)}{g'(x)}$在$a$处极限存在.\par \vspace{1em}
 
 只要使用洛必达法则计算出了极限值，
-就自动证明了极限的存在性. 
+就自动证明了极限的存在性.
 但是反过来，
 不能用洛必达法则证明极限不存在，
-即$\frac{f'(x)}{g'(x)}$的极限不存在不能推出$\frac{f(x)}{g(x)}$极限不存在. 
+即$\frac{f'(x)}{g'(x)}$的极限不存在不能推出$\frac{f(x)}{g(x)}$极限不存在.
 例如，我们知道$\lim\limits_{x \to +\infty} \frac{\sin x}{x} = 0$.
 但是如果试图像下面这样使用洛必达法则：
 \begin{eq1}
@@ -208,8 +208,8 @@ $\frac{f(x)}{g(x)}$型的极限
 因此，这个例子不满足上面的条件(4)，
 不能用洛必达法则计算.
 
-另外，即使洛必达的条件全部满足，也未必能求出极限值. 一个经典的例子是$\lim\limits_{x \to +\infty} \frac{x}{\sqrt{1+x^2}}$. 
-显然它的值是$1$. 
+另外，即使洛必达的条件全部满足，也未必能求出极限值. 一个经典的例子是$\lim\limits_{x \to +\infty} \frac{x}{\sqrt{1+x^2}}$.
+显然它的值是$1$.
 但是如果使用洛必达法则，会陷入无尽循环，永远求不出极限：
 $$
 \setlength\abovedisplayskip{12pt}
@@ -223,27 +223,27 @@ $$\par
 就能说明极限为$1$.
 这样推理是不严谨的，因为在洛必达没有计算出明确数值的情况下，尚不能证明这个极限存在，具体的极限值是多少更是无从谈起了.
 
-洛必达法则和泰勒展开都是求极限的重要方法，且二者有着深刻的联系. 
-在求$\frac{f(x)}{g(x)}$的极限时，若对$f(x)$和$g(x)$分别进行泰勒展开，就将极限转化成了十分简单的有理分式极限. 
+洛必达法则和泰勒展开都是求极限的重要方法，且二者有着深刻的联系.
+在求$\frac{f(x)}{g(x)}$的极限时，若对$f(x)$和$g(x)$分别进行泰勒展开，就将极限转化成了十分简单的有理分式极限.
 我们都知道，这种情况下只需“抓大头”：
-关注最高次（$x \to \infty$）或最低次（$x \to 0$）项的系数即可. 
+关注最高次（$x \to \infty$）或最低次（$x \to 0$）项的系数即可.
 而泰勒展开的各项系数又是由$n$阶导数决定的. 因此，对$\frac{f(x)}{g(x)}$连续使用多次洛必达的过程就相当于
-求泰勒展开各项系数的过程. 
+求泰勒展开各项系数的过程.
 二者没有本质的不同.
 推荐同学们理解教材中用洛必达法则证明泰勒公式的过程（洛必达法则本身的证明过程不是重点）.
-但是，这并不是说洛必达法则或者泰勒展开在具体计算时的计算量是相同的. 同学们应该根据具体情况选择更简便的方法. 
+但是，这并不是说洛必达法则或者泰勒展开在具体计算时的计算量是相同的. 同学们应该根据具体情况选择更简便的方法.
 在本讲义的解题技巧部分，我们会接着详细讨论这个问题.\par
 
 \subsubsection{函数的凹凸性与拐点}\par
 在学习函数的凹凸性时有一极常见的误区，就是认为$f(x)$上凸等价于$f''(x)<0$，$f(x)$下凸等价于$f''(x)>0$.
-以上论断仅在$f(x)$二阶导存在时才成立. 
+以上论断仅在$f(x)$二阶导存在时才成立.
 对于仅一阶导存在的函数，
 我们也能谈论它的凹凸性，
 这时就只能用定义来判断了.
 
-一些教材（包括高中数学）的定义（琴生不等式）也能兼容连续但不可导的函数. 
+一些教材（包括高中数学）的定义（琴生不等式）也能兼容连续但不可导的函数.
 但是北大版教材明确地指出，
-函数的凹凸性是对于（一阶）可导函数来说的. 
+函数的凹凸性是对于（一阶）可导函数来说的.
 因此我们只需要掌握教材上给出的定义和定理即可.\par \vspace{1em}
 
 \textbf{函数凹凸性的定义}~~\textit{设函数$f(x)$在区间$(a,b)$内可导. 若对于每一点$x_0 \in (a,b)$，都有
@@ -259,7 +259,7 @@ $f''(x)<0$，则称函数$f(x)$在$(a,b)$内是}\textbf{上凸}\textit{函数.}
 
 \textit{反之，若$f''(x)>0$成立，则称函数$f(x)$在$(a,b)$内是}\textbf{下凸}\textit{函数.}\par \vspace{1em}
 
-\subsubsection{其他复习要点} 
+\subsubsection{其他复习要点}
 本章有部分内容是同学们在高中时就应该掌握的，包括：\par
 (1)~利用导数求解最值问题；\par
 (2)~分析函数的性质，包括分析单调性、凹凸性，寻找极值点、拐点； \par
@@ -268,45 +268,51 @@ $f''(x)<0$，则称函数$f(x)$在$(a,b)$内是}\textbf{上凸}\textit{函数.}
 (1)~一阶导为$0$（稳定点）不一定是极值点，极值点不一定一阶导为$0$；
 (2)~二阶导为$0$不一定是拐点，拐点不一定二阶导为$0$.
 在研究函数时，单独检查函数定义域区间的端点、间断点和不可导点，就能避免产生此类细节性错误. \par
-高数课程中对于函数的性质的研究提出了一个新的要求，就是要用极限计算出函数的渐近线. 
-渐近线分为三类：\textbf{水平渐近线}、\textbf{垂直渐近线}和\textbf{斜渐近线}. 
+高数课程中对于函数的性质的研究提出了一个新的要求，就是要用极限计算出函数的渐近线.
+渐近线分为三类：\textbf{水平渐近线}、\textbf{垂直渐近线}和\textbf{斜渐近线}.
 找函数的渐近线，无非是检查函数的无穷间断点，以及在正/负无穷处的极限情况.
 只要清楚了渐近线的定义就不难. \par
 
 \subsection{解题方法}\par
 \subsubsection{计算泰勒展开式}\par
-泰勒展开是高数课程中最重要的内容之一，在解题和实际应用中都十分重要. 
+泰勒展开是高数课程中最重要的内容之一，在解题和实际应用中都十分重要.
 因此我们首先着重强调它的计算问题.
 虽然书中已经给出了公式，
-但是要计算函数的$n$阶导数经常是令人望而生畏的（见第二章）. 
+但是要计算函数的$n$阶导数经常是令人望而生畏的（见第二章）.
 在许多情况下，
-我们可以将复杂的函数转化为常见的函数，然后套用背诵过的泰勒展开式. 
+我们可以将复杂的函数转化为常见的函数，然后套用背诵过的泰勒展开式.
 这种“抄近路”的做法有时因为太便捷，甚至可以用泰勒展开式反推出$n$阶导数. \par \vspace{1em}
 
-\textbf{1.~~整体法} \vspace{0.25em}
- 
-\textbf{例4.1}~~\textit{计算$f(x)=\sin(x^2)$在$x=0$处的泰勒展开式（展开到$2k+1$阶）.} \par
- 
-\textbf{解答}~~令$t=x^2$，在$x \to 0$时：
+\textbf{1.~~整体法}
+
+\begin{example}
+\label{ex:ch04-01}
+计算$f(x)=\sin(x^2)$在$x=0$处的泰勒展开式（展开到$2k+1$阶）.
+\end{example}
+
+\begin{solution}
+令$t=x^2$，在$x \to 0$时：
 \begin{equation}
-    \setlength\abovedisplayskip{6pt}
-    \setlength\belowdisplayskip{6pt}
     \begin{aligned}
         \sin (x^2) &\xlongequal{t = x^2} \sin t \\
         &= t - \frac{1}{6} t^3 + \cdots + \frac{(-1)^{k}}{(2k+1)!} t^{2k+1} + o(t^{2k+2}) \\
         &= x^2 -\frac{1}{6} x^6 +\cdots + \frac{(-1)^{k}}{(2k+1)!} x^{4k+2} + o(x^{4k+4})         \nonumber
     \end{aligned}
-\end{equation} \qed \par
-~\par
-在一些题目里或在实际应用中，不一定要展开到任意$n$阶，而只需要展开到有限的阶数. 
-这种情况下，泰勒多项式中比目标阶数更高次的项都应归入余项之中，因此是没必要计算的. 
-注意这一点可以大大提高计算效率. \par
-~\par
+\end{equation}
+\end{solution}
 
-\textbf{例4.2}~~\textit{计算$f(x)=\sin(\sin x)$在$x=0$处的泰勒展开式（展开到$5$阶）.} \par
-\textbf{解答}~~令$t=\sin x$，先展开外层函数，再展开内层函数. 当$x \to 0$时：
-\setlength\abovedisplayskip{6pt}
-\setlength\belowdisplayskip{6pt}
+在一些题目里或在实际应用中，不一定要展开到任意$n$阶，而只需要展开到有限的阶数.
+这种情况下，泰勒多项式中比目标阶数更高次的项都应归入余项之中，因此是没必要计算的.
+注意这一点可以大大提高计算效率.
+
+\begin{example}
+\label{ex:ch04-02}
+计算$f(x)=\sin(\sin x)$在$x=0$处的泰勒展开式（展开到$5$阶）.
+\end{example}
+
+\begin{solution}
+令$t=\sin x$，先展开外层函数，再展开内层函数. 当$x \to 0$时：
+
 \begin{align*}
         \sin (\sin x)
         &\xlongequal{ t= \sin x} \sin t \\
@@ -317,19 +323,22 @@ $f''(x)<0$，则称函数$f(x)$在$(a,b)$内是}\textbf{上凸}\textit{函数.}
         &= \left( x - \frac{1}{3!} x^3 + \frac{1}{5!} x^5 + o(x^5) \right)
         -\frac{1}{3!} \left( x^3 - \frac{1}{2} x^{5} + o(x^5) \right)
         +\frac{1}{5!} \left(x^5 + o(x^5) \right) + o(x^5) \\
-        &= x - \frac{1}{3} x^3 + \frac{1}{10} x^5 +o(x^5) 
-\end{align*} \qed
+        &= x - \frac{1}{3} x^3 + \frac{1}{10} x^5 +o(x^5)
+\end{align*}
+\end{solution}
 
 \clearpage
 
-\textbf{2.~~拆分成常见函数}\vspace{0.5em}
+\textbf{2.~~拆分成常见函数}
 
-\textbf{例4.3}~~\textit{计算$f(x) = \ln \left( \frac{1+x}{5-x} \right)$在$x=0$处的泰勒展开式（展开到$n$阶）.} \vspace{0.5em}
+\begin{example}
+\label{ex:ch04-03}
+计算$f(x) = \ln \left( \frac{1+x}{5-x} \right)$在$x=0$处的泰勒展开式（展开到$n$阶）.
+\end{example}
 
-\textbf{解答}~~为了利用$\ln (1+x)$的泰勒展开式，先将$f(x)$进行转化：
+\begin{solution}
+为了利用$\ln (1+x)$的泰勒展开式，先将$f(x)$进行转化：
 \begin{equation}
-    \setlength\abovedisplayskip{12pt}
-    \setlength\belowdisplayskip{12pt}
     \begin{aligned}
         f(x) &= \ln (1+x) -\ln (5-x) \\
         &= \ln (1+x) -\ln5 - \ln\left(1-\frac{x}{5} \right) \\
@@ -338,18 +347,22 @@ $f''(x)<0$，则称函数$f(x)$在$(a,b)$内是}\textbf{上凸}\textit{函数.}
         &= -\ln 5 + \left( \frac{(-1)^{n-1}}{n} + \frac{1}{n \cdot 5^n}\right)x^n + o(x^n)
         \nonumber
     \end{aligned}
-\end{equation} \qed \par
-~\par
+\end{equation}
+\end{solution}
 
-\textbf{例4.4~(2021)}~~\textit{设正整数$n \ge 2$，求出}
+\begin{example}[2021]
+\label{ex:ch04-04}
+设正整数$n \ge 2$，求出
 $$
 f(x) = \frac{1 - 2x +5x^2}{(1-2x)(1+x^2)}
 $$
-\textit{在$x=0$点的$2n+1$阶局部泰勒公式.}\vspace{0.25em}
+在$x=0$点的$2n+1$阶局部泰勒公式.
+\end{example}
 
-\textbf{解答}~~用观察法或待定系数法得到$f(x)$的部分分式分解: 
+\begin{solution}
+用观察法或待定系数法得到$f(x)$的部分分式分解:
 $$
-f(x) = \frac{1}{1-2x} + \frac{-2x}{1+x^2} 
+f(x) = \frac{1}{1-2x} + \frac{-2x}{1+x^2}
 $$\par
 第一部分的展开（以$-2x$为整体）：
 $$
@@ -366,33 +379,41 @@ $$\par
         &= 1 + \sum_{k=1}^{n} \bigg( 2^{2k}x^{2k} + (2^{2k+1}+2(-1)^{k+1})x^{2k+1}  \bigg)  + o(x^{2k+1})
         \nonumber
     \end{aligned}
-\end{equation} \qed \par
-~\par
+\end{equation}
+\end{solution}
 
 \textbf{3.~~泰勒展开式的乘法}\vspace{0.25em}
 
 要计算函数$f(x)g(x)$的泰勒展开式，可先分别展开$f(x)$和$g(x)$，再将它们的展开式相乘.
 泰勒展开式的乘法遵循多项式乘法的规则.
-其中一种特殊的情况是$f(x)$或$g(x)$本身就是多项式，甚至是单项式，那么乘法将变得十分容易.\par
-~\par
-\textbf{例4.5}~~\textit{计算$\frac{x^2}{1-x}$在$x=0$处的泰勒展开式（展开到$n$阶）.} \par \vspace{0.5em}
-\textbf{解答}~~先展开$\frac{1}{1-x}$，再乘以$x^2$. 
+其中一种特殊的情况是$f(x)$或$g(x)$本身就是多项式，甚至是单项式，那么乘法将变得十分容易.
+
+\begin{example}
+\label{ex:ch04-05}
+计算$\frac{x^2}{1-x}$在$x=0$处的泰勒展开式（展开到$n$阶）.
+\end{example}
+
+\begin{solution}
+先展开$\frac{1}{1-x}$，再乘以$x^2$.
 \begin{equation}
     \begin{aligned}
         \frac{x^2}{1-x} &= x^2 \cdot \frac{1}{1-x} \\
         &= x^2 \cdot \bigg( 1 + x + x^2 + \cdots + x^{n} + o(x^n)  \bigg) \\
-        &= x^2 + x^3 + \cdots + x^{n} + o(x^n) 
+        &= x^2 + x^3 + \cdots + x^{n} + o(x^n)
         \nonumber
     \end{aligned}
-\end{equation} \qed
-~\par
-~\par
-\textbf{例4.6}~~\textit{计算$e^{2x} \sin x$在$x=0$处的泰勒展开式（展开到$4$阶）.}\par
-\textbf{解答}~~分别展开$e^{2x}$和$\sin x$到$4$阶，再相乘.
+\end{equation}
+\end{solution}
+
+\begin{example}
+\label{ex:ch04-06}
+计算$e^{2x} \sin x$在$x=0$处的泰勒展开式（展开到$4$阶）.
+\end{example}
+
+\begin{solution}
+分别展开$e^{2x}$和$\sin x$到$4$阶，再相乘.
 注意四次以上的无穷小量无需仔细展开，都归入$o(x^4)$即可.
 \begin{equation}
-    \setlength\abovedisplayskip{6pt}
-    \setlength\belowdisplayskip{6pt}
     \begin{aligned}
         e^{2x} \sin x &= \bigg( 1 + 2x + \frac{(2x)^2}{2} + \frac{(2x)^3}{6} + \frac{(2x)^4}{24} + o(x^4)\bigg)
         \cdot \bigg( x - \frac{x^3}{6} + o(x^4) \bigg) \\
@@ -400,8 +421,8 @@ $$\par
         &= x + 2x^2 + \frac{11x^3}{6} + x^4 + o(x^4)
         \nonumber
     \end{aligned}
-\end{equation} \qed \par
-~\par
+\end{equation}
+\end{solution}
 
 \textbf{*4.~~泰勒展开式的除法} \par
 泰勒展开式之间的除法可以用待定系数法计算. 设$f(x)$和$g(x)$为已知函数，在$x=0$处的泰勒展开式分别为：
@@ -416,7 +437,7 @@ $$
 g(x) = b_0 +b_1 x +b_2 x^2 + \cdots + b_n x^n + o(x^{n}) = \sum_{j=0}^{n} b_j x^j +  o(x^{n}) ~~~(x \to 0)
 $$
 
-现在求$h(x)=\frac{f(x)}{g(x)}$的泰勒展开式. 
+现在求$h(x)=\frac{f(x)}{g(x)}$的泰勒展开式.
 设$h(x)$的展开式中第$n$项系数为$c_n$，即：
 $$
 \setlength\abovedisplayskip{6pt}
@@ -446,33 +467,30 @@ $$\par
     a_0 = c_0 \cdot b_0 \\
     a_1 = c_0 \cdot b_1 + c_1 \cdot b_0 \\
     a_2 = c_0 \cdot b_2 + c_1 \cdot b_1 +c_2 \cdot b_0 \\
-    \cdots  
+    \cdots
 \end{cases}
 \] \setstretch{1.75} \par
-这样就可以依次计算出待定系数$c_0$、$c_1$、$c_2~\cdots$. \par
-~\par
-\textbf{例4.7}~~\textit{计算$\tan x$在$x=0$处的泰勒展开式（展开到$4$阶）.} \par
-\textbf{解答}~~设$\tan x$的泰勒展开式为：
+这样就可以依次计算出待定系数$c_0$、$c_1$、$c_2~\cdots$.
+
+\begin{example}
+\label{ex:ch04-07}
+计算$\tan x$在$x=0$处的泰勒展开式（展开到$4$阶）.
+\end{example}
+
+\begin{solution}
+设$\tan x$的泰勒展开式为：
 $$
-\setlength\abovedisplayskip{6pt}
-\setlength\belowdisplayskip{6pt}
 \tan x = a_0 + a_1 x +   a_2 x^2 + a_3 x^3 + a_4 x^4 + o(x^4)
 $$\par
 先展开$\sin x$和$\cos x$到$4$阶：
 $$
-\setlength\abovedisplayskip{6pt}
-    \setlength\belowdisplayskip{6pt}
-\sin x = x - \frac{x^3}{6} + o(x^4) 
+\sin x = x - \frac{x^3}{6} + o(x^4)
 $$
 $$
-\setlength\abovedisplayskip{6pt}
-    \setlength\belowdisplayskip{6pt}
-\cos x = 1 -\frac{x^2}{2} + \frac{x^4}{24} + o(x^4) 
+\cos x = 1 -\frac{x^2}{2} + \frac{x^4}{24} + o(x^4)
 $$\par
 由$\sin x = \tan x \cdot \cos x$，得：
 $$
-\setlength\abovedisplayskip{12pt}
-    \setlength\belowdisplayskip{12pt}
 \bigg( x - \frac{x^3}{6} + o(x^4)  \bigg) = \bigg( a_0 + a_1 x +   a_2 x^2 + a_3 x^3 + a_4 x^4 + o(x^4) \bigg)
 \cdot \bigg( 1 -\frac{x^2}{2} + \frac{x^4}{24} + o(x^4)  \bigg)
 $$
@@ -487,15 +505,20 @@ $$
     -\frac{1}{6} = -\frac{a_1}{2} + a_3 \\
     0 = \frac{a_0}{24} + -\frac{a_2}{2} + a_4
 \end{cases}
-\] \vspace{0.25em}
+\]
 
-解得$a_0 = 0$，$a_1 = 1$，$a_2 = 0$，$a_3 = \frac{1}{3}$，$a_4 = 0$，即：$\tan x = x + \frac{x^3}{3} + o(x^4)$ \qed \par
-~\par
-\textbf{*5.~~利用泰勒展开式计算$n$阶导数} \vspace{0.5em}
- 
-\textbf{例4.8}~~\textit{已知函数$f(x)=x^2\ln(2-x)$，则当$n \ge 3$时，求$f^{(n)}(0)$.}\vspace{0.5em}
- 
-\textbf{解答}~~对$f(x)$在$x=0$处进行泰勒展开： 
+解得$a_0 = 0$，$a_1 = 1$，$a_2 = 0$，$a_3 = \frac{1}{3}$，$a_4 = 0$，即：$\tan x = x + \frac{x^3}{3} + o(x^4)$
+\end{solution}
+
+\textbf{*5.~~利用泰勒展开式计算$n$阶导数}
+
+\begin{example}
+\label{ex:ch04-08}
+已知函数$f(x)=x^2\ln(2-x)$，则当$n \ge 3$时，求$f^{(n)}(0)$.
+\end{example}
+
+\begin{solution}
+对$f(x)$在$x=0$处进行泰勒展开：
 \begin{equation}
     \begin{aligned}
         f(x) &= x^2 \bigg(\ln 2 + \ln(1 - \frac{x}{2}) \bigg) \\
@@ -506,14 +529,17 @@ $$
     \end{aligned}
 \end{equation} \par
 展开式的$n$次项系数$\frac{f^{(n)}(0)}{n!} = -  \frac{1}{(n-2) \cdot 2^{n-2}}$，
-则$f^{(n)}(0) = -\frac{n!}{(n-2) \cdot 2^{n-2}}$. （$n \ge 3$）\qed \par \vspace{0.5em}
+则$f^{(n)}(0) = -\frac{n!}{(n-2) \cdot 2^{n-2}}$. （$n \ge 3$）
+\end{solution}
 
-~\par
+\begin{example}
+\label{ex:ch04-09}
+已知函数$f(x)=\ln \left( \frac{1+x}{5-x} \right)$，
+求$f^{(n)}(3)$.
+\end{example}
 
-\textbf{例4.9}~~\textit{已知函数$f(x)=\ln \left( \frac{1+x}{5-x} \right)$，
-求$f^{(n)}(3)$.}\par \vspace{0.5em}
- 
-\textbf{解答}~~对$f(x)$在$x=3$处进行泰勒展开，找它的$n$次项系数. 
+\begin{solution}
+对$f(x)$在$x=3$处进行泰勒展开，找它的$n$次项系数.
 为了用上背过的公式，
 令$t = x-3$，转化为在$t = 0$处展开：
     \begin{align*}
@@ -527,9 +553,9 @@ $$
     \end{align*}
 
 泰勒展开式的$n$次项系数$\frac{f^{(n)}(3)}{n!} = \frac{(-1)^{n+1}}{n \cdot 4^n} + \frac{1}{n \cdot 2^n} $，从而
-$f^{(n)}(3) = \frac{(-1)^{n+1}(n-1)!}{4^n} + \frac{(n-1)!}{2^n}$. \qed
-~\par
-~\par
+$f^{(n)}(3) = \frac{(-1)^{n+1}(n-1)!}{4^n} + \frac{(n-1)!}{2^n}$.
+\end{solution}
+
 \subsubsection{利用洛必达法则和泰勒公式计算极限}\par
 在开始做习题之前，
 先强调几个极限题的通用思路或原则（其中一些是对第一章的复习）：
@@ -538,28 +564,34 @@ $f^{(n)}(3) = \frac{(-1)^{n+1}(n-1)!}{4^n} + \frac{(n-1)!}{2^n}$. \qed
 (2)~对于指数型未定式（$0^0$型、$0^\infty$型、$1^\infty$型），取对数转化为分式的未定型.\par
 (3)~对于$\infty - \infty$型未定式，通分，转化为分式的未定型. \par
 (4)~分式型未定式（$0/0$型，$\infty / \infty$型）可以用洛必达法则解决. \par
-(5)~如果含有难处理的函数（如根号、三角函数等），先用其他方法简化，尽量往多项式的形式靠拢. 
+(5)~如果含有难处理的函数（如根号、三角函数等），先用其他方法简化，尽量往多项式的形式靠拢.
 实在化不了的时候再施展洛必达或者泰勒大法.\par \vspace{1em}
 
-\textbf{1.~~洛必达法则} \vspace{1em}
+\textbf{1.~~洛必达法则}
 
-\textbf{例4.10}~~\textit{计算$\lim\limits_{x \to 1} \frac{\arctan \left(\displaystyle\frac{x^2 -1}{x^2 +1}\right)}{x-1}$.}\par
-\textbf{解答}~~
+\begin{example}
+\label{ex:ch04-10}
+计算$\lim\limits_{x \to 1} \frac{\arctan \left(\displaystyle\frac{x^2 -1}{x^2 +1}\right)}{x-1}$.
+\end{example}
+
+\begin{solution}
 \begin{equation}
-    \setlength\abovedisplayskip{6pt}
-    \setlength\belowdisplayskip{6pt}
     \begin{aligned}
-        \lim\limits_{x \to 1} \frac{\arctan \left(\displaystyle\frac{x^2 -1}{x^2 +1}\right)}{x-1} 
+        \lim\limits_{x \to 1} \frac{\arctan \left(\displaystyle\frac{x^2 -1}{x^2 +1}\right)}{x-1}
         &\xlongequal{\text{洛必达}} \lim\limits_{x \to 1} \frac{1}{~~1+ \left( \dfrac{x^2-1}{x^2 + 1}\right)^2~~} \cdot \frac{2x(x^2+1) - 2x(x^2-1)}{(x^2+1)^2}
         = 1
         \nonumber
     \end{aligned}
-\end{equation} \qed \par
-~\par
+\end{equation}
+\end{solution}
 
-\textbf{例4.11}~~\textit{计算$\limx0 \frac{~\displaystyle\int_{\sin x}^{x}~\sqrt{3+t^2} ~\d t~ }{x(e^{x^2}-1)}$.}\par
-\textbf{解答}~~
-    \begin{align*}
+\begin{example}
+\label{ex:ch04-11}
+计算$\limx0 \frac{~\displaystyle\int_{\sin x}^{x}~\sqrt{3+t^2} ~\d t~ }{x(e^{x^2}-1)}$.
+\end{example}
+
+\begin{solution}
+\begin{align*}
         \limx0 \frac{\displaystyle\int_{\sin x}^{x}~\sqrt{3+t^2} \d t }{x(e^{x^2}-1)}
         &= \limx0 \frac{\displaystyle\int_{\sin x}^{x}~\sqrt{3+t^2} \d t }{x^3} ~~~~\text{（等价无穷小代换）}\\
         &\xlongequal{\text{洛必达}}  \limx0 \frac{\sqrt{3+x^2} - \cos x \sqrt{3 + \sin ^2 x}}{3x^2}~~~~\text{（变上限定积分求导）} \\
@@ -568,11 +600,14 @@ $f^{(n)}(3) = \frac{(-1)^{n+1}(n-1)!}{4^n} + \frac{(n-1)!}{2^n}$. \qed
         &= \frac{\sqrt{3}}{6}
         \nonumber
     \end{align*}
-\qed \par
-~\par
+\end{solution}
 
-\textbf{例4.12}~~\textit{计算$\lim\limits_{x \to 0^{+}}\frac{1-(\displaystyle\frac{\sin x}{x})^x}{x^3}$.}\par \vspace{0.5em}
-\textbf{解答}~~
+\begin{example}
+\label{ex:ch04-12}
+计算$\lim\limits_{x \to 0^{+}}\frac{1-(\displaystyle\frac{\sin x}{x})^x}{x^3}$.
+\end{example}
+
+\begin{solution}
 \begin{equation}
     \begin{aligned}
         \lim\limits_{x \to 0+}\frac{1-(\displaystyle\frac{\sin x}{x})^x}{x^3}
@@ -581,49 +616,53 @@ $f^{(n)}(3) = \frac{(-1)^{n+1}(n-1)!}{4^n} + \frac{(n-1)!}{2^n}$. \qed
         &= \lim\limits_{x \to 0+}  \frac{- \ln \left(\displaystyle\frac{\sin x - x}{x} + 1\right)}{x^2} \\
         &= \lim\limits_{x \to 0+} \frac{x - \sin x}{x^3} ~~~~\text{（等价无穷小代换）}\\
         &\xlongequal{\text{洛必达}} \lim\limits_{x \to 0+} \frac{1 - \cos x}{3x^2} \\
-        &= \frac{1}{6} 
+        &= \frac{1}{6}
         \nonumber
     \end{aligned}
-\end{equation} \qed \par
-~\par
+\end{equation}
+\end{solution}
 
-\textbf{例4.13~(2022B)}~~
-\textit{计算$\limx0 \frac{\sqrt[3]{1+x^2+x^4}-1}{(\ln (1+x))^2}$.}\par \vspace{1em}
- 
-\textbf{解答}~~为了书写方便，设$\sqrt[3]{1+x^2+x^4} = a(x)$，则$\limx0 a(x) =1 $，于是有：
+\begin{example}[2022 B卷]
+\label{ex:ch04-13}
+计算$\limx0 \frac{\sqrt[3]{1+x^2+x^4}-1}{(\ln (1+x))^2}$.
+\end{example}
+
+\begin{solution}
+为了书写方便，设$\sqrt[3]{1+x^2+x^4} = a(x)$，则$\limx0 a(x) =1 $，于是有：
 \begin{equation}
-    \setlength\abovedisplayskip{12pt}
-    \setlength\belowdisplayskip{12pt}
     \begin{aligned}
-        \limx0 \frac{\sqrt[3]{1+x^2+x^4}-1}{(\ln (1+x))^2} 
+        \limx0 \frac{\sqrt[3]{1+x^2+x^4}-1}{(\ln (1+x))^2}
         &= \limx0 \frac{a(x) - 1}{x^2} ~~~~\text{（等价无穷小代换）} \\
         &= \limx0 \frac{a^3(x) - 1}{x^2} \cdot \frac{1}{a^2(x) + a(x) + 1} \\
-        &= \limx0 \frac{x^2 + x^4}{x^2} \cdot \frac{1}{3} 
+        &= \limx0 \frac{x^2 + x^4}{x^2} \cdot \frac{1}{3}
         ~= \frac{1}{3}
         \nonumber
     \end{aligned}
-\end{equation}  \qed \par
-~\par
-\textbf{例4.14~(2021)}~~\textit{设$n$是任给的正整数，对于每个$1 \le k \le n$，$a_k$是任给的正实数.计算：}
-$$ 
-\setlength\abovedisplayskip{6pt}
-    \setlength\belowdisplayskip{6pt}
+\end{equation}
+\end{solution}
+
+\begin{example}[2021]
+\label{ex:ch04-14}
+设$n$是任给的正整数，对于每个$1 \le k \le n$，$a_k$是任给的正实数.计算：
+$$
 \limx0 \left( \frac{\sum_{k=1}^{n} a_{k}^{x}}{n} \right) ^{1/x}
-$$\par
-\textbf{解答}~~
+$$
+\end{example}
+
+\begin{solution}
 \begin{equation}
-    \setlength\abovedisplayskip{6pt}
-    \setlength\belowdisplayskip{6pt}
     \begin{aligned}
         \ln \bigg(\limx0\frac{\sum_{k=1}^{n} a_{k}^{x}}{n} \bigg)
         &= \limx0 \frac{\ln \left( \displaystyle\frac{a_1^{x} + a_2^{x} + \cdots + a_n^{x}}{n} \right)}{x} \\
         &\xlongequal{\text{洛必达}} \limx0 \frac{n}{a_1^{x} + a_2^{x} + \cdots + a_n^{x}} \cdot \frac{\ln a_1 \cdot a_1^{x} + \ln a_2 \cdot a_2^{x} + \cdots +\ln a_n \cdot  a_n^{x}}{n} \\
         &= \limx0 \frac{\ln a_1 + \ln a_2 + \cdots + \ln a_n}{n} \\
-        &= \frac{1}{n} \ln (a_1 a_2 \cdots a_n) 
+        &= \frac{1}{n} \ln (a_1 a_2 \cdots a_n)
         \nonumber
     \end{aligned}
 \end{equation}\par
-因此$\limx0\frac{\sum_{k=1}^{n} a_{k}^{x}}{n} = \sqrt[n]{a_1 a_2 \cdots a_n}$. \qed \par
+因此$\limx0\frac{\sum_{k=1}^{n} a_{k}^{x}}{n} = \sqrt[n]{a_1 a_2 \cdots a_n}$.
+\end{solution}
+
 （注：2021$\sim$22高数B期末考试答案文档中本题的答案有误.）
 ~\par
 ~\par
@@ -634,60 +673,74 @@ $$\par
 函数与其展开式之间是以等号连接的，
 因此可以随意代换.
 不能认为用泰勒展开计算极限是某种“近似”方法，
-更不能在写展开式时把余项省略掉不写. 
+更不能在写展开式时把余项省略掉不写.
 任何余项的消除必须通过等价无穷小量的运算性质来消除，
 即$\frac{o(x^n)}{x^n} = 0~(x \to 0)$.
 注意，无穷小量不能通过相减消除，
-即$o(x)-o(x)=0$不成立. 
+即$o(x)-o(x)=0$不成立.
 
 以上的说明同时也回答了求极限时“泰勒展开到多少项才足够”的问题，
 答案是皮亚诺余项作为等价无穷小量阶数足够高能被消除即可.
 讲义前文已经提到，
 直接计算$n$阶泰勒公式与连续用$n$次洛必达法则，
-本质上没有区别. 
-但是有时可以用整体法、乘除法等技巧快速计算泰勒展开式. 
-这种情况下尤其要注意“盯住”展开结果中所需要的最高次项. 
+本质上没有区别.
+但是有时可以用整体法、乘除法等技巧快速计算泰勒展开式.
+这种情况下尤其要注意“盯住”展开结果中所需要的最高次项.
 即使计算到一半，
 只要遇到比所需要的次数更高的项，
 也可以直接写个$o(x^n)$了事，
-没必要全计算出来. \par
-~\par
-\textbf{例4.15~(2020)}~~\textit{计算$\limx0 \frac{2\cos x -2 +x^2}{x^4}$.} \par
-\textbf{解答}~~
+没必要全计算出来.
+
+\begin{example}[2020]
+\label{ex:ch04-15}
+计算$\limx0 \frac{2\cos x -2 +x^2}{x^4}$.
+\end{example}
+
+\begin{solution}
 \begin{equation}
     \begin{aligned}
-        \limx0 \frac{2\cos x -2 +x^2}{x^4} 
+        \limx0 \frac{2\cos x -2 +x^2}{x^4}
         &= \limx0 \frac{2\left(1 - \displaystyle\frac{x^2}{2} + \displaystyle\frac{x^4}{24} + o(x^4)\right) -2 + x^2}{x^4} \\
         &= \limx0 \frac{\displaystyle\frac{x^4}{12}+ o(x^4)}{x^4} \\
         &= \frac{1}{12}
         \nonumber
     \end{aligned}
-\end{equation} \qed
-~\par
+\end{equation}
+\end{solution}
 
-\textbf{例4.16}~~\textit{计算$\limx0 \frac{1+\displaystyle\frac{x^2}{2}-\sqrt{1+x^2}}{(\cos x -e^{x^2})\sin x^2}$.}\par
- 
-\textbf{解答}~~
-\setlength\abovedisplayskip{6pt}
-    \setlength\belowdisplayskip{6pt}
+\begin{example}
+\label{ex:ch04-16}
+计算$\limx0 \frac{1+\displaystyle\frac{x^2}{2}-\sqrt{1+x^2}}{(\cos x -e^{x^2})\sin x^2}$.
+\end{example}
+
+\begin{solution}
 \begin{align*}
         \limx0 \frac{1+\displaystyle\frac{x^2}{2}-\sqrt{1+x^2}}{(\cos x -e^{x^2})\sin x^2}
         &= \limx0 \frac{1 + \displaystyle \frac{x^2}{2} - \left( 1 + \displaystyle\frac{x^2}{2} - \displaystyle\frac{x^4}{4} + o(x^4)\right)}
         {\left( 1 - \displaystyle\frac{x^2}{2} + o(x^2) - 1 - x^2 + o(x^2)\right) \cdot x^2} \\
         &= \limx0 \frac{\displaystyle\frac{x^4}{4} + o(x^4)}{-\displaystyle\frac{3x^4}{2} + o(x^4)} \\
         &= -\frac{1}{6}
-\end{align*} \qed
-~\par
-~\par
-\textbf{例4.17}~~\textit{计算$\limx0 \frac{\sin(\sin x)-x}{x^3}$.}\par \vspace{0.25em}
-\textbf{解答}~~利用例4.2中的展开结果：
+\end{align*}
+\end{solution}
+
+\begin{example}
+\label{ex:ch04-17}
+计算$\limx0 \frac{\sin(\sin x)-x}{x^3}$.
+\end{example}
+
+\begin{solution}
+利用例\ref{ex:ch04-02}中的展开结果：
 $$
-\limx0 \frac{\sin(\sin x)-x}{x^3} = \limx0 \frac{x - \frac{1}{3} x^3 +o(x^3) - x}{x^3} = -\frac{1}{3} 
-$$ \qed
-~\par
-~\par
-\textbf{例4.18~(2021)}~~\textit{计算$\limx0 \frac{\tan^4 x}{\sqrt{1-\displaystyle\frac{x \sin x}{2}} - \sqrt{\cos x}}$.}\par \vspace{0.25em}
-\textbf{解答}~~
+\limx0 \frac{\sin(\sin x)-x}{x^3} = \limx0 \frac{x - \frac{1}{3} x^3 +o(x^3) - x}{x^3} = -\frac{1}{3}
+$$
+\end{solution}
+
+\begin{example}[2021]
+\label{ex:ch04-18}
+计算$\limx0 \frac{\tan^4 x}{\sqrt{1-\displaystyle\frac{x \sin x}{2}} - \sqrt{\cos x}}$.
+\end{example}
+
+\begin{solution}
 \begin{equation}
     \begin{aligned}
         \limx0 \frac{\tan^4 x}{\sqrt{1-\displaystyle\frac{x \sin x}{2}} - \sqrt{\cos x}}
@@ -698,48 +751,53 @@ $$ \qed
         &= 48
         \nonumber
     \end{aligned}
-\end{equation}\qed
-~\par
-~\par
-以上的题目，虽然理论上用洛必达法则也可行，但是比较繁琐. 
+\end{equation}
+\end{solution}
+
+以上的题目，虽然理论上用洛必达法则也可行，但是比较繁琐.
 尤其是当出现函数的乘积、复合时，连续使用洛必达法则会让式子越来越长，而用泰勒展开则十分清晰明朗.
 
+\subsubsection{渐近线与函数图像}
 
-
-\subsubsection{渐近线与函数图像} \par \vspace{0.5em}
- 
-\textbf{例4.19~(2022B)}~~\textit{任意取定实数$p > 4$. 求函数}
+\begin{example}[2022 B卷]
+\label{ex:ch04-19}
+任意取定实数$p > 4$. 求函数
 $f(x) = (x^4)^{\frac{1}{p}}+ (1-x^4)^{\frac{1}{p}}$
-\textit{在闭区间$[-1,1]$上的最小值，并指明所有最小值点. }\par \vspace{0.25em}
- 
-\textbf{解答}~~令$t = t(x)= x^4$，$t \in [0,1]$. 
+在闭区间$[-1,1]$上的最小值，并指明所有最小值点.
+\end{example}
+
+\begin{solution}
+令$t = t(x)= x^4$，$t \in [0,1]$.
 则函数$f(x) = g(t) = t^{\frac{1}{p}} + (1-t)^{\frac{1}{p}}$.
 由闭区间上连续函数的最值定理，
-$g(t)$在$[0,1]$中必有最小值点. 
+$g(t)$在$[0,1]$中必有最小值点.
 最小值点只可能是区间端点、
 不可导点或者稳定点.
 接下来分别考虑这三种情况：
 
 (1)~区间端点：$g(0)=1$，$g(1)=1$.
 
-(2)~$g(t)$在$(0,1)$上没有不可导点. 
+(2)~$g(t)$在$(0,1)$上没有不可导点.
 
-(3)~对$g(t)$求导，得$g'(t) = \frac{1}{p}\left(t^{\frac{1}{p}-1} - (1-t)^{\frac{1}{p}-1}\right)$. 
+(3)~对$g(t)$求导，得$g'(t) = \frac{1}{p}\left(t^{\frac{1}{p}-1} - (1-t)^{\frac{1}{p}-1}\right)$.
 令$g'(t) = 0$，解得稳定点为$t = \frac{1}{2}$，~$g(\frac{1}{2}) = 2^{1-\frac{1}{p}} > 1$.
 
 综上，$g(t)$的最小值为$1$，最小值点为$t=0,1$.
-因此$f(x)$的最小值点为$x = 0,-1,1$.\qed\par
- 
-~\par
+因此$f(x)$的最小值点为$x = 0,-1,1$.
+\end{solution}
 
-\textbf{例4.20~(2022)}~~\textit{求函数$f(x) = (\sin x)^{\frac{2}{3}}+ (\cos x)^{\frac{2}{3}}$
+\begin{example}[2022]
+\label{ex:ch04-20}
+求函数$f(x) = (\sin x)^{\frac{2}{3}}+ (\cos x)^{\frac{2}{3}}$
 在闭区间$\left[ -\frac{\pi}{2} , ~\frac{\pi}{2}  \right]$
-上的最小值，并指明所有最小值点.} \par \vspace{0.25em}
- 
-\textbf{解答}~~由闭区间上连续函数的最值定理，$f(x)$在$\left[ -\frac{\pi}{2} , ~\frac{\pi}{2}  \right]$
-中必有最小值点. 
-最小值点只可能是区间端点、不可导点或者稳定点. 
-接下来分别考虑这三种情况：\vspace{0.5em}
+上的最小值，并指明所有最小值点.
+\end{example}
+
+\begin{solution}
+由闭区间上连续函数的最值定理，$f(x)$在$\left[ -\frac{\pi}{2} , ~\frac{\pi}{2}  \right]$
+中必有最小值点.
+最小值点只可能是区间端点、不可导点或者稳定点.
+接下来分别考虑这三种情况：
 
 (1)~区间端点：$f \left( -\frac{\pi}{2} \right) = f \left(\frac{\pi}{2} \right) = 1$.
 
@@ -751,36 +809,53 @@ $g(t)$在$[0,1]$中必有最小值点.
 ~$f \left(-\frac{\pi}{4}\right) = f\left(\frac{\pi}{4}\right) = 2^{\frac{2}{3}} > 1$.
 
 综上，$f(x)$的最小值为$1$，
-最小值点为$x = -\frac{\pi}{2},\frac{\pi}{2},0$. \qed \par
-~\par
+最小值点为$x = -\frac{\pi}{2},\frac{\pi}{2},0$.
+\end{solution}
 
-\textbf{例4.21~(2020)}~~\textit{求出一元函数
+\begin{example}[2020]
+\label{ex:ch04-21}
+求出一元函数
 $f(x) = x^\frac{2}{3} -(x^2 -1)^{\frac{1}{3}}$
-在闭区间$[-1,~1]$内达到最小值的所有点.}\par
- 
-\textbf{解答}~~令$t = \sin x$，$t \in \left[ -\frac{\pi}{2},~\frac{\pi}{2} \right]$.
-换元后的函数与例4.20相同，因此$f(x)$的最小值为$1$.
-取最小值时$t = -\frac{\pi}{2},\frac{\pi}{2},0$.
-对应的最小值点为$x = -1,1,0$. \qed\par
-~\par
+在闭区间$[-1,~1]$内达到最小值的所有点.
+\end{example}
 
-\textbf{例4.22}~~\textit{求出
-$f(x) = \frac{x^2 \arctan x}{x-1}$的所有渐近线.} \par \vspace{0.5em}
+\begin{solution}
+令$t = \sin x$，$t \in \left[ -\frac{\pi}{2},~\frac{\pi}{2} \right]$.
+换元后的函数与例\ref{ex:ch04-20}相同，因此$f(x)$的最小值为$1$.
+取最小值时$t = -\frac{\pi}{2},\frac{\pi}{2},0$.
+对应的最小值点为$x = -1,1,0$.
+\end{solution}
+
+\begin{example}
+\label{ex:ch04-22}
+求出
+$f(x) = \frac{x^2 \arctan x}{x-1}$的所有渐近线. \par
 \setstretch{2.25}
-\textbf{解答}~~
+\end{example}
+
+\begin{solution}
 (1)~铅直渐近线：因为$\lim\limits_{x \to 1} \frac{x^2 \arctan x}{x - 1} = \infty$，
 所以$f(x)$存在1条铅直渐近线$x = 1$. \par
 (2)~水平渐近线：因为$\lim\limits_{x \to \infty} \frac{x^2 \arctan x}{x - 1} = +\infty$，所以$f(x)$无水平渐近线.\par
 (3)斜渐近线：
 
 因为$\lim\limits_{x \to +\infty} \frac{f(x)}{x} = \lim\limits_{x \to +\infty} \frac{x^2 \arctan x}{x - 1} = \frac{\pi}{2}$，
-$\lim\limits_{x \to +\infty} \left[ f(x) - \frac{\pi}{2}x \right] 
-= \lim\limits_{x \to +\infty}  \frac{x^2 \arctan x -\frac{\pi}{2}x^2 + \frac{\pi}{2}x}{x-1}
-= \frac{\pi}{2} -1$，所以存在1条斜渐近线$y = \frac{\pi}{2}x + \frac{\pi}{2} -1$.\par
+
+\begin{eq1}
+\lim\limits_{x \to +\infty} \left[ f(x) - \frac{\pi}{2}x \right] &= \lim\limits_{x \to +\infty}  \frac{x^2 \arctan x -\frac{\pi}{2}x^2 + \frac{\pi}{2}x}{x-1}
+\\
+    &= \frac{\pi}{2} -1
+\end{eq1}
+所以存在1条斜渐近线$y = \frac{\pi}{2}x + \frac{\pi}{2} -1$.\par
 因为$\lim\limits_{x \to -\infty} \frac{f(x)}{x} = \lim\limits_{x \to -\infty} \frac{x^2 \arctan x}{x - 1} = -\frac{\pi}{2}$，
-$\lim\limits_{x \to -\infty} \left[ f(x) + \frac{\pi}{2}x \right] 
-= \lim\limits_{x \to -\infty}  \frac{x^2 \arctan x +\frac{\pi}{2}x^2 - \frac{\pi}{2}x}{x-1}
-= -\frac{\pi}{2} -1$，所以存在1条斜渐近线$y = -\frac{\pi}{2}x - \frac{\pi}{2} -1$.\qed \par \vspace{1em}
+
+\begin{eq1}
+\lim\limits_{x \to -\infty} \left[ f(x) + \frac{\pi}{2}x \right] &= \lim\limits_{x \to -\infty}  \frac{x^2 \arctan x +\frac{\pi}{2}x^2 - \frac{\pi}{2}x}{x-1}
+\\
+    &= -\frac{\pi}{2} -1
+\end{eq1}
+所以存在1条斜渐近线$y = -\frac{\pi}{2}x - \frac{\pi}{2} -1$.
+\end{solution}
 
 \setstretch{1.75}
 
@@ -789,7 +864,7 @@ $\lim\limits_{x \to -\infty} \left[ f(x) + \frac{\pi}{2}x \right]
 从书写证明过程的角度讲，罗尔中值定理的使用是一个固定的套路：\par
 (1)~构造辅助函数
 （注：在本小节的习题解答之前会增加“分析”部分，
-来解释辅助函数的构造是如何想到的. 
+来解释辅助函数的构造是如何想到的.
 在考试时这部分内容可以在草稿纸上完成，
 不必写在证明过程里）；
 
@@ -811,119 +886,146 @@ $\lim\limits_{x \to -\infty} \left[ f(x) + \frac{\pi}{2}x \right]
 
 \textbf{1.~~凑微分法/原函数法}\par \vspace{0.5em}
 既然要让辅助函数求导变为待证式，我们直接去找待证式的原函数就可以了.
-但是，题目中往往不会给出$f(x)$的具体表达式，不能直接积分，因此用这种方法需要对导数和原函数的形式比较敏感. 
+但是，题目中往往不会给出$f(x)$的具体表达式，不能直接积分，因此用这种方法需要对导数和原函数的形式比较敏感.
 很多经典题目中，待证的式子都暗藏着函数相乘/相除的导数的形式，借此看出辅助函数的构造.
-~\par 
 
-\clearpage
-
-\textbf{例4.23}~~
+\begin{example}
+\label{ex:ch04-23}
 \setstretch{2.1}
 
-\textit{(1)~~设$f(x)$，$g(x)$在$[a, b]$上连续，
+(1)~~设$f(x)$，$g(x)$在$[a, b]$上连续，
 在$(a,b)$内可导，
 且$g(a)=f(b)=0$，$f(x), g(x)\ne 0$.
 证明：存在$\xi \in (a,b)$，
-使得$\frac{f'(\xi)}{f(\xi)}=-\frac{g'(\xi)}{g(\xi)}$.} \par
+使得$\frac{f'(\xi)}{f(\xi)}=-\frac{g'(\xi)}{g(\xi)}$. \par
 
-\textit{(2)~~设函数$f(x)$，$g(x)$在$[a,b]$上连续，在$(a,b)$内可微，满足$f(x)g(x)\ne 0$，
-且$f(a)g(b)=f(b)g(a)$.}
-\textit{证明：存在$\xi \in (a,b)$，使得$\frac{f'(\xi)}{f(\xi)}=\frac{g'(\xi)}{g(\xi)}$.} \vspace{0.5em}
+(2)~~设函数$f(x)$，$g(x)$在$[a,b]$上连续，在$(a,b)$内可微，满足$f(x)g(x)\ne 0$，
+且$f(a)g(b)=f(b)g(a)$.
+证明：存在$\xi \in (a,b)$，使得$\frac{f'(\xi)}{f(\xi)}=\frac{g'(\xi)}{g(\xi)}$.
+\end{example}
 
-\textbf{分析}~~第(1)问中，待证式等价于$f'(\xi)g(\xi) + f(\xi) g'(\xi) = 0$.
+\begin{analysis}
+第(1)问中，待证式等价于$f'(\xi)g(\xi) + f(\xi) g'(\xi) = 0$.
 等号左侧可以看成$F(x) = f(x)g(x)$求导后在$x = \xi$处取值.
 第(2)问中，
 待证式等价于$\frac{f'(\xi)g(\xi) - f(\xi)g'(\xi)}{g^2(\xi)} = 0$.
 等号左侧可以看成$F(x) = \frac{f(x)}{g(x)}$求导后在$x = \xi$处取值.
+\end{analysis}
 
-\textbf{证明}~~
-
+\begin{proof}
 (1)~设$F(x)=f(x)g(x)$，则$F'(x) = f'(x)g(x) + f(x)g'(x)$.
 由题设可知，$F(x)$在$[a,b]$上连续，在$(a,b)$内可微，$F(a) = F(b) = 0$.
-由罗尔中值定理，存在$\xi \in (a,b)$，使得$F'(\xi) = 0$，从而$\frac{f'{\xi}}{f(\xi)}=-\frac{g'(\xi)}{g(\xi)}$\vspace{0.5em}
+由罗尔中值定理，存在$\xi \in (a,b)$，使得$F'(\xi) = 0$，从而$\frac{f'{\xi}}{f(\xi)}=-\frac{g'(\xi)}{g(\xi)}$
 
 (2)~设$F(x)=\frac{f(x)}{g(x)}$，则$F'(x) = \frac{f'(x)g(x) - f(x)g'(x)}{g^2(x)}$.
 由题设可知，$F(x)$在$[a,b]$上连续，在$(a,b)$内可微，$F(a) = F(b)$.
-由罗尔中值定理，存在$\xi \in (a,b)$，使得$F'(\xi) = 0$，从而$\frac{f'(\xi)}{f(\xi)}=\frac{g'(\xi)}{g(\xi)}$.\qed\par
-~\par
+由罗尔中值定理，存在$\xi \in (a,b)$，使得$F'(\xi) = 0$，从而$\frac{f'(\xi)}{f(\xi)}=\frac{g'(\xi)}{g(\xi)}$.
+\end{proof}
 
 \setstretch{1.75}
 
-\textbf{例4.24}~~\textit{设$b>a>0$，函数$f(x)$在$[a,b]$上连续。在$(a,b)$内可微. 
-证明：若$\frac{f(a)}{a}=\frac{f(b)}{b}$，则存在$\xi \in (a,b)$，使得$\xi f'(\xi) = f(\xi)$.}\par
-\textbf{证明}~~取例4.23第（2）问中的$g(x) = x$，立即得证.\qed\par
+\begin{example}
+\label{ex:ch04-24}
+设$b>a>0$，函数$f(x)$在$[a,b]$上连续。在$(a,b)$内可微.
+证明：若$\frac{f(a)}{a}=\frac{f(b)}{b}$，则存在$\xi \in (a,b)$，使得$\xi f'(\xi) = f(\xi)$.
+\end{example}
 
-~\par
+\begin{proof}
+取例\ref{ex:ch04-23}第（2）问中的$g(x) = x$，立即得证.
+\end{proof}
+
 \setstretch{2.15}
 
-\textbf{例4.25}~~\textit{若函数$f(x)$，$g(x)$在$[a,b]$上连续，在$(a,b)$内可微，
-且$g'(x) \ne 0$. 
-证明：存在$\xi \in (a,b)$，使得$\frac{f(\xi) - f(a)}{g(b) - g(\xi)} = \frac{f'(\xi)}{g'(\xi)}$.} \vspace{0.5em}
+\begin{example}
+\label{ex:ch04-25}
+若函数$f(x)$，$g(x)$在$[a,b]$上连续，在$(a,b)$内可微，
+且$g'(x) \ne 0$.
+证明：存在$\xi \in (a,b)$，使得$\frac{f(\xi) - f(a)}{g(b) - g(\xi)} = \frac{f'(\xi)}{g'(\xi)}$.
+\end{example}
 
-\textbf{分析}~~整理待证式，得到$f(\xi)g'(\xi)+f'(\xi)g(\xi) - f(a)g'(\xi) - g(b)f'(\xi) $. 
+\begin{analysis}
+整理待证式，得到$f(\xi)g'(\xi)+f'(\xi)g(\xi) - f(a)g'(\xi) - g(b)f'(\xi) $.
 其中的$f(\xi)g'(\xi)+f'(\xi)g(\xi) $可以视为
 $f(x)g(x)$求导后在$x = \xi$处取值，
 其余部分也容易写出原函数.
+\end{analysis}
 
-\textbf{证明}~~设$F(x) = f(x)g(x) - f(a)g(x) - g(b)f(x)$，
+\begin{proof}
+设$F(x) = f(x)g(x) - f(a)g(x) - g(b)f(x)$，
 则$F'(x) = f(x)g'(x)+f'(x)g(x) - f(a)g'(x) - g(b)f'(x) $.
 由题设可知，$F(x)$在$[a,b]$上连续，在$(a,b)$内可微，$F(a) = F(b) = -f(a)g(b)$.
 由罗尔中值定理，存在$\xi \in (a,b)$，使得$F'(\xi) = f(\xi)g'(\xi)+f'(\xi)g(\xi) - f(a)g'(\xi) - g(b)f'(\xi) = 0$，
-从而$\frac{f(\xi) - f(a)}{g(b) - g(\xi)} = \frac{f'(\xi)}{g'(\xi)}$.\qed\par
-~\par
+从而$\frac{f(\xi) - f(a)}{g(b) - g(\xi)} = \frac{f'(\xi)}{g'(\xi)}$.
+\end{proof}
 
 \setstretch{1.75}
 
 \textbf{2.~~积分因子法} \vspace{0.5em}
- 
-有时无法直接找到原函数，但是在式子两边同时乘以一个“积分因子”之后就可以了. 
-常见的积分因子是指数或单项式类型的函数. \vspace{1em}
 
-\textbf{例4.26}~~
-\textit{若函数$f(x)$在$[a,b]$上连续，在$(a,b)$内可微，且$f(a)=f(b)=0$.
-证明：对任意实数$\lambda$，存在$\xi \in (a,b)$，使得$\lambda f(\xi) =- f'(\xi)$.} \vspace{0.25em}
+有时无法直接找到原函数，但是在式子两边同时乘以一个“积分因子”之后就可以了.
+常见的积分因子是指数或单项式类型的函数.
 
-\textbf{分析}~~待证式两边乘以$e^{\lambda \xi}$，
+\begin{example}
+\label{ex:ch04-26}
+若函数$f(x)$在$[a,b]$上连续，在$(a,b)$内可微，且$f(a)=f(b)=0$.
+证明：对任意实数$\lambda$，存在$\xi \in (a,b)$，使得$\lambda f(\xi) =- f'(\xi)$.
+\end{example}
+
+\begin{analysis}
+待证式两边乘以$e^{\lambda \xi}$，
 得到$\lambda e^{\lambda \xi} f(\xi) + e^{\lambda \xi} f'(\xi)=0$.
-可以看出等号左侧是由$e^{\lambda \xi}f(\xi)$对$\xi$求导得到的. \vspace{0.25em}
+可以看出等号左侧是由$e^{\lambda \xi}f(\xi)$对$\xi$求导得到的.
+\end{analysis}
 
-\textbf{证明}~~设$F(x) = e^{\lambda x}f(x)$，
+\begin{proof}
+设$F(x) = e^{\lambda x}f(x)$，
 则$F'(x) = \lambda e^{\lambda x} f(x) + e^{\lambda x} f'(x)$.
 由题设可知，$F(x)$在$[a,b]$上连续，在$(a,b)$内可微，$F(a) = F(b) = 0$.
 由罗尔中值定理，存在$\xi \in (a,b)$，使得$F'(\xi) = \lambda e^{\lambda \xi} f(\xi) + e^{\lambda \xi} f'(\xi) =0$，
-从而$\lambda f(\xi) =- f'(\xi)$.\qed\par
-~\par
-~\par
-\textbf{例4.27}~~\textit{若函数$f(x)$，$g(x)$在$[a,b]$上连续，在$(a,b)$内可微，且$f(a)=f(b)=0$.
-证明：存在$\xi \in (a,b)$，使得$g'(\xi)f(\xi)+f'(\xi)=0$.}\par
-\textbf{分析}~~待证式两边乘以$e^{g(\xi)}$，
+从而$\lambda f(\xi) =- f'(\xi)$.
+\end{proof}
+
+\begin{example}
+\label{ex:ch04-27}
+若函数$f(x)$，$g(x)$在$[a,b]$上连续，在$(a,b)$内可微，且$f(a)=f(b)=0$.
+证明：存在$\xi \in (a,b)$，使得$g'(\xi)f(\xi)+f'(\xi)=0$.
+\end{example}
+
+\begin{analysis}
+待证式两边乘以$e^{g(\xi)}$，
 得到$g'(\xi) e^{g(\xi)} f(\xi) + e^{g(\xi)} f'(\xi)=0$.
-可以看出等号左侧是由$e^{g(\xi)}f(\xi)$对$\xi$求导得到的. \par
-\textbf{证明}~~设$F(x) = e^{g(x)}f(x)$，
+可以看出等号左侧是由$e^{g(\xi)}f(\xi)$对$\xi$求导得到的.
+\end{analysis}
+
+\begin{proof}
+设$F(x) = e^{g(x)}f(x)$，
 则$F'(x) = g'(x) e^{g(x)} f(x) + e^{g(x)} f'(x)$.
 由题设可知，$F(x)$在$[a,b]$上连续，在$(a,b)$内可微，$F(a) = F(b) = 0$.
 由罗尔中值定理，存在$\xi \in (a,b)$，使得$F'(\xi) = g'(\xi) e^{g(\xi)} f(\xi) + e^{g(\xi)} f'(\xi) =0$，
-从而$g'(\xi) f(\xi) + f'(\xi)=0$.\qed\par
-~\par
-~\par
+从而$g'(\xi) f(\xi) + f'(\xi)=0$.
+\end{proof}
 
 \textbf{3.~~降阶法} \vspace{0.25em}
 
 对一阶导数使用罗尔中值定理，可以得到二阶导数的信息.
 若待证的式子只包含$f'(\xi)$和$f''(\xi)$，而不包含$f(\xi)$，可以令$g(x) = f'(x)$再做考虑.
 
-\clearpage
-
-\textbf{例4.28}~~\textit{若函数$f(x)$在$[0,1]$内二阶可导，且$f(0)=f(1)$.
+\begin{example}
+\label{ex:ch04-28}
+若函数$f(x)$在$[0,1]$内二阶可导，且$f(0)=f(1)$.
 证明：存在$\xi \in (0,1)$，
-使得：$2f'(\xi) +(\xi - 1)f''(\xi) = 0$.}\vspace{0.25em}
+使得：$2f'(\xi) +(\xi - 1)f''(\xi) = 0$.
+\end{example}
 
-\textbf{分析}~~令$g(x) = f'(x)$，则待证式为$2g(\xi) + (\xi -1)g'(\xi)$.
+\begin{analysis}
+令$g(x) = f'(x)$，则待证式为$2g(\xi) + (\xi -1)g'(\xi)$.
 用$\xi-1$作为积分因子，
 该式在$(0,1)$上等价于$2(\xi - 1)g(\xi) + (\xi -1)^2 g'(\xi)=0$.
-可以看出等号左侧是由$g(\xi)(\xi -1)^2$对$\xi$求导得到的.\vspace{0.25em}
+可以看出等号左侧是由$g(\xi)(\xi -1)^2$对$\xi$求导得到的.
+\end{analysis}
 
-\textbf{证明}~~令$F(x) = f'(x)(x-1)^2$，
+\begin{proof}
+令$F(x) = f'(x)(x-1)^2$，
 则$F'(x) = 2(x-1)f'(x) + (x-1)^2f''(x)$.
 由题设可知，$f(x)$和$F(x)$均在$[0,1]$内连续可导.
 
@@ -934,8 +1036,8 @@ $f(x)g(x)$求导后在$x = \xi$处取值，
 对$F(x)$使用罗尔中值定理，
 可知存在$\xi \in (\eta,1)$，
 使得$F'(\xi) = 2(\xi - 1)f'(\xi) + (\xi -1)^2 f''(\xi) = 0$，从而
-$2f'(\xi ) + (\xi -1)f''(\xi) = 0$.\qed \par \vspace{1em}
-
+$2f'(\xi ) + (\xi -1)f''(\xi) = 0$.
+\end{proof}
 
 \textbf{*4.~~微分方程法} \vspace{0.25em}
 
@@ -946,46 +1048,44 @@ $2f'(\xi ) + (\xi -1)f''(\xi) = 0$.\qed \par \vspace{1em}
 (2)~解微分方程（即寻找所有符合等式的函数$f(x)$. 和不定积分类似，微分方程的解中应当包含任意常数$C$）；\par
 (3)~化简并整理，让等号左边为任意常数$C$，其余部分都在等号右边；\par
 (4)~等号右边的函数即为所要构造的辅助函数$F(x)$.\par
-该方法的关键是要解出常微分方程. 
+该方法的关键是要解出常微分方程.
 在罗尔中值定理的题目中，一般只涉及两种方法：
 （1）分离变量法，（2）一阶线性常微分方程.
-例4.29中将展示分离变量法. 学会这个方法，一般就不需要自己动脑子凑积分因子了.
+例\ref{ex:ch04-29}中将展示分离变量法. 学会这个方法，一般就不需要自己动脑子凑积分因子了.
 至于更一般的一阶线性常微分方程的情况，可以参考高数下册第九章“常微分方程”，
 背出一阶线性常微分方程的通解公式（第二版9.2）.
-它可以解决更难的问题.\par
-~\par
+它可以解决更难的问题.
 
+\begin{example}
+\label{ex:ch04-29}
+若函数$f(x)$在$[0,1]$连续，$(0,1)$可导，且$f(0)=0$，$k$为正整数.
+证明：存在$\xi \in (0,1)$，使得$\xi f'(\xi) +k f(\xi) = f'(\xi)$.
+\end{example}
 
-\textbf{例4.29}~~\textit{若函数$f(x)$在$[0,1]$连续，$(0,1)$可导，且$f(0)=0$，$k$为正整数.
-证明：存在$\xi \in (0,1)$，使得$\xi f'(\xi) +k f(\xi) = f'(\xi)$.}  \vspace{0.5em}
-
-\textbf{分析}~~可以用积分因子$(x-1)^{k-1}$. 若想不到这一点，可以用微分方程法.
+\begin{analysis}
+可以用积分因子$(x-1)^{k-1}$. 若想不到这一点，可以用微分方程法.
 首先记$f(x) = y$，于是我们要解微分方程$xy'+ky=y'$. 解这个方程可以用分离变量法（也可以套一阶线性常微分方程的公式）.
 将导数写成微分的形式：
 $$
-\setlength\abovedisplayskip{6pt}
-    \setlength\belowdisplayskip{6pt}
 x ~\frac{\d y}{\d x} + ky = \frac{\d y}{\d x}
 $$\par
 移项，使得等号一边只含有变量$x$，另一边只有变量$y$：
 \begin{equation}
-    \setlength\abovedisplayskip{12pt}
-    \setlength\belowdisplayskip{12pt}
     \begin{aligned}
         (x-1) ~\frac{\d y}{\d x} = -ky \\
         \frac{\d y}{y} = \frac{-k~\d x}{(x-1)}
         \nonumber
     \end{aligned}
-\end{equation} 
+\end{equation}
 
-题设中没有规定$y \ne 0$. 
+题设中没有规定$y \ne 0$.
 这里直接把$y$放在分母上，
 对于解微分方程而言是不严谨的.
 但是，解微分方程本身不是目的，
 它只是帮助我们得到辅助函数的手段，
 得到一个局部正确的结果就够用了.
 为了避免后续步骤出现绝对值，
-现在开始假设$y > 0$来处理. 
+现在开始假设$y > 0$来处理.
 
 两边加积分号：
 \begin{eq1}
@@ -995,8 +1095,6 @@ $$\par
 求出两边的不定积分，整理，
 将任意常数$C$放到等号左侧：
 \begin{equation}
-    \setlength\abovedisplayskip{12pt}
-    \setlength\belowdisplayskip{12pt}
     \begin{aligned}
         &~~~~\ln y = -k \ln (x-1) + C_1 \\
         &\Rightarrow \ln y = \ln \left(C(x-1)^{-k}\right)~~~\text{($C = e^{C_1}$)} \\
@@ -1005,79 +1103,88 @@ $$\par
         \nonumber
     \end{aligned}
 \end{equation} \par
-等号右边是我们需要构造的辅助函数$F(x) = (x-1)^k f(x)$.\par \vspace{0.5em}
+等号右边是我们需要构造的辅助函数$F(x) = (x-1)^k f(x)$.
+\end{analysis}
 
-\textbf{证明}~~设$F(x)=(x-1)^{k}f(x)$，
+\begin{proof}
+设$F(x)=(x-1)^{k}f(x)$，
 则$F'(x) = k(x-1)^{k-1}f(x) + (x-1)^k f'(x)$.
 由题设可知，$F(x)$在$[0,1]$连续，$(0,1)$可导，$F(0) = F(1) = 0$.
 由罗尔中值定理，存在$\xi \in (0,1)$，
 使得$F'(\xi) = k(\xi-1)^{k-1}f(\xi) + (\xi-1)^k f'(\xi) = 0$，
-从而$\xi f'(\xi) +k f(\xi) = f'(\xi)$.\qed\par
-~\par
+从而$\xi f'(\xi) +k f(\xi) = f'(\xi)$.
+\end{proof}
 
-\textbf{例4.30}~~\textit{若函数$f(x)$在$[0,1]$连续，$(0,1)$可导，且$f(0)=f(1)=0$，$f\left(\frac{1}{2}\right)=1$.
-证明：}
+\begin{example}
+\label{ex:ch04-30}
+若函数$f(x)$在$[0,1]$连续，$(0,1)$可导，且$f(0)=f(1)=0$，$f\left(\frac{1}{2}\right)=1$.
+证明：
 
-\textit{(1)~存在$\eta \in \left(\frac{1}{2},~1\right)$，
-使得$f(\eta)=\eta$.} \vspace{0.5em}
+(1)~存在$\eta \in \left(\frac{1}{2},~1\right)$，
+使得$f(\eta)=\eta$.
 
-\textit{(2)~对任意实数$\lambda$，
+(2)~对任意实数$\lambda$，
 存在$\xi \in (0, ~\eta)$，
-使得$f'(\xi)-\lambda (f(\xi)-\xi) = 1$.} \vspace{0.25em}
+使得$f'(\xi)-\lambda (f(\xi)-\xi) = 1$.
+\end{example}
 
-\textbf{证明(1)}~~设$F(x) = f(x) - x$，则$F(\frac{1}{2}) = \frac{1}{2}>0$，$F(1) = -1<0$.
+\begin{proof}[第(1)问证明]
+设$F(x) = f(x) - x$，则$F(\frac{1}{2}) = \frac{1}{2}>0$，$F(1) = -1<0$.
 由闭区间上连续函数的介值定理，
 存在$\eta \in \left(\frac{1}{2},~1\right)$，
-使得$f(\eta)=\eta$.\vspace{0.25em}
+使得$f(\eta)=\eta$.
+\end{proof}
 
-\textbf{分析(2)}~~可以在(1)中辅助函数$F(x)$的基础上加积分因子$e^{-\lambda x}$.
-若想不到这一点，可以用微分方程法. 
+\begin{analysis}[第(2)问分析]
+可以在(1)中辅助函数$F(x)$的基础上加积分因子$e^{-\lambda x}$.
+若想不到这一点，可以用微分方程法.
 记$f(x) = y$，
 需要解微分方程$y'- \lambda (y - x) = 1$.
-这是一个一阶线性非齐次常微分方程. 
+这是一个一阶线性非齐次常微分方程.
 套用公式（或者用常数变易法）可知，方程的通解为：
 $$
-\setlength\abovedisplayskip{6pt}
-\setlength\belowdisplayskip{6pt}
 y = (xe^{-\lambda x}+C)e^{\lambda x}
 $$
 求出两边的不定积分，整理，将任意常数$C$放到等号左侧：
 $$
-\setlength\abovedisplayskip{6pt}
-\setlength\belowdisplayskip{6pt}
 C = (y-x)e^{- \lambda x}
 $$\par
-等号右边是我们需要构造的辅助函数$F(x) = (f(x) - x)e^{- \lambda x} $. \vspace{0.25em}
+等号右边是我们需要构造的辅助函数$F(x) = (f(x) - x)e^{- \lambda x} $.
+\end{analysis}
 
-\textbf{证明(2)}~~设$F(x) = (f(x) - x)e^{- \lambda x} $，则$F'(x) = (f'(x) -1 - \lambda f(x) + \lambda x)e^{- \lambda x}$.
+\begin{proof}[第(2)问证明]
+设$F(x) = (f(x) - x)e^{- \lambda x} $，则$F'(x) = (f'(x) -1 - \lambda f(x) + \lambda x)e^{- \lambda x}$.
 由题设可知，$F(x)$在$[0,\eta]$内连续，$(0,~\eta)$内可导，
 且$F(0) = 0$. 由(2)中结论，
 $F(\eta) = 0$.
 由罗尔中值定理，
 存在$\xi \in (0,~\eta)$，
 使得$F'(\xi) = 0$.
-这等价于$f'(\xi)-\lambda (f(\xi)-\xi) = 1$. \qed\par
-~\par
+这等价于$f'(\xi)-\lambda (f(\xi)-\xi) = 1$.
+\end{proof}
 
 \subsubsection{微分中值定理的典型应用}\par
- 
+
 \textbf{1.~~分段处理} \vspace{0.25em}
 
 微分中值定理是靠函数在区间端点处的信息推断区间内部的信息.
 如果区间$(a,b)$内还存在一个分点$c$，
 并且知道函数在$c$处的局部性质，
-那么区间就被$c$分成了$(a,c)$和$(c,b)$两半. 
+那么区间就被$c$分成了$(a,c)$和$(c,b)$两半.
 在这两个小区间内可以分别使用中值定理，
-从而得到更加“精细”的结论. 
+从而得到更加“精细”的结论.
 一些题目会明显地提示分点$c$的存在，
-而有时我们需要主动地构造它（尤其是当要证的结论包含$\xi,\eta$两个不同的中值）.\par
-~\par
+而有时我们需要主动地构造它（尤其是当要证的结论包含$\xi,\eta$两个不同的中值）.
 
-\textbf{例4.31}~~\textit{设函数$f(x)$在$[a,b]$上有连续的导数，在$(a,b)$内二阶可导，
-且$f(a) = f(b)$，$f'(a) = f'(b) = 0$. 
-证明：存在$\xi, \eta \in (a,b)$且$\xi \ne \eta$，使得$f''(\xi) = f''(\eta)$.} \vspace{0.25em}
+\begin{example}
+\label{ex:ch04-31}
+设函数$f(x)$在$[a,b]$上有连续的导数，在$(a,b)$内二阶可导，
+且$f(a) = f(b)$，$f'(a) = f'(b) = 0$.
+证明：存在$\xi, \eta \in (a,b)$且$\xi \ne \eta$，使得$f''(\xi) = f''(\eta)$.
+\end{example}
 
-\textbf{证明}~~题设中已经完全给出了罗尔中值定理的使用条件，
+\begin{proof}
+题设中已经完全给出了罗尔中值定理的使用条件，
 可知存在$c \in (a,b)$使得$f'(c)=0$.\par
 在$[a,c]$和$[c,b]$内，
 $f'(x)$均连续，
@@ -1086,21 +1193,22 @@ $f'(x)$均可导，
 且$f'(a) = f'(b) = f'(c) = 0$.
 在区间在$[a,c]$和$[c,b]$上分别使用罗尔中值定理，
 可知分别存在$\xi \in (a,c)$和$\eta \in (c,b)$，
-使得$f''(\xi) = f''(\eta) = 0$.\qed \par
-~\par
-~\par
+使得$f''(\xi) = f''(\eta) = 0$.
+\end{proof}
 
-\textbf{例4.32}~~\textit{设函数$f(x)$在$[0,1]$上连续，在$(0,1)$内可微，
+\begin{example}
+\label{ex:ch04-32}
+设函数$f(x)$在$[0,1]$上连续，在$(0,1)$内可微，
 $f(0)=0$，$f(1)=1$.
-证明：存在不同的$\xi,~\eta \in (0,1)$，使得：$f'(\xi)f'(\eta) = 1$.} \vspace{0.25em}
+证明：存在不同的$\xi,~\eta \in (0,1)$，使得：$f'(\xi)f'(\eta) = 1$.
+\end{example}
 
-\textbf{证明}~~在$(0,1)$上取一分割点$c$，
-其具体位置待定. 
+\begin{proof}
+在$(0,1)$上取一分割点$c$，
+其具体位置待定.
 在区间$[0,c]$和$[c,1]$上分别使用拉格朗日中值定理，
 可知分别存在$\xi \in (0,~c)$和$\eta \in (c,~1)$，使得：
 \[ \setstretch{1.5}
-\setlength\abovedisplayskip{12pt}
-\setlength\belowdisplayskip{12pt}
 \begin{cases}
     f(c) - f(0) &= f(c) = f'(\xi) \cdot c \\
     f(1) - f(c) &= 1- f(c) = f'(\eta) \cdot (1-c)
@@ -1108,8 +1216,6 @@ $f(0)=0$，$f(1)=1$.
 \] \setstretch{1.75} \par
 整理上式，将$f'(\xi)$和$f'(\eta)$分别用$c$来表示，得到：
 $$
-\setlength\abovedisplayskip{12pt}
-    \setlength\belowdisplayskip{12pt}
 f'(\xi) f'(\eta) = \frac{f(c)}{c} \cdot \frac{1-f(c)}{1-c}
 $$
 
@@ -1120,23 +1226,24 @@ $$
 设辅助函数$F(x) = f(x) - 1 + x$，
 则$F(0) = -1$，$F(1) = 1$.
 由闭区间上连续函数的介值定理，
-上述的$c$是存在的，因此结论成立.\qed \par
-（注：一个更直观的想法是取满足$f(c) = c$的点$c$. 
+上述的$c$是存在的，因此结论成立.
+\end{proof}
+
+（注：一个更直观的想法是取满足$f(c) = c$的点$c$.
 但是这样的$c$不一定存在.）
 
-~\par
+\begin{example}
+\label{ex:ch04-33}
+设函数$f(x)$在$[0,1]$上连续，在$(0,1)$内可微，
+$f(0)=0$，$f(1)=1$，$a,b$为正数. 证明：\par
 
+(1)~存在$0<\xi<\eta<1$，使得$\frac{a}{f'(\xi)} + \frac{b}{f'(\eta)} = a + b$.
 
-\textbf{例4.33}~~\textit{设函数$f(x)$在$[0,1]$上连续，在$(0,1)$内可微，
-$f(0)=0$，$f(1)=1$，$a,b$为正数. 证明：}\par
- 
-\textit{(1)~存在$0<\xi<\eta<1$，使得$\frac{a}{f'(\xi)} + \frac{b}{f'(\eta)} = a + b$.}\vspace{0.25em}
+(2)~存在$0<\xi<\eta<1$，使得$af'(\xi)+bf'(\eta) = a+b$.
+\end{example}
 
-\textit{(2)~存在$0<\xi<\eta<1$，使得$af'(\xi)+bf'(\eta) = a+b$.} \vspace{0.25em}
-
-\textbf{证明}~~
-
-(1)~在$(0,1)$上取一分割点$c$，其具体取值待定. 
+\begin{proof}
+(1)~在$(0,1)$上取一分割点$c$，其具体取值待定.
 在区间$[0,~c]$和$[c,~1]$上分别使用拉格朗日中值定理，
 可知分别存在$\xi \in (0,c)$和$\eta \in (c,1)$，使得：
 \begin{eq1}
@@ -1146,108 +1253,87 @@ $f(0)=0$，$f(1)=1$，$a,b$为正数. 证明：}\par
     \end{cases}
 \end{eq1}
 
-
 整理上式，将$f'(\xi)$和$f'(\eta)$分别用$c$来表示，并代入待证的等式：
 $$
-\setlength\abovedisplayskip{12pt}
-\setlength\belowdisplayskip{12pt}
 a\cdot \frac{c}{f(c)} + b \cdot \frac{1-c}{1-f(c)} = a+b
 $$\par
 现在需要取合适的分点$c$使得上式成立.
 若暂时还看不出如何取，可以对等式稍加整理：
 $$
-\setlength\abovedisplayskip{12pt}
-\setlength\belowdisplayskip{12pt}
 a\cdot \frac{c - f(c)}{f(c)} - b \cdot \frac{c - f(c)}{1-f(c)} = 0
 $$\par
 假设存在$c \in (0,1)$使得$f(c) = c$，取这样的$c$即可使等式成立.
 但是这样的$c$不一定存在.
 假设不存在，可以将其约去：
 $$
-\setlength\abovedisplayskip{12pt}
-\setlength\belowdisplayskip{12pt}
 \frac{a}{f(c)} - \frac{b}{1 - f(c)} = 0
 $$\par
-解得$f(c) = \frac{a}{a+b}$. 
+解得$f(c) = \frac{a}{a+b}$.
 即只要取满足上式的$c$就证明了等式成立.
 由闭区间上连续函数的介值定理，这样的$c$是存在的.\par
 (2)~~将(1)中的微分中值公式代入(1)中待证的等式：
 $$
-\setlength\abovedisplayskip{6pt}
-\setlength\belowdisplayskip{6pt}
 a\cdot \frac{f(c)}{c} + b \cdot \frac{1-f(c)}{1-c} = a+b
 $$\par
 类似(1)的做法，发现若让$c = \frac{a}{a+b}$，
-就能使待证的等式成立.\qed\par
-~\par
-\textbf{例4.34}~~
+就能使待证的等式成立.
+\end{proof}
 
-\textit{(1)~$f(x)$在$[0,1]$连续，$(0,1)$可导，$f(0)=0$，$f(1) = 1$.
+\begin{example}
+\label{ex:ch04-34}
+(1)~$f(x)$在$[0,1]$连续，$(0,1)$可导，$f(0)=0$，$f(1) = 1$.
 $\lambda_1,~\lambda_2,\cdots ,\lambda_n$是$n$个给定的正数且$\lambda_1+\lambda_2+\cdots + \lambda_n = 1$.
-证明：存在$n$个不同的数$x_1,~x_2, \cdots ,x_n \in (0,1)$，使得：}
+证明：存在$n$个不同的数$x_1,~x_2, \cdots ,x_n \in (0,1)$，使得：
 $$
-\setlength\abovedisplayskip{12pt}
-\setlength\belowdisplayskip{12pt}
 \frac{\lambda_1}{f'(x_1)} + \frac{\lambda_2}{f'(x_2)} + \cdots + \frac{\lambda_n}{f'(x_n)} = 1
 $$
 
-\textit{(2)~设函数$P(x)$在闭区间$[0,1]$上连续，$P(0) = 0$，$P(1) = 1$，
+(2)~设函数$P(x)$在闭区间$[0,1]$上连续，$P(0) = 0$，$P(1) = 1$，
 $P(x)$在开区间$(0,1)$内可导，并且在每点处导数$P'(x)$都为正数.
-任意取定正实数$A$，正实数$B$，正整数$n$. 
-证明：在开区间$(0,1)$内存在严格递增的$n+1$个实数$\theta_0,~\theta_1,\cdots ,\theta_n$使得}
+任意取定正实数$A$，正实数$B$，正整数$n$.
+证明：在开区间$(0,1)$内存在严格递增的$n+1$个实数$\theta_0,~\theta_1,\cdots ,\theta_n$使得
 $$
-\setlength\abovedisplayskip{12pt}
-\setlength\belowdisplayskip{12pt}
 (A+B)^n = \sum_{k=0}^{n} ~\frac{1}{P'(\theta_k)} ~\frac{n!}{k!(n-k)!} ~A^{n-k} ~B^k
 $$
 $$
-\setlength\abovedisplayskip{4pt}
-\setlength\belowdisplayskip{4pt}
 0 < \theta_0 < \theta_1 < \cdots < \theta_n < 1
-$$\par
-\textbf{证明}~~
+$$
+\end{example}
 
+\begin{proof}
 (1)~~为了得到$n$个中值，在区间$(0,1)$中插入$n-1$个分点$c_1,~c_2, \cdots ,c_{n-1}$，
-并设$c_0 = 0$，$c_n = 1$. 
+并设$c_0 = 0$，$c_n = 1$.
 对任意的$0 \le k \le n$，在区间$[c_k,~c_{k+1}]$上分别使用拉格朗日中值定理.
 $$
-\setlength\abovedisplayskip{6pt}
-\setlength\belowdisplayskip{6pt}
 f(c_{k+1}) - f(c_k) = f'(x_k) \cdot (c_{k+1} - c_{k})
 $$\par
 整理上式，将$f'(x_k)$用$c$来表示，并代入待证的等式：
 $$
-\setlength\abovedisplayskip{12pt}
-\setlength\belowdisplayskip{12pt}
 \frac{\lambda_1 (c_1 - c_0)}{f(c_1) - f(c_0)} +
- \frac{\lambda_2(c_2 - c_1)}{f(c_2) - f(c_1)} + 
- \cdots + 
+ \frac{\lambda_2(c_2 - c_1)}{f(c_2) - f(c_1)} +
+ \cdots +
  \frac{\lambda_n(c_n - c_{n-1})}{f(c_n) - f(c_{n-1})} = 1
 $$\par
 接下来我们说明，可以通过将分割点$c_k$取在合适的位置，让上式成立，从而完成了证明.
 注意到$(c_1 - c_0) + (c_2 - c_1) + \cdots + (c_n - c_{n-1}) = c_n - c_0 = 1$.
 因此只要保证对任意的$0 \le k \le n-1$有下式成立即可：
 $$
-\setlength\abovedisplayskip{4pt}
-\setlength\belowdisplayskip{6pt}
 \frac{\lambda_{k+1}}{f(c_{k+1}) - f(c_k)} = 1
 $$ \par
 现在我们说明这样的一系列$c_1,~c_2, \cdots ,c_{n-1}$是一定可以取到的.
 事实上从上式可以解出：
 $$
-\setlength\abovedisplayskip{4pt}
-\setlength\belowdisplayskip{4pt}
 f(c_k) = \sum_{k=1}^{n-1} \lambda_k \in (0,1)
 $$\par
 由连续函数的介值性可知，$c_1,~c_2, \cdots ,c_{n-1}$都存在.
 另外，$c_n = \sum_{k=1}^{n} \lambda_k = 1$，符合我们的规定.
-因此结论成立.\vspace{0.5em}
+因此结论成立.
 
 (2)~~对每个$\theta_k$，
-令$x_k = P(\theta_k)$. 
+令$x_k = P(\theta_k)$.
 由于$P(x)$在开区间$(0,1)$内每点处导数为正数，
 它在该区间内严格单调递增，因此存在反函数.
-设$P(x)$的反函数为$Q(x)$. 
+设$P(x)$的反函数为$Q(x)$.
 那么根据反函数的求导公式，有$\frac{1}{P'(\theta_k)} = Q'(x_k)$.
 又由$0 < \theta_0 < \theta_1 < \cdots < \theta_n < 1$和$P(x)$的单调递增性可知
 $0 < x_0 < x_1 < \cdots < x_n < 1$. \par
@@ -1255,14 +1341,10 @@ $0 < x_0 < x_1 < \cdots < x_n < 1$. \par
 并设$c_0 = 0$，$c_{n+1} = 1$.对任意的$0 \le k \le n$，在$(c_{k},~c_{k+1})$上使用拉格朗日中值定理，
 可知存在$x_k \in (c_{k},~c_{k+1})$，满足：
 $$
-\setlength\abovedisplayskip{6pt}
-\setlength\belowdisplayskip{6pt}
 Q(c_{k+1}) - Q(c_k) = Q'(x_k) \cdot (c_{k+1} - c_{k})
 $$\par
 等式两边对$k$求和，即：
 $$
-\setlength\abovedisplayskip{12pt}
-\setlength\belowdisplayskip{12pt}
 \sum_{k=0}^{n} \left(Q(c_{k+1}) - Q(c_k)\right) =\sum_{k=0}^{n} Q'(x_k) \cdot (c_{k+1} - c_{k})
 $$
 
@@ -1271,8 +1353,6 @@ $$
 同时代入$Q'(x_k) = \frac{1}{P'(\theta_k)}$，
 得到：
 \begin{equation}
-    \setlength\abovedisplayskip{12pt}
-    \setlength\belowdisplayskip{12pt}
     \begin{aligned}
         1 = \sum_{k=0}^{n} \frac{1}{P'(\theta_k)} \cdot (c_{k+1} - c_{k})
     \end{aligned}
@@ -1281,8 +1361,6 @@ $$
 可以通过将分割点$c_k$取在合适的位置，让(1)式转变为待证的等式.
 为了便于比较，将待证的等式左右同时除以$(A+B)^n$：
 $$
-\setlength\abovedisplayskip{12pt}
-\setlength\belowdisplayskip{12pt}
 1 = \sum_{k=0}^{n} \frac{1}{P'(\theta_k)} ~\frac{n!}{k!(n-k)!} ~\left(\frac{A}{A+B}\right)^{n-k} ~\left(\frac{B}{A+B}\right)^k
 $$\par
 对比两式发现，
@@ -1290,28 +1368,24 @@ $$\par
 只要让$c_{k+1}-c_{k} = \frac{n!}{k!(n-k)!} ~\left(\frac{A}{A+B}\right)^{n-k} ~\left(\frac{B}{A+B}\right)^k$即可.
 即：
 $$
-\setlength\abovedisplayskip{12pt}
-\setlength\belowdisplayskip{12pt}
 c_{k+1} = \sum_{m=0}^{k} \frac{n!}{m!(n-m)!} ~\left(\frac{A}{A+B}\right)^{n-m} ~\left(\frac{B}{A+B}\right)^m
 $$
 
-最后，只需要验证上述分割点$c_k$的取法满足我们对$c_k$的所有规定. 
+最后，只需要验证上述分割点$c_k$的取法满足我们对$c_k$的所有规定.
 首先，由于$A$和$B$都是正数，
 $c_{k+1} - c_{k} > 0$对任意的$k$成立.
 另外，根据二项式展开定理，有：
 $$
-    \setlength\abovedisplayskip{12pt}
-    \setlength\belowdisplayskip{12pt}
 c_{n+1} = \sum_{m=0}^{n} \frac{n!}{m!(n-m)!} ~\left(\frac{A}{A+B}\right)^{n-m} ~\left(\frac{B}{A+B}\right)^m = 1
 $$
 
 因此上述分割点$c_k$的取法是允许的. \par
 在这种分割点的取法下，
-刚刚证得的(1)式与待证的等式相同. 
-因此存在一系列$x_k$使得待证的等式成立. 
+刚刚证得的(1)式与待证的等式相同.
+因此存在一系列$x_k$使得待证的等式成立.
 由$\theta_k = Q(x_k)$可知，
-题目所要求的一系列$\theta_k$也是存在的.\qed \par
-~\par
+题目所要求的一系列$\theta_k$也是存在的.
+\end{proof}
 
 \textbf{2.~~函数值被导数所控制}\vspace{0.5em}
 
@@ -1321,16 +1395,17 @@ $$
 这是建立导数与函数值之间的关系的常用思路.
 用严格数学语言来描述，同样要用微分中值定理.
 
-~\par
-\textbf{例4.35}~~\textit{设函数$f(x)$在$[0,2]$上一阶可导，$f(0) = 0$，
+\begin{example}
+\label{ex:ch04-35}
+设函数$f(x)$在$[0,2]$上一阶可导，$f(0) = 0$，
 $f(x)$在$x = x_0$处取得最大值$Mx_0$，且$x_0 \in (0,2)$，且$f'(x) \le M$.
-证明：}
+证明：
 
-\textit{(1)~当$x \in [0,~x_0]$时，有$f(x) = Mx$.}\par
-\textit{(2)~$M=0$.} \vspace{0.5em}
+(1)~当$x \in [0,~x_0]$时，有$f(x) = Mx$.\par
+(2)~$M=0$.
+\end{example}
 
-\textbf{证明}~~
-
+\begin{proof}
 (1)~用反证法.
 假设存在点$c \in (0,x_0)$使得$f(c) \ne Mc$.
 需要分两种情况.
@@ -1355,17 +1430,19 @@ $f(x)$在$x_0$处的左导数为$M$.
 由于$f(x)$在$x_0$处可导，
 导数值等于左导数$M$.
 又因为$x_0$是最大值点，
-根据费马引理，该点导数值$M=0$.\qed\par
-~\par
+根据费马引理，该点导数值$M=0$.
+\end{proof}
 
-\textbf{例4.36}~~\textit{设函数$f(x)$在$[-a,a]~(a > 0)$上二阶可导，
+\begin{example}
+\label{ex:ch04-36}
+设函数$f(x)$在$[-a,a]~(a > 0)$上二阶可导，
 $f(-a) = -1$，$f(a) = 1$，$f'(-a) = f'(a) = 0$，$|f''(x) \le 1|$.
-证明：}\par
-\textit{（1）$f'(x) \le a - |x|$；}\par
-\textit{（2）$a > \sqrt{2}$.} \vspace{0.5em}
+证明：\par
+（1）$f'(x) \le a - |x|$；\par
+（2）$a > \sqrt{2}$.
+\end{example}
 
-\textbf{证明}~~
-
+\begin{proof}
 (1)~用反证法，分两类讨论：
 
 情况一：假设存在$c \in (-a,0]$，
@@ -1373,8 +1450,8 @@ $f(-a) = -1$，$f(a) = 1$，$f'(-a) = f'(a) = 0$，$|f''(x) \le 1|$.
 在区间$[-a,c]$上，
 对$f'(x)$使用拉格朗日中值定理，
 可知存在$\xi \in (-a,c)$，
-使得$f'(c) - f'(-a) = f''(\xi) ( c+a)$. 
-即$f''(\xi) = \frac{f'(c)}{c+a} > 1$. 
+使得$f'(c) - f'(-a) = f''(\xi) ( c+a)$.
+即$f''(\xi) = \frac{f'(c)}{c+a} > 1$.
 与题设矛盾.
 
 情况二：假设存在$c \in (0,a)$，
@@ -1384,68 +1461,65 @@ $f(-a) = -1$，$f(a) = 1$，$f'(-a) = f'(a) = 0$，$|f''(x) \le 1|$.
 可知存在$\xi \in (c,a)$，
 使得$f'(a) - f'(c) = f''(\xi) (a-c)$，即$f''(\xi) = \frac{-f'(c)}{a-c} < -1$.
 与题设矛盾.\par
-综上，$f'(x) \le a - |x|$. \vspace{0.5em}
+综上，$f'(x) \le a - |x|$.
 
-(2)~令$g(x) = a-|x|$. 
+(2)~令$g(x) = a-|x|$.
 则存在$x_0 \in [-a,a]$，
 使得$f'(x_0) < g(x_0)$.
 如若不然，
-则$f'(x)=g(x)$在$[-a,a]$内恒成立. 
+则$f'(x)=g(x)$在$[-a,a]$内恒成立.
 但此时$g'(0)$不存在，
 与$f(x)$二阶可导矛盾.
 进而有：
 $$
-\setlength\abovedisplayskip{12pt}
-\setlength\belowdisplayskip{12pt}
 \int_{-a}^{a} f'(x) ~\d x <
 \int_{-a}^{a} (a - |x|) ~\d x = a^2
 $$\par
-即$f(a) -f(-a) = 2 < a^2$，解得$a > \sqrt{2}$. \qed \par
-~\par
+即$f(a) -f(-a) = 2 < a^2$，解得$a > \sqrt{2}$.
+\end{proof}
 
 \subsubsection{泰勒公式的应用与证明题}
 
-本小节主要展示拉格朗日余项的应用. 
+本小节主要展示拉格朗日余项的应用.
 拉格朗日余项中依赖于$f(x)$的$n+1$阶导数，
 并且类似于皮亚诺余项，
 它也能表达“余项是$x^n$的高阶无穷小量”的意思.
-这两方面的信息需要充分利用起来. 
+这两方面的信息需要充分利用起来.
 但是另一方面，
 拉格朗日余项又含有取值不定的中值$\xi$.
 为了证得确定的结论，
-还需要设法把$\xi$消掉.\par \vspace{1em}
+还需要设法把$\xi$消掉.
 
-\textbf{例4.37}~~\textit{证明：对于$x \in \left(0,~\frac{\pi}{2} \right)$，
-$\sin x > x - \frac{x^3}{6} $.}\vspace{0.25em}
+\begin{example}
+\label{ex:ch04-37}
+证明：对于$x \in \left(0,~\frac{\pi}{2} \right)$，
+$\sin x > x - \frac{x^3}{6} $.
+\end{example}
 
-\textbf{证明}~~在$x=0$处展开$\sin x$到三阶，
+\begin{proof}
+在$x=0$处展开$\sin x$到三阶，
 可知存在$\xi \in \left(0,~\frac{\pi}{2}\right)$，
 使得：
 $$
-\setlength\abovedisplayskip{12pt}
-\setlength\belowdisplayskip{12pt}
 \sin x = x - \frac{x^3}{6} + \frac{f^{(4)}(\xi)}{4!} x^4
 $$
 
 对于其中的拉格朗日余项，有：
 $$
-\setlength\abovedisplayskip{12pt}
-\setlength\belowdisplayskip{12pt}
 \frac{f^{(4)}(\xi)}{4!} x^4 = \frac{\sin \xi}{4!}x^4 > 0
 $$\par
 代回泰勒公式，就得到：
 $$
-\setlength\abovedisplayskip{6pt}
-\setlength\belowdisplayskip{6pt}
 \sin x > x - \frac{x^3}{6}
-$$\qed\par
+$$
+\end{proof}
 
 \clearpage
 
 本题虽然简单，
 但是提示我们一个基本思路：
 利用函数$n+1$阶导的范围来处理掉拉格朗日余项.
-在下面的题目中我们需要继续使用这个思路. 
+在下面的题目中我们需要继续使用这个思路.
 同时，我们还要介绍一个经典技巧.
 众所周知，对于同一个$n+1$阶可导函数$f(x)$，我们可以写出多个不同的泰勒展开式.
 具体方法有：
@@ -1453,106 +1527,96 @@ $$\qed\par
 (2)~在$x_0$处展开，然后分别将$x$令为不同的值. \par
 将不同的泰勒展开式放在一起比较，
 相互作差/作和，
-许多貌似很“跳脱”的结论就能一下子看懂了. \par
-~\par
+许多貌似很“跳脱”的结论就能一下子看懂了.
 
-\textbf{例4.38}~~\textit{设函数$f(x)$在闭区间$[0,1]$上连续，在开区间$(0,1)$上二阶可导，
+\begin{example}
+\label{ex:ch04-38}
+设函数$f(x)$在闭区间$[0,1]$上连续，在开区间$(0,1)$上二阶可导，
 且$|f''(x)| \ge 1$，$f(0) = f(1) = 0$.
 函数$|f(x)|$在$(0,1)$上有最大值点$x_0$.
-证明：$|f(x_0)| \ge \frac{1}{8}$.} \vspace{0.25em}
+证明：$|f(x_0)| \ge \frac{1}{8}$.
+\end{example}
 
-\textbf{证明}~~在$x_0$处泰勒展开到二阶，
+\begin{proof}
+在$x_0$处泰勒展开到二阶，
 分别代入$x = 0$和$ x= 1$，
 可知分别存在$\xi \in (0,x_0)$和$\eta \in (x_0,1)$，使得：
 $$
-\setlength\abovedisplayskip{6pt}
-\setlength\belowdisplayskip{6pt}
 0=f(0) = f(x_0) + f'(x_0) (0-x_0) + \frac{f''(\xi)}{2} (0-x_0)^2
 $$
 $$
-\setlength\abovedisplayskip{6pt}
-\setlength\belowdisplayskip{6pt}
 0=f(1) = f(x_0) + f'(x_0) (1-x_0) + \frac{f''(\eta)}{2} (1-x_0)^2
 $$\par
 由于$x_0$为最大值点，
-$f'(x_0) = 0$. 
+$f'(x_0) = 0$.
 再代入$|f''(\xi)| \ge 1$，分别得到：
 $$
-\setlength\abovedisplayskip{12pt}
-\setlength\belowdisplayskip{12pt}
 |f(x_0)| = \left| \frac{f''(\xi)}{2}x_0^2 \right| \ge \frac{1}{2}x_0^2  \\
 $$
 $$
-\setlength\abovedisplayskip{12pt}
-\setlength\belowdisplayskip{12pt}
 |f(x_0)| = \left| \frac{f''(\eta)}{2}(1-x_0)^2 \right| \ge \frac{1}{2}(1-x_0)^2
 $$
 
 两式相加：
 \begin{equation}
-    \setlength\abovedisplayskip{12pt}
-    \setlength\belowdisplayskip{12pt}
     \begin{aligned}
-        2|f(x_0)| 
-        \ge \frac{1}{2} \left( x_0^2 +(1-x_0)^2 \right)  
-        = \frac{1}{2} \left( 2x_0^2 - 2x_0 + 1 \right) 
+        2|f(x_0)|
+        \ge \frac{1}{2} \left( x_0^2 +(1-x_0)^2 \right)
+        = \frac{1}{2} \left( 2x_0^2 - 2x_0 + 1 \right)
         \ge \frac{1}{4}
         \nonumber
     \end{aligned}
-\end{equation} 
+\end{equation}
 
-即$|f(x_0)| \ge \frac{1}{8}$.\qed\par
-~\par
+即$|f(x_0)| \ge \frac{1}{8}$.
+\end{proof}
 
-\textbf{例4.39}~~\textit{设函数$f(x)$在$[-1,1]$上有连续的三阶导数，
+\begin{example}
+\label{ex:ch04-39}
+设函数$f(x)$在$[-1,1]$上有连续的三阶导数，
 $f(-1) = 0$，$f(1) = 1$，
 $f'(0) = 0$.
 证明：存在$\xi \in (-1,1)$，
-使得$f^{(3)}(\xi) = 3$.}\vspace{0.5em}
+使得$f^{(3)}(\xi) = 3$.
+\end{example}
 
-\textbf{解答}~~
+\begin{solution}
 在$x_0 = 0$处泰勒展开到三阶，分别代入$x = 1$和$x = -1$，
 可知分别存在$\eta_1 \in (-1,0)$和$\eta_2 \in (0,1)$，使得：
 $$
-\setlength\abovedisplayskip{6pt}
-\setlength\belowdisplayskip{6pt}
 0=f(-1) = f(0) + f'(0) \cdot (-1) + \frac{f''(0)}{2} \cdot (-1)^2 + \frac{f^{(3)}(\eta_1)}{6} \cdot (-1)^3
 $$
 $$
-\setlength\abovedisplayskip{6pt}
-\setlength\belowdisplayskip{6pt}
 1=f(1) = f(0) + f'(0)\cdot 1 + \frac{f''(0)}{2} \cdot 1^2 + \frac{f^{(3)}(\eta_2)}{6}  \cdot 1^3
 $$\par
 两式相减，并代入$f'(x_0) = 0$，得到：
 $$
-\setlength\abovedisplayskip{4pt}
-\setlength\belowdisplayskip{4pt}
--1 = -\frac{f^{(3)}(\eta_1)}{6} - \frac{f^{(3)}(\eta_2)}{6} 
+-1 = -\frac{f^{(3)}(\eta_1)}{6} - \frac{f^{(3)}(\eta_2)}{6}
 $$\par
 稍加整理：
 $$
-\setlength\abovedisplayskip{4pt}
-\setlength\belowdisplayskip{4pt}
 6 = f^{(3)}(\eta_1) + f^{(3)}(\eta_2)
 $$\par
 假设$f^{(3)}(\eta_1)=f^{(3)}(\eta_2)=3$，结论显然成立.
 若不然，不妨设$f^{(3)}(\eta_1) < 3$，$f^{(3)}(\eta_2)>3$.
 由三阶导数的连续性，存在$\xi \in (\eta_1,\eta_2)$，使得
-$f^{(3)}(\xi) = 3$. \qed\par
-~\par
+$f^{(3)}(\xi) = 3$.
+\end{solution}
 
-接下来，我们用两道题目来熟悉泰勒公式在数值计算上的应用.\par
-~\par
- 
-\textbf{例4.40}~~\textit{设$0 < x \le \frac{1}{3}$. 
+接下来，我们用两道题目来熟悉泰勒公式在数值计算上的应用.
+
+\begin{example}
+\label{ex:ch04-40}
+设$0 < x \le \frac{1}{3}$.
 证明：按公式$e^x = 1 + x +\frac{x^2}{2} + \frac{x^3}{6}$计算$e^x$的近似值时，
-误差不超过$8 \times {10}^{-4}$.}\par
-\textbf{解答}~~误差即是拉格朗日余项$R = \frac{f^{(4)}(\xi)}{4!} x^4$，
+误差不超过$8 \times {10}^{-4}$.
+\end{example}
+
+\begin{solution}
+误差即是拉格朗日余项$R = \frac{f^{(4)}(\xi)}{4!} x^4$，
 其中$\xi \in \left(0,~\frac{1}{3}\right)$.
 利用$f^{(4)}(\xi)$的范围估计$R$的上下界：
 \begin{equation}
-    \setlength\abovedisplayskip{12pt}
-\setlength\belowdisplayskip{12pt}
     \begin{aligned}
         |R| = \left|\frac{f^{(4)}(\xi)}{4!} x^4\right| &= \left| \frac{e^{\xi}}{24} x^4 \right| \\
         &\le  \frac{e^{\frac{1}{3}}}{24} \cdot \frac{1}{3^4}  \\
@@ -1562,84 +1626,72 @@ $f^{(3)}(\xi) = 3$. \qed\par
         \nonumber
     \end{aligned}
 \end{equation}
-\qed\par
-~\par
+\end{solution}
 
+\begin{example}
+\label{ex:ch04-41}
+求方程$x^2 \sin \frac{1}{x} = 2x -501$的数值解，精确到$0.001$.
+\end{example}
 
-\textbf{例4.41}~~\textit{求方程$x^2 \sin \frac{1}{x} = 2x -501$的数值解，精确到$0.001$.}\vspace{0.5em}
-
-\textbf{分析}~~目测方程的解是很大的数. 
+\begin{analysis}
+目测方程的解是很大的数.
 若粗略地用$\sin \frac{1}{x} \sim \frac{1}{x}$近似，
-可以解出$x \approx 501$. 
+可以解出$x \approx 501$.
 但这是否足够接近于方程的真实解呢？
-为了估计误差，需要在近似时带上拉格朗日余项.\par
- 
-\textbf{解答}~~
+为了估计误差，需要在近似时带上拉格朗日余项.
+\end{analysis}
+
+\begin{solution}
 现在证明我们猜测的近似解$x \approx 501$的误差不超过$0.001$.
 误差项$R(x)$为：
 $$
-\setlength\abovedisplayskip{6pt}
-\setlength\belowdisplayskip{6pt}
 R(x) = |x -501| = \left| x^2 \sin \frac{1}{x} -x \right|
 $$\par
 利用泰勒公式，有：
 $$
-\setlength\abovedisplayskip{6pt}
-\setlength\belowdisplayskip{6pt}
 \sin \frac{1}{x} = \frac{1}{x} - \frac{1}{2} \sin \frac{\theta}{x}
 $$
 
 其中$\theta \in (0,1)$.
 代入误差项，得到：
 $$
-\setlength\abovedisplayskip{12pt}
-\setlength\belowdisplayskip{12pt}
 R(x) = \left| \frac{1}{2} \sin \frac{\theta}{x} \right| < \frac{\theta}{2x} < 0.001
 $$
-\qed\par
-~\par
+\end{solution}
 
+\subsubsection{关于函数凹凸性的证明}
 
-\subsubsection{关于函数凹凸性的证明}\par
-
- 
-\textbf{例4.42}~~\textit{设函数$f(x)$在区间$[a,b]$上一阶可导（未必二阶可导）. 
+\begin{example}
+\label{ex:ch04-42}
+设函数$f(x)$在区间$[a,b]$上一阶可导（未必二阶可导）.
 证明：$f(x)$在$[a,b]$内是上凸函数，当且仅当琴生不等式成立，即：对于任意的$x_1$，$x_2 \in (a,b)$，
-$x_1 \ne x_2$，都有$f\left(\frac{x_1+x_2}{2}\right)> \frac{f(x_1)+f(x_2)}{2}$.} \vspace{0.5em}
+$x_1 \ne x_2$，都有$f\left(\frac{x_1+x_2}{2}\right)> \frac{f(x_1)+f(x_2)}{2}$.
+\end{example}
 
-\textbf{证明}~~
-
+\begin{proof}
 (1)~~若$f(x)$在$[a,b]$内是上凸函数，现在证明琴生不等式成立.
 
 考虑$x_0 = \frac{x_1+x_2}{2}$处的切线，切线方程为$y - f(x_0) = f'(x_0) (x - x_0)$.
 由函数函数的定义，$x_1$和$x_2$处的函数图像应均在切线下方，即：
 $$
-\setlength\abovedisplayskip{2pt}
-\setlength\belowdisplayskip{2pt}
 f(x_1) <  f'(x_0) (x_1 - x_0) + f(x_0)
 $$
 $$
-\setlength\abovedisplayskip{2pt}
-\setlength\belowdisplayskip{2pt}
 f(x_2) <  f'(x_0) (x_2 - x_0) + f(x_0)
 $$\par
 两式相加，得：
 $$
-\setlength\abovedisplayskip{4pt}
-\setlength\belowdisplayskip{4pt}
 f(x_1)+f(x_2) <  f'(x_0) (x_1 + x_2 - 2x_0) + 2f(x_0)
 $$
 
 不等式两侧同时除以$2$，得：
 $$
-\setlength\abovedisplayskip{12pt}
-\setlength\belowdisplayskip{12pt}
 \frac{f(x_1)+f(x_2)}{2} <  f'(x_0) \left(\frac{x_1+x_2}{2} - x_0\right) + f(x_0) = f(x_0) = f \left( \frac{x_1+x_2}{2} \right)
 $$
 
 (2)~若琴生不等式成立，
 现在证明上凸函数的定义成立.
- 
+
 用反证法. 假设存在$x_0 \in (a,b)$，使得该点去心邻域内的函数值大于该点切线.
 特别地，存在一个小正数$\delta > 0$，使得：
 \begin{eq}
@@ -1649,41 +1701,43 @@ $$
 
 两式相加，得：
 $$
-\setlength\abovedisplayskip{4pt}
-\setlength\belowdisplayskip{4pt}
 f(x_0 - \delta) + f(x_0 + \delta) > 2f(x_0)
 $$\par
 这与琴生不等式矛盾. 因此$f(x)$在$[a,b]$内是上凸函数.
-\qed\par
+\end{proof}
 
+\begin{example}
+\label{ex:ch04-43}
+设函数$f(x)$在$\mathbb{R}$上二阶可导，且为上凸函数.
+证明：若存在常数$M>0$，使得对任意的$x \in \mathbb{R}$，均有$|f(x)| \le M$，则$f(x)$为常值函数.
+\end{example}
 
-\textbf{例4.43}~~\textit{设函数$f(x)$在$\mathbb{R}$上二阶可导，且为上凸函数.
-证明：若存在常数$M>0$，使得对任意的$x \in \mathbb{R}$，均有$|f(x)| \le M$，则$f(x)$为常值函数.}\vspace{0.25em}
-
-\textbf{证明}~~反证法. 假设$f(x)$不是常值函数.
+\begin{proof}
+反证法. 假设$f(x)$不是常值函数.
 那么存在$x_0 \in \mathbb{R}$，使得$f'(x_0) \ne 0$.
 以$f'(x_0) > 0$为例.
 考虑$x_0$处的切线，切线方程为$y - f(x_0) = f'(x_0) (x - x_0)$.
 由上凸函数的定义，对任意的$x<x_0$，有：
 $$
-\setlength\abovedisplayskip{4pt}
-\setlength\belowdisplayskip{4pt}
 f(x) < f'(x_0) (x - x_0) + f(x_0)
 $$\par
 试解不等式$f'(x_0) (x - x_0) + f(x_0) < -M$，得到$x < \frac{-M -f(x_0)}{f'(x_0)} + x_0$.
 也就是说，对于任意满足上述条件的$x$，有$f(x) < -M$. 与题设矛盾.
-因此$f(x)$为常值函数.\qed\par
-~\par
-\textbf{例4.44}~~\textit{证明}：\par
-\textit{(1)~不存在$\mathbb{R}$上的二阶可导函数$f(x)$，使得对任意的$x \in \mathbb{R}$，都有
-$f(x)f''(x) < 0$}.
+因此$f(x)$为常值函数.
+\end{proof}
 
-\textit{(2)~设函数$g(x)$在$\mathbb{R}$上三阶可导，存在$a \in \mathbb{R}$，使得
-$g(a)g'(a)g''(a)g'''(a) \ge 0$.} \vspace{0.5em}
+\begin{example}
+\label{ex:ch04-44}
+证明：\par
+(1)~不存在$\mathbb{R}$上的二阶可导函数$f(x)$，使得对任意的$x \in \mathbb{R}$，都有
+$f(x)f''(x) < 0$.
 
-\textbf{证明}~~
+(2)~设函数$g(x)$在$\mathbb{R}$上三阶可导，存在$a \in \mathbb{R}$，使得
+$g(a)g'(a)g''(a)g'''(a) \ge 0$.
+\end{example}
 
-(1)~~反证法. 假设存在这样的函数. 
+\begin{proof}
+(1)~~反证法. 假设存在这样的函数.
 由$f(x)$的连续性，只有两种可能：$f(x)>0$在$\mathbb{R}$上恒成立，或者$f(x)<0$在$\mathbb{R}$上恒成立.
 以前一种情况为例（后一种情况完全类似）.
 此时有$f''(x) < 0$在$\mathbb{R}$上恒成立，
@@ -1696,27 +1750,23 @@ $g(a)g'(a)g''(a)g'''(a) \ge 0$.} \vspace{0.5em}
 由上凸函数的定义，
 对任意的$x < x_0$，有：
 $$
-\setlength\abovedisplayskip{4pt}
-\setlength\belowdisplayskip{4pt}
 f(x) < f'(x_0) (x - x_0) + f(x_0)
 $$
 则当$x < \frac{-f(x_0)}{f'(x_0)} + x_0$时，
-$f(x) < f'(x_0) (x - x_0) + f(x_0) < 0$，矛盾.\vspace{0.5em}
+$f(x) < f'(x_0) (x - x_0) + f(x_0) < 0$，矛盾.
 
 若$f'(x_0) < 0$，
 由上凸函数的定义，
 对任意的$x > x_0$，有：
 $$
-\setlength\abovedisplayskip{4pt}
-\setlength\belowdisplayskip{4pt}
 f(x) < f'(x_0) (x - x_0) + f(x_0)
 $$
 则当$x > \frac{-f(x_0)}{f'(x_0)} + x_0$时，
-$f(x) < f'(x_0) (x - x_0) + f(x_0) < 0$，矛盾.\vspace{0.5em}
+$f(x) < f'(x_0) (x - x_0) + f(x_0) < 0$，矛盾.
 
 因此不存在这样的函数.
 
-(2)~~用反证法. 
+(2)~~用反证法.
 假设对任意的$x$，
 $g(x)g'(x)g''(x)g'''(x) < 0$.
 由$g(x),g'(x),g''(x),g'''(x)$各自的介值性，
@@ -1725,19 +1775,20 @@ $g(x)g'(x)g''(x)g'''(x) < 0$.
 从而$g(x)g'(x)g''(x)g'''(x) > 0$，矛盾.
 因此必存在$a \in \mathbb{R}$，
 使得$g(a)g'(a)g''(a)g'''(a) \ge 0$.
-\qed\par
+\end{proof}
 
-~\par
 \subsection{综合应用}
 
-\textbf{例4.45~(2021)}~~\textit{证明：任给$x \in \mathbb{R}$，存在$\theta(x) \in (0,1)$，使得}
+\begin{example}[2021]
+\label{ex:ch04-45}
+证明：任给$x \in \mathbb{R}$，存在$\theta(x) \in (0,1)$，使得
 $$
-\setlength\abovedisplayskip{6pt}
-    \setlength\belowdisplayskip{6pt}
 \arctan x = \frac{x}{1 + (\theta(x))^2 x^2}
 $$
+\end{example}
 
-\textbf{证明}~~(1)~对于任意给定的$x>0$，
+\begin{proof}
+(1)~对于任意给定的$x>0$，
 $t$的函数$\arctan t$在$[0,x]$上连续，
 在$(0,x)$上可导.
 用微分中值定理得存在$\theta (x) \in (0,1)$使得：
@@ -1748,53 +1799,45 @@ $$
 
 即：
 $$
-\setlength\abovedisplayskip{12pt}
-\setlength\belowdisplayskip{12pt}
 \arctan x = \frac{x}{1+(\theta (x) \cdot x)^2} = \frac{x}{1 + (\theta (x)^2) x^2}
 $$
 
 (2)~对于任意给定的$x<0$，定义$\theta (x) = \theta (-x)$. 因此：
 $$
-\setlength\abovedisplayskip{12pt}
-\setlength\belowdisplayskip{12pt}
 \arctan x = \arctan (-x) = -\frac{-x}{1 + (\theta (-x))^2(-x)^2} = \frac{x}{1 + (\theta (x)^2) x^2}
 $$
 
 (3)对于$x=0$，定义$\theta (0) =0$. 此时等式显然成立.
 
-综合(1)(2)(3)可知，结论对一切$x \in \mathbb{R}$成立. \qed \par
-~\par
+综合(1)(2)(3)可知，结论对一切$x \in \mathbb{R}$成立.
+\end{proof}
 
-
-\textbf{例4.46}~~\textit{设$f(x)$在$(0,~\infty)$上有连续的二阶导数，且}
+\begin{example}
+\label{ex:ch04-46}
+设$f(x)$在$(0,~\infty)$上有连续的二阶导数，且
 $$
-\setlength\abovedisplayskip{4pt}
-\setlength\belowdisplayskip{4pt}
 \lim\limits_{x \to +\infty} xf(x) = 0, ~~\lim\limits_{x \to +\infty} xf''(x) = 0
 $$
 
-\textit{证明：$\lim\limits_{x \to +\infty} xf'(x) = 0$.} \vspace{0.25em}
+证明：$\lim\limits_{x \to +\infty} xf'(x) = 0$.
+\end{example}
 
-\textbf{分析}~~一阶导和二阶导同时出现，可以考虑用泰勒展开.
-所有条件和待证的结论都是极限式，而且都乘了个$x$，所以对展开式两边乘以$x$之后再两边取极限.\vspace{0.25em}
+\begin{analysis}
+一阶导和二阶导同时出现，可以考虑用泰勒展开.
+所有条件和待证的结论都是极限式，而且都乘了个$x$，所以对展开式两边乘以$x$之后再两边取极限.
+\end{analysis}
 
-
-\textbf{证明}~~对任意的$x>0$，根据泰勒公式的拉格朗日余项，存在$\xi \in (x,~x+1)$，使得
+\begin{proof}
+对任意的$x>0$，根据泰勒公式的拉格朗日余项，存在$\xi \in (x,~x+1)$，使得
 $$
-\setlength\abovedisplayskip{6pt}
-\setlength\belowdisplayskip{6pt}
 f(x+1) = f(x) + f'(x) + \frac{1}{2}f''(\xi)
 $$\par
 因此：
 $$
-\setlength\abovedisplayskip{6pt}
-\setlength\belowdisplayskip{6pt}
 f'(x) = f(x+1) - f(x) - \frac{1}{2} f''(\xi)
 $$\par
 两边同时乘以$x$，即得：
 \begin{equation}
-    \setlength\abovedisplayskip{6pt}
-\setlength\belowdisplayskip{6pt}
     \begin{aligned}
         xf'(x) = xf(x+1) - xf(x) - \frac{1}{2}xf''(\xi)
     \end{aligned}
@@ -1807,8 +1850,6 @@ $$\par
 且(2)式右边第一项，
 当$x \to +\infty$时，有：
 \begin{equation}
-    \setlength\abovedisplayskip{12pt}
-\setlength\belowdisplayskip{12pt}
     \begin{aligned}
         \lim\limits_{x \to +\infty}
         &= \lim\limits_{x \to +\infty} \frac{x}{x+1} (x+1)f(x+1)\\
@@ -1824,31 +1865,30 @@ $$\par
 所以$\xi \to +\infty$，
 $0<\frac{x}{\xi}<1$，所以：
 $$
-\setlength\abovedisplayskip{12pt}
-\setlength\belowdisplayskip{12pt}
-\lim\limits_{x \to +\infty} \frac{1}{2}xf''(\xi) = \lim\limits_{x \to +\infty} \frac{1}{2} \frac{x}{\xi} \xi f''(\xi) = 0 
+\lim\limits_{x \to +\infty} \frac{1}{2}xf''(\xi) = \lim\limits_{x \to +\infty} \frac{1}{2} \frac{x}{\xi} \xi f''(\xi) = 0
 $$
 
-于是根据(2)式，有$\lim\limits_{x \to +\infty} xf'(x) = 0$.\qed\par
-~\par
+于是根据(2)式，有$\lim\limits_{x \to +\infty} xf'(x) = 0$.
+\end{proof}
 
-\textbf{例4.47}~~\par
-\textit{(1)~证明达布中值定理：若函数$f(x)$在区间$(a,b)$内有原函数，
+\begin{example}
+\label{ex:ch04-47}
+(1)~证明达布中值定理：若函数$f(x)$在区间$(a,b)$内有原函数，
 又设$[a,b] \subset (A,B)$，且$f(a)<f(b)$，证明：
 对于任意给定的$\eta$，$f(a) < \eta < f(b)$，
-都存在一点$c \in (a,b)$，使得$f(c) = \eta$.} \par
-\textit{(2)~证明：若$f(x)$在区间$(a,b)$内有原函数且不连续，则它的间断点必为第二类间断点.} \vspace{0.25em}
+都存在一点$c \in (a,b)$，使得$f(c) = \eta$. \par
+(2)~证明：若$f(x)$在区间$(a,b)$内有原函数且不连续，则它的间断点必为第二类间断点.
+\end{example}
 
-\textbf{证明}~~
-
-(1)我们先证明$f(a)<0$，$f(b) > 0$，$f(\eta)=0$的情形. 
+\begin{proof}
+(1)我们先证明$f(a)<0$，$f(b) > 0$，$f(\eta)=0$的情形.
 设$f(x)$的原函数为$F(x)$.由左、右导数的定义：
 \[
 \begin{cases}
     F'_{+} (a) = \lim\limits_{x \to a+} \frac{F(x)-F(a)}{x-a} <0 \\
     F'_{-} (b) = \lim\limits_{x \to b-} \frac{F(x)-F(b)}{x-b} >0
 \end{cases}
-\] 
+\]
 
 由极限的保号性，存在$\delta_1 >0$，当$x \in ( a,~a + \delta_1)$时，有$\frac{F(x)-F(a)}{x-a}<0$，即$F(x)<F(a)$；
 存在$\delta_2 >0$，
@@ -1859,14 +1899,14 @@ $$
 由闭区间上连续函数的最值定理，
 存在$\eta \in [a,b]$，
 使得$F(x)$在$\eta$处取最小值.
-而上面的推论说明，$\eta \ne a$且$\eta \ne b$. 
+而上面的推论说明，$\eta \ne a$且$\eta \ne b$.
 由费马引理，$F'(\eta) = f(\eta) = 0$.\par
 对于一般的情况，
 可构造辅助函数$G(x) = F(x) - \eta x$.
 则$G'(a) = f(a) - \eta < 0$，
 $G'(b) = f(b) - \eta > 0$，
 $G'(\eta) =0$.
-这就还原为了刚才证过的情况.\vspace{0.5em}
+这就还原为了刚才证过的情况.
 
 (2)~~用反证法. 假设$f(x)$存在第一类间断点$c$.\par
 若$c$为可去间断点，
@@ -1878,7 +1918,7 @@ $G'(\eta) =0$.
 有$|f(x) - L|< \epsilon = \frac{L - f(c)}{2}$.
 那么在开区间$(c-\delta,c+\delta)$中就不存在使得$f(\xi) = \frac{L - f(c)}{2}$成立的$\xi$，
 即违反了（1）中证明的介值性，矛盾.\par
-若$c$为跳跃间断点，设$f(x)$在$c$处的左右极限分别为$L_1$和$L_2$. 
+若$c$为跳跃间断点，设$f(x)$在$c$处的左右极限分别为$L_1$和$L_2$.
 不妨设$L_1 > L_2$.
 由极限的定义，存在$\delta>0$，使得当$x \in (c-\delta,~c)$时，
 有$|f(x) - L_1| < \epsilon = \frac{L_1 - L_2}{3}$；
@@ -1890,51 +1930,51 @@ $G'(\eta) =0$.
 即违反了（1）中证明的介值性，
 矛盾.
 
-综上，$f(x)$只能有第二类间断点.\qed\par
-~\par
+综上，$f(x)$只能有第二类间断点.
+\end{proof}
 
+\begin{example}
+\label{ex:ch04-48}
+设函数$f(x)$在$(0,+\infty)$上可导，且有界.$~\lim\limits_{x \to +\infty} f'(x) = C$.
+证明：$C = 0$.
+\end{example}
 
-\textbf{例4.48}~~\textit{设函数$f(x)$在$(0,+\infty)$上可导，且有界.$~\lim\limits_{x \to +\infty} f'(x) = C$.
-证明：$C = 0$.} \vspace{0.25em}
-
-\textbf{证明}~~用反证法，不妨设$C>0$.
+\begin{proof}
+用反证法，不妨设$C>0$.
 $\lim\limits_{x \to +\infty} f'(x) = C$说明$f(x)$有一条斜渐近线.
 设渐近线为$g(x) = y = Cx + b$.
 对任意大的实数$M$，设$g(x_0) = M+1$.
 由渐近线的定义，存在$X>0$，使得当$x > \max \left\{ X,~x_0 \right\}$时，有$|f(x) - g(x)| < \epsilon = \frac{1}{2}$.
-从而$f(x) > M$. 
+从而$f(x) > M$.
 这说明$f(x)$无界，与题设矛盾.
-因此$C=0$.\qed\par
-~\par
+因此$C=0$.
+\end{proof}
 
-\textbf{例4.49}~~\par
-\textit{(1)~设$g(x)$在$[a,a+h]$上可导，$g(a) = 0$，且满足
-$|g'(x)| \le \frac{1}{2h}|g(x)|$. 
-证明：对任意$x \in [a,a+h]$，$g(x) = 0$.}\par
-\textit{(2)~设函数$f(x)$在$[a,b]$上连续，函数$g(x)$在$[a,b]$上可导，且$g(a)=0$.
+\begin{example}
+\label{ex:ch04-49}
+(1)~设$g(x)$在$[a,a+h]$上可导，$g(a) = 0$，且满足
+$|g'(x)| \le \frac{1}{2h}|g(x)|$.
+证明：对任意$x \in [a,a+h]$，$g(x) = 0$.\par
+(2)~设函数$f(x)$在$[a,b]$上连续，函数$g(x)$在$[a,b]$上可导，且$g(a)=0$.
 证明：若存在$\lambda \ne 0$，使得$|g(x)f(x)+\lambda g'(x)| \le |g(x)|$，
-则对任意$x \in [a,b]$，有$g(x) = 0$.}\vspace{0.25em}
+则对任意$x \in [a,b]$，有$g(x) = 0$.
+\end{example}
 
-\textbf{证明}~~
-
+\begin{proof}
 (1)~~设$x_0$是闭区间$[a,a+h]$上使得$|f(x)|$取最大值的点，
 并设$|f(x_0)| = M$.
 在区间$[a,x_0]$上使用拉格朗日中值定理，
 可知存在$c \in (a,~x_0)$，使得：
 $$
-\setlength\abovedisplayskip{6pt}
-\setlength\belowdisplayskip{6pt}
 M - g(a) = M = g'(c) \cdot (x_0 - a)
 $$
 
 等式两边取绝对值，
 并利用题设条件推导：
 \begin{equation}
-    \setlength\abovedisplayskip{12pt}
-\setlength\belowdisplayskip{12pt}
     \begin{aligned}
-        |M| = |g'(c)|\cdot |x_0 - a| 
-        \le h \cdot \frac{1}{2h} |g(c)| 
+        |M| = |g'(c)|\cdot |x_0 - a|
+        \le h \cdot \frac{1}{2h} |g(c)|
         \le \frac{|M|}{2}
         \nonumber
     \end{aligned}
@@ -1943,15 +1983,13 @@ $$
 由不等式链的最左侧和最右侧可知$M=0$.
 即$|g(x)|$的最大值为$0$.
 因此对任意$x \in [a,b]$，
-有$g(x) =0$.\vspace{0.5em}
+有$g(x) =0$.
 
 (2)~~设$x_0$是闭区间$[a,a+h]$上使得$|f(x)|$取最大值的点，并设$|f(x_0)| = M$.
 对题设中的不等式进行转化、放缩处理：
 \begin{equation}
-    \setlength\abovedisplayskip{12pt}
-    \setlength\belowdisplayskip{12pt}
     \begin{aligned}
-        &|g(x)f(x)+\lambda g'(x)| \le |g(x)| \\ 
+        &|g(x)f(x)+\lambda g'(x)| \le |g(x)| \\
         \Rightarrow &~ |\lambda g'(x)|-|g(x)f(x)| \le |g(x)| \\
         \Rightarrow &~ |g'(x)| \le \frac{|g(x)| + |g(x)f(x)|}{|\lambda|} \\
         \Rightarrow &~ |g'(x)| \le \frac{(1+M)|g(x)|}{|\lambda|}
@@ -1965,52 +2003,45 @@ $$
 又由$g(a+h)=0$，
 可以继续证得$g(x)=0$在区间$[a+h,a+2h]\cap[a,b]$内恒成立.
 如此反复，经过有限次递推之后直至$[a+kh,a+(k+1)h]\cap[a,b]$为空集.
-这样就证明了$g(x) = 0$在整个区间$[a,b]$上恒成立.\qed\par
-~\par
+这样就证明了$g(x) = 0$在整个区间$[a,b]$上恒成立.
+\end{proof}
 
-\textbf{例4.50}~~\textit{
-设函数$f(x)$在$x_0$的某邻域内$n+1$阶可导，$f^{(n+1)}(x) \ne 0$，且有}
+\begin{example}
+\label{ex:ch04-50}
+设函数$f(x)$在$x_0$的某邻域内$n+1$阶可导，$f^{(n+1)}(x) \ne 0$，且有
 $$
-\setlength\abovedisplayskip{6pt}
-\setlength\belowdisplayskip{6pt}
 f(x_0 + h) = f(x_0) + f'(x_0)h + \cdots + \frac{h^n}{n!}f^{(n)}(x_0 + \theta(h)h)
 $$
 
-\textit{求$\lim\limits_{h \to 0} \theta(h)$}.\vspace{0.5em}
+求$\lim\limits_{h \to 0} \theta(h)$.
+\end{example}
 
-\textbf{分析}~~$f(x)$的$n+1$阶导数存在，又涉及到$h \to 0$时的情况，想到可以泰勒展开到$n+1$阶（带皮亚诺余项）.
-将两种展开式相减.\vspace{0.5em}
+\begin{analysis}
+$f(x)$的$n+1$阶导数存在，又涉及到$h \to 0$时的情况，想到可以泰勒展开到$n+1$阶（带皮亚诺余项）.
+将两种展开式相减.
+\end{analysis}
 
-\textbf{证明}~~写出$f(x)$在$x_0$处的$n+1$阶泰勒展开（皮亚诺余项）：
+\begin{proof}
+写出$f(x)$在$x_0$处的$n+1$阶泰勒展开（皮亚诺余项）：
 $$
-\setlength\abovedisplayskip{12pt}
-\setlength\belowdisplayskip{12pt}
 f(x_0 + h) = f(x_0) + f'(x_0)h + \cdots + \frac{f^{(n)}(x_0)}{n!} h^n + \frac{f^{(n+1)}(x_0)}{(n+1)!} h^{n+1} + o(h^{n+1})
 $$\par
 而题干中的等式实际上是$f(x)$在$x_0$处展开到$n-1$阶，带拉格朗日余项的泰勒公式.
 二者相减可得：
 $$
-\setlength\abovedisplayskip{12pt}
-\setlength\belowdisplayskip{12pt}
 \frac{h^n}{n!}f^{(n)}(x_0 + \theta(h)h) = \frac{f^{(n)}(x_0)}{n!} h^n + \frac{f^{(n+1)}(x_0)}{(n+1)!} h^{n+1} + o(h^{n+1})
 $$\par
 等式两边同时除以$h^{n+1}$，移项，得到：
 $$
-\setlength\abovedisplayskip{12pt}
-\setlength\belowdisplayskip{12pt}
 \frac{f^{(n)}(x_0 + \theta(h)h)}{h \cdot n!} - \frac{f^{(n)}(x_0)}{h \cdot n!} = \frac{f^{(n+1)}(x_0)}{(n+1)!} + o(1)
 $$\par
 等式两边同时取极限$h \to 0$：
 $$
-\setlength\abovedisplayskip{12pt}
-\setlength\belowdisplayskip{12pt}
 \frac{1}{n!} \cdot \lim\limits_{h \to 0} \frac{f^{(n)}(x_0 + \theta(h)h) - f^{(n)}(x_0)}{h}
 = \frac{f^{(n+1)}(x_0)}{(n+1)!}
 $$\par
 将左侧的极限凑成导数的形式：
 \begin{equation}
-    \setlength\abovedisplayskip{12pt}
-\setlength\belowdisplayskip{12pt}
     \begin{aligned}
         \lim\limits_{h \to 0} \frac{f^{(n)}(x_0 + \theta(h)h) - f^{(n)}(x_0)}{h}
         &= \lim\limits_{h \to 0} \frac{f^{(n)}(x_0 + \theta(h)h) - f^{(n)}(x_0)}{\theta(h)h} \cdot \theta(h)h \\
@@ -2021,7 +2052,6 @@ $$\par
 
 将其代回等式，得到：
 $$
-\setlength\abovedisplayskip{12pt}
-\setlength\belowdisplayskip{12pt}
 \lim\limits_{h \to 0} \theta(h) = \frac{1}{n+1}
-$$\qed
+$$
+\end{proof}

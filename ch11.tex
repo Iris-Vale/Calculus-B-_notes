@@ -16,12 +16,12 @@
 设$x \to a^{+}$时$f(x)$无界，即$a$为\textbf{瑕点}.
 则瑕积分的定义及变换得到的无穷积分是：
 \begin{eq1}
-    \int_{a}^{b} f(x) ~\d x = 
+    \int_{a}^{b} f(x) ~\d x =
     \lim\limits_{\epsilon \to 0^{+}} \int_{a+\epsilon}^{b} f(x) ~\d x
-    \xlongequal{t = \frac{1}{x-a}} \int_{1/(b-a)}^{+\infty} \frac{f(\frac{1}{t}+a)}{t^2} ~\d t 
+    \xlongequal{t = \frac{1}{x-a}} \int_{1/(b-a)}^{+\infty} \frac{f(\frac{1}{t}+a)}{t^2} ~\d t
 \end{eq1}
 
-这个换元的合理性需要通过定义来说明（例1），
+这个换元的合理性需要通过定义来说明（例\ref{ex:ch11-01}），
 但是一般情况下，可以不加证明地使用.
 当然这并不意味着可以把教材上关于瑕积分的叙述直接撕下来扔掉了，
 因为总会出现用不了这种换元法的情况.
@@ -60,8 +60,6 @@
 在两个子区间上都发散.
 所以$I_1$和$I_2$是发散的.
 
-
-
 这两个例子说明，在分析广义积分的收敛性时，
 必须先对积分区间进行拆分，
 使得每个区间内只含有单侧的无穷大或者单侧的瑕点.\vspace{0.5em}
@@ -95,8 +93,6 @@
 而例题既展示了规范的解题方法，也可以作为经典例子积累下来.
 考试题与教材例题相似的可能性很高.
 
-
-
 \subsubsection{广义积分相关定理简述（注意和级数相关定理类比）}
 
 \setstretch{2.25}
@@ -115,7 +111,7 @@ $\left| \int_{A}^{A'} f(x)~\d x \right|$充分小（$<\epsilon$）.\vspace{0.5em
 
 \textbf{6.}~~\textbf{狄利克雷判别法：}$\int_{a}^{A} f(x)~\d x$有界 + $g(x)$单调趋于$0$ $\Rightarrow$ $\int_{a}^{+\infty} f(x)g(x) ~\d x $收敛. \vspace{0.5em}
 
-\textbf{7.}~~\textbf{阿贝尔判别法：}$\int_{a}^{+\infty} f(x)~\d x$收敛 + $g(x)$单调有界 $\Rightarrow$ $\int_{a}^{+\infty} f(x)g(x) ~\d x $收敛. 
+\textbf{7.}~~\textbf{阿贝尔判别法：}$\int_{a}^{+\infty} f(x)~\d x$收敛 + $g(x)$单调有界 $\Rightarrow$ $\int_{a}^{+\infty} f(x)g(x) ~\d x $收敛.
 
 \subsubsection{广义积分实用结论}
 
@@ -165,7 +161,6 @@ $p \in \mathbb{R}$，$a>0$. （教材11.1例8） \vspace{0.5em}
 
 ~~~~~~~~(2)~当$q \le 1$，无穷积分发散. \vspace{1em}
 
-
 \subsubsection{含参变量正常积分的换序问题}
 
 在正常一元函数定积分的基础上，我们考虑被积函数$f(x)$中除了积分变量$x$以外还含有一个参变量$y$的情况.
@@ -191,8 +186,6 @@ $p \in \mathbb{R}$，$a>0$. （教材11.1例8） \vspace{0.5em}
 （注：书上举出$f(x,y)=\frac{x}{y^2}e^{-x^2/y^2}$的例子来说明，当二元函数连续性不满足，极限和积分号不一定可换序.
 可以借助这个例子深入思考其中的原理. 提示：考虑$f(x,y)$当$y \to 0$时收敛到$0$的速度，是否一致收敛？）\vspace{0.5em}
 
-
-
 \textbf{2.}~~\textbf{可积性：}参变量积分$g(y)$在$[c,d]$上可积，
 且两个积分号可换序，即：
 \begin{eq1}
@@ -209,12 +202,11 @@ $p \in \mathbb{R}$，$a>0$. （教材11.1例8） \vspace{0.5em}
      \int_{a}^{b} f_y (x,y)~\d x
 \end{eq1}
 
-
 \subsubsection{含参变量广义积分I：一致收敛}
 
 本节进一步研究含参变量的广义积分：
 \begin{eq1}
-    g(y) = \int_{a}^{+\infty} f(x,y)~\d x 
+    g(y) = \int_{a}^{+\infty} f(x,y)~\d x
 \end{eq1}
 
 最终的目的还是回答有关$g(y)$连续性、可积性、可微性以及相应的换序问题.
@@ -239,7 +231,7 @@ $p \in \mathbb{R}$，$a>0$. （教材11.1例8） \vspace{0.5em}
 存在与$y$无关的实数$N$，使当$A>N$，$A'>N$时，对一切$y \in Y$，都有
 \begin{eq1}
     \left| \int_{A}^{A'} f(x,y)~\d x \right| < \epsilon
-\end{eq1} 
+\end{eq1}
 
 （注：与不含参变量的无穷积分的柯西收敛准则完全相同，只是强调了$N$的选取与$y$无关.）
 
@@ -256,15 +248,17 @@ $p \in \mathbb{R}$，$a>0$. （教材11.1例8） \vspace{0.5em}
 （注：即函数项级数一致收敛的强级数判别法. 该判别法只能判断绝对一致收敛.）\vspace{1em}
 
 \textbf{4.}~~\textbf{狄利克雷判别法：}部分积分$\int_{a}^{A} f(x,y) ~\d x$一致有界
-+ $g(x,y)$对$x$单调一致趋于$0$ $\Rightarrow$ $\int_{a}^{+\infty} f(x,y)g(x,y)~\d x$一致收敛.
++ $g(x,y)$对$x$单调一致趋于$0$
+
+$\Rightarrow$ $\int_{a}^{+\infty} f(x,y)g(x,y)~\d x$一致收敛.
 
 （注：在原版的狄利克雷判别法的基础上，加上一致性的限制即可.）\vspace{1em}
 
 \textbf{5.}~~\textbf{阿贝尔判别法：}$\int_{a}^{+\infty} f(x,y)~\d x$一致收敛 + $g(x,y)$单调一致有界
+
 $\Rightarrow$ $\int_{a}^{+\infty} f(x,y)g(x,y)~\d x$一致收敛.\vspace{0.25em}
 
 （注：在原版的阿贝尔判别法的基础上，加上一致性的限制即可.）\vspace{1em}
-
 
 \subsubsection{含参变量广义积分II：换序问题}
 
@@ -275,7 +269,7 @@ $\Rightarrow$ $\int_{a}^{+\infty} f(x,y)g(x,y)~\d x$一致收敛.\vspace{0.25em}
 
 \textbf{1.}~~\textbf{连续性：}$g(y)$在$[c,d]$上连续，且极限和无穷积分可换序，即：
 \begin{eq1}
-    \lim\limits_{y \to y_0} \int_{a}^{+\infty} f(x,y)~\d x 
+    \lim\limits_{y \to y_0} \int_{a}^{+\infty} f(x,y)~\d x
     =  \int_{a}^{+\infty} \lim\limits_{y \to y_0} f(x,y)~\d x
 \end{eq1}
 
@@ -292,26 +286,26 @@ $\Rightarrow$ $\int_{a}^{+\infty} f(x,y)g(x,y)~\d x$一致收敛.\vspace{0.25em}
 
 \textbf{3.}~~\textbf{可微性：}$g(y)$在$[c,d]$上可导，且求导和无穷积分可换序，即：
 \begin{eq1}
-    g'(y) = \frac{\d}{\d y} \int_{a}^{+\infty} f(x,y)~\d y 
+    g'(y) = \frac{\d}{\d y} \int_{a}^{+\infty} f(x,y)~\d y
     = \int_{a}^{+\infty} f_y (x,y)~\d y
 \end{eq1}
 
 \textbf{4.}~~\textbf{无穷积分换序：}设$f(x,y)$在区域$[a,+\infty) \times [c,+\infty)$上连续，又设两个含参变量无穷积分：
 \begin{eq1}
-    \int_{a}^{+\infty} f(x,y)~\d x ~~~~\text{与}~~~~\int_{c}^{+\infty} f(x,y)~\d y 
+    \int_{a}^{+\infty} f(x,y)~\d x ~~~~\text{与}~~~~\int_{c}^{+\infty} f(x,y)~\d y
 \end{eq1}
 分别关于$y$和$x$在任意又穷闭区间$[c,d]$及$[a,b]$上一致收敛，
 并且两积分：
 \begin{eq1}
-    \int_{a}^{+\infty} \d x \int_{c}^{+\infty} |f(x,y)| ~\d y 
+    \int_{a}^{+\infty} \d x \int_{c}^{+\infty} |f(x,y)| ~\d y
     ~~~~\text{与}~~~~
-    \int_{c}^{+\infty} \d y \int_{a}^{+\infty} |f(x,y)| ~\d x 
+    \int_{c}^{+\infty} \d y \int_{a}^{+\infty} |f(x,y)| ~\d x
 \end{eq1}
 中至少有一个存在，则两积分：
 \begin{eq1}
-    \int_{a}^{+\infty} \d x \int_{c}^{+\infty} f(x,y) ~\d y 
+    \int_{a}^{+\infty} \d x \int_{c}^{+\infty} f(x,y) ~\d y
     ~~~~\text{与}~~~~
-    \int_{c}^{+\infty} \d y \int_{a}^{+\infty} f(x,y) ~\d x 
+    \int_{c}^{+\infty} \d y \int_{a}^{+\infty} f(x,y) ~\d x
 \end{eq1}
 都存在且相等，即可以交换积分次序.
 
@@ -319,7 +313,7 @@ $\Rightarrow$ $\int_{a}^{+\infty} f(x,y)g(x,y)~\d x$一致收敛.\vspace{0.25em}
 
 $\Gamma$函数的定义如下：
 \begin{eq1}
-    \Gamma (\alpha) = \int_{0}^{+\infty} x^{\alpha - 1} e^{-x} ~\d x ,~~\alpha > 0 
+    \Gamma (\alpha) = \int_{0}^{+\infty} x^{\alpha - 1} e^{-x} ~\d x ,~~\alpha > 0
 \end{eq1}
 
 其重要性质和公式整理如下：
@@ -373,29 +367,28 @@ B函数的定义如下：
 (2)~首先要判断清楚广义积分的类型，特别要小心一个积分可能既是无穷积分，又是瑕积分.
 此时收敛性需要分开讨论.
 
-(3)~注意判断被积函数是否非负（或非正），不同情况适用不同的判别法.\par
-\clearpage
+(3)~注意判断被积函数是否非负（或非正），不同情况适用不同的判别法.
 
 \begin{example}
-    {1}{
-        设$f(x)$在$(0,a]$上连续的正值函数，且$x \to 0^{+}$时$f(x)$无界.
-    }
+\label{ex:ch11-01}
+设$f(x)$在$(0,a]$上连续的正值函数，且$x \to 0^{+}$时$f(x)$无界.
+
+(1)~~证明：可以对瑕积分$\int_{0}^{a} f(x) ~\d x$做变量替换$t = \frac{1}{x}$，将其转化为无穷积分.
+且瑕积分和无穷积分的收敛性一致.
+
+(2)~~又设$f(x)$在$(0,a]$上严格单调递减.
+证明：瑕积分$\int_{0}^{a} f(x) ~\d x$与反函数的无穷积分$\int_{f(a)}^{+\infty} f^{-1}(y) ~\d y$的敛散性一致.
 \end{example}
 
-\textit{(1)~~证明：可以对瑕积分$\int_{0}^{a} f(x) ~\d x$做变量替换$t = \frac{1}{x}$，将其转化为无穷积分.
-且瑕积分和无穷积分的收敛性一致.}
-
-\textit{(2)~~又设$f(x)$在$(0,a]$上严格单调递减.
-证明：瑕积分$\int_{0}^{a} f(x) ~\d x$与反函数的无穷积分$\int_{f(a)}^{+\infty} f^{-1}(y) ~\d y$的敛散性一致.}\vspace{1em}
-\begin{remark}
-    本题的结论提供了两种无穷积分与瑕积分互化的思路.
+\begin{analysis}
+本题的结论提供了两种无穷积分与瑕积分互化的思路.
     两个结论都很易于理解，但是并不显然，需要从定义出发加以论证.
-    
+
     第一小问，是证明积分的换元法可以用在无穷积分和瑕积分上.
     这个结论之所以需要证明，是因为之前所学的积分换元法是针对于黎曼定积分的，
     而本章所学的广义积分是对黎曼积分的上下限取极限得到的，其本身并不是黎曼积分.
     在证明时也需体现这个极限过程.
-    
+
     第二小问，是证明如果把整个坐标平面以$y=x$为轴镜像翻转，那么瑕积分可以看成其反函数的无穷积分.
     这在几何意义上是说得通的，因为无穷积分和瑕积分都可以看成函数曲线与$x$轴围成的面积.
     镜像翻转的操作无非是把图像从“无限向上延伸”（瑕积分）变成了“无限向右延伸”（无穷积分）.
@@ -403,18 +396,17 @@ B函数的定义如下：
     瑕积分的定义并不是由无穷积分“镜像翻转”得到的.
     它们的区别就像是：对于同一块区域，可以沿$x$轴方向无限分割再取极限，也可以沿$y$轴方向无限分割再取极限.
     对于无界区域而言，这两种计算面积的方法一定得到相同的结果吗？这一点需要从定义出发证明.
-\end{remark}\vspace{0.5em}
+\end{analysis}
 
-\begin{pf}
-    (1)~~
+\begin{proof}
+(1)~~
     \begin{eq1}
-        \int_{0}^{a} f(x)~\d x 
+        \int_{0}^{a} f(x)~\d x
         &= \lim\limits_{\delta \to 0^{+}} \int_{\delta}^{a} f(x) ~\d x \\
         &= \lim\limits_{\delta \to 0^{+}} \int_{1/a}^{1/\delta} \frac{f(1/t)}{t^2} ~\d t \\
         &= \lim\limits_{A \to +\infty} \int_{1/a}^{A} \frac{f(1/t)}{t^2} ~\d t
         &= \int_{1/a}^{+\infty} \frac{f(1/t)}{t^2} ~\d t
     \end{eq1}
-    \vspace{0.5em}
 
     (2)~~令$y = f(x)$，即$x = f^{-1}(y)$，则有：
     \begin{align*}
@@ -428,67 +420,65 @@ B函数的定义如下：
 
     $(*)$式的第三项是瑕积分$\int_{0}^{a} f(x) ~\d x$的定义，
     但不能直接得到无穷积分与瑕积分等价，因为$\delta f(\delta)$的收敛性是未知的.
-    接下来我们对此进行讨论：\vspace{0.5em}
+    接下来我们对此进行讨论：
 
     i)~~若$\lim\limits_{\delta \to 0^{+}} \delta f(\delta)$存在. 则：
     \begin{eq1}
         \int_{f(a)}^{+\infty} f^{-1}(y) ~\d y
         &= - a f(a) + \lim\limits_{\delta \to 0^{+}} \delta f(\delta)   + \lim\limits_{\delta \to +0} \int_{\delta}^{a} f(x) ~\d x \\
-        &=- a f(a) + \lim\limits_{\delta \to 0^{+}} \delta f(\delta)   + \int_{0}^{a} f(x)~\d x 
+        &=- a f(a) + \lim\limits_{\delta \to 0^{+}} \delta f(\delta)   + \int_{0}^{a} f(x)~\d x
     \end{eq1}
 
-    故$\int_{f(a)}^{+\infty} f^{-1}(y) ~\d y$与$\int_{0}^{a} f(x)~\d x $收敛性一致.\vspace{1em}
+    故$\int_{f(a)}^{+\infty} f^{-1}(y) ~\d y$与$\int_{0}^{a} f(x)~\d x $收敛性一致.
 
     ii)~~若$\lim\limits_{\delta \to 0^{+}} \delta f(\delta) = +\infty$，
     即$\lim\limits_{\delta \to 0^{+}} \frac{f(\delta)}{1/ \delta} = +\infty$.
     已知瑕积分$\int_{0}^{a} \frac{1}{x} ~\d x$发散.
     由比较判别法可知瑕积分$\int_{0}^{a} f(x)~\d x$也发散$(\to +\infty)$.
-    进而由$(*)$式可知无穷积分也发散$(\to +\infty)$.\vspace{0.5em}
+    进而由$(*)$式可知无穷积分也发散$(\to +\infty)$.
 
-    综合i)，ii)可知，瑕积分$\int_{0}^{a} f(x) ~\d x$与无穷积分$\int_{f(a)}^{+\infty} f^{-1}(y) ~\d y$同时收敛或同时发散. \qed \par
-    
-\end{pf} 
-~\par
-~\par
+    综合i)，ii)可知，瑕积分$\int_{0}^{a} f(x) ~\d x$与无穷积分$\int_{f(a)}^{+\infty} f^{-1}(y) ~\d y$同时收敛或同时发散.
+\end{proof}
 
 \begin{example}
-    {2}{设无穷积分$\int_{1}^{+\infty} \left( e^{-\cos \frac{1}{x}} - e^{-1} \right) x^k ~\d x$收敛. 求$k$的范围.}
-\end{example}\vspace{0.5em}
-\begin{remark}
-    被积函数是非负函数.
+\label{ex:ch11-02}
+设无穷积分$\int_{1}^{+\infty} \left( e^{-\cos \frac{1}{x}} - e^{-1} \right) x^k ~\d x$收敛. 求$k$的范围.
+\end{example}
+
+\begin{analysis}
+被积函数是非负函数.
     根据比较判别法，只需要估计出被积函数无穷小量阶数.
     可以利用等价无穷小代换/中值定理/泰勒展开等求极限的方法.
-\end{remark}
+\end{analysis}
+
 \begin{solution}
-    当$x \to +\infty$时，有如下的等价无穷小关系：
+当$x \to +\infty$时，有如下的等价无穷小关系：
     \begin{eq1}
-        e^{-\cos \frac{1}{x}} - e^{-1} 
+        e^{-\cos \frac{1}{x}} - e^{-1}
         &= e^{-1} \left( e^{1 - \cos \frac{1}{x}} - 1 \right)\\
         &\sim e^{-1} \left( 1 - \cos \frac{1}{x} \right) \\
         &\sim \frac{1}{2ex^2}
-    \end{eq1}\vspace{0.5em}
+    \end{eq1}
 
     替换被积函数，可知原积分的敛散性与$\int_{1}^{+\infty} \frac{1}{2ex^{2-k}} ~\d x$一致.
-    故$k < 1$. \qed \par
+    故$k < 1$.
 \end{solution}
-~\clearpage
 
-\begin{example}
-    {3(2023)}{
-        讨论无穷积分$\int_{1}^{+\infty} \frac{\sin x}{\sqrt{x}} \arctan x$的敛散性.
-    }
-\end{example}\vspace{0.5em}
+\begin{example}[2023]
+\label{ex:ch11-03}
+讨论无穷积分$\int_{1}^{+\infty} \frac{\sin x}{\sqrt{x}} \arctan x$的敛散性.
+\end{example}
 
-\begin{remark}
-    被积函数不是非负函数，考虑用狄利克雷或阿贝尔判别法.
+\begin{analysis}
+被积函数不是非负函数，考虑用狄利克雷或阿贝尔判别法.
     这里$\sin x$是典型的变上限积分有界的函数.
     因此根据狄利克雷判别法，只需证明其余部分单调趋于$0$.
-\end{remark}
+\end{analysis}
 
 \begin{solution}
-    $\sin x$的变上限积分有界：
+$\sin x$的变上限积分有界：
     \begin{eq1}
-        \left|\int_{1}^{A} \sin x ~\d x \right| 
+        \left|\int_{1}^{A} \sin x ~\d x \right|
         = \left| -\cos A + \cos 1 \right| \le 2
     \end{eq1}
 
@@ -503,29 +493,27 @@ B函数的定义如下：
 
 计算$g(x)$的极限：
 \begin{eq1}
-    \lim\limits_{x \to +\infty} g(x) 
-    = \lim\limits_{x \to +\infty}  \frac{\arctan x}{\sqrt{x}} 
+    \lim\limits_{x \to +\infty} g(x)
+    = \lim\limits_{x \to +\infty}  \frac{\arctan x}{\sqrt{x}}
     = 0
 \end{eq1}
 
-由狄利克雷判别法，该无穷积分收敛.\qed \par 
+由狄利克雷判别法，该无穷积分收敛.
 \end{solution}
-~\par
 
 \begin{example}
-    {4}{
-        若积分$\int_{0}^{1} \frac{\ln x}{x^p (1-x)^{1-p}} ~\d x$收敛.
+\label{ex:ch11-04}
+若积分$\int_{0}^{1} \frac{\ln x}{x^p (1-x)^{1-p}} ~\d x$收敛.
         求$p$的取值范围.
-    }
-\end{example}\vspace{0.5em}
+\end{example}
 
-\begin{remark}
-    此题要注意$x=0^{+}$和$x=1^{-}$都可能是瑕点.
+\begin{analysis}
+此题要注意$x=0^{+}$和$x=1^{-}$都可能是瑕点.
     需要保证这两处瑕积分都收敛.
-\end{remark}\vspace{0.5em}
+\end{analysis}
 
 \begin{solution}
-    被积函数在$(0,1)$上非正.
+被积函数在$(0,1)$上非正.
     现分别考虑$x=0$和$x=1$处的收敛性.
 
     i)~~考虑积分$\int_{0}^{1/2} \frac{\ln x}{x^p (1-x)^{1-p}} ~\d x$.
@@ -546,77 +534,75 @@ B函数的定义如下：
         = \lim\limits_{x \to 0^{+}} x^{\epsilon} \ln x = 0
     \end{eq1}
 
-    由比较判别法可知，$\int_{0}^{1/2} \frac{\ln x}{x^p} ~\d x$收敛.\vspace{0.5em}
+    由比较判别法可知，$\int_{0}^{1/2} \frac{\ln x}{x^p} ~\d x$收敛.
 
     ii)~~考虑积分$\int_{1/2}^{1} \frac{\ln x}{x^p (1-x)^{1-p}}~\d x$.
     因为当$x \to 1^{-}$时，$x^{p} \to 1$，$\ln x \sim \ln (1 + x -1) \sim x - 1$，
     所以该积分的敛散性与$\int_{1/2}^{1} \frac{-1}{(1-x)^{-p}} ~\d x$一致.
-    因此$p > -1$.\vspace{0.5em}
+    因此$p > -1$.
 
-
-    综合i)，ii)可知，$-1 < p < 1$.\qed \par
+    综合i)，ii)可知，$-1 < p < 1$.
 \end{solution}
-~\par
 
 \begin{example}
-    {5}{
-        若$\int_{0}^{2} \frac{1}{|\ln x|^{a}} ~\d x$收敛.
+\label{ex:ch11-05}
+若$\int_{0}^{2} \frac{1}{|\ln x|^{a}} ~\d x$收敛.
         求$a$的范围.
-    }
-\end{example}\vspace{0.5em}
-\begin{remark}
-    此题要注意$x=0^{+}$，$x=1^{-}$和$x = 1^{+}$都可能是瑕点.
-\end{remark}
+\end{example}
+
+\begin{analysis}
+此题要注意$x=0^{+}$，$x=1^{-}$和$x = 1^{+}$都可能是瑕点.
+\end{analysis}
+
 \begin{solution}
-    将整个积分拆分为：
+将整个积分拆分为：
     \begin{eq1}
-        \int_{0}^{2} \frac{1}{|\ln x|^{a}}~\d x 
-        = \int_{0}^{1/2} \frac{1}{|\ln x|^a}~\d x 
+        \int_{0}^{2} \frac{1}{|\ln x|^{a}}~\d x
+        = \int_{0}^{1/2} \frac{1}{|\ln x|^a}~\d x
         + \int_{1/2}^{1} \frac{1}{|\ln x|^a}~\d x
         + \int_{1}^{2} \frac{1}{|\ln x|^a} ~\d x
     \end{eq1}
-    现分别讨论右侧三个瑕积分的收敛性：\vspace{0.5em}
+    现分别讨论右侧三个瑕积分的收敛性：
 
     i)~~由讲义11.1.3的结论5，积分$\int_{0}^{1/2} \frac{1}{|\ln x|^a}~\d x$收敛对$a \in \mathbb{R}$成立.
 
     ii)~~当$x \to 1^{-}$时，$|\ln x| \sim |\ln (1 + x -1)| \sim 1-x$.
     故积分$\int_{1/2}^{1} \frac{1}{|\ln x|^a} ~\d x$的敛散性与
     $\int_{1/2}^{1} \frac{1}{(1-x)^a} ~\d x$一致.
-    故$a < 1$. 
+    故$a < 1$.
 
     iii)~~当$x \to 1^{+}$时，$|\ln x| \sim |\ln (1 + x -1)| \sim x-1$.
     故积分$\int_{1}^{2} \frac{1}{|\ln x|^a} ~\d x$的敛散性与
     $\int_{1}^{2} \frac{1}{(x-1)^a} ~\d x$一致.
-    故$a < 1$. \vspace{0.5em}
+    故$a < 1$.
 
-    综合i)，ii)，iii)可知，$a<1$. \qed \par
+    综合i)，ii)，iii)可知，$a<1$.
 \end{solution}
-~\par
 
-\begin{example}
-    {6(2021)}{
-       定义函数 \(\theta : [0, +\infty) \to [0, +\infty)\) 为
+\begin{example}[2021]
+\label{ex:ch11-06}
+定义函数 \(\theta : [0, +\infty) \to [0, +\infty)\) 为
        \begin{eq1}
             \theta(x) = \int_0^x \sqrt{(t+1)(t+2)(t+3)}  ~\d t
-       \end{eq1} 
+       \end{eq1}
     证明无穷积分
-    $\int_0^{+\infty} \cos\left(\theta(x)\right)  ~\d x$收敛.}
-\end{example}\vspace{0.5em}
+    $\int_0^{+\infty} \cos\left(\theta(x)\right)  ~\d x$收敛.
+\end{example}
 
-\begin{remark}
-    如果熟悉教材知识点，此题的思路容易想到.
+\begin{analysis}
+如果熟悉教材知识点，此题的思路容易想到.
     余弦函数中复合了另一个函数$\theta (x)$，我们是没办法处理的.
     但是对于没有复合的$\cos x$，我们可以利用其变上限积分有界，进而通过狄利克雷判别法证明无穷积分收敛.
     因此，令$s = \theta (x)$，从而把余弦函数“解放出来”，是势在必行的一步.
-\end{remark}
+\end{analysis}
 
-\begin{pf}
-    令$s = \theta (x)$，则有：
+\begin{proof}
+令$s = \theta (x)$，则有：
     \begin{eq}
         \d s  = \d \theta (x)
         = \theta'(x) ~\d x
     \end{eq}
-    
+
     另外：
     \begin{eq}
         \theta '(x) = \sqrt{(x+1)(x+2)(x+3)}
@@ -625,7 +611,7 @@ B函数的定义如下：
     故：
     \begin{eq1}
         \int_{0}^{+\infty} \cos (\theta (x)) ~\d x
-        = \int_{x=0}^{x=+\infty} \frac{\cos s ~\d s}{\sqrt{(x+1)(x+2)(x+3)}} 
+        = \int_{x=0}^{x=+\infty} \frac{\cos s ~\d s}{\sqrt{(x+1)(x+2)(x+3)}}
     \end{eq1}
 
     \setstretch{2.25}
@@ -633,80 +619,69 @@ B函数的定义如下：
     其中，$\int_{x=0}^{x=A} \cos s ~\d s$有界，
     而$\frac{1}{\sqrt{(x+1)(x+2)(x+3)}}$单调递减趋于$0$.
     根据狄利克雷判别法，
-    该无穷积分收敛. \qed 
-\end{pf} \par
-~\par
+    该无穷积分收敛.
+\end{proof}
 
 \setstretch{1.75}
 
 \subsubsection{广义积分的计算}
 
 根据往年的经验，广义积分的计算题是必考的，
-而且必考$\Gamma$函数和B函数（不要试图用莱布尼茨公式）.\par
-~\par
+而且必考$\Gamma$函数和B函数（不要试图用莱布尼茨公式）.
 
-\begin{example}
-    {7(2022)}{
-        求无穷积分 \( \int_{0}^{+\infty} \sqrt{x^3 e^{-x}} ~\d x \) 的值，
+\begin{example}[2022]
+\label{ex:ch11-07}
+求无穷积分 \( \int_{0}^{+\infty} \sqrt{x^3 e^{-x}} ~\d x \) 的值，
         和瑕积分 \( \int_{0}^{1} \sqrt{\frac{x^3}{1-x}} ~\d x \) 的值.
-    }
 \end{example}
 
 \begin{solution}
-
-    (1) 
+(1)
     \[ \int_{0}^{+\infty} \sqrt{x^3 e^{-x}} ~\d x = \Gamma\left(\frac{5}{2}\right) = \frac{3}{2} \cdot \frac{1}{2} \Gamma\left(\frac{1}{2}\right) = \frac{3}{4} \sqrt{\pi} \]
 
-    (2) 
+    (2)
     \[ \int_{0}^{1} \sqrt{\frac{x^3}{1-x}} ~\d x = \int_{0}^{1} x^{\frac{3}{2}} (1-x)^{-\frac{1}{2}} ~\d x = \text{B} \left(\frac{5}{2}, \frac{1}{2}\right) = \frac{\Gamma\left(\frac{5}{2}\right) \Gamma\left(\frac{1}{2}\right)}{\Gamma(1)} = \frac{\frac{3}{4} \sqrt{\pi} \cdot \sqrt{\pi}}{1} = \frac{3}{4} \pi \]
-\qed \par
 \end{solution}
-~\par
 
-\begin{example}
-    {8(2021)}{
-    (1)求出无穷积分 $\int_{0}^{+\infty} \sqrt{x} e^{-x}  ~\d x $ 的值；
-    (2)求出瑕积分 $\int_{0}^{1} \frac{1}{\sqrt{x(1-x)}}  ~\d x $ 的值.
-    }
+\begin{example}[2021]
+\label{ex:ch11-08}
+(1)求出无穷积分 $\int_{0}^{+\infty} \sqrt{x} e^{-x}  ~\d x $ 的值；
+
+(2)求出瑕积分 $\int_{0}^{1} \frac{1}{\sqrt{x(1-x)}}  ~\d x $ 的值.
 \end{example}
+
 \begin{solution}
-    
-    (1)
+(1)
     \[ \int_{0}^{+\infty} \sqrt{x} e^{-x}  \d x = \int_{0}^{+\infty} x^{\frac{3}{2}-1} e^{-x}  \d x = \Gamma\left(\frac{3}{2}\right) = \frac{1}{2} \Gamma\left(\frac{1}{2}\right) = \frac{1}{2} \sqrt{\pi} \]
 
     (2)
-    \[ \int_{0}^{1} \frac{1}{\sqrt{x(1-x)}}  \d x = \int_{0}^{1} x^{\frac{1}{2}-1}(1-x)^{\frac{1}{2}-1}  \d x = \text{B} \left(\frac{1}{2}, \frac{1}{2}\right) 
+    \[ \int_{0}^{1} \frac{1}{\sqrt{x(1-x)}}  \d x = \int_{0}^{1} x^{\frac{1}{2}-1}(1-x)^{\frac{1}{2}-1}  \d x = \text{B} \left(\frac{1}{2}, \frac{1}{2}\right)
     = \frac{\Gamma\left(\frac{1}{2}\right) \Gamma\left(\frac{1}{2}\right)}{\Gamma(1)} = \pi \]
+\end{solution}
 
-\end{solution} \qed \par
-~\par
-
-\begin{example}
-    {9(2024)}{
-        求积分的值： \[ \int_{0}^{1} \sqrt{\frac{x^5}{1-x}}  ~\d x \] .
-    }
+\begin{example}[2024]
+\label{ex:ch11-09}
+求积分的值： \[ \int_{0}^{1} \sqrt{\frac{x^5}{1-x}}  ~\d x \] .
 \end{example}
+
 \begin{solution}
-    \begin{eq1}
+\begin{eq1}
         \int_{0}^{1} \sqrt{\frac{x^5}{1-x}} ~\d x &= \int_{0}^{1} x^{\frac{5}{2}}(1-x)^{-\frac{1}{2}}  ~\d x = \text{B}\left(\frac{7}{2}, \frac{1}{2}\right) = \frac{\Gamma\left(\frac{7}{2}\right) \Gamma\left(\frac{1}{2}\right)}{\Gamma(4)} \\
         &= \frac{\frac{5}{2} \cdot \frac{3}{2} \cdot \frac{1}{2} \cdot \Gamma\left(\frac{1}{2}\right) \cdot \Gamma \left(\frac{1}{2}\right)}{3!} = \frac{\frac{15}{8} \sqrt{\pi} \cdot \sqrt{\pi}}{6}  = \frac{5}{16} \pi
-    \end{eq1} \qed \par
+    \end{eq1}
 \end{solution}
-~\par
 
 \subsubsection{广义积分综合题——级数相关}
-\vspace{0.5em}
 
-\begin{example}
-    {10(教材11.1例8)}{
-        证明：当$0 < p \le 1$时，积分$\int_{1}^{+\infty} \frac{\sin x}{x^p}~\d x$条件收敛.
-    }
-\end{example} \vspace{0.5em}
+\begin{example}[教材11.1例8]
+\label{ex:ch11-10}
+证明：当$0 < p \le 1$时，积分$\int_{1}^{+\infty} \frac{\sin x}{x^p}~\d x$条件收敛.
 
 \setstretch{2}
+\end{example}
 
-\begin{pf}
-    先证明$\int_{1}^{+\infty} \frac{\sin x}{x} ~\d x$收敛.
+\begin{proof}
+先证明$\int_{1}^{+\infty} \frac{\sin x}{x} ~\d x$收敛.
     变上限积分$\int_{1}^{+\infty} \sin x ~\d x$有界.
     又因为$p>0$，所以函数$\frac{1}{x^p}$单调递减趋于$0$（当$x \to +\infty$）.
     由狄利克雷判别法即知当$0 < p \le 1$时，
@@ -721,7 +696,7 @@ B函数的定义如下：
 
     \begin{eq1}
         \int_{1}^{A} \left| \frac{\sin x}{x^p} \right| ~\d x
-        &\ge \int_{\pi}^{n_0 \pi} \frac{|\sin x|}{x^p} ~\d x 
+        &\ge \int_{\pi}^{n_0 \pi} \frac{|\sin x|}{x^p} ~\d x
         = \sum_{n=2}^{n_0} \int_{(n-1)\pi}^{n\pi} \frac{|\sin x|}{x^p} ~\d x \\
         &\ge \sum_{n=2}^{n_0} \frac{1}{(n\pi)^p} \int_{(n-1)\pi}^{n\pi} |\sin x|~\d x \\
         &= \sum_{n=2}^{n_0} \frac{1}{(n\pi)^p} \int_{0}^{\pi} \sin x ~\d x = \frac{2}{\pi^p} \sum_{n=2}^{n_0} \frac{1}{n^p}
@@ -732,11 +707,10 @@ B函数的定义如下：
     由此推出$\int_{1}^{A} \frac{|\sin x|}{x^p}~\d x$可大于任意给定的正数，
     只要$A$充分大.
     这即意味着$\int_{1}^{A} \left| \frac{\sin x}{x^p} \right| ~\d x$无界，
-    即$\int_{1}^{+\infty} \left| \frac{\sin x}{x^p} \right| ~\d x$发散.\vspace{0.5em}
+    即$\int_{1}^{+\infty} \left| \frac{\sin x}{x^p} \right| ~\d x$发散.
 
-    综合上述，当$0 < p \le 1$时，$\int_{1}^{+\infty} \frac{\sin x}{x^p} ~\d x$条件收敛. \qed \par
-\end{pf}
-~\par
+    综合上述，当$0 < p \le 1$时，$\int_{1}^{+\infty} \frac{\sin x}{x^p} ~\d x$条件收敛.
+\end{proof}
 
 \setstretch{1.75}
 
@@ -776,39 +750,36 @@ $[(n-1)\pi , n\pi]$区间.
 那么可以取被积函数的零点作为分割点，
 使得分割后的级数是交错级数.
 
-
-\begin{figure}[H] 
+\begin{figure}[H]
     \centering
     \includegraphics[width=0.8\textwidth]{fig11_1.jpg}
-    \caption{无穷积分可以精细地向下（阴影部分面积）和向上（虚线部分面积+阴影部分面积）放缩成级数} 
+    \caption{无穷积分可以精细地向下（阴影部分面积）和向上（虚线部分面积+阴影部分面积）放缩成级数}
 \end{figure}
 
-\clearpage
-
 \begin{example}
-    {11}{
-        设$\alpha, \beta > 0$.
+\label{ex:ch11-11}
+设$\alpha, \beta > 0$.
         若无穷积分$\int_{0}^{+\infty} \frac{x^\alpha ~\d x}{1 + x^{\beta} \sin^2 x}$，
         求$\alpha, \beta$所满足的关系.
-    }
-\end{example}\vspace{0.5em}
+\end{example}
+
 \begin{solution}
-    设$n \in \mathbb{N}$.
+设$n \in \mathbb{N}$.
     当$x \in [n\pi, (n+1)\pi]$时，被积函数$f(x) = \frac{x^\alpha }{1 + x^{\beta} \sin^2 x}$可放缩如下：
     \begin{eq1}
-        \frac{(n\pi)^{\alpha}}{1 + (n+1)^{\beta} \pi^{\beta} \sin^2 x} 
+        \frac{(n\pi)^{\alpha}}{1 + (n+1)^{\beta} \pi^{\beta} \sin^2 x}
         \le f(x)
         \le
-        \frac{(n+1)^{\alpha}\pi^{\alpha}}{1 + n^{\beta} \pi^{\beta} \sin^2 x} 
+        \frac{(n+1)^{\alpha}\pi^{\alpha}}{1 + n^{\beta} \pi^{\beta} \sin^2 x}
     \end{eq1}
 
     故：
     \begin{eq1}
-        \int_{n\pi}^{(n+1)\pi} \frac{(n\pi)^{\alpha}~\d x}{1 + (n+1)^{\beta} \pi^{\beta} \sin^2 x} 
+        \int_{n\pi}^{(n+1)\pi} \frac{(n\pi)^{\alpha}~\d x}{1 + (n+1)^{\beta} \pi^{\beta} \sin^2 x}
         \le
         \int_{n\pi}^{(n+1)\pi} f(x)~\d x
         \le
-        \int_{n\pi}^{(n+1)\pi} \frac{(n+1)^{\alpha}\pi^{\alpha} ~\d x}{1 + n^{\beta} \pi^{\beta} \sin^2 x} 
+        \int_{n\pi}^{(n+1)\pi} \frac{(n+1)^{\alpha}\pi^{\alpha} ~\d x}{1 + n^{\beta} \pi^{\beta} \sin^2 x}
     \end{eq1}
 
     计算出左侧和右侧的积分（过程省略）：
@@ -834,24 +805,20 @@ $[(n-1)\pi , n\pi]$区间.
     由$p$级数结论，
     这两个级数收敛当且仅当$\alpha - \frac{\beta}{2} < -1$.
     而根据比较判别法，
-    这也是被夹在两个级数中间的无穷积分$\int_{0}^{+\infty} f(x)~\d x$收敛的充要条件. \qed \par
+    这也是被夹在两个级数中间的无穷积分$\int_{0}^{+\infty} f(x)~\d x$收敛的充要条件.
 \end{solution}
-~\par
 
-
-\begin{example}
-    {12(2021)}{
-        已知：当$t \in \mathbb{R}$，$\frac{t}{\pi}$不是整数时，有：
+\begin{example}[2021]
+\label{ex:ch11-12}
+已知：当$t \in \mathbb{R}$，$\frac{t}{\pi}$不是整数时，有：
         \begin{eq1}
             \frac{1}{\sin t} = \frac{1}{t} + \ss (-1)^n \left( \frac{1}{t + n\pi} + \frac{1}{t - n\pi} \right)
         \end{eq1}
         利用这个结论证明：$\int_{0}^{+\infty} \frac{\sin t}{t} ~\d t = \frac{\pi}{2}$.
-    }
-\end{example}\vspace{0.5em}
+\end{example}
 
-\begin{pf}
-    
-    (1)~~欲将无穷积分进行区间分割，转化成级数.
+\begin{proof}
+(1)~~欲将无穷积分进行区间分割，转化成级数.
     先证明无穷积分收敛：
     因为$\sin t$的变上限积分有界，
     $\frac{1}{t}$单调递减趋于$0$，
@@ -868,7 +835,7 @@ $[(n-1)\pi , n\pi]$区间.
     因此需要将积分与无穷求和交换顺序.
     在这之前，需要先做成两件事——
     (2)：将每个$[n\pi, (n+1)\pi]$上的积分都转换到同一个区间内；
-    (3)：证明积分与无穷求和可换序.\vspace{0.5em}
+    (3)：证明积分与无穷求和可换序.
 
     (2.1)~~令$t= x - n\pi$，有：
     \begin{eq1}
@@ -884,16 +851,15 @@ $[(n-1)\pi , n\pi]$区间.
     这需要从$x$轴负半轴“平移”到$[0,\pi]$区间来产生.
     恰好$\frac{\sin x}{x}$是偶函数.
     只需考虑$\int_{-\infty}^{0} \frac{\sin x}{x} ~\d x$.
-    \vspace{0.5em}
 
     (2.2)~~令$t= x + n\pi$，有：
     \begin{eq1}
         \int_{0}^{+\infty} \frac{\sin x}{x} ~\d x
-        = \int_{-\infty}^{0} \frac{\sin x}{x} ~\d x 
+        = \int_{-\infty}^{0} \frac{\sin x}{x} ~\d x
         &= \sum_{n=1}^{\infty} \left( \int_{-n\pi}^{-(n-1)\pi} \frac{\sin x}{x} ~\d x \right) \\
         &= \sum_{n=1}^{\infty} \left( \int_{-n\pi}^{-(n-1)\pi} \frac{\sin(t - n\pi)}{t-n\pi} ~\d t \right) \\
         &= \sum_{n=1}^{\infty} \left(  \int_{0}^{\pi} \frac{(-1)^n \sin t}{t-n\pi} ~\d t \right)
-    \end{eq1}\vspace{0.5em}
+    \end{eq1}
 
     (2.3)~~将(2.1)与(2.2)的结果合并：
     \begin{eq1}
@@ -902,11 +868,9 @@ $[(n-1)\pi , n\pi]$区间.
         + \int_{-\infty}^{0} \frac{\sin x}{x} ~\d x \\
         &= \sum_{n=0}^{\infty} \left(  \int_{0}^{\pi} \frac{(-1)^n \sin t}{t+n\pi} ~\d t \right)+
         \sum_{n=1}^{\infty} \left(  \int_{0}^{\pi} \frac{(-1)^n \sin t}{t-n\pi} ~\d t \right) \\
-        &= \int_{0}^{\pi} \frac{\sin t}{t} ~\d t + 
+        &= \int_{0}^{\pi} \frac{\sin t}{t} ~\d t +
         \ss \left[ \int_{0}^{\pi} (-1)^n \sin t \left( \frac{1}{t+n\pi} + \frac{1}{t-n\pi}\right)~\d t \right] \\
-    \end{eq1}\vspace{0.5em}
-
-
+    \end{eq1}
 
     (3)~~根据逐项积分定理，为了无穷求和与积分交换顺序，需要证明以下关于$t$的函数项级数在$[0,\pi]$上一致收敛：
     \begin{eq1}
@@ -917,21 +881,21 @@ $[(n-1)\pi , n\pi]$区间.
     \begin{eq1}
         \left| (-1)^n \sin t \left( \frac{1}{t+n\pi} + \frac{1}{t-n\pi}\right) \right|
         &= \left| \frac{2t\sin t}{t^2 - n^2 \pi ^2} \right|\\
-        &\le \frac{2\pi}{n^2 \pi^2} = \frac{2}{\pi n^2} 
+        &\le \frac{2\pi}{n^2 \pi^2} = \frac{2}{\pi n^2}
     \end{eq1}
 
     而数项级数$\ss \frac{2}{\pi n^2}$收敛.
     由强级数判别法，
-    上面的函数项级数一致收敛，故无穷求和与积分可以换序.\vspace{0.5em}
+    上面的函数项级数一致收敛，故无穷求和与积分可以换序.
 
     (4)~~换序后计算如下：
     \begin{eq1}
          2 \int_{0}^{+\infty} \frac{\sin x}{x} ~\d x
-         &= \int_{0}^{\pi} \frac{\sin t}{t} ~\d t + 
+         &= \int_{0}^{\pi} \frac{\sin t}{t} ~\d t +
         \ss \left[ \int_{0}^{\pi} (-1)^n \sin t \left( \frac{1}{t+n\pi} + \frac{1}{t-n\pi}\right)~\d t \right] \\
-        &= \int_{0}^{\pi} 
+        &= \int_{0}^{\pi}
         \left[  \frac{\sin t}{t} + \ss (-1)^n \sin t \left( \frac{1}{t+n\pi} + \frac{1}{t-n\pi}\right)  \right] ~\d t \\
-        &= \int_{0}^{\pi} 
+        &= \int_{0}^{\pi}
          \sin t \left[  \frac{1}{t} + (-1)^n \ss  \left( \frac{1}{t+n\pi} + \frac{1}{t-n\pi}\right)  \right] ~\d t
     \end{eq1}
 
@@ -944,32 +908,28 @@ $[(n-1)\pi , n\pi]$区间.
 
     即：\begin{eq1}
         \int_{0}^{+\infty} \frac{\sin x}{x} ~\d x = \frac{\pi}{2}
-    \end{eq1} \qed \par
-\end{pf}
-~\par
+    \end{eq1}
+\end{proof}
 
 \begin{example}
-    {13}{
-        设级数 \(\sum_{n=0}^{\infty} a_n\) 收敛，
+\label{ex:ch11-13}
+设级数 \(\sum_{n=0}^{\infty} a_n\) 收敛，
         每项 \(a_n > 0\)，\(T\) 是序列 \(\{a_n\}\) 中最大项.
         对于每个实数 \(x > 0\)，定义 \(L(x)\) 是序列 \(\{a_n\}\) 中大于 \(x\) 的项的个数.
-    }
+
+(1)~~证明： $0$ 是 \(L(x)\) 的瑕点.
+
+(2)~~证明：瑕积分 \(\int_0^T L(x)  ~\d x\) 收敛，并且
+$\int_0^T L(x)  ~\d x = \sum_{n=0}^{\infty} a_n$.
 \end{example}
 
-
-\textit{(1)~~证明： $0$ 是 \(L(x)\) 的瑕点.}
-
-\textit{(2)~~证明：瑕积分 \(\int_0^T L(x)  ~\d x\) 收敛，并且}
-$\int_0^T L(x)  ~\d x = \sum_{n=0}^{\infty} a_n$. \vspace{0.5em}
-
-
-\begin{remark}
-    $L(x)$的定义实际与$\{ a_n \}$的排列顺序无关.
+\begin{analysis}
+$L(x)$的定义实际与$\{ a_n \}$的排列顺序无关.
     因此，解决问题的关键在于将$\{a_n \}$重排成易于分析的顺序.
-\end{remark}\vspace{0.5em}
+\end{analysis}
 
-\begin{pf}
-    将序列$\{ a_n \}$重排为单调递减的序列$\{ b_n \}$.
+\begin{proof}
+将序列$\{ a_n \}$重排为单调递减的序列$\{ b_n \}$.
     $b_1 = T$.
     根据级数重排定理，$\sum_{n=0}^{\infty} b_n$收敛，且
     $\sum_{n=0}^{\infty} a_n = \sum_{n=0}^{\infty} b_n$.
@@ -981,25 +941,25 @@ $\int_0^T L(x)  ~\d x = \sum_{n=0}^{\infty} a_n$. \vspace{0.5em}
     从而也是$\{ b_n \}$的下确界.
     因为$\{ b_n \}$单调递减，
     根据单调有界原理$\vphantom{\sum_{0}^{0}}$，
-    $\limn b_n = 0$.\vspace{0.25em}
-    
-    这样一来，$L(x)$的定义可以写成：$L(x) = n ~,~~ x \in [b_{n+1}, b_n)$.\vspace{0.5em}
+    $\limn b_n = 0$.
+
+    这样一来，$L(x)$的定义可以写成：$L(x) = n ~,~~ x \in [b_{n+1}, b_n)$.
 
     (1)~~对任意大的正整数$N$，都有：
     \begin{eq}
         L(x) \ge N ~,~~ \forall x \in (0,b_N)
     \end{eq}
 
-    故$L(x)$在$0$附近无界，即$0$是$L(x)$的瑕点.\vspace{0.5em}
+    故$L(x)$在$0$附近无界，即$0$是$L(x)$的瑕点.
 
     (2)~~$L(x)$是非负函数，
     而$\int_{\delta}^{T} L(x) ~\d x$（作为$\delta$的函数）和
     $\int_{b_n}^{T} L(x) ~\d x $（作为关于$n$的序列）同时有界或无界.
-    故$\int_{0}^{T} L(x) ~\d x = \limn \int_{b_n}^{T} L(x) ~\d x$. \vspace{0.25em}
-    
+    故$\int_{0}^{T} L(x) ~\d x = \limn \int_{b_n}^{T} L(x) ~\d x$.
+
     计算右侧的积分序列：
     \begin{eq1}
-        \int_{b_n}^{T} L(x) ~\d x 
+        \int_{b_n}^{T} L(x) ~\d x
         &= \sum_{k=1}^{n-1} k \cdot (b_k - b_{k+1}) \\
         &= \left( b_1 - b_2 \right) + 2\left( b_2 - b_3 \right) + 3\left( b_3 - b_4 \right) + \cdots + (n-1) \left( b_{n-1} - b_{n} \right)  \\
         &= b_1 + b_2 + b_3 +\cdots + b_{n-1} - (n-1)b_n \\
@@ -1011,13 +971,9 @@ $\int_0^T L(x)  ~\d x = \sum_{n=0}^{\infty} a_n$. \vspace{0.5em}
     因此，对$(*)$式两侧取$n \to \infty$极限，得到：
     \begin{eq1}
         \int_{0}^{T} L(x) ~\d x = \limn \int_{b_n}^{T} L(x) ~\d x
-        = \ss b_n = \ss a_n 
-    \end{eq1} \qed \par
-    
-\end{pf}
-~\par
-
-
+        = \ss b_n = \ss a_n
+    \end{eq1}
+\end{proof}
 
 \subsubsection{含参变量积分收敛性判断和计算}
 
@@ -1035,22 +991,18 @@ $\int_0^T L(x)  ~\d x = \sum_{n=0}^{\infty} a_n$. \vspace{0.5em}
 并且余项的取法配合积分发散的原因（将在具体题目中展示怎么做）.
 对于边界点处积分收敛但是积分函数不连续的情况，
 可以反用含参积分连续性的定理，从含参积分不连续推出它不是一致收敛.
-\par
-
-~\par
 
 \begin{example}
-    {14}{
-        考虑含参变量$y$的无穷积分$I(y) = \int_{0}^{+\infty} e^{-xy^2}  \cos x ~\d x$.
-    }
+\label{ex:ch11-14}
+考虑含参变量$y$的无穷积分$I(y) = \int_{0}^{+\infty} e^{-xy^2}  \cos x ~\d x$.
+
+(1)(2021)~~任意取定 \( r > 0 \)，证明$I(y)$对于 \( y \in [r, +\infty) \) 是一致收敛的.
+
+(2)~~证明$I(y)$对于 \( y \in (0, +\infty) \) 不是一致收敛的.
 \end{example}
-\textit{(1)(2021)~~任意取定 \( r > 0 \)，证明$I(y)$对于 \( y \in [r, +\infty) \) 是一致收敛的.}
 
-\textit{(2)~~证明$I(y)$对于 \( y \in (0, +\infty) \) 不是一致收敛的.}
-\vspace{0.5em}
-
-\begin{remark}
-    第一问由于出现了$\cos x$，容易看出应该用狄利克雷判别法.
+\begin{analysis}
+第一问由于出现了$\cos x$，容易看出应该用狄利克雷判别法.
     第二问中，观察到这个被积函数实际上是可以求出不定积分的.
     可以直接计算出余项（关于$A$和$y$的表达式）然后说明它不随$y$一致收敛到$0$，作为保底手段.
     但是如果仔细分析，能够发现更简单清晰的放缩方法.
@@ -1064,11 +1016,10 @@ $\int_0^T L(x)  ~\d x = \sum_{n=0}^{\infty} a_n$. \vspace{0.5em}
     这也是$I(y)$在$y=0$附近不一致收敛的根本原因.
     受此启发，在利用柯西收敛原理（的否定形式）证明时，
     也要抓住$\left[2n\pi - \frac{\pi}{2}, 2n\pi + \frac{\pi}{2}\right]$的区间，借助$\cos x$在一段区间上的非负性构造余项大于$\epsilon$.
-\end{remark}\vspace{0.5em}
+\end{analysis}
 
-\begin{pf}
-
-    (1)~~对于每个给定的 \( y \in [r, +\infty) \)，\( e^{-xy^2} \) 关于 \( x \) 是单调递减函数.并且：
+\begin{proof}
+(1)~~对于每个给定的 \( y \in [r, +\infty) \)，\( e^{-xy^2} \) 关于 \( x \) 是单调递减函数.并且：
     \begin{eq1}
         e^{-xy^2} \leq e^{-xr^2}
     \end{eq1}
@@ -1076,17 +1027,17 @@ $\int_0^T L(x)  ~\d x = \sum_{n=0}^{\infty} a_n$. \vspace{0.5em}
     \( e^{-xr^2} \) 与 \( y \) 无关，并且当 \( x \to +\infty \) 时，\( e^{-x}r^2 \to 0 \) .
     所以，当 \( x \to +\infty \) 时，\( e^{-xy^2} \) 对于 \( y \in [r, +\infty) \) 一致收敛于$0$.
 
-    对于任意 \( A > a \) 及一切 \( y \in [r, +\infty) \)， 
+    对于任意 \( A > a \) 及一切 \( y \in [r, +\infty) \)，
     \[
     \left| \int_a^A \cos x  ~\d x \right| = \left| \sin A - \sin a \right| \leq 2
     \]
     一致有界.
 
-    因此，根据狄利克雷判别法，含参变量 \( y \) 的无穷积分 
+    因此，根据狄利克雷判别法，含参变量 \( y \) 的无穷积分
     \begin{eq}
     \int_0^{+\infty} e^{-xy^2} \cos x  ~\d x
     \end{eq}
-    在 \([r, +\infty)\) 上一致收敛. \vspace{0.5em}
+    在 \([r, +\infty)\) 上一致收敛.
 
     (2)~~一致收敛的柯西收敛原理：
 
@@ -1095,12 +1046,12 @@ $\int_0^T L(x)  ~\d x = \sum_{n=0}^{\infty} a_n$. \vspace{0.5em}
     $\forall y \in [r , +\infty)$，
     $\left| \int_{A'}^{A''} e^{-xy^2} \cos x ~\d x \right| < \epsilon$.
 
-    因此，$I(y)$在$(0,+\infty)$上不一致收敛等价于：\vspace{0.5em}
+    因此，$I(y)$在$(0,+\infty)$上不一致收敛等价于：
 
     $\exists \epsilon >0$，$\forall A_0 > 0$，
     $\exists A',A'' > 0$，
     $\exists y \in [r , +\infty)$，
-    $\left| \int_{A'}^{A''} e^{-xy^2} \cos x ~\d x \right| > \epsilon$.\vspace{0.5em}
+    $\left| \int_{A'}^{A''} e^{-xy^2} \cos x ~\d x \right| > \epsilon$.
 
     对任意大的$A_0 > 0$，总存在$n \in \mathbb{N}$，
     使得$2n\pi - \frac{\pi}{2} > A_0$.
@@ -1109,7 +1060,7 @@ $\int_0^T L(x)  ~\d x = \sum_{n=0}^{\infty} a_n$. \vspace{0.5em}
     $\int_{A'}^{A''} \cos x ~\d x = 2> \epsilon$.
     现在，我们只需要对参数$y$取一个合适的序列$\{ y_n \}$，
     使得$e^{-xy^2}$$\vphantom{\ss}$不随$n$收敛到$0$，就能保证整个余项$>\epsilon$.
-    
+
     考虑到积分式中$x \in (2n\pi - \frac{\pi}{2}, 2n\pi + \frac{\pi}{2})$，
     可以取$y = y_n = \frac{1}{\sqrt{2n\pi + \pi /2}}$.
     这样就有：
@@ -1122,23 +1073,21 @@ $\int_0^T L(x)  ~\d x = \sum_{n=0}^{\infty} a_n$. \vspace{0.5em}
         \left| \int_{A'}^{A''} e^{-xy^2} \cos x ~\d x \right|
         &= \int_{2n\pi - \pi / 2}^{2n\pi + \pi / 2} e^{-xy^2} \cos x ~\d x \\
         &\ge  \int_{2n\pi - \pi / 2}^{2n\pi + \pi / 2} e^{-1} \cos x ~\d x \\
-        &= 2e^{-1} > \epsilon~~~(\text{取}\epsilon = e^{-1}) 
-    \end{eq1} \qed \par
-\end{pf} 
+        &= 2e^{-1} > \epsilon~~~(\text{取}\epsilon = e^{-1})
+    \end{eq1}
+\end{proof}
 
-~\par
+\begin{example}[教材11.3例题]
+\label{ex:ch11-15}
+考虑积分$J(t) = \int_{0}^{+\infty} \sqrt{t} e^{-tx^2}~\d x$.
 
-\begin{example}
-    {15(教材11.3例题)}{
-        考虑积分$J(t) = \int_{0}^{+\infty} \sqrt{t} e^{-tx^2}~\d x$.
-    }
+(1)~~证明：$J(t)$在区间$[c,d]$上一致收敛，其中$0<c<d$.
+
+(2)~~证明：$J(t)$在区间$[0,d]$上不一致收敛.
 \end{example}
-\textit{(1)~~证明：$J(t)$在区间$[c,d]$上一致收敛，其中$0<c<d$.}
 
-\textit{(2)~~证明：$J(t)$在区间$[0,d]$上不一致收敛.}\vspace{0.5em}
-
-\begin{remark}
-    被积函数按负指数的速度收敛，可用M-判别法，将这个收敛速度描述出来即可.
+\begin{analysis}
+被积函数按负指数的速度收敛，可用M-判别法，将这个收敛速度描述出来即可.
     第二问，还是先看看边界点$t=0$处发生了什么.
     显然$J(0) = 0$.
     但是，当$t \to 0^{+}$时，
@@ -1146,48 +1095,46 @@ $\int_0^T L(x)  ~\d x = \sum_{n=0}^{\infty} a_n$. \vspace{0.5em}
     也就是说，$J(t)$在$t=0$处不连续.
     根据含参无穷积分的连续性定理，
     不连续性可以推出不一致收敛.
-\end{remark} \vspace{0.5em}
+\end{analysis}
 
-\begin{pf}
-    
-    (1)~~当$c \le t \le d$时，有$|\sqrt{t} e^{-tx^2}| \le \sqrt{d} e^{-cx^2}$.
-    而无穷积分$\int_{0}^{+\infty} \sqrt{d} e^{-cx^2} ~\d x$收敛. 
-    由M-判别法，$J(t)$在$[c,d]$上一致收敛.\vspace{0.5em}
+\begin{proof}
+(1)~~当$c \le t \le d$时，有$|\sqrt{t} e^{-tx^2}| \le \sqrt{d} e^{-cx^2}$.
+    而无穷积分$\int_{0}^{+\infty} \sqrt{d} e^{-cx^2} ~\d x$收敛.
+    由M-判别法，$J(t)$在$[c,d]$上一致收敛.
 
     (2)~~显然$J(0)=0$.
     当$t>0$时，$J(t)$的值亦可直接计算出来：
     \begin{eq1}
-        J(t) &= \int_{0}^{+\infty} \sqrt{t} e^{-tx^2} ~\d x 
-        &\xlongequal{u=\sqrt{t}x} \int_{0}^{+\infty} e^{-u^2} ~\d u 
+        J(t) &= \int_{0}^{+\infty} \sqrt{t} e^{-tx^2} ~\d x
+        &\xlongequal{u=\sqrt{t}x} \int_{0}^{+\infty} e^{-u^2} ~\d u
         &= \frac{\sqrt{\pi}}{2}
     \end{eq1}
-    
+
     可见$J(t)$在$t=0$处不连续.
     但被积函数$f(x,t) = \sqrt{t} e^{-tx^2}$在$[0,+\infty)\times [0,d]$上连续.
-    根据含参无穷积分的连续性，$J(t)$在$[0,d]$上不一致收敛. \qed \par
-\end{pf}
-~\par
+    根据含参无穷积分的连续性，$J(t)$在$[0,d]$上不一致收敛.
+\end{proof}
 
 \begin{example}
-    {15}{
-        考虑积分$I(y) = \int_{1}^{+\infty}\frac{\cos xy}{x} ~\d x$.
-    }
-\end{example} \vspace{0.25em}
-\textit{(1)~~证明：$I(y)$在$[c,\pi]$上一致收敛，其中$0<c<\pi$.}
+\label{ex:ch11-16}
+考虑积分$I(y) = \int_{1}^{+\infty}\frac{\cos xy}{x} ~\d x$.
 
-\textit{(2)~~证明：$I(y)$在$(0,\pi]$上不一致收敛.}\vspace{0.5em}
-\begin{remark}
-    第一问比较容易看出应该用狄利克雷判别法.
+(1)~~证明：$I(y)$在$[c,\pi]$上一致收敛，其中$0<c<\pi$.
+
+(2)~~证明：$I(y)$在$(0,\pi]$上不一致收敛.
+\end{example}
+
+\begin{analysis}
+第一问比较容易看出应该用狄利克雷判别法.
     第二问，来看积分在边界点$y=0$的情况.
     发现
     $I(0) = \int_{1}^{+\infty} \frac{\d x}{x}$是发散的（$\to +\infty$）.
     在证明时可以利用这一点：只要取序列$\{ y_n \}$快速收敛到$0$，就能让$\cos xy$十分接近$\cos xy = 1$，
     从而构造出余项$> \epsilon$.
-\end{remark}\vspace{0.5em}
+\end{analysis}
 
-\begin{pf}
-    
-    (1)~~当$y \in [c,\pi]$时：
+\begin{proof}
+(1)~~当$y \in [c,\pi]$时：
     \begin{eq1}
        \left| \int_{1}^{A} \cos xy ~\d x \right|
        &= \left| \frac{\sin A - \sin 1}{y} \right| \le \frac{2}{y} \le \frac{2}{c}
@@ -1195,14 +1142,14 @@ $\int_0^T L(x)  ~\d x = \sum_{n=0}^{\infty} a_n$. \vspace{0.5em}
     即$\int_{1}^{A} \cos xy ~\d x$一致有界.
     而$\frac{1}{x}$与$y$无关，单调递减一致趋于$0$.
     故由狄利克雷判别法可知，
-    $I(y)$在$[c,\pi]$上一致收敛.\vspace{0.5em}
+    $I(y)$在$[c,\pi]$上一致收敛.
 
     (2)~~$I(y)$在$(0,\pi]$上不一致收敛等价于：
 
     $\exists \epsilon >0$，$\forall A_0 > 0$，
     $\exists A',A'' > 0$，
     $\exists y \in (0,\pi]$，
-    $\left| \int_{A'}^{A''} \frac{\cos xy}{x} ~\d x \right| > \epsilon$.\vspace{0.5em}
+    $\left| \int_{A'}^{A''} \frac{\cos xy}{x} ~\d x \right| > \epsilon$.
 
     对任意大的$A_0$，总存在正整数$n > A_0$.
     取$A' = n$，$A'' = 2n$，以及$\{ y_n \} = \frac{1}{n^2}$.
@@ -1211,14 +1158,13 @@ $\int_0^T L(x)  ~\d x = \sum_{n=0}^{\infty} a_n$. \vspace{0.5em}
         \left| \int_{A'}^{A''} \frac{\cos xy}{x} ~\d x \right|
         &= \left| \int_{n}^{2n} \frac{\cos x/n^2}{x} ~\d x \right|
         \ge  \int_{n}^{2n} \frac{\cos 2n/n^2}{x} ~\d x \\
-        &= \cos{\frac{2}{n}} \cdot \int_{n}^{2n} \frac{\d x}{x} 
-        = \ln 2 \cdot \cos \frac{2}{n} \to \ln 2 
+        &= \cos{\frac{2}{n}} \cdot \int_{n}^{2n} \frac{\d x}{x}
+        = \ln 2 \cdot \cos \frac{2}{n} \to \ln 2
     \end{eq1}
 
     可见当$n$充分大时，总存在充分小的$\epsilon > 0$，使$\left| \int_{A'}^{A''} \frac{\cos xy}{x} ~\d x \right|>\epsilon$.
-    即$I(y)$在$(0,\pi]$上不一致收敛. \qed \par
-\end{pf}
-~\par
+    即$I(y)$在$(0,\pi]$上不一致收敛.
+\end{proof}
 
 接下来有几个计算无穷积分的问题.
 对于含参积分而言，对参数求导（费曼积分法）是我们课内学到的最重要的技巧之一.
@@ -1231,38 +1177,32 @@ $\int_0^T L(x)  ~\d x = \sum_{n=0}^{\infty} a_n$. \vspace{0.5em}
 这是需要注意利用包含在定义域内的子区间来“曲线救国”.
 这在接下来的几道题目中都有体现.
 
-\par
-~\par
+\begin{example}[2023]
+\label{ex:ch11-17}
+证明和计算下列各题：
 
-\begin{example}
-    {16(2023)}{
-        证明和计算下列各题：
-    }
-\end{example}\vspace{0.5em}
+(1)~~证明 \( I(t) = \int_{0}^{+\infty} e^{-xt} \frac{\sin x}{x}  ~\d x \) 关于 \( t \in [0, +\infty) \) 一致收敛.
 
-\textit{(1)~~证明 \( I(t) = \int_{0}^{+\infty} e^{-xt} \frac{\sin x}{x}  ~\d x \) 关于 \( t \in [0, +\infty) \) 一致收敛.}
+(2)~~证明 \( I(t) = \int_{0}^{+\infty} e^{-xt} \frac{\sin x}{x}  ~\d x \) 在 \((0, +\infty)\) 的任何闭子区间上可导，即在 \((0, +\infty)\) 可导.
 
-\textit{(2)~~证明 \( I(t) = \int_{0}^{+\infty} e^{-xt} \frac{\sin x}{x}  ~\d x \) 在 \((0, +\infty)\) 的任何闭子区间上可导，即在 \((0, +\infty)\) 可导.}
+(3)~~求出函数 \( I(t),  t \in (0, +\infty) \).
 
-\textit{(3)~~求出函数 \( I(t),  t \in (0, +\infty) \).}
+(4)~~计算 \(\int_{0}^{+\infty} \frac{\sin x}{x}  ~\d x\) 的值.
+\end{example}
 
-\textit{(4)~~计算 \(\int_{0}^{+\infty} \frac{\sin x}{x}  ~\d x\) 的值.}\vspace{0.5em}
-
- 
-\begin{remark}
-    教材例题.
+\begin{analysis}
+教材例题.
     每一小问的提示给得很充分，
     可以仔细学习整道题的证明思路.
     在其他题目中不一定有如此详尽的提示，需要自己想到第(2)问的结论对后面的步骤而言是有必要的.
-\end{remark}\vspace{0.5em}
+\end{analysis}
 
 \begin{solution}
-    
-    (1)~~这里被积函数虽然在$x=0$处无定义，但对任意$t \in [0,+\infty)$，
+(1)~~这里被积函数虽然在$x=0$处无定义，但对任意$t \in [0,+\infty)$，
     \begin{eq1}
         \lim\limits_{x \to o^{+}} \frac{e^{-tx} \sin x}{x} = 1
     \end{eq1}
-    即$x=0$是被积函数的第一类间断点. 
+    即$x=0$是被积函数的第一类间断点.
     因而函数在任意区间$[0,A]$上可积，$x=0$不是瑕点.
 
     令$f(x,t)= \frac{\sin x}{x}$，$g(x,t) = e^{-tx}$.
@@ -1271,7 +1211,7 @@ $\int_0^T L(x)  ~\d x = \sum_{n=0}^{\infty} a_n$. \vspace{0.5em}
     即$g(x,t)$对$t$一致有界；
     又$\int_{0}^{+\infty} f(x,t) ~\d x$收敛，即对$y$一致收敛.
     由阿贝尔判别法，
-    即得该无穷积分在$[0,+\infty)$上一致收敛.\vspace{0.5em}
+    即得该无穷积分在$[0,+\infty)$上一致收敛.
 
     (2)~~任意取定一点$t_0 \in (0,+\infty)$，必存在区间$[c,d]$，
     满足$t_0 \in [c,d] \subset (0,+\infty)$.
@@ -1282,11 +1222,11 @@ $\int_0^T L(x)  ~\d x = \sum_{n=0}^{\infty} a_n$. \vspace{0.5em}
     \end{eq1}
     且积分$\int_{0}^{+\infty} e^{-cx} ~\d x$收敛.
     由M-判别法，积分$\int_{0}^{+\infty} \frac{\partial F(x,t)}{\partial t} ~\d x$在$[c,d]$上一致收敛.
-    于是有含参积分求导定理，$I(t)$在$(0,+\infty)$的任意闭子区间$[c,d]$上可导，且积分与求导可换序.\vspace{0.5em}
+    于是有含参积分求导定理，$I(t)$在$(0,+\infty)$的任意闭子区间$[c,d]$上可导，且积分与求导可换序.
 
     (3)~~由$(2)$可计算$I'(t)$如下：
     \begin{eq1}
-        I'(t) &= \int_{0}^{+\infty} \frac{\partial F(x,t)}{\partial t}~\d x 
+        I'(t) &= \int_{0}^{+\infty} \frac{\partial F(x,t)}{\partial t}~\d x
         = \int_{0}^{+\infty} -e^{-tx} \sin x ~\d x \\
         &= -\frac{e^{-tx} (-t \sin x - \cos x)}{1+t^2} \bigg|_{x=0}^{+\infty} \\
         &= -\frac{1}{1+t^2} ~,~~ c \le t \le d
@@ -1307,7 +1247,7 @@ $\int_0^T L(x)  ~\d x = \sum_{n=0}^{\infty} a_n$. \vspace{0.5em}
     下面再来定常数$C$.
     由$I(t)$表达式看出，当$t > 0$时有：
     \begin{eq1}
-        0 \le |I(t)| \le \int_{0}^{+\infty} \left| e^{-tx} \frac{\sin x}{x} \right|~\d x 
+        0 \le |I(t)| \le \int_{0}^{+\infty} \left| e^{-tx} \frac{\sin x}{x} \right|~\d x
         \le \int_{0}^{+\infty} e^{-tx}~\d x = \frac{1}{t}
     \end{eq1}
 
@@ -1330,28 +1270,22 @@ $\int_0^T L(x)  ~\d x = \sum_{n=0}^{\infty} a_n$. \vspace{0.5em}
     由含参积分的连续性：
     \begin{eq1}
         \int_{0}^{+\infty} \frac{\sin x}{x}  ~\d x = I(0) = \lim\limits_{t \to 0^{+}} I(t) = \frac{\pi}{2}
-    \end{eq1} \qed 
-
-
-    
-    
+    \end{eq1}
 \end{solution}
 
+\begin{example}[2022]
+\label{ex:ch11-18}
+设$n$是正整数.
 
-~\par
-
-\begin{example}
-    {17(2022)}{
-        设$n$是正整数.
         考虑含参变量$t$的无穷积分$J_n (t) = \int_{0}^{+\infty} \frac{1}{(t+x^2)^n} ~\d x$.
-    }
+
+(1)~~任给$a>0$. 证明：$J_n(t)$在$[a,+\infty)$上一致收敛.
+
+(3)~~对于每个$t \in (0,+\infty)$，求出$J_n(t)$的值.
 \end{example}
-\textit{(1)~~任给$a>0$. 证明：$J_n(t)$在$[a,+\infty)$上一致收敛.}
 
-\textit{(3)~~对于每个$t \in (0,+\infty)$，求出$J_n(t)$的值.}\vspace{0.5em}
-
-\begin{remark}
-    第一问，因为被积函数收敛速度很快，至少是$\frac{1}{x^2}$量级.
+\begin{analysis}
+第一问，因为被积函数收敛速度很快，至少是$\frac{1}{x^2}$量级.
     可用M-判别法，描述出这个收敛速度即可.
     第二问，对参数$t$求导，可以得到关于的$n$递推式.
     需要注意的细节是，
@@ -1360,13 +1294,12 @@ $\int_0^T L(x)  ~\d x = \sum_{n=0}^{\infty} a_n$. \vspace{0.5em}
     实际上应该证明的是这个操作对于$(0,+\infty)$内的任何一个子闭区间$[a,b]$可行.
     然后，计算出了$(0,+\infty)$内的任何一个子闭区间$[a,b]$上的$J_n(t)$，
     也就相当于计算出了$(0,+\infty)$上的$J(t)$.
-\end{remark}\vspace{0.5em}
+\end{analysis}
 
 \clearpage
 
 \begin{solution}
-    
-    (1)~~任意取定$a>0$.
+(1)~~任意取定$a>0$.
     $n$是正整数推出：对于任意$t \ge a >0$和任意$0 \ge x \ge 1$，有：
     \begin{eq1}
         \frac{1}{(t+x^2)^n }\le \frac{1}{(a+x^2)^n}
@@ -1379,24 +1312,23 @@ $\int_0^T L(x)  ~\d x = \sum_{n=0}^{\infty} a_n$. \vspace{0.5em}
 
     右侧无穷积分收敛.
     故由M-判别法可知$J_n(t)$在$[a,+\infty)$上一致收敛.
-    \vspace{0.5em}
 
     (2)~~对于任意给定的正整数 \( n \)，和正实数 $a<b$，
     由(1)推出：无穷积分$\int_{0}^{+\infty} \frac{1}{(t+x^2)^n}  ~\d x$ 在 \([a, b]\) 上点点收敛.
     把 \( n \) 换为 \( n+1 \) 推出：若对参变量$t$求导与无穷积分，则求导后的无穷积分：
     \begin{eq1}
-        \int_{0}^{+\infty} \frac{\partial}{\partial t} \left( \frac{1}{(t+x^2)^n} \right)  ~\d x = -n \int_{0}^{+\infty} \frac{1}{(t+x^2)^{n+1}} ~ \d x 
+        \int_{0}^{+\infty} \frac{\partial}{\partial t} \left( \frac{1}{(t+x^2)^n} \right)  ~\d x = -n \int_{0}^{+\infty} \frac{1}{(t+x^2)^{n+1}} ~ \d x
     \end{eq1}
     对于 \( t \in [a, b] \subset [a, +\infty) \) 是一致收敛的.
     因此，根据含参变量的无穷积分与对参变量求导次序交换定理得到：对于任意给定的正整数 \( n \)，对于 \( t \in [a, b] \)，有
     \begin{eq1}
-         \frac{\d}{\d t} \left( \int_{0}^{+\infty} \frac{1}{(t+x^2)^n}  ~\d x \right) 
+         \frac{\d}{\d t} \left( \int_{0}^{+\infty} \frac{1}{(t+x^2)^n}  ~\d x \right)
          &= \int_{0}^{+\infty} \frac{\partial}{\partial t} \left( \frac{1}{(t+x^2)^n} \right)  ~\d x\\
-         &= -n \int_{0}^{+\infty} \frac{1}{(t+x^2)^{n+1}}  ~\d x 
+         &= -n \int_{0}^{+\infty} \frac{1}{(t+x^2)^{n+1}}  ~\d x
     \end{eq1}
 
     即得到了递推公式：$J_{n+1}(t) = -\frac{1}{n} \frac{\d J_n(t)}{\d t}$.
-   
+
     计算$J_1(t)$：
     \begin{eq1}
         J_1(t) = \int_{0}^{+\infty} \frac{1}{t+x^2}  ~\d x = \frac{1}{\sqrt{t}} \arctan \left( \frac{x}{\sqrt{t}} \right) \bigg|_{0}^{+\infty} = \frac{\pi}{2} t^{-\frac{1}{2}}
@@ -1404,13 +1336,13 @@ $\int_0^T L(x)  ~\d x = \sum_{n=0}^{\infty} a_n$. \vspace{0.5em}
 
     则由递推公式：
     \begin{eq1}
-        J_{n+1}(t) &= -\frac{1}{n} \frac{\d J_n(t)}{\d t} 
+        J_{n+1}(t) &= -\frac{1}{n} \frac{\d J_n(t)}{\d t}
         = \left(-\frac{1}{n}\right) \cdots \left(-\frac{1}{2}\right) \left(-\frac{1}{1}\right) \frac{\d^n J_1(t)}{\d t^n} \\
         &= \left(-\frac{1}{n}\right) \cdots \left(-\frac{1}{2}\right) \left(-\frac{1}{1}\right) \frac{d^n}{dt^n} \left( \frac{\pi}{2} t^{-\frac{1}{2}} \right) \\
         &= \frac{\pi}{2} \left(-\frac{1}{n}\right) \cdots \left(-\frac{1}{2}\right) \left(-\frac{1}{1}\right) \left( -\frac{1}{2} \right) \left( -\frac{1}{2}-1 \right) \cdots \left( -\frac{1}{2} - (n-1) \right) t^{-\frac{1}{2}-n} \\
         &= \frac{\pi}{2} \left(-\frac{1}{n}\right) \cdots \left(-\frac{1}{2}\right) \left(-\frac{1}{1}\right) \left( -\frac{1}{2} \right) \left( -\frac{3}{2} \right) \cdots \left( -\frac{2n-1}{2} \right) t^{-\frac{1}{2}-n} \\
         &= \frac{\pi}{2} \frac{1}{n} \cdots \frac{1}{2} \frac{1}{1} \cdot \frac{1}{2} \frac{3}{2} \cdots \frac{2n-1}{2} t^{-\frac{1}{2}-n} \\
-        &= \frac{\pi}{2^{n+1}} \frac{(2n-1)!!}{n!} \frac{1}{t^{n+\frac{1}{2}}} 
+        &= \frac{\pi}{2^{n+1}} \frac{(2n-1)!!}{n!} \frac{1}{t^{n+\frac{1}{2}}}
     \end{eq1}
 
     将$n+1$换为$n$得到，当$n \ge 2$时：
@@ -1420,13 +1352,8 @@ $\int_0^T L(x)  ~\d x = \sum_{n=0}^{\infty} a_n$. \vspace{0.5em}
 
     当$n=1$时：
     \begin{eq1}
-        J_1(t) = \frac{\pi}{2} \frac{1}{\sqrt{t}} 
-    \end{eq1} \qed \par
+        J_1(t) = \frac{\pi}{2} \frac{1}{\sqrt{t}}
+    \end{eq1}
 \end{solution}
-~\par
 
 \clearpage
-
-
-
-    

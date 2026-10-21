@@ -28,6 +28,7 @@
 % 用于自动宽度框
 
 \allowdisplaybreaks[4]
+\setlength{\emergencystretch}{2em}
 
 \pagestyle{plain}
 \author{刘瑞杰~~~北京大学生命科学学院}
@@ -62,35 +63,34 @@
     \end{equation}}
 
 
-    \NewDocumentEnvironment{example}{ m m }
-    {
-        \par\indent\textbf{例 #1}~~\textit{#2}\par % 添加 \indent 并移除空行
-    }
-    {}
-    
-    \NewDocumentEnvironment{remark}{}
-    {
-        \par\indent\textbf{分析}~~\ignorespaces % 添加 \indent
-    }
-    {
-        \par
-    }
+% Lecture examples: automatic chapter numbering; optional source metadata.
+\newtheoremstyle{lectureexample}
+  {8pt plus 2pt minus 1pt}{4pt plus 1pt minus 1pt}
+  {\normalfont\setstretch{1.75}}{\parindent}{\bfseries}{}{0.6em}
+  {\thmname{#1}\thmnumber{~#2}\thmnote{（\normalfont 来源：#3）}}
+\theoremstyle{lectureexample}
+\newtheorem{example}{例}[section]
 
-    \NewDocumentEnvironment{solution}{}
-    {
-        \par\indent\textbf{解答}~~\ignorespaces % 添加 \indent
-    }
-    {
-        \par
-    }
-
-    \NewDocumentEnvironment{pf}{}
-    {
-        \par\indent\textbf{证明}~~\ignorespaces % 添加 \indent
-    }
-    {
-        \par
-    }
+% Shared headings and spacing. Answer/proof endings use amsthm's QED stack.
+\newcommand{\lectureblockbegin}[1]{%
+  \par\addvspace{4pt plus 1pt minus 1pt}%
+  \normalfont\setstretch{1.75}%
+  \setlength{\abovedisplayskip}{8pt plus 2pt minus 2pt}%
+  \setlength{\belowdisplayskip}{8pt plus 2pt minus 2pt}%
+  \noindent\hspace*{\parindent}\textbf{#1}\quad\nobreak\ignorespaces
+}
+\newcommand{\lectureblockend}{%
+  \par\addvspace{8pt plus 2pt minus 1pt}\ignorespacesafterend
+}
+\NewDocumentEnvironment{analysis}{O{分析}}
+  {\lectureblockbegin{#1}}
+  {\lectureblockend}
+\NewDocumentEnvironment{solution}{O{解答}}
+  {\pushQED{\qed}\lectureblockbegin{#1}}
+  {\unskip\popQED\lectureblockend}
+\RenewDocumentEnvironment{proof}{O{证明}}
+  {\pushQED{\qed}\lectureblockbegin{#1}}
+  {\unskip\popQED\lectureblockend}
 
 
 \newcommand{\centeredcaption}[2]{%
