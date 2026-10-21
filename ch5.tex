@@ -1,0 +1,1048 @@
+\clearpage
+\section{向量代数与空间解析几何}
+
+（注：小写斜体字母表示标量或标量函数，如$x,y,f$；
+小写斜体粗体字母表示向量或向量函数，如$\bm{a},\bm{b},\bm{r}$.）
+
+\subsection{复习要点}
+由于高中数学已经讲过空间解析几何，本节只梳理和拓展高数课程中新学的知识.
+如果同学们已经遗忘了高中数学的知识，还是应该基于教材来复习. 
+
+\subsubsection{向量代数} 
+本小节的学习要点是：
+
+(1)~熟悉点乘、叉乘、求夹角等基本操作（向量混合积、三重积等在考题中出现的概率较低）；
+
+(2)~理解如何从向量的角度描述几何对象的空间位置关系；
+
+(3)~在多元函数微积分中做到分析学（极限的观点）和代数学（“向量代数”）相结合来理解. \vspace{1em}
+
+\textbf{叉乘的定义}~~~\textit{$\acb$是一个向量，其方向垂直于$\bm{a}$和$\bm{b}$所决定的平面，由右手法则确定；
+其模长$|\acb| = |\bm{a}||\bm{b}|\sin \langle \bm{a},\bm{b} \rangle$.}\vspace{1em}
+
+\textbf{叉乘的运算性质}\textit{（以下的$\lambda$为任意实数）} \par
+\textbf{(1)~反交换律}~~~ $\acb = - \bm{b} \times \bm{a}$;\par
+\textbf{(2)~对数乘的结合律}~~~ $\lambda \acb = (\lambda \bm{a}) \times \bm{b}
+= \bm{a} \times (\lambda \bm{b})$;\par
+\textbf{(3)~对向量加法的分配律}~~~$(\bm{a} + \bm{b}) \times \bm{c} = \bm{a} \times \bm{c} + \bm{b} \times \bm{c}$；\vspace{1em}
+
+\textbf{叉乘的坐标表示}~~~\textit{设}$\bm{a} = (x_1, y_1, z_1)$，$\bm{b} = (x_2, y_2, z_2)$ ：
+
+\setstretch{1}
+\begin{eq}
+        \acb &= 
+        \begin{vmatrix}
+            \bm{i} & \bm{j} & \bm{k} \\[4pt]
+            x_1 & y_1 & z_1 \\[4pt]
+            x_2 & y_2 & z_2 
+        \end{vmatrix}
+        &= \left(
+            y_1 z_2 - y_2 z_1, ~
+            x_2 z_1 - x_1 z_2, ~
+            x_1 y_2 - x_2 y_1
+        \right)
+\end{eq} 
+\setstretch{1.75}
+
+\textbf{混合积}~~\textit{设$\bm{a} = (x_1, y_1, z_1)$，
+$\bm{b} = (x_2, y_2, z_2)$，
+$\bm{c} = (x_3, y_3, z_3)$.
+则$\bm{a},\bm{b},\bm{c}$的混合积及其坐标表示方法为：}
+
+\setstretch{1}
+\begin{eq}
+        \bm{a} \cdot (\bm{b} \times \bm{c}) &=
+        \begin{vmatrix}
+            x_1 & y_1 & z_1 \\[4pt]
+            x_2 & y_2 & z_2 \\[4pt]
+            x_3 & y_3 & z_3
+        \end{vmatrix}  
+\end{eq}
+\setstretch{1.75}
+
+\textbf{混合积的轮换对称性}~~$\bm{a} \cdot (\bm{b} \times \bm{c}) = \bm{b} \cdot (\bm{c} \times \bm{a}) = \bm{c} \cdot (\bm{a} \times \bm{b})$\vspace{1em}
+
+向量$\bm{a},\bm{b},\bm{c}$的混合积的几何意义是由三个向量所确定的平行六面体的体积.
+其正负号取决于它们是否符合右手法则.
+因此，
+通过$\bm{a} \cdot (\bm{b} \times \bm{c}) = 0$
+可以判断$\bm{a},\bm{b},\bm{c}$是否共面.\vspace{1em}
+
+\textbf{向量三重积}
+\begin{eq}
+    \bm{a} \times (\bm{b} \times \bm{c}) &= 
+    (\bm{a} \cdot \bm{c}) \cdot \bm{b} - (\bm{a} \cdot \bm{b}) \cdot \bm{c} \\
+    (\bm{a} \times \bm{b}) \times \bm{c} &= 
+    (\bm{a} \cdot \bm{c}) \cdot \bm{b} - \bm{a} \cdot (\bm{b} \cdot \bm{c})
+\end{eq}
+
+\textbf{方向余弦}~~\textit{向量与坐标轴正向的夹角称为}\textbf{方向角}，\textit{其余弦值称为}\textbf{方向余弦}.\par
+
+
+\subsubsection{直线与平面}
+教材中详细介绍了直线和平面的各种方程，这里不赘述. 
+考试题目会用不同的形式给出直线和平面，因此需要知道如何快速从方程中提取出信息（如方向向量和法向量），
+而不是先找平面/直线上的点，
+再通过点坐标得到向量. 
+对于平面方程，
+点法式方程和一般式方程都能直接体现法向量；
+三点式方程利用混合积的行列式来表示三点共面；
+截距式方程能直接体现三个截距. 
+对于直线方程，两面式方程不直接，
+一般要先把平面的信息转化成直线本身的信息（两平面法向量叉乘等于直线的方向向量）；
+标准式方程和参数方程能直接体现方向向量.
+
+直线和平面都具有极高的对称性——直线上所有点都有共同的方向向量，平面上所有点都有共同的法向量.
+因此，最好能建立“直线就是方向向量”，
+“平面就是法向量”的观念.
+根据具体情况的需要，
+可以考察方向向量或法向量的起点位置，
+作为直线或平面“绝对位置”的衡量.
+
+接下来我们从向量的观点出发，
+梳理一下平面/直线之间的位置关系.
+设直线$L_1,L_2$的（单位）方向向量分别为$\bm{e}_1,\bm{e}_2$；平面$S_1,S_2$的法向量分别为$\bm{n}_1,\bm{n}_2$，
+则有：\vspace{1em}
+
+(1)~\textit{直线$L_1$与$L_2$平行（重合）$\Leftrightarrow~ \bm{e}_1 \parallel \bm{e}_2$；}
+
+(2)~\textit{直线$L_1$与$L_2$垂直 $\Leftrightarrow~ \bm{e}_1 \perp \bm{e}_2$；}
+
+(3)~\textit{直线$L_1$与$L_2$异面$\Leftrightarrow$不平行且不相交；}
+
+(4)~\textit{平面$S_1$与$S_2$平行（重合）$\Leftrightarrow~ \bm{n}_1 \parallel \bm{n}_2$；}
+
+(5)~\textit{平面$S_1$与$S_2$垂直$\Leftrightarrow~ \bm{n}_1 \perp \bm{n}_2$；}
+
+(6)~\textit{直线$L_1$与平面$S_1$平行$\Leftrightarrow~ \bm{e}_1 \perp \bm{n}_1$；}
+
+(7)~\textit{直线$L_1$在平面$S_1$内$\Leftrightarrow~ \bm{e}_1 \perp \bm{n}_1$且有一公共点；}
+
+(8)~\textit{直线$L_1$与平面$S_1$垂直$\Leftrightarrow~ \bm{e}_1 \parallel \bm{n}_1$；}
+
+(9)~\textit{直线$L_1$与平面$S_1$相交$\Leftrightarrow~ \bm{e}_1 \cdot \bm{n}_1 = 0$；} \vspace{1em}
+
+\clearpage
+
+应用向量的观点，在涉及到投影与距离计算时，应善用向量的点乘. 因为向量点乘本身带有投影的含义.
+若将向量$\bm{a}$垂直投影到向量$\bm{b}$的方向上，所得投影的长度$l$为：
+\begin{eq}
+    l = \frac{|\bm{a} \cdot \bm{b}|}{|\bm{b}|}
+\end{eq}
+
+利用这一点，我们可以用很直观的语言来描述各类距离的计算方法：\vspace{1em}
+
+(1)~点到平面的距离：从该点指向平面上任意一点的向量，投影到法向量方向上；
+
+(2)~（平行）平面之间的距离：任意一条连接两平面的向量，投影到公共的法向量方向上；
+
+(3)~（平行）直线到平面的距离：任意一条连接直线与平面的向量，投影到平面法向量方向上；
+
+(4)~异面直线的距离：任意一条连接两直线的向量，投影到两直线方向向量叉乘的方向上.
+
+\subsubsection{空间曲线}
+第五章介绍了用\textbf{参数方程}形式给出的空间曲线，
+即$x=x(t),~y=y(t),~z=z(t)$.
+为了写得紧凑也可以写成\textbf{向量函数}的形式.
+今后在曲线积分/曲面积分中会遇到这样的写法，应当认识：
+\begin{eq}
+    \bm{r}(t) = \left( x(t),y(t),z(t)\right)
+\end{eq}
+
+向量函数可以进行加减、数乘、求导和积分的运算.
+进行这些运算的方法与普通的实值函数无异，
+因为向量函数就是以几个实值函数为分量组成的向量，
+只需对每个分量分别进行这些运算即可.
+其中，向量函数的求导是尤为重要的：
+\begin{eq}
+    \bm{r}'(t) = \left( x'(t),y'(t),z'(t)\right)
+\end{eq}
+
+设$\bm{r}(t)$是曲线$C$的参数方程，
+则$\bm{r}'(t_0)$就是曲线$C$在$t = t_0$处的\textbf{切向量}（\textbf{切矢}），
+其方向就是曲线的$C$在该处的\textbf{切线方向}.
+经过该点，以切向量作为法向量的平面就是曲线$C$在该点处的\textbf{法平面}.
+
+向量函数的点乘、叉乘和混合积的求导运算符合莱布尼茨律，很容易记忆：
+\begin{eq1}
+   &(1)~ \frac{\d}{\d t} \left( \bm{a}(t) \cdot \bm{b}(t)\right) =  \bm{a}'(t) \cdot \bm{b}(t) + \bm{a}(t) \cdot \bm{b}'(t)\\
+   &(2)~ \frac{\d}{\d t} \left( \bm{a}(t) \times \bm{b}(t)\right) =  \bm{a}'(t) \times \bm{b}(t) + \bm{a}(t) \times \bm{b}'(t)\\
+   &(3)~ \frac{\d}{\d t} \left[\bm{a}(t) \cdot (\bm{b}(t) \times \bm{c}(t) )\right]
+   = \bm{a}'(t) \cdot (\bm{b}(t) \times \bm{c}(t) ) +
+   \bm{a}(t) \cdot (\bm{b}'(t) \times \bm{c}(t) ) \\
+   &~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   +\bm{a}(t) \cdot (\bm{b}(t) \times \bm{c}'(t) )
+\end{eq1}
+
+\clearpage
+
+本节将对空间曲线的参数方程做一些额外的讨论.
+考虑以下三组方程：
+
+(a)~$x^2 + y^2 = 1$，$z=0$ \par
+
+(b)~$x = \cos t$，$y = \sin t$，$z=0$~~~~$t \in [0,2\pi)$ 
+
+(c)~$x = \cos (t^2)$，$y = \sin (t^2)$，$z=0$~~~~$t \in [0,\sqrt{2\pi})$ \vspace{0.5em}
+
+问：它们是否代表同一条曲线？
+
+按照教材中对于空间曲线的定义：空间曲线是指从区间$[a,b]$到$\mathbb{R}^3$的一个\textbf{连续映射的像}.
+这里的“连续映射”就是指参数方程，即在参数方程中$x,y,z$都是关于$t$的连续函数.
+而映射的像无非是$\mathbb{R}^3$中的一个点集. 
+这与高中数学对于曲线的定义类似，也符合我们直观上对曲线的认识——
+方程(a)(b)(c)虽然形式不同，但都代表单位圆.\par
+但是，这三组方程所包含的信息量实际上是不同的.
+以简单的运动学视角解读参数方程，我们可以将$t$视为时间，
+$\bm{r}(t)$视为某个质点在$\mathbb{R}^3$中的位移.
+那么，其导数$\bm{r}'(t)$就代表了该质点在$t$时刻的速度矢量.
+可见，参数方程/向量函数$\bm{r}(t)$记录了一个质点运动全程的运动状态.
+而教材中所谓“曲线”其实只保留了质点运动的轨迹信息，
+而丢失了速度、加速度等信息.
+因此，
+在微分几何中常把曲线定义为从$\mathbb{R}$出发的\textbf{连续映射}本身，
+而非\textbf{连续映射}的像.
+通俗地说，
+“参数方程即是曲线，曲线即是参数方程”.
+在这个定义下，方程(a)只定义了“曲线的像”，其本身不构成一条空间曲线；
+方程(b)和(c)都是空间曲线，而且是不同的空间曲线.
+因为把这两个方程视为运动学方程时，质点只是轨迹相同，每一时刻的速度并不同.
+
+在高数中，我们没有必要纠结“应该采用哪种定义”.
+但是前述的数学思想对于之后的学习是有帮助的.
+顺着这个话题再解读一下本节剩下的两个知识点：
+
+(1)~一条空间曲线$\bm{r}(t)~(t \in [a,b])$如果连续可导，
+且对任意$t \in [a,b]$有$\bm{r}'(t) \ne \bm{0}$，
+则称该曲线是一条\textbf{光滑曲线}（\text{正则曲线}）.
+依照该定义，(b)是光滑曲线，(c)不是光滑曲线（因为$\bm{r}'(0) = 0$），
+而(a)不确定是不是光滑曲线.
+可见，曲线的性质与其参数化有关，其中包括曲线切线方向的存在性.
+这件事很反常识.
+比如，以我们高中所学的几何知识，
+我们都会认为单位圆在$(1,0)$处的切线方向是$(0,1)$.
+但是在高数中，用$\bm{r}'(t)$定义了切线方向，结论就完全不同——
+同样是单位圆，曲线(b)在$(1,0)$处的切线方向是$(0,1)$，
+曲线(c)在$(1,0)$处不存在切线方向（因为切向量是零向量），
+而曲线(a)则是不确定切线方向是否存在.
+由此可见，虽然教材以连续映射的像来定义曲线，
+但是因为用参数方程定义了切线方向，
+还是不免露出了“参数方程即是曲线”的数学思想.
+
+(2)~光滑空间曲线$\bm{r}(t)~(t \in [a,b])$的弧长$s$：
+\begin{eq1}
+    s = \int_{a}^{b} |\bm{r}'(t)|~\d t = \int_{a}^{b} \sqrt{(x'(t))^2 + (y'(t))^2 + (z'(t))^2} ~\d t
+\end{eq1}
+
+其意义是：质点运动的总路程是其速率对时间的积分.
+
+
+
+\subsubsection{*空间曲面}
+
+关于一般空间曲面的讨论需要用到多元函数微积分的知识，
+因此教材将其安排在了第六章末，作为选读小节出现.
+内容不多，强烈建议同学们在学完第六章之后去阅读一下，
+在高数下会用得到.
+在这里，为了帮助同学们建立空间曲面的一般性观念，
+简要说明一下空间曲线的表示方法.
+
+一般来说，我们会把曲面理解为一个方程的解集，也就是曲面的\textbf{标准方程}：
+\begin{eq}
+    F(x,y,z) = 0
+\end{eq}
+
+曲面也可以用\textbf{参数方程}来表示.
+直观上，曲线是一个“$1$维”的几何对象，而曲面是一个“$2$维”的几何对象.
+因此，曲线的参数方程需要$1$个参数，曲面的参数方程就需要$2$个参数了：
+
+\setstretch{1.25}
+\begin{eq1}
+    \begin{cases}
+        x = x(u,v) \\
+        y = y(u,v) ~,~~~(u,v) \in D \\
+        z = z(u,v) 
+    \end{cases}
+\end{eq1}
+其中$D$是一个平面区域.\setstretch{1.75}
+曲面参数方程也可以写成向量函数的形式——当然，
+是关于$u$和$v$的二元向量函数
+$\bm{r}(u,v) = (x(u,v),y(u,v),z(u,v))$.
+
+和空间曲线类似地，
+由参数方程出发，可以给出曲面的准确定义：
+它是指某个$\mathbb{R}^2 \to \mathbb{R}^3$的连续映射的像.
+我们还可以延续空间曲线的一些争议，
+给曲面下另外一个定义，即认为$\mathbb{R}^2 \to \mathbb{R}^3$的连续映射本身就是曲面，
+从而说“参数方程即是曲面”.
+不过，我们很难像时间$t$一样，给$u$和$v$两个参数赋予直观的物理意义.
+这里我们借助一个具体例子，
+说明“把曲面看成连续映射本身”也是一个很自然的想法.
+
+$\mathbb{R}^3$中单位球的标准方程是$x^2 + y^2 + z^2 = 1$.
+可以将其表示为$\theta$和$\varphi$的参数方程：
+
+\setstretch{1.25}
+\begin{eq1}
+    \begin{cases}
+        x = \sin \varphi \cos \theta\\
+        y = \sin \varphi \sin \theta  ~,~~~\theta \in [0,2\pi),~\varphi \in [0,\pi] \\
+        z = \cos \varphi 
+    \end{cases}
+\end{eq1}
+
+我们可以把$\theta$和$\varphi$赋予地理上的含义：\setstretch{1.75}
+把单位球看作地球仪，
+那么$\theta$代表经度，$\varphi$代表纬度.
+我们都知道经度和纬度在地球仪上是可以“看得见”的.
+例如，取经度$\theta$为某个常数$\theta = \theta_0$，
+那么上面的参数方程仅与一个参数$\varphi$有关，成为了一条曲线.
+它恰是地球仪上纬度为$\theta_0$的经线（连接南北极的大半圆弧）.
+类似地，如果取定纬度为某一常数$\varphi = \varphi_0$，
+就得到了一条纬线.
+以这种方式，
+曲面方程的两个参数就具象化为了纵横交错的经纬网格.
+在经纬网格中，
+我们可以直接读出地球仪上任何一点的经纬坐标.
+如果你愿意的话，还可以在一张纸上画一个平面直角坐标系，
+并且把地球仪上任何一点的经纬坐标$(\theta,\varphi)$标定在纸上.
+这样，你就获得了一张地球的平面地图.
+
+事实上，
+对于任意以参数方程形式表达的曲面，
+我们都可以做类似的事情：
+(1)~通过取定参数$u$或$v$为固定常数，
+在曲面上确定一系列纵横交错的曲线，
+分别称为$u-\textbf{坐标曲线}$和$v-\textbf{坐标曲线}$.
+这些曲线构成的网格称为\textbf{参数曲线网}（\textbf{坐标网格}）.
+(2)~把曲面描绘到平面直角坐标“地图”上，
+曲面上的点被标定成“地图”上的点$(u,v)$.
+这实际上意味着参数方程为曲面配备了一个坐标系$(u,v)$，
+称之为\textbf{曲纹坐标}（图1）.
+由“地图”到“曲面”，必定要经过“参数方程”.
+同学们也可以按这样的思想，重新理解空间曲线参数方程的含义，
+即为曲线配备一个$1$维坐标.
+
+通过参数方程为空间曲线和曲面配备坐标，绘制“地图”是很重要的思想.
+在高数的前四章，我们学习了$\mathbb{R}$上的微积分；
+而在第六、七章，
+我们即将学$\mathbb{R}^n$上的微积分——
+也就是在平整光滑的“地图”上做微积分.
+最后，我们要学习如何在一般的曲线和曲面上做微积分，
+基本方法就是，借助曲线和曲面的参数方程，拉回到我们熟悉的$\mathbb{R}^n$“地图”上来讨论问题.
+例如，曲线积分可以转化成一元积分，曲面积分可以转化成二元重积分.
+
+\subsubsection{二次曲面}
+
+二次曲面是指三元二次方程所代表的曲面：
+\begin{eq}
+    Ax^2 + By^2 + Cz^2 + Dxy + Eyz + Fzx + Gx + Hy + Iz + J = 0
+\end{eq}
+
+二次曲面的分类是个非常有趣的问题，
+涉及到二次型理论，
+将在线性代数课程中深入介绍.
+在高数课程中，同学们只需要掌握分类的结论，
+即$9$种二次曲面的名称、图形（确保自己能画出来）和标准方程.
+由于教材中已经详细列举出来了，这里不再赘述.
+一个问题是：如果任给一个三元二次方程，如何判断它属于哪一类曲面呢？
+下面的定理是很有用的：\vspace{0.5em}
+
+\textbf{定理}~~\textit{在非退化的线性变换下，二次曲面的类型不变.}\vspace{0.5em}
+
+线性变换是指如下形式的变量替换：
+\begin{eq1}
+    \setstretch{1.25}
+    \begin{cases}
+        x = a_1 x' + a_2 y' + a_3 z' \\
+        y = b_1 x' + b_2 y' + b_3 z' ~,~~~a_i,b_i,c_i\text{为常数} \\
+        z = c_1 x' + c_2 y' + c_3 z' 
+    \end{cases}
+\end{eq1}
+
+\setstretch{1.75}
+而“非退化”是要求经过变量替换后，
+二次曲面没有被“压扁”成平面、直线等其他更低维度的东西.
+这个条件有一个严格的数学表达：
+\begin{eq1}
+    \setstretch{1.25}
+    \begin{vmatrix}
+            x_1 & y_1 & z_1 \\
+            x_2 & y_2 & z_2 \\
+            x_3 & y_3 & z_3
+    \end{vmatrix}  \ne 0
+\end{eq1}
+
+\setstretch{1.75}
+因此，可以利用非退化的线性替换，
+把一般的二次方程转化成标准方程（消去交叉项），
+再去和$9$种二次曲面的标准方程比对，
+从而判断它属于哪一种曲面.
+
+
+\subsection{解题方法} 
+
+\subsubsection{直线与平面}
+
+关于直线和平面的解析几何问题在高中数学已有较多涉及，
+因此不详细整理解题方法了.
+以下列举几个经典问题，
+目的是回顾一些可能容易被忽视的方法.\vspace{1em}
+\begin{example}
+    {1}{
+        一直线$L$过点$M(2,-1,3)$且与直线$l: \frac{x-1}{2} = \frac{y}{-1} = \frac{z+2}{1}$相交，
+        又平行于平面$\pi : 3x -2y + z+5 = 0$，求它的方程.
+    }
+\end{example}
+
+\begin{remark}
+    本题方法很多.
+    涉及到直线的问题，一般会考虑确定直线上一点坐标和一个方向向量，
+    交面式方程的信息则显得不直观.
+    这里展示平面束方程的解法，可以灵活地把直线的交面式方程利用起来.
+\end{remark}
+
+\begin{solution}
+    所求直线$L$必在平行于平面$\pi$且过点$M$的平面$\pi_1$上，设其是：
+    \begin{eq}
+        \pi_1 : 3x-2y+z+D = 0
+    \end{eq}
+
+    代入点$M$的坐标，解出$D = -11$.
+    故平面$\pi_1$的方程是：
+    \begin{eq}
+        \pi_1 : 3x-2y+z - 11 = 0
+    \end{eq}
+
+    另一方面，
+    因为所求直线$L$与已知直线$l$相交，
+    所以$L$必与过点$M$及直线$l$的平面相交，
+    设其为$\pi_2$.
+    则$\pi_1$和$\pi_2$的交线便是所求直线$L$.
+    为了求$\pi_2$的方程，将$l$改写为交面式：
+    \begin{eq1}
+        \setstretch{1.25}
+        \begin{cases}
+            \frac{x-1}{2} = \frac{y}{-1} \\[10pt]
+            \frac{y}{-1} = \frac{z+2}{1}
+        \end{cases}
+    \end{eq1}
+    \setstretch{1.75}
+
+    过$l$的平面束方程为：
+    \begin{eq1}
+        \left( \frac{x-1}{2} - \frac{y}{-1} \right)
+        + \lambda
+        \left( \frac{y}{-1} - \frac{z+2}{1} \right) = 0
+    \end{eq1}
+
+    代入点$M$的坐标，解出$\lambda = -\frac{1}{8}$.
+    再代入平面束方程并化简，得到：
+    \begin{eq}
+        \pi_2 : 4x+9y+z-2 = 0
+    \end{eq}
+
+    故所求直线$L$的交面式方程：
+    \begin{eq1}
+        \setstretch{1.25}
+        \begin{cases}
+            3x-2y+z - 11= 0\\
+            4x+9y+z-2 = 0
+        \end{cases}
+    \end{eq1}
+\end{solution} \qed \par
+
+~\par
+\setstretch{1.75}
+
+\begin{example}
+    {2}{
+        求下列投影点的坐标：
+    }
+\end{example}
+\textit{(1)~点$(-1,2,0)$在平面$x+2y-z+1 = 0$上的投影.}
+
+\textit{(2)~点$(2,3,1)$在$\frac{x+7}{1} = \frac{y+2}{2} = \frac{z+2}{3}$上的投影.} \vspace{0.5em}
+
+\begin{remark}
+    点的投影，就是先求垂线/垂面，再求交点.
+    涉及到直接求直线和平面的交点，将直线表示成参数方程是最直接的.
+\end{remark}\vspace{0.5em}
+
+\begin{solution}
+    
+    (1)~~平面的法向量$\bm{n} = (1,2,-1)$即是平面垂线的方向向量.
+    过点$(-1,2,0)$的垂线方程设成参数方程：
+    \begin{eq1}
+        \setstretch{1.25}
+        \begin{cases}
+            x = t-1 \\
+            y = 2t+2 \\
+            z = -t
+        \end{cases}
+    \end{eq1}
+    \setstretch{1.75}
+
+    与平面方程联立，得到：
+    \begin{eq}
+        (t-1) + 2(2t+2) - (-t) + 1 = 0 \implies t = -\frac{2}{3}
+    \end{eq}
+
+    代入垂线的参数方程即求出交点$(x,y,z) = \left( -\frac{5}{3}, \frac{2}{3}, \frac{2}{3} \right)$.
+    这就是所求投影点.\vspace{0.5em}
+
+    (2)~~直线的方向向量$\bm{l} = (1,2,3)$即是其垂面的法向量.
+    故过点$(2,3,1)$且与直线垂直的平面方程为：
+    \begin{eq}
+        1 \cdot (x-2) + 2\cdot (y-3) + 3 \cdot (z-1) = 0 
+    \end{eq}
+
+    而由直线的标准方程得到参数方程：
+    \begin{eq1}
+        \setstretch{1.25}
+        \begin{cases}
+            x = t-7 \\
+            y = 2t-2 \\
+            z = 3t-2
+        \end{cases}
+    \end{eq1}
+    \setstretch{1.75}
+
+    将垂面方程与直线方程联立得到：
+    \begin{eq}
+        (t-7) + 2(2t-2) + 3(3t-2) - 11 = 0 \implies t = 2
+    \end{eq}
+    
+    代入直线的参数方程即求出交点$(-5,2,4)$，这就是所求投影点. \qed \par
+\end{solution}
+~\par
+
+\clearpage
+
+\begin{example}
+    {3}{
+        已知空间的两条直线：
+        \begin{eq1}
+            l_1 : \frac{x-4}{1} = \frac{y-3}{-2} = \frac{z-8}{1}~,~~~l_2 : \frac{x+1}{7} = \frac{y+1}{-6} = \frac{z+1}{1}
+        \end{eq1}
+    }
+\end{example}
+\textit{(1)~证明：$l_1$和$l_2$异面.}
+
+\textit{(2)~求$l_1$和$l_2$之间的距离.}
+
+\textit{(3)~求$l_1$和$l_2$公垂线的标准方程.}
+
+\textit{(4)~求连接$l_1$上任一点和$l_2$上任一点的线段中点的轨迹的一般方程.}\vspace{0.5em}
+
+\begin{remark}
+    以$l_1$和$l_2$之间随意的一条连线（连接向量）作为桥梁.
+\end{remark}\vspace{0.5em}
+
+\begin{solution}
+    
+    (1)~~$l_1$上有点$\bm{r}_1 = (4,3,8)$，方向向量$\bm{v}_1 = (1,-2,1)$；
+    $l_2$上有点$\bm{r}_2 = (-1,-1,-1)$，方向向量$\bm{v}_2 = (7,-6,1)$.
+    $l_1$与$l_2$异面等价于$\bm{r}_1 - \bm{r}_2,~\bm{v}_1,~\bm{v}_2$三个向量不共面. 因此由：
+    \begin{eq1}
+    \setstretch{1.25}
+    (\bm{r}_1 - \bm{r}_2) \cdot ( \bm{v}_1 \times \bm{v}_2) = 
+    \begin{vmatrix}
+            5 & 4 & 9 \\
+            1 & -2 & 1 \\
+            7 & -6 & 1
+    \end{vmatrix}  \ne 0
+\end{eq1}
+可知$l_1$和$l_2$异面.\vspace{0.5em}
+
+(2)~~先计算$l_1$和$l_2$的公垂线方向$\bm{n}$：
+\begin{eq1}
+    \setstretch{1.25}
+    \bm{n} = \bm{v}_1 \times \bm{v}_2 = 
+    \begin{vmatrix}
+            \bm{i} & \bm{j} & \bm{k} \\
+            1 & -2 & 1 \\
+            7 & -6 & 1
+    \end{vmatrix}  = (4,6,8)
+\end{eq1}
+
+$l_1$和$l_2$的距离$d$即是二者的连接向量$\bm{r}_1 - \bm{r}_2$
+在$\bm{n}$上的投影长度. 因此：
+\begin{eq1}
+    d = \frac{|(\bm{r}_1 - \bm{r}_2 ) \cdot \bm{n}|}{|\bm{n}|} = \frac{5 \cdot 4 + 4 \cdot 6 + 9 \cdot 8 }{\sqrt{4^2 + 6^2 + 8^2}} = 2\sqrt{29}
+\end{eq1}
+
+(3)~~任取$l_1$上任意一点$P_1(4+t_1,~3-2t_1,~8+t_1)$和$l_2$上任意一点$P_2(-1+7t_2,~-1-6t_2,~-1+t_2)$.
+    则向量$\overrightarrow{P_1 P_2} = (5+t_1 - 7t_2 , ~4 -2t_1 +6t_2 ,~ 9 +t_1 -t_2)$.
+    若$P_1 P_2$在公垂线上，则$\overrightarrow{P_1 P_2} \parallel \bm{n}$.即：
+    \begin{eq}
+        (5+t_1 - 7t_2 , ~4 -2t_1 +6t_2 , ~9 +t_1 -t_2) \parallel (4,6,8)
+    \end{eq}
+    
+    解得$t_1 = -1$，$t_2 = 0$. 可知$(3,5,7)$和$(-1,-1,-1)$在公垂线上，
+    从而公垂线的标准方程为：
+    \begin{eq1}
+        \frac{x+1}{4}  = \frac{y+1}{6} = \frac{z+1}{8}
+    \end{eq1}
+
+    (4)~~$P_1 P_2$的中点为$(x,y,z) = \frac{1}{2} \left( 3+t_1 + t_2 , ~2 -2t_1 -6t_2, ~7+t_1 + t_2 \right)$.
+    此为一平面的参数方程.
+    消去$t_1$和$t_2$，
+    得到平面的标准方程：$4x+6y + 8z -40 = 0$.
+    \qed \par
+\end{solution}
+
+\clearpage
+
+\begin{example}
+    {4}{
+        设有$O(0,0,0), A(2,1,0),B(1,1,2),C(0,2,2)$四个点.
+        求三棱锥$OABC$的体积.
+    }
+\end{example}
+\begin{remark}
+    利用行列式（向量混合积）的几何意义.
+\end{remark}
+\begin{solution}
+    $\overrightarrow{OA} = (2,1,0)$，
+    $\overrightarrow{OB} = (1,1,2)$，
+    $\overrightarrow{OC} = (0,2,2)$.
+    这三个向量的混合积的绝对值即是这三个向量围成的平行六面体的体积.
+    题目所要求的三棱锥体积$V$是其$\frac{1}{6}$：
+    \begin{eq1}
+    \setstretch{1.25}
+    V = \frac{1}{6} \cdot
+    \left|\begin{vmatrix}
+            2 & 1 & 0 \\
+            1 & 1 & 2 \\
+            0 & 2 & 2
+    \end{vmatrix} \right|  = 1
+    \end{eq1}
+\end{solution} \qed \par
+~\par
+
+\subsubsection{*曲线与向量函数}
+
+须知$\mathbb{R}^3$中的“点坐标”可以等同地看成“$3$维向量”，
+$\bm{r}(t)$既可以看成空间曲线的参数方程（空间点集），
+也可以看成向量函数，满足向量的一切运算性质.
+充分利用$\bm{r}(t)$的求导和向量运算性质，
+可以证明许多有用的结论.\vspace{1.5em}
+
+\begin{example}
+    {5}{
+        设$\bm{r}(t)$是一个处处非零的向量函数，证明
+    }
+\end{example}
+\textit{(1)~向量函数$\bm{r}(t)$的模长是常数当且仅当$\bm{r}'(t) \cdot \bm{r}(t) = 0$.}
+
+\textit{(2)~向量函数$\bm{r}(t)$的方向不变当且仅当$\bm{r}'(t) \times \bm{r}(t) = \bm{0}$.}
+
+\textit{(3)~存在一个固定的方向
+使得向量函数$\bm{r}(t)$与之垂直，当且仅当$\bm{r}(t) \cdot (\bm{r}'(t) \times \bm{r}''(t)) = 0$.}\vspace{0.5em}
+
+\begin{pf}
+    
+    (1)~~因为：
+    \begin{eq}
+        \frac{\d}{\d t} |\bm{r}(t)|^2 =
+        \frac{\d (\bm{r}(t) \cdot \bm{r}(t))}{\d t} = 
+        2 \bm{r}'(t) \cdot \bm{r}(t)
+    \end{eq}
+    
+    可以看出$|\bm{r}(t)|^2$是常数当且仅当$\bm{r}'(t) \cdot \bm{r}(t) = 0$. \vspace{0.5em}
+
+    (2)~~如果$\bm{r}(t)$方向不变，
+    则存在固定的单位向量$\bm{e}$，
+    使向量函数$\bm{r}(t)$能写成$\bm{r}(t) = f(t) \cdot \bm{e}$.
+    其中，$f(t) = \bm{r}(t) \cdot \bm{e}$是处处非零的连续可微实值函数. 
+    因此：
+    \begin{eq}
+        \bm{r}'(t) = f'(t) \cdot \bm{e} \implies \bm{r}'(t) \times \bm{r}(t) = 0
+    \end{eq}
+
+    反过来，假设已知 $\bm{r}'(t) \times \bm{r}(t) = 0$，
+    设单位向量$\bm{e}(t) = \frac{\bm{r}(t)}{|\bm{r}(t)|}$.
+    只需证明$\bm{e}(t)$是常向量函数.
+    将$\bm{r}(t) = |\bm{r}(t)| \cdot \bm{e}(t)$
+    代入$\bm{r}'(t) \times \bm{r}(t) = \bm{0}$中可得：
+
+    \begin{eq1}
+        \bm{0} = \bm{r}'(t) \times \bm{r}(t) 
+        &= \frac{\d}{\d t} \left( |\bm{r}(t)| \cdot \bm{e}(t) \right) \times \bm{r}(t) \\
+        &= \left( \frac{\d |\bm{r}(t)|}{\d t} \cdot \bm{e}(t) + |\bm{r}(t)| \cdot \bm{e}'(t) \right) \times \bm{r}(t) \\
+        &= \frac{\d |\bm{r}(t)|}{\d t} \cdot \bm{e}(t) \times \bm{r}(t) + |\bm{r}(t)| \cdot \bm{e}'(t) \times \bm{r}(t) \\
+        &= |\bm{r}(t)| \cdot \bm{e}'(t) \times \bm{r}(t)
+    \end{eq1}
+
+    可见$\bm{e}'(t) \times \bm{r}(t) = 0$，
+    即$\bm{e}'(t)$与$\bm{r}(t)$共线.
+    又因为$|\bm{e}(t)| = 1$是定值，由$(1)$可知，$\bm{e}'(t) \cdot \bm{e}(t) = 0$，
+    因此$\bm{e}'(t)$又与$\bm{r}(t)$垂直.
+    因为$\bm{r}(t) \ne \bm{0}$，
+    只能是$\bm{e}'(t) = \bm{0}$.
+    故$\bm{e}(t)$是常向量函数，所以$\bm{r}(t)$的方向不变. \vspace{0.5em}
+
+    (3)~~设有单位常向量$\bm{n}$，使得$\bm{r}(t) \cdot \bm{n} = 0$.
+    求导可得：
+    \begin{eq}
+        \bm{r}'(t) \cdot \bm{n} = 0~,~~~\bm{r}''(t) \cdot \bm{n} = 0
+    \end{eq}
+
+    可见$\bm{r}(t),\bm{r}'(t),\bm{r}''(t)$都与$\bm{n}$垂直，
+    因此共面，于是它们的混合积为$0$.
+
+    反过来，
+    假设$\bm{r}(t) \cdot (\bm{r}'(t) \times \bm{r}''(t)) = 0$成立.
+    命向量函数$\bm{n}(t) = \bm{r}(t) \times \bm{r}'(t)$，
+    则$\bm{n}(t)$与$\bm{r}(t)$垂直.
+    若$\bm{n}(t) = \bm{0}$，由$(2)$知，
+    $\bm{r}(t)$的方向是固定的，
+    显然能与一固定的方向垂直.
+    若$\bm{n}(t) \ne \bm{0}$，
+    我们希望证明$\bm{n}(t)$的方向是固定的，
+    即证明$\bm{n}(t) \times \bm{n}'(t) = \bm{0}$.
+    首先计算$\bm{n}'(t)$：
+    \begin{eq}
+        \bm{n}'(t) &= \frac{\d}{\d t} (\bm{r}(t) \times \bm{r}'(t)) \\
+        &= \bm{r}'(t) \times \bm{r}'(t)  +  \bm{r}(t) \times \bm{r}''(t) \\
+        &= \bm{r}(t) \times \bm{r}''(t)
+    \end{eq}
+
+    因而由向量三重积公式：
+    \begin{eq}
+        \bm{n}(t) \times \bm{n}'(t) 
+        &= \bm{n}(t) \times \left( \bm{r}(t) \times \bm{r}''(t) \right)   \\
+        &= (\bm{n}(t) \cdot \bm{r}''(t))\bm{r}(t) - 
+        (\bm{n}(t) \cdot \bm{r}(t))\bm{r}''(t) \\
+    \end{eq}
+
+    再由混合积的轮换对称性：
+    \begin{eq}
+        \bm{n}(t) \cdot \bm{r}''(t) = 
+        (\bm{r}(t) \times \bm{r}'(t)) \cdot \bm{r}''(t) 
+        = \bm{r}(t) \cdot (\bm{r}'(t) \times \bm{r}''(t)) = 0
+    \end{eq}
+
+    以及：
+    \begin{eq}
+        \bm{n}(t) \cdot \bm{r}(t) =
+        (\bm{r}(t) \times \bm{r}'(t)) \cdot  \bm{r}(t)
+        = (\bm{r}(t) \times \bm{r}(t)) \cdot \bm{r}'(t) = 0
+    \end{eq}
+
+    可知$\bm{n} \times \bm{n}'(t) = 0$，
+    即$\bm{n}(t)$的方向是固定的.
+    而它与$\bm{r}(t)$垂直. \qed \par
+\end{pf}
+~\par
+
+\clearpage
+
+\begin{example}
+    {5}{
+        证明：若一条光滑曲线在各点的切线都经过一个固定点，
+        则它是一条直线.
+    }
+\end{example}
+\begin{pf}
+    设有光滑曲线$\bm{r}(t) = (x_1(t), ~x_2(t),~x_3(t))$，
+    对于任意的$t$，设切线过定点$\bm{p}$，
+    则$\bm{p} - \bm{r}(t)$就是$t$处的切线方向，
+    即$\bm{p} - \bm{r}(t) \parallel \bm{r}'(t)$.
+    可知：
+    \begin{eq}
+        (\bm{p} - \bm{r}(t)) \times \bm{r}'(t) = \bm{0}
+    \end{eq}
+
+    由$\bm{p}$是常向量，即$\bm{p}(t)' = \bm{0}$，可得：
+    \begin{eq}
+        (\bm{p} - \bm{r}(t)) \times (\bm{p} - \bm{r}(t))' = \bm{0}
+    \end{eq}
+
+    由例4(2)的结论，上式说明$\bm{p} - \bm{r}(t)$的方向是固定的，
+    即$\bm{r}'(t)$的方向是固定的.
+    设$\bm{r}'(t)$始终平行于一个常向量$\bm{T} = (T_1 , T_2 ,T_3)$.
+    则：
+    \begin{eq}
+        \frac{x_i'}{T_i} = f(t) ~,~~i = 1,2,3,~~ f(t)\text{为一个确定的实值函数}
+    \end{eq}
+
+    设$f(t)$的原函数是$F(t)$，
+    则对上式两侧进行积分，
+    得到：
+    \begin{eq}
+        x_i = T_i \cdot F(t) + C_i~,~~i = 1,2,3 
+    \end{eq}
+
+    即：
+    \begin{eq}
+        \frac{x_1 - C_1}{T_1} = \frac{x_2 - C_2}{T_2}  = \frac{x_3 - C_3}{T_3} = F(t)
+    \end{eq}
+
+    是直线的标准方程. 因此$\bm{r}(t)$是直线. \qed \par
+
+\end{pf}
+~\par
+
+\begin{example}
+    {6}{
+        证明：若一条光滑曲线在各点的法平面都经过一个固定点，
+        则它必定落在一个球面上.
+    }
+\end{example}
+\begin{pf}
+    设有光滑曲线$\bm{r}(t)$，
+    对于任意的$t$，设法平面过定点$\bm{p}$，
+    则$\bm{p} - \bm{r}(t)$平行于$t$处的法平面，
+    即：
+    \begin{eq}
+        (\bm{p} - \bm{r}(t)) \cdot \bm{r}'(t) = 0
+    \end{eq}
+
+    由$\bm{p}$是常向量，即$\bm{p}'(t) = \bm{0}$，可得：
+    \begin{eq}
+        (\bm{p} - \bm{r}(t)) \cdot (\bm{p} - \bm{r}(t))' = 0
+    \end{eq}
+
+    由例4(1)的结论，上式说明$\bm{p} - \bm{r}(t)$的长度是定值.
+    故$\bm{r}(t)$在以$\bm{p}$为球心的球面上. \qed \par
+\end{pf}
+
+\subsubsection{曲线和曲面}
+
+在之后的学习中，我们遇到的曲线或曲面形式各异，
+但是一般都需要写成参数方程形式，
+才能做进一步研究.
+本章中求曲线的弧长即是如此.
+因此，有必要训练一下曲线方程和曲面方程的写法（尤其是参数化），
+这也是为高数下做准备.
+
+\begin{example}
+    {7}{
+        设$C:\bm{r}(t)~t \in [a,b]$是光滑曲线.
+        变量替换$t = t(u)$是任意可微的实值函数，
+        证明：变量替换不影响$C$的弧长.
+    }
+\end{example}
+\begin{remark}
+    利用定积分的换元法
+\end{remark}
+\begin{pf}
+    因为只有光滑曲线才能讨论弧长，
+    这里要求变换后的$C:\bm{r}(t(u))$关于$u$也是光滑曲线.
+    这就是说：
+    \begin{eq}
+        \frac{\d \bm{r}(t(u))}{\d u} = \frac{\d \bm{r}(t(u))}{\d t} \cdot \frac{\d t}{\d u} \ne \bm{0}
+    \end{eq}
+
+    这就要求$\frac{\d t}{\d u} \ne 0$.
+    由导数的介值性，$\frac{\d t}{\d u}$要么恒大于$0$，要么恒小于$0$.
+    不妨设$\frac{\d t}{\d u} > 0$.
+    并设$u \in [t^{-1}(a),t^{-1}(b)] = [\alpha , \beta]$.
+    因此根据定积分的换元法，弧长$s$表示为：
+    \begin{eq1}
+        s &= \int_{a}^{b} \left| \frac{\d \bm{r}(t)}{\d t} \right| ~\d t\\
+        &= \int_{\alpha}^{\beta} \left| \frac{\d \bm{r}(t(u))}{\d t} \right|  \cdot \frac{\d t}{\d u} \cdot \d u \\
+        &= \int_{\alpha}^{\beta} \left| \frac{\d \bm{r}(t(u))}{\d u} \right| ~\d u
+    \end{eq1}
+
+    最后一行本就是$C$在参数$u$下的弧长公式.
+    可见弧长与变量替换无关. \qed \par
+\end{pf}
+~\par
+
+
+\begin{example}
+    {8}{
+        设曲线$C$的方程：
+    }
+\end{example}
+\begin{eq}
+    \setstretch{1.25}
+    \begin{cases}
+        y = \frac{x^2}{2a} \\[6pt]
+        z = \frac{x^3}{6a^2} 
+    \end{cases}
+\end{eq}
+
+\setstretch{1.75}
+\textit{(1)~将曲线$C$表示成参数方程.}
+
+\textit{(2)~计算曲线$C$在原点$O(0,0,0)$和点$P(x_0,y_0,z_0)$之间的弧长.}
+
+\begin{solution}
+    
+    (1)~~该方程已经是关于$x$的参数方程，$x \in [0,x_0]$.
+
+    (2)~~曲线的切向量：
+    \begin{eq}
+        \bm{r}'(x) = \left( 1,\frac{x}{a}, \frac{x^2}{2a^2} \right)
+    \end{eq}
+
+    则曲线从$O$到$P$的弧长为：
+    \begin{eq}
+        s &= \int_{0}^{x_0} |\bm{r}'(x)| ~\d x 
+        = \int_{0}^{x_0} \sqrt{1 + \frac{x^2}{a^2} + \frac{x^4}{4a^4}} ~\d x \\
+        &=  \frac{1}{2a^2} \int_{0}^{x_0} (x^2 + 2a^2) ~\d x 
+        =  \frac{1}{2a^2} \left( \frac{x^3}{3} + 2a^2 x \right)\bigg|_{0}^{x_0} 
+        = \frac{x_0^3}{6a^2} + x_0
+    \end{eq} \qed \par
+\end{solution}
+~\par
+
+\begin{example}
+    {9}{
+        设曲线$C$的方程：
+    }
+\end{example}
+\begin{eq}
+    \setstretch{1.25}
+    \begin{cases}
+        e^{2z} = 1-x\\
+        y^2 = x e^{2z}
+    \end{cases}
+\end{eq}
+
+\setstretch{1.75}
+\textit{(1)~将曲线$C$表示成参数方程.}
+
+\textit{(2)~计算曲线$C$在$(0,0,0)$和$\left( \frac{1}{2} , \frac{1}{2} , -\frac{1}{2} \ln 2 \right)$之间的弧长.} \vspace{0.5em}
+
+\begin{remark}
+    注意参数化过程中变量和参数的取值范围.
+\end{remark}
+
+\begin{solution}
+    
+    (1)~~曲线$C$的方程经过变形得：
+    \begin{eq}
+    \setstretch{1.25}
+    \begin{cases}
+        y^2 = x(1-x) \\
+        z = \ln(1-x)
+    \end{cases}
+\end{eq}
+
+设$x = \sin^2 t$，得到关于$t$的参数方程：
+\begin{eq}
+    \setstretch{1.25}
+    \begin{cases}
+        x =  \sin^2 t \\
+        y = \sin t \cos t ~,~~~t \in \left( -\frac{\pi}{2},\frac{\pi}{2} \right)\\
+        z = \ln \cos t
+    \end{cases}
+\end{eq}\vspace{0.5em}
+
+(2)~~该段曲线对应的参数范围$t \in \left[ 0,\frac{\pi}{4} \right]$. 计算切向量：
+\begin{eq}
+    \bm{r}'(t) = \left( \sin 2t , \cos 2t , -\tan t \right)
+\end{eq}
+
+弧长$s$：
+\begin{eq}
+    s &= \int_{0}^{\pi/4} \sqrt{\sin^2 2t + \cos^2 2t + \tan^2 t}~\d t \\
+    &= \int_{0}^{\pi / 4} \sec t ~\d t 
+    = \ln (\sec t + \tan t)\bigg|_{0}^{\pi / 4} 
+    = \ln (1+\sqrt{2})
+\end{eq} \qed \par
+\end{solution}
+~\par
+
+\begin{example}
+    {10}{
+        求以下曲线在$xOy$上的投影：\begin{eq}
+    \setstretch{1.25}
+    \begin{cases}
+        x^2 + y^2 + z^2 = 1 \\
+        z^2 = 2y
+    \end{cases}
+    \end{eq}
+    }
+\end{example}
+\begin{remark}
+    求曲线的垂直投影是一个重要而不困难的问题.
+    曲线投影到$xOy$上，
+    意味着不关心$z$的变化，
+    只关心$x$与$y$的关系.
+    因此消去$z$即可.
+\end{remark}
+\begin{solution}
+    消去$z$得到：$x^2 + y^2 + 2y = 1$. \qed \par
+\end{solution}
+
+\clearpage
+
+\begin{example}
+    {11}{
+        考虑$z$轴绕直线$L:~2x+z = 0 ,~ y=0 $旋转所形成的曲面.
+        判断这是何种曲面，
+        并写出标准方程和参数方程.
+    }
+\end{example}
+
+\begin{solution}
+    直线$L$的方向向量为$\bm{l} = (-1,0,2)$.
+    则$z$轴与直线$L$的夹角余弦$\theta$为：
+    \begin{eq}
+        \cos \theta = \frac{\bm{k} \cdot \bm{l}}{|\bm{k}| \cdot |\bm{l}|} = \frac{2}{\sqrt{5}}
+    \end{eq}
+    
+    在旋转曲面上任取一点$M(x,y,z)$，
+    即$\overrightarrow{OM} = (x,y,z)$.
+    因为$O$是$z$轴与$L$之交点，所以该曲面是以$L$为中轴线，$z$轴为一母线的圆锥面. 有：
+    \begin{eq}
+        \frac{\overrightarrow{OM} \cdot \bm{l}}{|\overrightarrow{OM}||\bm{l}|} = \cos \theta
+    \end{eq}
+
+    即：
+    \begin{eq}
+        \frac{2z-x}{\sqrt{x^2 + y^2 + z^2 } \cdot \sqrt{5}} = \frac{2}{\sqrt{5}} 
+    \end{eq}
+
+    两边平方整理，得到曲面方程：     $3x^2 + 4y^2 + 4zx = 0$.
+
+    参数方程为（例12中展示得到该方程的思路）：
+    \begin{eq1}
+    \begin{cases}
+        x = \frac{1}{\sqrt{3}} \left( r\cos \theta - r \right)\\[4pt]
+        y = \frac{1}{2} r \sin \theta ~,~~~~~~~~~r \in \mathbb{R},~\theta \in [0,2\pi) \\[4pt]
+        z = \frac{\sqrt{3}}{2}r
+    \end{cases}
+    \end{eq1} \qed \par
+
+\end{solution}
+~\par
+
+
+
+\begin{example}
+    {12}{
+        判断曲面$S: 3x^2 + 4y^2 + 4zx$是何种曲面类型.
+    }
+\end{example}
+\begin{remark}
+    这是例11中的曲面.
+    但是，本题没有给出曲面的构造方式，
+    不容易直接看出它是锥面.
+    这里展示如何利用配方法对方程进行非退化的线性变换，将其转化成我们所熟悉的$9$种二次曲面的标准方程之一.
+\end{remark}
+\begin{solution}
+    对曲面方程进行配方：
+    \begin{eq}
+        0 = 3x^2 + 4y^2 + 4zx 
+        = \left(\sqrt{3}x + \frac{2}{\sqrt{3}}z \right)^2 + 4y^2 - \frac{4z^2}{3} 
+    \end{eq}
+
+    做线性变换$u =  \sqrt{3}x + \frac{2}{\sqrt{3}}z,~~v = 2y,~~w = \frac{2}{\sqrt{3}}z$，
+    则方程化为：
+    \begin{eq}
+        u^2 + v^2 - w^2 = 0
+    \end{eq}
+
+    是锥面的标准方程.
+    故原曲面是锥面. \qed \par
+
+    （注：这里令$u = r \cos \theta$，$v = r \sin \theta$，
+    $w = r$，就得到了例11中的参数方程.）
+\end{solution} 

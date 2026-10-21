@@ -1,0 +1,112 @@
+\usepackage{ctex}
+\usepackage{amsmath}
+\usepackage{array}
+\newcolumntype{C}[1]{>{\centering\arraybackslash}m{#1}}
+
+\usepackage{graphicx}
+\usepackage{amsthm}
+\usepackage{fontspec}
+\usepackage{setspace}
+\usepackage{geometry}
+\usepackage{tikz}
+\usepackage{tikz-3dplot}
+\usepackage{pgfplots}
+\usepackage{extarrows}
+\usepackage{bm}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{subfigure}
+\usepackage{ulem}
+\usepackage{amsfonts}
+\usepackage{soul, color, xcolor}
+\usepackage{framed}
+\usepackage{esint}
+\usepackage{xparse}
+\usepackage{caption}
+\usepackage{varwidth}
+\usepackage{hyperref}
+% 用于自动宽度框
+
+\allowdisplaybreaks[4]
+
+\pagestyle{plain}
+\author{刘瑞杰~~~北京大学生命科学学院}
+\title{高数辅导讲义(2024.10 $\sim$ 2025.06)}
+
+\geometry{left=3cm, right=3cm,top =2cm, bottom=2cm}
+
+\everymath{\displaystyle}
+\def\d{\mathrm{d}}
+\def\limx0{\lim\limits_{x \to 0}}
+\def\limxi{\lim\limits_{x \to \infty}}
+\def\limn{\lim\limits_{n \to \infty}}
+
+\def\acb{\bm{a}\times\bm{b}}
+
+\def\ss{\sum_{n=1}^{\infty}} 
+
+\newenvironment{eq}{\begin{equation}
+    \setlength\abovedisplayskip{6pt}
+    \setlength\belowdisplayskip{6pt}
+    \begin{aligned}
+        \nonumber
+}{\end{aligned}
+    \end{equation}}
+
+\newenvironment{eq1}{\begin{equation}
+    \setlength\abovedisplayskip{10pt}
+    \setlength\belowdisplayskip{10pt}
+    \begin{aligned}
+        \nonumber
+}{\end{aligned}
+    \end{equation}}
+
+
+    \NewDocumentEnvironment{example}{ m m }
+    {
+        \par\indent\textbf{例 #1}~~\textit{#2}\par % 添加 \indent 并移除空行
+    }
+    {}
+    
+    \NewDocumentEnvironment{remark}{}
+    {
+        \par\indent\textbf{分析}~~\ignorespaces % 添加 \indent
+    }
+    {
+        \par
+    }
+
+    \NewDocumentEnvironment{solution}{}
+    {
+        \par\indent\textbf{解答}~~\ignorespaces % 添加 \indent
+    }
+    {
+        \par
+    }
+
+    \NewDocumentEnvironment{pf}{}
+    {
+        \par\indent\textbf{证明}~~\ignorespaces % 添加 \indent
+    }
+    {
+        \par
+    }
+
+
+\newcommand{\centeredcaption}[2]{%
+  \captionof*{figure}{%
+    \begin{varwidth}{\linewidth}%
+      \centering%
+      #1\\[1.25ex]% 第一行
+      #2% 第二行
+    \end{varwidth}%
+  }%
+}
+
+\pgfplotsset{
+  every axis/.append style={
+    axis on top=false, % 将坐标轴放在底层
+    set layers=standard, % 设置标准图层顺序
+    axis line style={line width=0.5pt} % 减细坐标轴线条
+  }
+}

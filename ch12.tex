@@ -1,0 +1,735 @@
+\section{傅里叶级数}
+
+\subsection{复习要点}
+
+\subsubsection{傅里叶级数的计算与收敛性}
+
+在傅里叶级数这一章，最重要的是能熟练地计算出傅里叶系数，并且写对傅里叶级数的形式.
+有如下几种情况：\vspace{0.5em}
+
+\textbf{1.~~$f(x)$是$\mathbb{R}$上以$2\pi$为周期的函数，在$[-\pi.\pi]$上有界可积}
+\begin{eq1}
+f(x) \sim \frac{a_0}{2} + \ss \left( a_n \cos nx + b_n \sin nx \right)
+\end{eq1}
+
+傅里叶系数：
+\begin{eq1}
+    a_n &= \frac{1}{\pi} \int_{-\pi}^{\pi} f(x) \cos nx ~\d x ~,~~ n = 0,1,2,\cdots \\
+    b_n &= \frac{1}{\pi} \int_{-\pi}^{\pi} f(x) \sin nx ~\d x ~,~~ n = 1,2,\cdots
+\end{eq1}\vspace{0.5em}
+
+\textbf{2.~~$f(x)$是$\mathbb{R}$上以$2\pi$为周期的偶函数，在$[-\pi.\pi]$上有界可积}
+
+展开成傅里叶余弦级数：
+\begin{eq1}
+f(x) \sim \frac{a_0}{2} + \ss a_n \cos nx 
+\end{eq1}
+
+傅里叶系数：
+\begin{eq1}
+    a_n &= \frac{1}{\pi} \int_{-\pi}^{\pi} f(x) \cos nx ~\d x
+    = \frac{2}{\pi} \int_{0}^{\pi} f(x) \cos nx ~\d x
+     ~,~~ n = 0,1,2,\cdots
+\end{eq1}\vspace{0.5em}
+
+\textbf{3.~~$f(x)$是$\mathbb{R}$上以$2\pi$为周期的奇函数，在$[-\pi.\pi]$上有界可积}
+
+展开成傅里叶正弦级数：
+\begin{eq1}
+f(x) \sim \ss b_n \sin nx 
+\end{eq1}
+
+傅里叶系数：
+\begin{eq1}
+    b_n &= \frac{1}{\pi} \int_{-\pi}^{\pi} f(x) \sin nx ~\d x
+    = \frac{2}{\pi} \int_{0}^{\pi} f(x) \sin nx ~\d x
+     ~,~~ n = 1,2,\cdots
+\end{eq1}\vspace{0.5em}
+
+\textbf{4.~~$f(x)$是$\mathbb{R}$上以任意$2l$为周期的函数，在$[-\pi.\pi]$上有界可积}
+\begin{eq1}
+f(x) \sim \frac{a_0}{2} + \ss \left( a_n \cos \frac{n\pi}{l} x + b_n \sin \frac{n\pi}{l} x \right)
+\end{eq1}
+
+傅里叶系数：
+\begin{eq1}
+    a_n &= \frac{1}{l} \int_{-l}^{l} f(x) \cos  \frac{n\pi}{l} x ~\d x ~,~~ n = 0,1,2,\cdots \\
+    b_n &= \frac{1}{l} \int_{-l}^{l} f(x) \sin  \frac{n\pi}{l} x ~\d x ~,~~ n = 1,2,\cdots
+\end{eq1}\vspace{0.5em}
+
+\textbf{5.~~$f(x)$是有穷区间$[-l,l)$上的有界可积函数：}做周期为$2l$的周期延拓，然后计算傅里叶级数.
+
+\textbf{6.~~$f(x)$是有穷区间$[0,l]$上的有界可积函数：}做奇延拓或偶延拓，再做周期延拓，然后计算傅里叶级数.\vspace{1em}
+
+以上，$f(x)$与其傅里叶级数之间均用“$\sim$”而不是“$=$”连接.
+这是因为$f(x)$的傅里叶级数不一定收敛到$f(x)$.
+因此我们计算出傅里叶级数之后，一般还要问：
+$f(x)$的傅里叶级数的和函数$S(x)$是什么？
+它和$f(x)$有何关系？
+对此我们有两个定理可以用：\vspace{1em}
+
+\textbf{定理（狄利克雷定理）}~~
+\textit{设函数$f(x)$以$2\pi$为周期，在区间$[-\pi,\pi]$上满足狄利克雷条件，
+即$f(x)$在$[-\pi,\pi]$上分段连续且分段单调，则$f(x)$的傅里叶级数在任意一点$x$处均收敛，且其和函数为：}
+\begin{eq1}
+    \setstretch{1.25}
+    S(x) = 
+    \begin{cases}
+        f(x)  \quad &x\text{为}f(x)\text{的连续点} \\[6pt]
+        \frac{f(x+0) + f(x-0)}{2} \quad &  x\text{为}f(x)\text{的间断点}
+    \end{cases}
+\end{eq1}\vspace{1em}
+
+\setstretch{1.75}
+
+\textbf{定理}~~
+\textit{设函数$f(x)$以$2\pi$为周期，且在区间$[-\pi,\pi]$上分段可微，
+则$f(x)$的傅里叶级数在任意一点$x$处均收敛到和函数$S(x)$.
+$S(x)$的形式同上.}\vspace{1em}
+
+
+在得到了傅里叶级数及其和函数之后，可以进一步计算某些数项级数的和.
+这是高数中比较偏重的一类应用.
+具体实现方法有两种：
+（1）代入特殊的$x$值；
+（2）利用帕塞瓦尔等式.
+不论用哪种方法，
+都需要先寻找一个合适的$f(x)$，
+使得它的傅里叶系数是我们想要的形式，
+这一步比较困难的，
+不过在具体题目中一般会有前一小问的提示.
+
+
+\subsubsection{*内积空间}
+
+本章叙述傅里叶级数相关概念时，经常拿函数与$3$维向量做类比.
+这反映出一条重要事实：在函数集合中也可以建立像$3$维欧氏空间$\mathbb{R}^3$一样的线性结构.
+借傅里叶级数的话题，我们这里把线性空间和内积空间的知识讲得更明白一些，
+争取从更高的观点重新认识傅里叶级数.
+
+在第九章讲义中，我们曾经铺垫过\textbf{线性空间}的概念.
+简而言之，如果一个集合$V$中的元素之间定义了\textbf{加法}和\textbf{数乘}两种运算，
+且两种运算都对$V$封闭，那么集合$V$就是一个线性空间.
+向量的加法和数乘是我们非常熟悉的运算了.
+全体$n$维向量构成的线性空间，即$n$维欧氏空间$\mathbb{R}^n$，
+也是我们所熟悉的空间.
+因此，对于线性空间的理解，可以将欧氏空间作为“模板”.
+或者说，线性空间的概念就是对向量空间的抽象化和普遍化.
+
+以向量运算的性质作为“模板”，可以公理化地定义加法和数乘运算，从而构建出一般的线性空间（对公理化定义不感兴趣者可跳过，不影响理解）：\vspace{1em}
+
+\textit{若集合$V$上定义了元素之间的加法和实数对元素的数乘，且满足以下$8$条规则，那么称$V$是$\mathbb{R}$上的线性空间：}
+
+(1)~\textbf{加法单位元：}\textit{$V$中存在唯一的零元素$\bm{0}$（加粗以示它是$V$中元素，类似于“零向量”，与实数$0$相区别），
+使得对任意$\bm{x} \in V$，$\bm{0} + \bm{x} = \bm{x}$. }
+
+(2)~\textbf{加法结合律：}\textit{$\bm{x}_1 +( \bm{x}_2 + \bm{x}_3) = (\bm{x}_1 + \bm{x}_2) + \bm{x}_3$，$\forall \bm{x}_1,\bm{x}_2, \bm{x}_3 \in V$.}
+
+(3)~\textbf{加法的逆：}\textit{$\forall \bm{x} \in V$，存在一个它的“负元素”$-\bm{x}$，使得$\bm{x}+(-\bm{x}) = \bm{0}$.}
+
+(4)~\textbf{加法交换律：}\textit{$\bm{x}_1 + \bm{x}_2 = \bm{x}_2 + \bm{x}_1$，$\forall \bm{x}_1,\bm{x}_2 \in V$.}
+
+(5)~\textbf{数乘单位：}\textit{$1 \cdot \bm{x} = \bm{x}$，$\forall \bm{x} \in V$.}
+
+(6)~\textbf{数乘结合律：}\textit{$\alpha(\beta \bm{x}) = (\alpha \beta)\bm{x}$，$\forall \alpha,\beta \in \mathbb{R}$，$\bm{x} \in V$.}
+
+(7)~\textbf{数乘分配律I：}\textit{$\alpha (\bm{x}_1 + \bm{x}_2) = \alpha \bm{x}_1 + \alpha \bm{x}_2$，$\forall \alpha \in \mathbb{R}$，$\bm{x_1},\bm{x_2} \in V$.}
+
+(8)~\textbf{数乘分配律II：}\textit{$(\alpha + \beta)\bm{x} = \alpha \bm{x} + \beta \bm{x}$，$\forall \alpha,\beta \in \mathbb{R}$，$\bm{x} \in V$.}\vspace{1em}
+
+一个集合“升级”成了线性空间之后，还可以继续“升级”，以求获得更好的性质.
+回顾$n$维欧氏空间$\mathbb{R}^n$，这是一个性质极好的空间，
+体现在它除了线性结构之外还有很多别的结构——
+我们可以计算任意两点之间的距离$d(\bm{x},\bm{y})$，这是\textbf{度量}结构；
+可以计算一个向量的模长$\Vert \bm{x} \Vert$，即\textbf{范数}；
+还可以计算两个向量的\textbf{内积}，并且定义向量夹角的概念.
+在傅里叶级数这一章，内积是最为重要的结构.
+要为一个线性空间严格“装备”内积结构，也可以通过公理化定义的方式实现（对公理化定义不感兴趣者可跳过，不影响理解）.
+
+\clearpage
+
+\textit{设$V$是线性空间.
+定义$V$上的一个二元函数$(\cdot,\cdot) : V \times V \to \mathbb{R}$，即：
+对于任意$\bm{x},\bm{y} \in V$，$(\bm{x},\bm{y})$都对应一个实数.
+如果对任意的$\bm{x},\bm{y} \in V$，$\alpha \in \mathbb{R}$，
+满足以下$4$条规则，
+那么称$V$是内积空间，
+这个二元函数是$V$上的一个内积：}
+
+(1)~\textbf{正定性：}\textit{$(\bm{x},\bm{x} \ge 0)$，等号成立当且仅当$\bm{x} = \bm{0}$.}
+
+(2)~\textbf{对称性：}\textit{$(\bm{x},\bm{y}) = (\bm{x},\bm{y})$.}
+
+(3)~\textbf{线性（数乘）：}\textit{$(\alpha \bm{x}, \bm{y}) = \alpha (\bm{x},\bm{y})$.}
+
+(4)~\textbf{线性（加法）：}\textit{$(\bm{x}+\bm{y},\bm{z}) = (\bm{x},\bm{z}) + (\bm{y},\bm{z})$.}\vspace{1em}
+
+度量、范数和内积相比，内积是“级别最高”的一种结构.
+因为它可以自然地诱导出另外二者.
+范数（模长）可以看成一个元素（向量）与自身内积再开方；
+而度量（两点之间的距离）可以看成两个元素之差的范数：
+\begin{eq1}
+    \Vert \bm{x} \Vert  = \sqrt{(\bm{x},\bm{x})}~~~~~~d(\bm{x},\bm{y}) = \Vert \bm{x} - \bm{y} \Vert
+\end{eq1}
+
+“装备”了内积的线性空间称为\textbf{内积空间}，
+可以说是一种近乎“升满级”的线性空间了，
+它满足了我们把$V$中元素当作向量来研究的绝大多数需要.
+这也是傅里叶级数所研究的“场所”.
+下面具体说明.
+
+首先要明确，在谈论傅里叶级数时我们关心的函数集合$V$是什么？
+这可能是同学们会忽略的问题，但这在高数书上是有提及的：
+我们考虑的是$[-\pi,\pi]$上全体有界可积的函数所组成的集合，
+即$[-\pi,\pi]$上的\textbf{有界可积函数类}$R[-\pi,\pi]$.
+不过脚注中还说，可以放宽研究的范围，考虑$[-\pi,\pi]$上的\textbf{平方可积函数类}$L^2 [-\pi,\pi]$.
+之后我们会解释为什么平方可积函数类是值得考虑的.
+无论把所研究的函数类$V$设定成以上两种中的哪一个，
+都可以轻松验证它是线性空间：
+这里线性空间的加法即是通常意义上的函数加法，线性空间的数乘即是通常意义上的函数数乘；
+任取两个有界可积（或平方可积）的函数$f,g$，
+它们的线性组合$\alpha f + \beta g$也是有界可积（或平方可积）的，
+故$R[-\pi,\pi]$和$L^2[-\pi,\pi]$关于加法和数乘运算封闭.
+
+为函数类线性空间$V$“装备”内积：
+\begin{eq1}
+    (f,g) = \frac{1}{\pi} \int_{-\pi}^{\pi} f(x)g(x) ~\d x
+\end{eq1}
+
+就将$V$“升级”成了内积空间.
+可以通过内积的$4$条公理验证它确实是一个合法的内积定义.
+有了内积空间，我们就能把更多向量的概念给搬进函数空间里来了.
+
+\subsubsection{正交系、正交投影与傅里叶级数}
+
+在$\mathbb{R}^3$中，我们引入了一组\textbf{单位正交系}：$\bm{e}_1 = [1,0,0],~\bm{e}_2 = [0,1,0],~\bm{e}_3 = [0,0,1]$.
+习惯上也记作$\bm{i},\bm{j},\bm{k}$.
+所谓单位正交系，是指范数（模长）为$1$，且两两之间内积为$0$（正交）的一组向量. 即：
+\begin{eq1}
+    \setstretch{1.25}
+    (\bm{e}_i , \bm{e}_j) = \delta_{ij} = 
+    \begin{cases}
+        1\quad i = j \\
+        0\quad i \ne j
+    \end{cases} 
+\end{eq1}
+
+\setstretch{1.75}
+
+对任意$\bm{x}  \in \mathbb{R}^3$，$\bm{x}$
+都可以\textbf{正交分解}到$\bm{e}_1,\bm{e}_2,\bm{e}_3$这$3$个方向上，即：
+\begin{eq}
+    \bm{x} = a_1 \bm{e}_1 + a_2 \bm{e}_2 + a_3 \bm{e}_3
+\end{eq}
+
+问题在于如何知道系数$a_1,a_2,a_3$？
+根据内积的几何意义，若$\bm{x}$与单位向量$\bm{e}_1$做内积，
+相当于\textbf{正交投影}到了$\bm{e}_i$的方向上，这正是我们要的：
+\begin{eq}
+    (\bm{x}, \bm{e}_i) = x_i
+\end{eq}
+
+代入进去：
+\begin{eq1}
+    \bm{x} = 
+    (\bm{x}, \bm{e}_1) \bm{e}_1
+    + (\bm{x}, \bm{e}_2) \bm{e}_2
+    + (\bm{x}, \bm{e}_3) \bm{e}_3
+    = \sum_{i=1}^{3} (\bm{x}, \bm{e}_i) \bm{e}_i
+\end{eq1}
+
+同样的事情可以照搬到一般的内积空间中去，
+自然也可以照搬到有界可积函数类（或平方可积函数类）$V = R[-\pi,\pi]$或$V= L^2[-\pi,\pi]$中去.
+只需要找到$V$中的单位正交系.
+由教材上的推导，可以证明如下的\textbf{三角函数系}是一个单位正交系：
+\begin{eq1}
+    \left\{ \bm{e}_n \right\} = \left\{ \frac{1}{\sqrt{2}},~\cos t ,~\sin t , \cdots ,~\cos nt ,~\sin nt , \cdots \right\}
+\end{eq1}
+
+仿照向量空间的做法，把任意的函数$f \in V$正交分解到$\left\{ \bm{e}_n \right\}$上，
+就有：
+\begin{eq1}
+    f \sim \ss (f,\bm{e}_n) \bm{e}_n
+\end{eq1}
+
+如果详细写出$V$上内积的表达式和各个$\bm{e}_i$，会发现这就是\textbf{傅里叶级数}.
+可见傅里叶级数的意义就是在求函数$f$的正交投影分解.
+傅里叶系数相当于“向量的分量”.
+
+\subsubsection{*内积空间中傅里叶级数的收敛}
+
+之前强调过，函数$f$与其傅里叶级数之间用“$\sim$”连接，
+是因为傅里叶级数不一定收敛到$f$.
+我们自然希望能通过限制一些条件，使得“$\sim$”可以改为“$=$”，
+即$f$的傅里叶级数一定收敛到$f$.
+不过我们也知道，在高数课内所介绍的狄利克雷条件下，
+$f$的傅里叶级数在间断点处也不收敛到$f$.
+这里的收敛是指函数项级数的逐点收敛.
+因此，这里我们简要介绍基于内积空间的傅里叶级数收敛理论.
+
+——但是说到底，“收敛”是什么意思呢？
+在过去一年，我们从高数里学到了各种极限的收敛：
+导数、偏导数、各类黎曼积分、级数、广义积分……
+这些极限本质上都是实数序列或函数的极限.
+而内积空间是一个全新的“领域”，
+里面的元素未必是实数，
+我们也尚未定义其中的极限是指什么.
+为了定义它，我们回到旅途的起点.
+回顾序列$\{ x_n \}$收敛到$x_0$的$\epsilon-\delta$定义：
+\begin{eq}
+    \forall \epsilon > 0 ,~ \exists N \in \mathbb{N^{*}},~ \text{当}n \ge N\text{时}, ~|x_n - x_0|< \epsilon 
+\end{eq}
+
+在这个定义中，我们用绝对值表示了$x_n$和$x_0$之间的距离（度量），
+并且通过这个距离小于任意的$\epsilon$来反映极限存在.
+而刚才已经提到，任意的内积都可以自然诱导出一个相应的度量，
+即是两个元素之差的范数.
+现在，若取任意内积空间中的一个序列$\{ \bm{x}_n \}$，
+以及一个元素$\bm{x}_0$.
+可以完全仿照实数序列的极限定义，写出$\bm{x}_n \to \bm{x}_0$的定义：
+\begin{eq1}
+    \forall \epsilon > 0 ,~ \exists N \in \mathbb{N^{*}},~ \text{当}n \ge N\text{时}, ~d(\bm{x}_n , \bm{x}_0) = \Vert \bm{x}_n - \bm{x}_0 \Vert < \epsilon 
+\end{eq1}
+
+这个定义等同于当$n \to \infty$时，实数序列$d(\bm{x}_n , \bm{x}_0)$趋向于$0$.
+现在我们考察这个定义对傅里叶级数而言意味着什么.
+我们知道，级数收敛即部分和序列收敛.
+因此，$f$的傅里叶级数收敛到$f$就是指：
+\begin{eq1}
+    \Vert  f - \sum_{k=1}^{n} (f,\bm{e}_k) \bm{e}_k  \Vert \to 0~,~~\text{当}~n \to \infty
+\end{eq1}
+
+这等同于范数平方趋于$0$，而范数平方就是自己和自己做内积.
+代入内积的定义，可以写成：
+\begin{eq1}
+    \frac{1}{\pi} \int_{-\pi}^{\pi} \left( f(x) - \sum_{k=1}^{n} (f,\bm{e}_k) \bm{e}_k  \right)^2 ~\d x \to 0~,~~\text{当}~n \to \infty
+\end{eq1}
+
+可以看出，这种收敛方式就是\textbf{均方收敛}，
+也就是$f$与其傅里叶级数部分和的\textbf{平方平均误差}$\delta^2_n$收敛到$0$.
+这也是教材上十二章第$3$节所讨论的收敛方式.
+（注：这里$\delta_n^2$的表达式可能与教材上略有不同.）
+通过以上的构建和推导可以发现，
+在把函数类视为内积空间的背景下，
+均方收敛才是最自然的、“官方钦定”的一种收敛方式.
+而教材中的讨论实际上说明了一个十分简单的结论：
+\textbf{对于$f \in R[-\pi,\pi]$，
+$f$的傅里叶级数一定（均方）收敛到$f$.}
+
+
+\subsubsection{*单位正交基、帕塞瓦尔等式}
+
+我们深入解读一下“$f$的傅里叶级数一定均方收敛到$f$”这个结论.
+事实上，在一般的内积空间中，不能断言这样的结论成立.
+关键在于只定义\textbf{单位正交系}对于傅里叶级数的收敛而言不太够用.
+这个问题在我们熟悉的$n$维欧氏空间$\mathbb{R}^n$中容易看出来.
+以$\mathbb{R}^3$为例.
+之前我们给出了其上的一个单位正交系
+$\{ \bm{e}_1 , \bm{e}_2 , \bm{e}_3 \}$，
+并且说明了$\mathbb{R}^3$中的任意向量$\bm{x}$都能按它进行正交分解.
+然而，单位正交系只有“单位”和“正交”这两个要求.
+意味着$\{ \bm{e}_1 , \bm{e}_2  \}$甚至$\{ \bm{e}_1 \}$这种“缺斤少两”的向量组也是单位正交系.
+但是，任意的向量$\bm{x} $在这种单位正交系上却不一定能彻底地正交分解. 例如，若把$\bm{x} = [a_1,a_2,a_3]~(a_3 \ne 0)$分解到$\{ \bm{e}_1 , \bm{e}_2  \}$上，
+会发现分解后的向量并不等于$\bm{x}$：
+\begin{eq1}
+    [a_1,a_2,a_3] = \bm{x} \ne 
+    (\bm{x}, \bm{e}_1) \bm{e}_1
+    + (\bm{x}, \bm{e}_2) \bm{e}_2
+    = [a_1,a_2,0]
+\end{eq1}
+
+正交分解不彻底也会导致勾股定理失效，
+即分解后系数的平方和小于分解前向量模长的平方：
+\begin{eq1}
+    \Vert x \Vert^2 > a_1^2 + a_2^2
+\end{eq1}
+
+反过来说，按空间向量分解定理，$\{ \bm{e}_1 , \bm{e}_2 , \bm{e}_3 \}$能线性表出$\mathbb{R}^3$中的任意向量，而$\{ \bm{e}_1 , \bm{e}_2 \}$却不行.
+像前者这种，能够线性表出整个内积空间里任何元素的单位正交系，称为\textbf{完备}的单位正交系，或者称为\textbf{单位正交基}.
+一组单位正交基所含向量的个数就是内积空间的\textbf{维数}.
+
+经过上面的例子，我们发现在有限维的内积空间中
+比较容易判断出一个单位正交系是不是单位正交基，
+从而判定一个向量经过正交分解之后还等不等于它自身.
+但是在无穷维内积空间中就不那么容易了.
+根据前文的分析，一个比较好用的判断方法是观察勾股定理是否成立.
+对于一般的无穷维内积空间，任取一个单位正交系$\{ \bm{e}_i \}$（不妨设包含无穷多个向量），
+以及空间中的元素$\bm{x}$，傅里叶系数的平方和级数不超过$\bm{x}$的模长平方：
+\begin{eq1}
+      \sum_{i=1}^{\infty} |(\bm{x},\bm{e}_i)|^2 \le \Vert \bm{x} \Vert^2
+\end{eq1}
+
+如果$\{ \bm{e}_i \}$是单位正交基，则不等号可以改为等号：
+\begin{eq1}
+     \sum_{i=1}^{\infty} |(\bm{x},\bm{e}_i)|^2  = \Vert \bm{x} \Vert^2 
+\end{eq1}
+
+这就是\textbf{贝塞尔不等式}和\textbf{帕塞瓦尔等式}.
+但这里可以提出一点质疑：
+在无穷维空间中，“傅里叶系数的平方和”就是一个无穷级数了.
+它是否收敛？
+这和傅里叶级数的（均方）收敛能等同起来看待吗？
+对于第一个问题，教材给出了肯定的回答：
+从贝塞尔不等式看出，傅里叶系数的平方和级数是一个有上界$\Vert \bm{x} \Vert^2 $的正项级数，因此收敛.
+对于第二个问题，还需要用以下定理打个补丁：\vspace{1em}
+
+\textbf{定理}~~\textit{设$\{ \bm{e}_i \}$是完备内积空间$H$（指柯西收敛原理成立的空间）中的一个单位正交系，
+$\{ \alpha_i \}$是一个实数列，
+则级数$\sum_{i=1}^{\infty} \alpha_i \bm{e}_i $收敛的充要条件是级数$\sum_{i=1}^{\infty} |\alpha_i|^2$收敛. 
+并且在上述条件下，有：}
+\begin{eq1}
+    \Vert \sum_{i=1}^{\infty} \alpha_i \bm{e}_i \Vert^2 = \sum_{i=1}^{\infty} |\alpha_i|^2
+\end{eq1}
+\vspace{1em}
+
+有了收敛性的保证，
+本节的主旨可以总结如下——
+\vspace{1em}
+
+
+\textbf{定理}~~\textit{设$\{ \bm{e}_i \}$是完备内积空间$H$中的一个单位正交系.
+则下列叙述是等价的：}
+
+\textit{(1)~对任意的$\bm{x} \in H $，
+$\bm{x} = \sum_{i=1}^{\infty} (\bm{x},\bm{e}_i) \bm{e}_i$，即$\bm{x}$的傅里叶级数（均方）收敛到$\bm{x}$.}
+
+\textit{(2)~$\{ \bm{e}_i \}$所能线性标出的所有元素在$H$中稠密，即$\{ \bm{e}_i \}$是$H$的一个单位正交基.}
+
+\textit{(3)~对任意的$\bm{x} \in H $，有
+$\Vert \bm{x} \Vert^2 = \sum_{i=1}^{\infty} | (\bm{x},\bm{e}_i) |^2$，即帕塞瓦尔等式成立.}
+\vspace{1.25em}
+
+在函数空间$V = R[-\pi,\pi]$或$L^2[-\pi,\pi]$中，
+若要证明“函数$f$的傅里叶级数一定均方收敛到$f$”（即教材上的帕塞瓦尔等式成立），是比较麻烦的.
+教材上也省略了关键的证明过程.
+而上述定理告诉我们可以从(2)入手，即证明三角函数系是单位正交基.
+大致思路是：先证明对任意$[-\pi,\pi]$上的连续函数$g$，
+都存在三角多项式（均方）收敛到$g$（Stone-Weierstrass逼近定理）；再证明任意$f \in V$都可以用$[-\pi,\pi]$上的连续函数列$\{ g_n \}$来（均方）逼近.
+
+
+
+
+
+
+
+\subsection{解题方法}
+
+\subsubsection{计算傅里叶级数}
+
+常规方法（例1$\sim$例3）是按部就班地用正交投影的公式展开.
+计算积分的过程中，常用分部积分法，务必熟练.
+例4是一道用来搞笑的题目（？）.
+例5介绍待定系数法.
+如果除了计算傅里叶级数之外，
+还要求和函数，
+那么需要引用狄利克雷定理（或者另一个分段可微条件下的定理）来说明.
+
+\par
+~\par
+
+\begin{example}
+    {1(2021)}{
+        ~
+    }
+\end{example}
+\textit{(1)~~设 \( p \) 是非整数的实数，\((-\infty, +\infty)\) 上的函数 \( f(x) \) 以 \( 2\pi \) 为周期，它在 \([-\pi, \pi]\) 等于 \(\cos(px)\).求出 \( f(x) \) 的傅里叶级数，及其和函数.}
+
+\textit{(2)~~明确写出从上面 (1) 中 \(\cos(px)\) 的傅里叶展开式推出下面等式的详细推导过程：当 \( t \in \mathbb{R} \)，\( t/\pi \) 不是整数时，有：}
+\begin{eq1}
+    \frac{1}{\sin t} = \frac{1}{t} + \sum_{n=1}^{\infty} (-1)^n \left( \frac{1}{t+n\pi} + \frac{1}{t-n\pi} \right)
+\end{eq1}
+
+\begin{solution}
+
+    (1)~~\( f(x) \) 是偶函数，所以当 \( n>0 \) 时，傅里叶系数 \( b_n = 0 \). 
+    当$n=0$时：
+    \begin{eq1}
+        a_0 = \frac{2}{\pi}\int_{0}^{\pi}\cos(px)  ~\d x = \frac{2 \sin(p\pi)}{p\pi}
+    \end{eq1}
+
+    当$n>0$时：
+    \begin{eq1}
+        a_n &= \frac{2}{\pi}\int_{0}^{\pi}\cos(px) \cos(nx)  ~\d x = \frac{1}{\pi}\int_{0}^{\pi}[\cos((p+n)x) + \cos((p-n)x)]  ~\d x \\
+        &= \left[ \frac{\sin((p+n)x)}{(p+n)\pi} + \frac{\sin((p-n)x)}{(p-n)\pi} \right]_{0}^{\pi} = (-1)^n \left( \frac{1}{p+n} + \frac{1}{p-n} \right) \frac{\sin(p\pi)}{\pi}
+    \end{eq1}
+
+    $f(x)$的傅里叶级数是：
+    \begin{eq1}
+        \frac{\sin(p\pi)}{p\pi} + \sum_{n=1}^{\infty} (-1)^n \left( \frac{1}{p+n} + \frac{1}{p-n} \right) \frac{\sin(p\pi)}{\pi} \cos(nx)
+    \end{eq1}
+
+    $f(x)$在$[-\pi,\pi]$上分段连续，分段单调.
+    因此，根据狄利克雷定理得：
+    在$[-\pi,\pi]$上$f(x)$的傅里叶级数的和函数是$\cos px$，即：
+    \begin{eq1}
+        \cos(px) = \frac{\sin(p\pi)}{p\pi} + \sum_{n=1}^{\infty} (-1)^n \left( \frac{1}{p+n} + \frac{1}{p-n} \right) \frac{\sin(p\pi)}{\pi} \cos(nx)
+    \end{eq1} \vspace{0.5em}
+
+    (2)~~在傅里叶展开式中令 \( x = 0 \):
+    \begin{eq1}
+        1 = \frac{\sin(p\pi)}{p\pi} + \sum_{n=1}^{\infty} (-1)^n \left( \frac{1}{p+n} + \frac{1}{p-n} \right) \frac{\sin(p\pi)}{\pi}
+    \end{eq1}
+
+    由 \( p \) 非整数得 \(\sin(p\pi) \neq1 0\)，整理得：
+    \begin{eq1}
+        \frac{1}{\sin(p\pi)} = \frac{1}{p\pi} + \sum_{n=1}^{\infty} (-1)^n \left( \frac{1}{p\pi + n\pi} + \frac{1}{p\pi - n\pi} \right)
+    \end{eq1}
+    
+    令 \( t = p\pi \) 得到：当$\frac{t}{\pi}=p$不是整数时，有：
+    \begin{eq1}
+        \frac{1}{\sin t} = \frac{1}{t} + \sum_{n=1}^{\infty} (-1)^n \left( \frac{1}{t+n\pi} + \frac{1}{t-n\pi} \right)
+    \end{eq1} \qed \par
+\end{solution}
+~\par
+
+\begin{example}
+    {2(2022)}{
+        设 \( f : \mathbb{R} \rightarrow \mathbb{R} \) 是周期为 \( 2\pi \) 的函数，\( f(x) \) 在 \((-\pi, \pi]\) 上等于 \( e^x \).
+        求 \( f(x) \) 的傅里叶级数，以及此傅里叶级数在 \( x = \pi \) 处的收敛值.
+    }
+\end{example}
+\begin{solution}
+    $n=0$：
+    \begin{eq1}
+         a_0 = \frac{1}{\pi} \int_{-\pi}^{\pi} e^x ~\d x = \frac{1}{\pi} (e^{\pi} - e^{-\pi})
+    \end{eq1}
+
+    当$n>0$时，用分部积分法求出：
+    \[
+        a_n = \frac{1}{\pi} \int_{-\pi}^{\pi} e^x \cos(nx) ~\d x 
+        = \frac{1}{\pi} \left[ \frac{\cos(nx) + n \sin(nx)}{1+n^2} e^x \right]_{-\pi}^{\pi}
+        = (-1)^n \frac{e^{\pi} - e^{-\pi}}{\pi (1+n^2)}
+    \]
+
+    以及：
+    \[
+         b_n = \frac{1}{\pi} \int_{-\pi}^{\pi} e^x \sin(nx) ~\d x 
+         = \frac{1}{\pi} \left[ \frac{\sin(nx) - n \cos(nx)}{1+n^2} e^x \right]_{-\pi}^{\pi} 
+         = (-1)^{n-1} \frac{n(e^{\pi} - e^{-\pi})}{\pi (1+n^2)}
+    \]
+
+    $f(x)$的傅里叶级数是：
+    \[
+        \frac{1}{2\pi} (e^{\pi} - e^{-\pi}) + \sum_{n=1}^{\infty} \left( (-1)^n \frac{e^{\pi} - e^{-\pi}}{\pi (1+n^2)} \cos(nx) + (-1)^{n-1} \frac{n(e^{\pi} - e^{-\pi})}{\pi (1+n^2)} \sin(nx) \right)
+    \]
+
+    $f(x)$在$[-\pi,\pi]$上分段连续，分段单调.
+    因此，根据狄利克雷定理得：
+    在$x = \pi$处，
+    $f(x)$的傅里叶级数的收敛值是$\frac{e^{-\pi} + e^{\pi}}{2}$. \qed \par
+\end{solution}
+~\par
+
+\begin{example}
+    {3(2023)}{
+        设 \( 2\pi \) 周期函数$\vphantom{\ss}$ \( f(x) \) 在 \([-\pi, \pi]\) 上的表达式为 \( f(x) = x^2 \)，求 \( f(x) \) 所对应的 Fourier 级数及其和函数，
+        并给出级数$\sum_{n=1}^{\infty} \frac{1}{n^2}, \quad \sum_{n=1}^{\infty} \frac{(-1)^n}{n^2}, \quad \sum_{n=1}^{\infty} \frac{1}{n^4}$的值.
+    }
+\end{example}\vspace{0.5em}
+
+\begin{solution}
+    
+    (1)由于 \( f(x) = x^2 \) 是偶函数，故 \( b_n = 0 \).
+    只需计算 \( a_0 \) 和 \( a_n \).
+\end{solution}
+
+
+    计算 \( a_0 \)：
+    \[
+    a_0 = \frac{1}{\pi} \int_{-\pi}^{\pi} x^2  ~\d x 
+    = \frac{2}{\pi} \int_{0}^{\pi} x^2  ~\d x 
+    = \frac{2}{\pi} \left[ \frac{x^3}{3} \right]_0^{\pi} = \frac{2}{\pi} \cdot \frac{\pi^3}{3} = \frac{2\pi^2}{3}
+    \]
+    
+    计算 \( a_n \) (\( n \geq1 1 \))：
+    \begin{eq1}
+        a_n = 
+        \frac{1}{\pi} \int_{-\pi}^{\pi} x^2 \cos(nx) ~\d x 
+        = \frac{2}{\pi} \int_{0}^{\pi} x^2 \cos(nx)  ~\d x
+    \end{eq1}
+
+    使用分部积分法：
+    \begin{eq1}
+        \int x^2 \cos(nx)  ~\d x 
+        &= \frac{x^2 \sin(nx)}{n} - \frac{2}{n} \int x \sin(nx)  ~\d x \\
+        &= \frac{x^2 \sin(nx)}{n} - \frac{2}{n} \left( -\frac{x \cos(nx)}{n} + \frac{1}{n} \int \cos(nx)  ~\d x \right) \\
+        &= \frac{x^2 \sin(nx)}{n} + \frac{2x \cos(nx)}{n^2} - \frac{2 \sin(nx)}{n^3}
+    \end{eq1}
+
+    代入积分限：
+    \begin{eq1}
+        \int_{0}^{\pi} x^2 \cos(nx)  ~\d x 
+        &= \left[ \frac{x^2 \sin(nx)}{n} + \frac{2x \cos(nx)}{n^2} - \frac{2 \sin(nx)}{n^3} \right]_0^{\pi} \\
+        &= \frac{\pi^2 \sin(n\pi)}{n} + \frac{2\pi \cos(n\pi)}{n^2} - \frac{2 \sin(n\pi)}{n^3} \\
+        &= \frac{2\pi (-1)^n}{n^2}
+    \end{eq1}
+
+    所以：
+    \[
+    a_n = \frac{2}{\pi} \cdot \frac{2\pi (-1)^n}{n^2} = \frac{4(-1)^n}{n^2}
+    \]
+    
+    傅里叶级数为：
+    \begin{eq1}
+        f(x) \sim \frac{a_0}{2} + \sum_{n=1}^{\infty} a_n \cos(nx) = \frac{\pi^2}{3} + \sum_{n=1}^{\infty} \frac{4(-1)^n}{n^2} \cos(nx)
+    \end{eq1}
+
+    由于 \( f(x) = x^2 \) 在 \([-\pi, \pi]\) 上连续且满足 Dirichlet 条件，其傅里叶级数在 \([-\pi, \pi]\) 上收敛于 \( x^2 \).
+    在端点 \( x = \pm\pi \) 处，级数收敛于：
+    \[
+    \frac{f(\pi^-) + f(-\pi^+)}{2} = \frac{\pi^2 + \pi^2}{2} = \pi^2
+    \]
+    因此，和函数$S(x)$为：
+    \[
+    S(x) = f(x) = (x-2k\pi)^2 ,\quad k \in \mathbb{Z}
+    \]
+    
+    (2)~~
+    求 \( \sum_{n=1}^{\infty} \frac{1}{n^2} \)：
+    取 \( x = \pi \)，代入傅里叶级数：
+    \begin{eq1}
+        S(\pi) = \pi^2 = \frac{\pi^2}{3} + \sum_{n=1}^{\infty} \frac{4(-1)^n}{n^2} \cos(n\pi) = \frac{\pi^2}{3} + \sum_{n=1}^{\infty} \frac{4(-1)^n}{n^2} (-1)^n = \frac{\pi^2}{3} + 4 \sum_{n=1}^{\infty} \frac{1}{n^2}
+    \end{eq1}
+  
+    解得：
+    \[
+    4 \sum_{n=1}^{\infty} \frac{1}{n^2} = \pi^2 - \frac{\pi^2}{3} = \frac{2\pi^2}{3} \implies \sum_{n=1}^{\infty} \frac{1}{n^2} = \frac{\pi^2}{6}
+    \]
+
+    (3)~~
+    求 \( \sum_{n=1}^{\infty} \frac{(-1)^n}{n^2} \)：
+    取 \( x = 0 \)，代入傅里叶级数：
+    \begin{eq1}
+        S(0) = 0^2 = 0 = \frac{\pi^2}{3} + \sum_{n=1}^{\infty} \frac{4(-1)^n}{n^2} \cos(0) = \frac{\pi^2}{3} + 4 \sum_{n=1}^{\infty} \frac{(-1)^n}{n^2}
+    \end{eq1}
+
+    解得：
+    \[
+    4 \sum_{n=1}^{\infty} \frac{(-1)^n}{n^2} = -\frac{\pi^2}{3} \implies \sum_{n=1}^{\infty} \frac{(-1)^n}{n^2} = -\frac{\pi^2}{12}
+    \]
+
+    (4)~~
+    求 \( \sum_{n=1}^{\infty} \frac{1}{n^4} \)：
+    使用 Parseval 恒等式：
+    \begin{eq1}
+        \frac{1}{\pi} \int_{-\pi}^{\pi} [f(x)]^2  dx = \frac{a_0^2}{2} + \sum_{n=1}^{\infty} a_n^2
+    \end{eq1}
+    
+    左边：
+    \[
+    \frac{1}{\pi} \int_{-\pi}^{\pi} x^4  ~\d x = 
+    \frac{2}{\pi} \left[ \frac{x^5}{5} \right]_0^{\pi} 
+    = \frac{2\pi^4}{5}
+    \]
+
+    右边：
+    \[
+    \frac{1}{2} \left( \frac{2\pi^2}{3} \right)^2 + \sum_{n=1}^{\infty} \left( \frac{4(-1)^n}{n^2} \right)^2 = \frac{1}{2} \cdot \frac{4\pi^4}{9} + \sum_{n=1}^{\infty} \frac{16}{n^4} = \frac{2\pi^4}{9} + 16 \sum_{n=1}^{\infty} \frac{1}{n^4}
+    \]
+
+    联立方程：
+    \[
+    \frac{2\pi^4}{5} = \frac{2\pi^4}{9} + 16 \sum_{n=1}^{\infty} \frac{1}{n^4}
+    \]
+
+    解得：
+    \[
+    16 \sum_{n=1}^{\infty} \frac{1}{n^4} = \frac{2\pi^4}{5} - \frac{2\pi^4}{9} = \frac{8\pi^4}{45} \implies \sum_{n=1}^{\infty} \frac{1}{n^4} = \frac{\pi^4}{90}
+    \] \qed \par
+
+    ~\par
+
+\begin{example}
+    {4}{
+        计算下列函数的傅里叶级数（周期为$2\pi$）：$f(x) = \sin^4 x$.
+    }
+\end{example}
+\begin{remark}
+    不要真的去算积分.
+\end{remark}
+\begin{solution}
+    \begin{eq1}
+        \sin^4 x &= \left( \frac{1-\cos 2x}{2} \right)^2 
+        = \frac{1 -2\cos 2x + \cos^2 2x}{4}  \\
+        &= \frac{1}{4} - \frac{1}{2}\cos 2x + \frac{1+\cos 4x}{8} \\
+        &= \frac{3}{8} - \frac{1}{2} \cos 2x + \frac{1}{8}\cos 4x
+    \end{eq1}
+\end{solution} \qed \par
+~\par
+
+\begin{example}
+    {5}{
+        计算下列函数的傅里叶级数（周期为$2\pi$）：$f(x) = \frac{1-r^2}{1-2r\cos x + r^2} ~(|r|<1)$.
+    }
+\end{example}\vspace{0.5em}
+\begin{solution}
+    注意到$f(x)$是偶函数，可以展开成余弦级数.设为：$f(x) \sim \sum_{n=0}^{\infty} a_n \cos nx$.
+    又因为$f(x)$在$\mathbb{R}$上连续，
+    根据狄利克雷定理，
+    $f(x)$的傅里叶级数收敛到$f(x)$：
+    \begin{eq1}
+        f(x) = \frac{1-r^2}{1-2r\cos x + r^2} = \sum_{n=0}^{\infty} a_n \cos nx
+    \end{eq1}
+
+把$f(x)$的分母乘上去，整理：
+\begin{eq1}
+    1-r^2 &= (1-2r\cos x + r^2) \sum_{n=0}^{\infty} a_n \cos nx \\
+    &= \sum_{n=0}^{\infty} (1+r^2) a_n \cos nx 
+    - \sum_{n=0}^{\infty} 2r a_n \cos nx \cos x \\
+    &= \sum_{n=0}^{\infty} (1+r^2) a_n \cos nx 
+    - \sum_{n=0}^{\infty} r a_n [\cos (n+1)x + \cos (n-1)x] 
+\end{eq1}
+
+调整求和的指标，以使$\cos$下$x$的倍数一致（便于确定系数）：
+\begin{eq1}
+    1-r^2 = \sum_{n=0}^{\infty} (1+r^2) a_n \cos nx 
+    - \sum_{n=-1}^{\infty} r a_{n+1} \cos nx
+    - \sum_{n=1}^{\infty} r a_{n-1} \cos nx
+\end{eq1}
+
+可见右侧三角多项式的$\cos nx$项系数为$0~(n \ge 1)$.
+有如下递推公式：
+\begin{eq1}
+    0 = (1+r^2) a_n - ra_{n+1} - ra_{n-1}~,~~n \ge 2
+\end{eq1}
+
+推出通项公式：
+\begin{eq1}
+    &\frac{ra_n - a_{n+1}}{ra_{n-1} - a_n} = r\\
+    \implies  &ra_n - a_{n+1} = r^{n-1}(ra_1 - a_2) \\
+    \implies & \frac{a_n}{r^{n-1}} - \frac{a_{n+1}}{r^n} = a_1 - \frac{a_2}{r} \\
+    \implies & \frac{a_n}{r^{n-1}} = \frac{a_2}{r} + (n-2)\left(\frac{a_2}{r} - a_1 \right)~~(n \ge 2)
+\end{eq1}
+
+现在只需要计算前三项$a_0$，$a_1$和$a_2$.
+$a_0$可直接用公式计算（定积分计算过程省略）：
+\begin{eq1}
+    a_0 = \frac{1}{2 \pi} \int_{-\pi}^{\pi} \frac{1-r^2}{1-2r\cos x + r^2} ~\d x = 1
+\end{eq1}
+
+由余弦级数的常数项（即余弦级数中$n=0$的项）：
+\begin{eq1}
+    1-r^2 = (1+r^2)a_0 - ra_1
+\end{eq1}
+
+代入$a_0 = 1$，解出$a_1 = 2r$.
+再由余弦级数的$\cos x$项（即余弦级数中$n=\pm 1$的项）：
+\begin{eq1}
+    0 = (1+r^2)a_1 - ra_0 - ra_2 - ra_0
+\end{eq1}
+代入$a_0 = 1$和$a_1 = 2r$，解得$a_2 = 2r^2$.
+再代入图像公式，得到$\frac{a_2}{r} - a_1 = 0$，从而：
+\begin{eq1}
+    \frac{a_n}{r^{n-1}} = \frac{a_2}{r} \implies a_n = 2r^n ~~(n \ge 2)
+\end{eq1}
+
+上述公式事实上也对$n=1$成立.
+将各项系数代入余弦级数，就得到：
+\begin{eq1}
+    f(x) = 1 + \ss 2r^n \cos nx
+\end{eq1} \qed \par
+
+\end{solution}
+
+~\par
+

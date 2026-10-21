@@ -1,0 +1,40 @@
+    \documentclass{ctexart}
+\linespread{1.75}
+\input{preamble}
+\setcounter{tocdepth}{3}
+
+\setcounter{section}{0}
+
+\begin{document}
+    \maketitle
+    % \newpage
+    \vspace*{\fill}
+        \begin{center}
+            \begin{equation*}
+                1+1 = 2
+            \end{equation*}
+        \end{center}
+    \vspace*{\fill}
+    \cleardoublepage
+
+    \include{preface.tex}
+
+    {
+        \small
+        \tableofcontents
+    }
+    \cleardoublepage
+
+    \input{ch1.tex}
+    \input{ch2.tex}
+    \input{ch3.tex}
+    \input{ch4.tex}
+    \input{ch5.tex}
+    \input{ch6.tex}
+    \input{ch7.tex}
+    \input{ch8.tex}
+    \input{ch9.tex}
+    \input{ch10.tex}
+    \input{ch11.tex}
+    \input{ch12.tex}
+\end{document}

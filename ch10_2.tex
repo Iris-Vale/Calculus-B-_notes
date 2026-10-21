@@ -1,0 +1,805 @@
+\clearpage
+\section{II.数项级数}
+\setstretch{1.75}
+
+
+\subsection{复习要点}
+
+\subsubsection{级数收敛与柯西收敛原理}
+
+所谓级数$\sum_{n=1}^{\infty} a_n$收敛，就是指级数的部分和序列$\{ S_n \}$收敛.
+级数的和$S$就是指部分和序列的极限. 即：
+\begin{eq}
+    S_n = \sum_{k=1}^{n} a_n~~,~~~~~~S = \sum_{n=1}^{\infty} a_n = \limn S_n
+\end{eq}
+
+由此来看，级数的收敛问题也只是一个普通的极限问题而已.
+但是，在已知通项$a_n$的条件下，$S_n$的变化趋势不容易直接观察.
+第一章中介绍的极限$\epsilon - N$定义也较难用于证明级数收敛，
+因为按这个定义我们要证明的是$S_n \to S$，
+而$S$的值一般事先猜不出来.
+因此，教材在本章开头特意引入了一种无需事先知道极限值的收敛性判断准则，
+即\textbf{柯西收敛原理}.
+它的基本思想是：如果序列$\{ x_n \}$收敛，那么当$n$充分大时，$x_n$的上下波动应该十分小.
+反过来说，如果发现只要指标$m$和$n$都充分大，就能保证$|x_m - x_n|$充分小，也可以说明$\{ x_n \}$是收敛的.\vspace{1em}
+
+\textbf{柯西收敛原理}~~\textit{设$\{ x_n\}$是一个序列，则$\{x_n \}$有极限的充要条件是：对于任意给定的$\epsilon > 0$，都存在$N$，使得$|x_n - x_m| < \epsilon$，只要$n,m \ge N$.}
+\vspace{1em}
+
+在级数问题中，上面的$\{ x_n \}$就是指$\{ S_n \}$，而$|x_n - x_m|$是指$|S_n - S_m|$.
+不妨设$n < m$，则它也可以写成$\left| \sum_{k=n+1}^{m} a_k \right|$.
+这样改写得到的就是级数的柯西收敛原理.\vspace{1em}
+
+\textbf{级数的柯西收敛原理}~~\textit{级数$\sum_{n=1}^{\infty} a_n $收敛的充要条件是：对于任意给定的$\epsilon >0$，存在一个$N$，使得$\left| \sum_{k=n+1}^{m} a_k \right| < \epsilon$，只要$m > n \ge N$.}
+\vspace{1em}
+
+用它的否定形式也可以证明一个级数发散：\vspace{1em}
+
+\textbf{级数的柯西收敛原理（否定）}~~\textit{级数$\sum_{n=1}^{\infty} a_n $发散的充要条件是：存在$\epsilon >0$，对于任意大的$N>0$，
+存在$m > n \ge N$， 使得$\left| \sum_{k=n+1}^{m} a_k \right| > \epsilon$.}
+\vspace{1em}
+
+用柯西收敛原理证明级数收敛或发散，涉及到估计$\left| \sum_{k=n+1}^{m} a_k \right|$的大小.
+一般需要对它进行放缩.
+如果要证明级数收敛，需要将通项放大，使之成为某种能手动计算出来的求和式，然后说明$n \to \infty$时求和结果趋于$0$（教材10.1节正文证明$\sum_{n=1}^{\infty} \frac{1}{n^2}$收敛）；
+如果要证明级数收敛，需要将通项缩小，然后求和，说明它总大于某个给定的$\epsilon$（教材10.1节正文证明$\sum_{n=1}^{\infty} \frac{1}{n}$发散）.
+注意在证明级数发散时，我们实际上是在证明$m,n$的存在性.
+因此可以把$m$取成相对于$n$足够大，而且又便于计算的值，这样更有机会计算出$\left| \sum_{k=n+1}^{m} a_k \right|$超过某个给定的$\epsilon$.
+方便起见，一般让$n = N$即可（说明$n$充分大）. 
+而$m$最常见的就是取成$2N$.
+这种取法可以当作套路记住，一般的题目不太会打破这个套路.
+
+这里不方便的地方在于，我们掌握的直接求和的方法很稀少（等比级数、裂项法），所以没法做到很精确地估计.
+这也是为什么我们要介绍更多级数收敛性的判别法.
+
+\subsubsection{级数的性质}
+
+级数是一种无穷求和，它的有些性质与有限求和差别很大，
+在对级数进行变形时需要加以注意.\vspace{0.5em}
+
+\textbf{1.~级数相加}\vspace{0.5em}
+
+考虑级数：
+\begin{eq}
+    \sum_{n=1}^{\infty} \left( a_n + b_n \right)
+    =
+    (a_1 + b_1) + (a_2 + b_2) + (a_3 + b_3) + \cdots 
+\end{eq}
+
+该级数是收敛性与$\ss a_n$和$\ss b_n$的收敛性关系如何呢？
+结论如下：\vspace{1em}
+
+\textit{i)~~若$\ss a_n$与$\ss b_n$都收敛，则$\ss \left( a_n + b_n \right)$收敛.}
+
+\textit{ii)~~若$\ss a_n$与$\ss b_n$一个收敛一个发散，则$\ss \left( a_n + b_n \right)$发散.}
+
+\textit{iii)~~若$\ss a_n$与$\ss b_n$都发散，则$\ss \left( a_n + b_n \right)$可能收敛，也可能发散.}\vspace{1.25em}
+
+前两条可以总结如下：\textbf{在一个级数的通项上加一个收敛级数的通项，不改变级数的收敛性.}
+因此，在判断级数敛散性时，可以把通项中收敛的部分拆出来放一边不看.
+这一点将会在后面得到充分的应用.
+第三条则是一个需要注意的易错点——
+有些同学可能误认为，两个发散级数相加还是发散的.
+实际上非常容易举出反例：
+\begin{eq}
+    a_n = (-1)^n ~~,~~b_n = (-1)^{n+1} \implies a_n + b_n = 0
+\end{eq}
+
+在这个例子中，$a_n$与$b_n$过大的“振动”恰好通过叠加相互抵消了，导致了$\ss \left( a_n + b_n \right)$收敛.
+这种“抵消”的情况在对级数变形时需要特别警惕.\vspace{1em}
+
+\clearpage
+
+\textbf{2.~级数加括号}\vspace{0.5em}
+
+加法满足结合律. 
+在有限求和式中，任意加括号都不会改变求和的结果.
+但是这一点在级数中不成立.
+因为在对级数求和之前，必须先证明它收敛；
+而一个级数是否收敛与它求和的过程，
+即部分和序列$\{ S_n \}$的变化趋势有关.
+如果给级数加括号，实际上改变了部分和序列. 
+举例来说：设级数$\ss a_n$的部分和序列为$\{ A_n \}$.
+给这个级数每两项加一个括号，则构成了一个以$b_n = a_{2n-1} + a_{2n}$为通项的新级数：
+\begin{eq}
+    \ss b_n &= (a_1 + a_2) + (a_3 + a_4) + (a_5 + a_6) + \cdots \\[-10pt]
+    &= ~~~~~b_1 ~~~~+~~~~~ b_2 ~~~~~+~~~~ b_3~~~~+ \cdots
+\end{eq}
+
+则加括号得到的新级数$\ss b_n$的部分和序列$B_n = A_{2n}$，实际上是$A_n$的偶子列.
+更一般地说，给一个级数加括号之后，得到的新级数的部分和序列一定是原级数部分和序列的某个子列.
+我们只需回顾序列和其子列的收敛性关系：如果原级数收敛，即它的部分和序列收敛，则它的任意子列一定收敛到同一个值；
+但如果原级数发散，即它的部分和序列发散，它的子列是否还发散则不好说.
+这样就得到了教材上关于级数加括号的结论：\vspace{1em}
+
+\textit{i)~~若一个级数收敛，将它的通项任意加括号后所成的新级数，仍然收敛到原级数的和.}
+
+\textit{ii)~~若一个级数发散，将它的通项任意加括号后所成的新级数，可能收敛也可能发散.}\vspace{1em}
+
+
+\textbf{3.~级数重排}\vspace{0.5em}
+
+加法满足交换律.
+但是对级数的通项重新排列次序，可能会改变收敛性与级数的和.
+这同样是因为部分和序列$\{ S_n \}$改变了.
+级数能否重排涉及的是一般项级数中\textbf{绝对收敛}与\textbf{条件收敛}的区别.
+所谓绝对收敛，就是指绝对值级数$\ss |a_n|$收敛.
+收敛但不是绝对收敛的情况就称为条件收敛.
+教材有以下的结论：\vspace{1em}
+
+\textit{i)~~若级数绝对收敛，则将它的各项重新排列次序后所得的新级数也绝对收敛，且其和不变.}
+
+\textit{ii)~~若级数条件收敛，则可以将它的各项重新排列次序，使它收敛到任意值（包括$\pm \infty$）.} \vspace{1em}
+
+第二条结论看起来很反直觉，但其实也很容易做到.
+接下来展示一个具体例子.
+考虑下面的交错级数：
+\begin{eq}
+    \ss a_n = \ss \frac{(-1)^{n+1}}{n} = 1 - \frac{1}{2} + \frac{1}{3} - \frac{1}{4} + \frac{1}{5} - \cdots 
+\end{eq}
+
+事实上这个级数条件收敛，其和为$\ln 2$.
+现在我希望通过重排，让它收敛到$1.919810$. 
+设重排后的级数是$\ss b_n$，部分和为$B_n$.
+重排的方法如下：
+首先提取出原级数$\ss a_n$中的正数项，将它们按原来的顺序逐个相加：
+\begin{eq}
+    b_1 = 1~~&,~~B_1 = 1 \\
+    b_2 = \frac{1}{3}~~&,~~B_2 = \frac{4}{3} \\
+    b_3 = \frac{1}{5}~~&,~~B_3 = \frac{23}{15} \\
+    &\cdots \\
+    b_6 = \frac{1}{11}~~&,~~B_6 \approx 1.878 \\
+    b_7 = \frac{1}{13}~~&,~~B_7 \approx 1.955 > 1.919810
+\end{eq}
+
+可见加到第$7$项时，部分和超过了目标值.
+这时就不再继续加正数项了，
+第$8$项转而放置$a_n$中的第一个负数项：
+\begin{eq}
+    b_8 = -\frac{1}{2} ~~,~~ B_8 \approx 1.455 < 1.919810
+\end{eq}
+
+这下部分和又小于目标值了. 
+因此之后再继续排列正数项$\frac{1}{15}$，$\frac{1}{17} \cdots $.
+如此，当部分和小于目标值时，就往上排列$a_n$的正数项；当部分和大于目标值时，就往上排列$a_n$的负数项.
+这样就能控制部分和序列$\{ B_n \}$在目标值的附近上下摆动，而摆动的幅度越来越小，因此收敛到目标值.
+这道理就像“咸了加水，淡了加盐”，而每次加水或加盐的量越来越少，就能保证汤的味道是收敛的.
+
+了解了重排的具体方法，也可以进一步理解绝对收敛和条件收敛的区别.
+从条件收敛级数中取出所有的正数项（或负数项）组成一个新级数，它一定是发散的.
+这意味着如果不断地叠加正数项，只要加得足够多，最终部分和一定会超过目标值，从而需要一些负数项来调节.
+这种重排的思路对于绝对收敛级数就不成立了.
+因为如果从绝对收敛级数中取出所有的正数项（或负数项）组成一个新级数，它一定是收敛的（此为教材定理）.
+因此会出现“即使把所有正数项（或负数项）都用上也达不到目标值”的情况.
+
+这些道理对应于很简单的生活事实：
+假如你拥有无限多的盐和水（条件收敛），那么想调多咸或者多淡都可以.
+但如果盐和水的总量都是有限的（绝对收敛），那么即使分无限多次来加盐和水，最终的咸淡都是确定的，并且这与一次性加入全部盐和全部水的结果完全一样.
+
+\subsubsection{正项级数判别法}
+
+正项级数是一类比较简单的级数，因为它不涉及到正数项和负数项的相互抵消.
+正项级数是否收敛仅取决于通项$a_n$趋于$0$的速度是否足够快.
+常用的正项级数判别法也都是在关注这一点.
+这里我们对相关命题和定理做一个简要的罗列和说明.\vspace{1em}
+
+\textbf{1~~命题}~~\textit{正项级数$\ss a_n$收敛的充要条件是其部分和序列$\{ S_n \}$有上界.}\vspace{0.5em}
+
+说明：对$\{ S_n \}$而言就是单调收敛原理. 一般题目中不会直接使用这个命题.    \vspace{1em}
+
+\textbf{2.1~~比较判别法}~~\textit{若存在常数$N \ge 1$及$c > 0$，使得当$n \ge N$时，有$0 \ge a_n \ge c \cdot b_n$. 则：}
+
+~~~~\textit{i)~若$\ss b_n$ 收敛，则$\ss a_n$收敛.}
+
+~~~~\textit{ii)~若$\ss a_n$ 发散，则$\ss b_n$收敛.}\vspace{0.5em}
+
+\textbf{2.2~~比较判别法（极限形式）}~~\textit{设两个正项级数$\ss a_n$和$\ss b_n$满足：$\limn \frac{a_n}{b_n} = h$. 则：}
+
+~~~~\textit{i)~当$0 < h < +\infty$时，级数$\ss a_n$和$\ss b_n$同时收敛或同时发散.} 
+
+~~~~\textit{ii)~当$h=0$时，若$\ss b_n$收敛，则$\ss a_n$收敛.}
+
+~~~~\textit{iii)~当$h = +\infty$时，若$\ss a_n$发散，则$\ss b_n$发散.} \vspace{1em}
+
+这里强调一下$p$级数的重要结论：\vspace{0.5em}
+
+\textbf{2.3~~定理（$p$级数）}~~\textit{对于$p$级数$\ss \frac{1}{n^p}$，$p$为实数：}
+
+~~~~\textit{i)~当$p>1$时，$p$级数收敛.}
+
+~~~~\textit{ii)~当$p \le 1$时，$p$级数发散.}\vspace{0.5em}
+
+用比较判别法的时候，常常拿$p$级数作为比较对象：\vspace{0.5em}
+
+\textbf{2.4~~定理（比较判别法+$~p$级数）}~~\textit{当$n \to \infty$时，若$a_n > 0$是$\frac{1}{n^{p}} ~(p > 1)$的同阶或高阶无穷小量，则正项级数$\ss a_n$收敛.} \vspace{0.5em}
+
+比较判别法在正项级数中的使用是相当普遍的.
+最重要的就是分析无穷小量阶数的思想，
+需要用到第一章中求极限的诸多方法.\vspace{1em}
+
+\textbf{3.1~~达朗贝尔判别法}~~\textit{若正项级数$\ss a_n$满足：$\limn \frac{a_{n+1}}{a_n} = l$，则：}
+
+~~~~\textit{i)~当$l < 1$时，级数收敛.}
+
+~~~~\textit{ii)~当$l > 1$时，级数发散.}
+
+~~~~\textit{iii)~当$l = 1$时，级数的敛散性不定.}\vspace{0.5em}
+
+\textbf{3.2~~柯西判别法}~~\textit{若正项级数$\ss a_n$满足：$\limn \sqrt[n]{a_n} = l$，则：}
+
+~~~~\textit{i)~当$l < 1$时，级数收敛.}
+
+~~~~\textit{ii)~当$l > 1$时，级数发散.}
+
+~~~~\textit{iii)~当$l = 1$时，级数的敛散性不定.}\vspace{0.5em}
+
+\textbf{3.3~~拉比判别法}~~\textit{若正项级数$\ss a_n~(a_n \ne 0)$满足：$\limn n\left( \frac{a_n}{a_{n+1}} - 1 \right) = R$（$R$可以是$\infty$），则：}
+
+~~~~\textit{i)~当$R > 1$时，级数收敛.}
+
+~~~~\textit{ii)~当$R < 1$时，级数发散.}
+
+~~~~\textit{iii)~当$R = 1$时，级数的敛散性不定.}\vspace{0.5em}
+
+拉比判别法属于教材上标星号内容，用到的概率不大.
+达朗贝尔判别法和柯西判别法的原理是基于等比级数的收敛.
+例如级数$\ss \frac{1}{n + 2^n}$.
+我们发现当$n$很大时，这个级数与等比级数$\ss \frac{1}{2^n}$很接近，所以应该也是收敛的.
+这一点也可以通过比较判别法来说明.
+达朗贝尔判别法的思路是：
+用$q_n = \frac{a_{n+1}}{a_n}$表示“公比”.
+虽然$q_n$一般情况下不像等比级数一样是个定值，但是当$n \to \infty$时，$q_n$如果收敛到一个定值$l$，那么可以说这个数列与以$l$为公比的等比级数很相像，因此级数的收敛性取决于$l$与$1$的大小关系.
+类似地，柯西判别法的思路则是用$\sqrt[n]{a_n}$的极限来“摹拟”等比级数的公比.
+
+达朗贝尔判别法和柯西判别法的泛用性较低，因为只能判断出收敛/发散速度与等比级数相当的级数（这两个判别法甚至连$p$级数都判断不了捏）.
+在用的时候需要先看看级数的面相.
+一般通项中带有指数项$a^n$或阶乘$n!$的，适合用达朗贝尔判别法；
+带有指数项$a^n$或$n^n$的，适合用柯西判别法.\vspace{1em}
+
+\textbf{4.1~~无穷积分判别法}~~\textit{设$\ss a_n$为正项级数. 若存在一个单调下降的非负函数$f(x)$，使$a_n = f(n)$，则级数$\ss a_n$收敛的充要条件为无穷积分$\int_{1}^{+\infty} f(x) ~\d x$收敛.}\vspace{0.5em}
+
+这个判别法用得最少. 
+同学们只需记住教材中的一个例子即可：$\ss \frac{1}{n \ln n}$.
+其他情况下，往往反而是把积分转化成级数更方便判断，而不是把级数转化成积分.
+
+\subsubsection{一般项级数判别法}
+
+这里我们讨论的是非正项级数（通项有正有负）是否条件收敛的判断.
+教材中只介绍了“三板斧”——\textbf{莱布尼茨判别法}、\textbf{狄利克雷判别法}和\textbf{阿贝尔判别法}.
+其中，莱布尼茨判别法又可以视为狄利克雷判别法的特例.
+因此，同学们只要从两个判别法里选出适用的那一个即可.\vspace{1em}
+
+\textbf{1.~狄利克雷判别法}~~\textit{若序列$\{a_n \}$单调趋于$0$，级数$\ss b_n$的部分和序列有界，则级数$\ss a_n b_n$收敛.}\vspace{0.5em}
+
+\textbf{2.~阿贝尔判别法}~~\textit{若序列$\{a_n \}$单调有界，级数$\ss b_n$的部分和序列收敛（即级数收敛），则级数$\ss a_n b_n$收敛.}\vspace{0.5em}
+
+在用这两个判别法的时候，需要把级数通项拆成两部分相乘，让不同的部分分别负责满足序列单调/序列有界/部分和序列有界/级数收敛这些条件，使得最终的“任务分配”符合两种判别法之一的要求.
+其中，“单调”、“有界”和“级数收敛”是同学们比较熟悉的性质，有许多方法可以判断.
+“部分和序列有界”相对比较难判断. 
+对此同学们只需记住两类情况，只要遇到，就先往狄利克雷判别法的方向去思考：
+
+（1）$b_n = (-1)^n$. 显然它的部分和序列在$-1$和$0$之间反复横跳，是有界的.
+一个正项级数的通项$a_n$如果乘以了$b_n$，那就成为了\textbf{交错级数}，即一正一负交替的级数.
+此时如果有序列$\{ a_n \}$单调趋于$0$，交错级数$\ss a_n b_n$就满足了狄利克雷判别法的条件.
+这实际上就是莱布尼茨判别法的内容.
+
+（2）$b_n = \cos(n \varphi)~(\varphi \ne 2k\pi)$或$b_n = \sin (n \varphi)~(\varphi \in \mathbb{R})$.
+以$b_n = \cos(n \varphi)$为例，其部分和序列$B_n$：
+\begin{eq}
+     B_n &= 
+     \sum _{k = 1}^{n}\cos \left(k \varphi \right)  \\
+     &= \frac{1}{\sin \dfrac{\varphi }{2}}\left(\cos \varphi \sin \frac{\varphi }{2} + \cos 2\varphi \sin \frac{\varphi }{2} + \cdots + \cos n \varphi \sin \frac{\varphi}{2} \right) \\
+     &= \frac { 1 } { 2 \sin \dfrac { \varphi } { 2 } } \left( \sin \frac { ( 2 n + 1 ) \varphi } { 2 } - \sin \frac { \varphi } { 2 } \right) 
+\end{eq}
+
+则$|B_n| = \left| \sum _ { k = 1 } ^ { n } \cos ( k \varphi) \right| \leq \frac { 1 } { \left| \sin \dfrac { \varphi } { 2 } \right| } $. \par
+
+
+\subsection{解题技巧}
+
+\subsubsection{判断级数收敛性}
+
+判断级数收敛性的基本步骤如下.
+首先判断是级数是否是正项级数. 如果是，用正项级数的判别法.
+如果不是，需考虑绝对收敛和条件收敛.
+对于绝对收敛性的判别，只需要给级数加绝对值，然后回归正项级数的判别法.
+对于条件收敛性的判别，只需要思考使用莱布尼茨判别法、狄利克雷判别法还是阿贝尔判别法即可.
+
+要点：注意各个判别法的使用条件，尤其注意不要对一般项级数使用正项级数的判别法（如比较判别法）.
+背诵清楚狄利克雷判别法和阿贝尔判别法的条件.
+如果发现各个判别法都没有用，可以考虑更细致的估阶方法（如下一小节讲的泰勒展开）.\vspace{1em}
+
+\begin{example}
+    {1(2023)}{
+        \textit{判断下列级数敛散性:}
+    }
+\end{example} \vspace{0.5em}
+
+\textit{(1)~~}
+$\sum_{n=3}^{\infty} \frac{2}{n \ln \sqrt{n}}$
+
+\textit{(2)~~}
+$\sum_{n=1}^{\infty} \frac{3 \sqrt[5]{n} + 1}{(\sqrt[4]{n}+ n)(\sqrt[3]{n} + n)}$
+
+\textit{(3)~~}
+$\sum_{n=1}^{\infty} \left( \frac{4 \cdot 3^n}{5^n} - \frac{1}{n} + \frac{1}{n+2} \right)$ \vspace{0.5em}
+
+
+\begin{solution}
+    (1)~~由对数性质知级数通项$a_n = \frac{4}{n \ln n}$.
+    证明该级数的发散性是课本例题.
+    由无穷积分判别法可知，该级数的敛散性等价于相应无穷积分的敛散性：
+    \begin{eq}
+        \int_{3}^{+\infty} \frac{1}{x \ln x}~\d x 
+    \end{eq}
+
+    用凑微分法计算该无穷积分：
+    \begin{eq}
+        \int_{3}^{+\infty} \frac{1}{x \ln x}~\d x 
+        &= \int_{3}^{+\infty} \frac{1}{\ln x}~\d (\ln x) \\
+        &= \ln \ln x \bigg|_{3}^{+\infty} \\
+        &= \lim\limits_{x \to + \infty} \ln \ln x - \ln \ln 3
+    \end{eq}
+
+    式中的极限显然是发散的，即无穷积分是发散的. 因此原级数发散，\vspace{0.5em}
+
+    (2)~~当$n \to +\infty$时，级数通项有以下的无穷小量等价关系：
+    \begin{eq}
+        \sum_{n=1}^{\infty} \frac{3 \sqrt[5]{n} + 1}{(\sqrt[4]{n}+ n)(\sqrt[3]{n} + n)}
+        \sim
+        \frac{3 \sqrt[5]{n}}{n \cdot n} \sim \frac{3}{n^{9/5}}
+    \end{eq}
+
+    由$p$级数的结论可知$\sum_{n=1}^{\infty} \frac{3}{n^{9/5}}$收敛，因而原级数收敛.\vspace{1em}
+
+    (3)~~部分合并级数通项：
+    \begin{eq}
+        a_n = \frac{4 \cdot 3^n}{5^n} - \frac{1}{n} + \frac{1}{n+2}
+        = \frac{4 \cdot 3^n}{5^n} - \frac{2}{n(n+2)}
+    \end{eq}
+
+    我们发现级数$\sum_{n=1}^{\infty} \frac{4 \cdot 3^n}{5^n}$是$|q|<1$的等比级数，因此收敛；
+    而级数$\sum_{n=1}^{\infty} \frac{-2}{n(n+2)}$的通项等价于$\frac{-2}{n^2}$，由$p$级数的结论可知收敛.
+    因此：
+    \begin{eq}
+        \sum_{n=1}^{\infty} a_n = \sum_{n=1}^{\infty} \frac{4 \cdot 3^n}{5^n} + \sum_{n=1}^{\infty} \frac{-2}{n(n+2)}
+    \end{eq}
+    是收敛的. \qed\par
+\end{solution}
+~\par
+
+\clearpage
+
+\begin{example}
+    {2}{设$p$和$q$都是正实数. 讨论级数$\sum_{n=2}^{\infty} \frac{1}{n^p \ln^q n}$的敛散性.}
+\end{example}\vspace{0.5em}
+\begin{remark}
+    当$n \to \infty$时，$\ln n \ll n$.
+    因此可以用比较判别法说明这个级数的收敛性基本和$p$级数类似.
+    但是这个方法对于$p=1$失效.
+    不过好在此时回归了可以用无穷积分判别法的（几乎唯一一个）经典情形.
+\end{remark}\vspace{0.5em}
+\begin{solution}
+    i)~当$p > 1$时，级数通项可以放大：$\frac{1}{n^p \ln^q n} < \frac{1}{n^p}$.
+    而$p$级数$\sum_{n=2}^{\infty} \frac{1}{n^p}$收敛，由比较判别法可知原级数收敛.
+
+    ii)~当$p < 1$时，我们通过$p$级数的结论和$\ln n$增长较慢的事实，猜测级数是发散的.
+    因此只需与$\frac{1}{n}$比较：
+    \begin{eq}
+        \limn \frac{1/(n^p \ln^q n)}{1/n} = \limn \frac{n^{1-p}}{\ln^q n} = +\infty
+    \end{eq}
+    而级数$\ss \frac{1}{n}$是发散的.
+    由比较判别法可知原级数发散.\vspace{0.5em}
+
+    iii)~当$p = 1$时，由无穷积分判别法可知，该级数的敛散性等价于相应无穷积分的敛散性：
+    \begin{eq}
+        \int_{2}^{+\infty} \frac{1}{x \ln^q x}~\d x
+    \end{eq}
+
+    计算如下：
+    \begin{eq}
+        \int_{2}^{+\infty} \frac{1}{x \ln^q x}~\d x
+        &= \int_{2}^{+\infty} \frac{1}{\ln^q x}~ \d (\ln x) \\[4pt]
+        &= 
+        \begin{cases}
+            \ln \ln x \bigg|_{2}^{+\infty} = \lim\limits_{x \to +\infty} \ln \ln x - \ln \ln 2 ~~(q=1)\\[4pt]
+            \frac{(\ln x)^{-q+1}}{-q+1} \bigg|_{2}^{+\infty} = \lim\limits_{x \to +\infty} \frac{(\ln x)^{-q+1}}{-q+1} - \frac{(\ln 2)^{-q+1}}{-q+1} ~~(q \ne 1)
+        \end{cases}
+    \end{eq}
+    
+    可见，当$q > 1$时，无穷积分收敛；当$0 < q \le 1$时，无穷积分发散.
+
+    综上，当$0<p<1$，或$p =1$且$0 < q \le 1$时，级数发散；
+    当$p>1$，或$p=1$且$q > 1$时，级数收敛.
+\end{solution} \qed \par
+
+\begin{example}
+    {3}{判断级数$\sum_{n=2}^{\infty} \frac{1}{(\ln n)^{\ln n}}$的敛散性.}
+\end{example}\vspace{0.5em}
+\begin{remark}
+    问题的实质是分析$(\ln n)^{\ln n}$的增长速率，看是否快于$n^{1+\epsilon}$.
+\end{remark}
+\begin{solution}
+    对级数通项做如下变形：
+    \begin{eq}
+        a_n = \frac{1}{(\ln n)^{\ln n}} = \frac{1}{e^{\ln \ln n \cdot \ln n} } = \frac{1}{n^{\ln \ln n}}
+    \end{eq}
+    
+    显然当$n$充分大时，有$\ln \ln n > 2$，从而$\frac{1}{n^{\ln \ln n}} < \frac{1}{n^2}$.
+    因为级数$\sum_{n=1}^{\infty} \frac{1}{n^2}$收敛，由比较判别法可知原级数收敛.
+    \qed \par
+\end{solution}
+~\par
+
+\begin{example}
+    {4}{判断级数$\ss \left( \frac{1}{n} - \sin \frac{1}{n} \right)$的敛散性.}
+\end{example}\vspace{0.5em}
+\begin{remark}
+    {第一章中求极限方法可以放在正项级数的背景下考察.}
+\end{remark}
+\begin{solution}
+    当$n \to \infty$时，$x = \frac{1}{n} \to 0$是无穷小量.
+    容易证明$x - \sin x \sim \frac{x^3}{6}~(x \to 0)$，
+    即$\frac{1}{n} - \sin \frac{1}{n}$与$\frac{1}{n^3}$是同阶无穷小量.
+    而级数$\ss \frac{1}{n^3}$收敛.
+    由比较判别法可知原级数收敛.
+\end{solution} \qed \par
+~\par
+
+\begin{example}
+    {5}{
+        设$a_n = \cos n \pi \cdot \ln \left( 1 + \frac{1}{\sqrt{n}} \right)$.
+    }
+\end{example}
+
+\textit{(1)~判断级数$\ss a_n$的收敛性（包括绝对收敛性）.}
+
+\textit{(2)~判断级数$\ss a_n^2$的收敛性.}\vspace{0.5em}
+
+\begin{solution}
+    (1)~先判断绝对收敛性，即级数$\ss |a_n|$的收敛性.
+    当$n \to \infty$时，有如下的等价无穷小关系：
+    \begin{eq}
+        |a_n| = \ln \left( 1+ \frac{1}{\sqrt{n}} \right) \sim \frac{1}{\sqrt{n}}
+    \end{eq}
+    而级数$\ss \frac{1}{\sqrt{n}}$发散.
+    由比较判别法可知，原级数不是绝对收敛.
+
+    再判断级数$\ss a_n$的收敛性.
+    注意到$\cos n \pi = (-1)^n$，该级数是交错级数.
+    而$\ln \left( 1+ \frac{1}{\sqrt{n}} \right)$单调递减趋于$0$.
+    故由莱布尼茨判别法可知，原级数发散.
+    
+    综上，级数$\ss a_n$条件收敛.\vspace{0.5em}
+
+    (2)~级数$\ss a_n^2$是正项级数.
+    有如下的等价无穷小关系：
+    \begin{eq}
+        a_n^2 = \ln^2 \left( 1+ \frac{1}{\sqrt{n}} \right) \sim \frac{1}{n}
+    \end{eq}
+    而级数$\ss \frac{1}{n}$发散.
+    由比较判别法可知，原级数发散. \qed \par
+\end{solution}
+~\par
+
+\begin{example}
+    {6}{判断级数敛散性：$\ss \frac{\sin (2n)}{n+ \dfrac{1}{n}} \cdot \left( 1+ \frac{1}{n}\right)^n$.}
+\end{example}\vspace{0.5em}
+\begin{remark}
+    首先发现该级数不是正项级数，也不是交错级数，因此考虑用狄利克雷判别法或者阿贝尔判别法.
+    观察级数中各项的特征.
+    $\sin 2n$是典型的部分和有界的序列.
+    而$\left( 1+\frac{1}{n} \right)^n$单调递增趋于$e$是熟知的结论.
+    以这两点观察作为突破口.
+\end{remark}\vspace{0.5em}
+\begin{solution}
+    当$n \to \infty$时，$\left( 1+\frac{1}{n} \right)^n$有界且单调递增（教材结论，可以不加证明直接使用）.
+    由阿贝尔判别法，如果证明了级数$\ss \frac{\sin (2n)}{n+\dfrac{1}{n}}$收敛，就证明了原级数收敛.
+
+    在级数$\ss \frac{\sin (2n)}{n+\dfrac{1}{n}}$中，
+    $\sin (2n)$的部分和序列$\{ B_n \}$有界.
+    事实上：
+    \begin{eq}
+        B_n = \frac{1}{2\sin 1} \left( \sin (2n+1) - \sin 1 \right)
+    \end{eq}
+    另一方面，序列$\left \{ \frac{1}{n + \frac{1}{n}}\right \}$显然单调趋于$0$.
+    由狄利克雷判别法可知级数收敛. \qed \par
+\end{solution}
+~\par
+
+\subsubsection{*泰勒展开判断级数敛散性}
+
+如果令$x = \frac{1}{n}$，则会发现$p$级数的通项其实是单项式$x^{p}$（单项式）.
+也就是说，所有换元后具有单项式形式（$x \to 0$）的级数，我们都是知道敛散性的.
+而我们又知道，任何$n$阶可导的函数都可以通过$n$阶泰勒展开，表示成多项式+余项的形式.
+因此，在泰勒展开之后，只要保证余项构成的级数收敛，就能根据$p$级数的结论轻易判断原级数是否收敛.
+
+这个方法对于一般项级数都是适用的，而且未必要把$\frac{1}{n}$看成$x$来展开，只要$n \to \infty$时$x \to 0$皆可.\par
+~\par
+
+
+
+\begin{example}
+    {7}{判断级数敛散性：$\sum_{n=2}^{\infty} \frac{(-1)^n}{\sqrt{n} + (-1)^{n}}$}
+\end{example}
+\begin{remark}
+    该级数是交错级数，但是$\frac{1}{\sqrt{n} + (-1)^n}$不是单调递减的，故不能用莱布尼茨判别法.
+    这里我们用泰勒展开强行解决.
+\end{remark}
+\begin{solution}
+    对通项进行泰勒展开（$x = \frac{(-1)^n}{\sqrt{n}}$）：
+    \begin{eq}
+        \frac{(-1)^n}{\sqrt{n} + (-1)^n}
+        &= \frac{(-1)^n}{\sqrt{n}} \cdot \frac{1}{1 + \dfrac{(-1)^n}{\sqrt{n}}} \\
+        &= \frac{(-1)^n}{\sqrt{n}} \cdot \left( 1 - \frac{(-1)^n}{\sqrt{n}} + \frac{1}{n} + o(\frac{1}{n}) \right) \\
+        &= \boxed{\frac{(-1)^n}{\sqrt{n}}} - \boxed{\frac{1}{n}} + \boxed{\frac{(-1)^n}{n^{3/2} }+ o(\frac{1}{n^{3/2}})} \\[-6pt]
+         & ~~~\text{条件收敛}~~\text{发散} ~~~~~~~~~\text{绝对收敛}
+    \end{eq}
+\end{solution}
+
+如此，原级数的通项能被拆成三部分（用三个方框表示）之和.
+每一部分构成的级数分别是条件收敛、发散和绝对收敛的.
+它们相加所构成的级数是发散的.\qed \par
+~\par
+
+\begin{example}
+    {8}{判断级数敛散性：$\sum_{n=2}^{\infty} \frac{(-1)^n}{\sqrt{n + (-1)^{n}}}$}
+\end{example}\vspace{0.5em}
+\begin{solution}
+    对通项进行泰勒展开（$x = \frac{(-1)^n}{n}$）：
+    \begin{eq}
+        \sum_{n=2}^{\infty} \frac{(-1)^n}{\sqrt{n + (-1)^{n}}}
+    &= \frac{(-1)^n}{\sqrt{n}} \cdot \frac{1}{\sqrt{1 + \dfrac{(-1)^n}{n}}} \\
+    &= \frac{(-1)^n}{\sqrt{n}} \cdot \left( 1 - \frac{1}{2} \cdot \frac{(-1)^n}{n} + o(\frac{1}{n}) \right) \\
+    &= \boxed{\frac{(-1)^n}{\sqrt{n}}} - \boxed{\frac{1}{2} \cdot \frac{1}{n^{3/2}} + o(\frac{1}{n^{3/2}})} \\[-6pt]
+    & ~~~\text{条件收敛}~~~~~~~~~~\text{绝对收敛}
+    \end{eq}
+    
+\end{solution} \vspace{1em}
+如此，原级数的通项能被拆成两部分（用两个方框表示）之和.
+这两部分构成的级数分别是条件收敛和绝对收敛的.
+它们相加所构成的级数是条件收敛的.\qed \par
+~\par \vspace{1em}
+
+结合上面两道例题，说明一下泰勒展开法的注意事项：
+
+（1）与泰勒展开法求极限类似的，需要注意展开的阶数.
+只要保证余项是$o(\frac{1}{n^{1+\epsilon}})$，$\epsilon > 0$，那么余项就一定是绝对收敛的，无需再做更高阶的展开.
+特别注意，当通项是$o(\frac{1}{n})$时，不一定收敛（例如$\frac{1}{n \ln n}$）. 
+所以最好多展开一项. 
+例如上面两道例题中，都展开到了$\frac{1}{n^{3/2}}$的项.\vspace{0.5em}
+
+（2）最后判断敛散性时，用到了级数收敛性相加的性质，即从通项中剔除收敛的部分，不影响级数的收敛性.
+这是教材定理，可以直接使用.
+但事实上，还可以类似地判断出绝对收敛性. 
+例8就用到了以下的结论：\vspace{1em}
+
+\textit{i)~~若$\ss a_n$与$\ss b_n$都绝对收敛，则$\ss \left( a_n + b_n \right)$绝对收敛.}
+
+\textit{ii)~~若$\ss a_n$与$\ss b_n$一个绝对收敛，一个条件收敛，则$\ss \left( a_n + b_n \right)$条件收敛.}
+
+\textit{iii)~~若$\ss a_n$与$\ss b_n$都条件收敛，则$\ss \left( a_n + b_n \right)$收敛，但不能确定是否绝对收敛.}\vspace{1.5em}
+
+这些结论很简单，但是教材上没有直接提出.
+因此在用的时候最好证明一下.\vspace{1.25em}
+
+\clearpage
+
+\begin{example}
+    {9}{证明上面的结论.}
+\end{example}\vspace{0.5em}
+\begin{solution}
+    已知每种情况下级数$\ss \left( a_n + b_n \right)$都收敛.
+    这里只分析绝对收敛性.
+
+    i)~~由三角不等式：$|a_n + b_n| \le |a_n| + |b_n|$.
+    由级数$\ss a_n$和$\ss b_n$绝对收敛可知$\ss \left( |a_n| + |b_n| \right)$收敛，从而
+    由比较判别法可知级数$\ss | a_n + b_n |$收敛.\vspace{0.5em}
+
+    ii)~~不妨设$\ss a_n$绝对收敛，$\ss b_n$条件收敛. 用反证法.
+    假设$\ss |a_n + b_n|$收敛.
+    由三角不等式，$|b_n| = |\left( a_n + b_n \right) - a_n| \le |a_n + b_n| + |a_n|$.
+    又由级数$\ss a_n$绝对收敛，可知级数$\ss \left( |a_n + b_n| + |a_n| \right)$收敛，
+    从而由比较判别法可知级数$\ss |b_n|$收敛，矛盾.
+    故级数$\ss \left( a_n + b_n \right)$条件收敛.\vspace{0.5em}
+
+    iii)~~举出例子即可.
+    设$a_n = b_n = \frac{(-1)^n}{n}$，则$\ss a_n$和$\ss b_n$都条件收敛，$\ss \left( a_n + b_n\right)$也条件收敛.
+    设$a_n = \frac{(-1)^n}{n}$，$b_n = \frac{(-1)^{n+1}}{n}$，则$\ss a_n$和$\ss b_n$都条件收敛，而$\ss \left( a_n + b_n\right) = \ss 0$绝对收敛. \qed \par
+    ~\par
+
+\end{solution}
+
+\subsubsection{级数求和}
+到高数下为止，我们所要掌握的计算级数的和的情况或方法如下：
+
+（1）等比级数（最基本）；\par
+（2）裂项法（技巧性较强，了解基本用法即可）：\par
+（3）幂级数法（在函数项级数部分讲解，重点掌握）；\par
+（4）转化为定积分（高数上讲义中已讲解过，期末应该不会再考了）；\par
+（5）傅里叶级数（在傅里叶级数部分讲解，重点掌握）.
+
+这里只展示一道裂项法的经典例题.
+其余方法在相应知识点之后再讲解.\par
+~\par
+
+\begin{example}
+    {10}{计算级数$\ss \frac{1+\dfrac{1}{2} + \dfrac{1}{3} + \cdots + \dfrac{1}{n}}{(n+1)(n+2)}$.}
+\end{example}
+\begin{solution}
+    设$a_n = \sum_{k=1}^{n} \frac{1}{k}$.
+    则级数通项为$\frac{a_n}{(n+1)(n+2)} = \frac{a_n}{n+1} - \frac{a_n}{n+2}$.
+    于是对于级数的部分和$S_m$，有：
+    \begin{eq}
+        S_m &= 
+        \sum_{n=1}^{m} \frac{a_n}{(n+1)(n+2)} \\
+        &= \frac{a_1}{2} - \frac{a_1}{3} + \frac{a_2}{3} - \frac{a_3}{4} + \cdots  + \frac{a_n}{n+1} - \frac{a_n}{n+2} + \cdots + \frac{a_m}{m+1} - \frac{a_m}{m+2} \\
+        &= \frac{a_1}{2} + \frac{a_2 -a_1}{3} + \cdots + \frac{a_n - a_{n-1}}{n+1} + \cdots + \frac{a_m - a_{m+1}}{m+1} - \frac{a_m}{m+2} \\
+        &= \frac{1}{2}\cdot 1 + \frac{1}{3} \cdot \frac{1}{2} + \cdots +\frac{1}{n+1} \cdot \frac{1}{n} + \cdots + \frac{1}{m+1} \cdot \frac{1}{m} - \frac{a_m}{m+2} \\
+        &= 1 - \frac{1}{2} + \frac{1}{2} - \frac{1}{3} + \cdots + \frac{1}{n} - \frac{1}{n+1} + \cdots + \frac{1}{m} - \frac{1}{m+1} + \frac{a_m}{m+2} \\
+        &= 1 -\frac{1}{m+1} + \frac{a_m}{m+2}
+    \end{eq}
+
+    欲计算级数的和$S = \lim\limits_{m \to \infty} S_m$，
+    只需计算$\lim\limits_{m \to \infty} \frac{a_m}{m+2}$.
+    在第一章中，曾经证明过这样的结论：
+    若$\limn x_n = x$，则序列$\{ x_n \}$的前$n$项均值序列也收敛到$x$，即：
+    $\limn \frac{x_1 + x_2 + \cdots + x_n}{n} = x$.
+    在这里，若设$x_n = \frac{1}{n} \to 0 ~(n \to \infty)$，
+    则$\frac{a_m}{m}$就是其前$m$项均值，因此：
+    \begin{eq}
+        \lim\limits_{m \to \infty} \frac{a_m}{m+2}
+        = \lim\limits_{m \to \infty} \frac{a_m}{m}
+        = \lim\limits_{n \to \infty} \frac{1}{n} = 0
+    \end{eq}
+    
+    则级数的和：
+    \begin{eq}
+        S &= \lim\limits_{m \to \infty} S_m 
+        &= \lim\limits_{m \to \infty} \left(1 -\frac{1}{m+1} + \frac{a_m}{m+2}\right) = 1
+    \end{eq}
+
+\end{solution}\qed \par
+
+
+\subsubsection{抽象级数证明题}
+
+以下几道证明题中，我们强调极限思想的运用.
+在有条件的情况下，充分利用比较判别法的极限形式（同阶无穷小的思想）来简化级数.
+如果没有准确的极限结果可以利用，需考虑放缩.
+放缩可以大胆，因为只需体现级数通项收敛的速度.
+作为放缩的目标，建议熟悉一些常见的级数收敛的特殊情况，
+例如可以裂项的级数、子级数收敛等.\vspace{1em}
+
+\begin{example}
+    {11}{设序列$\{ a_n \}~(a_n \ne 0)$单调趋于$1$. 证明：级数$\ss \left( \frac{a_n}{a_{n+1} } - 1 \right)$收敛.}
+\end{example}
+\begin{remark}
+    由级数和部分和序列的关系可知，序列$\{ a_n \}$收敛等价于级数$\ss \left( a_{n+1} - a_{n} \right)$.
+\end{remark}
+\begin{solution}
+    由极限的保号性，存在$N \in \mathbb{N}$，使得$n > N$时，$a_n > 0$.
+    由单调性，此时要么$\frac{a_n}{a_{n+1}}$恒为非正或非负.
+    故级数$\sum_{n=N}^{\infty} \left( \frac{a_n}{a_{n+1} } - 1 \right)$为正项级数（或负项级数）.
+
+    因为$\limn a_n = 1$，当$n \to \infty$时，有$\frac{a_n}{a_{n+1} } - 1 \sim a_n - a_{n+1}$.
+    而级数$\sum_{n=N}^{\infty} \left( a_n - a_{n+1}\right)$的部分和序列$A_n = a_N - a_{n+1} \to a_N - 1$收敛.
+    由比较判别法可知原级数收敛. \qed \par
+\end{solution}
+~\par
+
+\begin{example}
+    {12}{设正项数列$\{ a_n \}$单调递增，求证：$\ss \frac{1}{a_n}$收敛的充要条件是$\ss \frac{n}{a_1 + a_2 + \cdots + a_n}$收敛.}
+\end{example}
+\begin{remark}
+    要证明两个正项级数同时收敛或发散，容易想到用比较判别法.
+    实质是证明两个级数通项收敛速度没有数量级的差异.
+    可能会想到把两个级数的通项相除$\frac{na_n}{a_1 + a_2 + \cdots + a_n}$，
+    然而因为题目条件不足，没法证明它趋于某个常数.
+    不过这为我们放缩提供思路：需要利用$na_n$与$a_1 + a_2 + \cdots + a_n$的关系.
+\end{remark}\vspace{0.5em}
+\begin{solution}
+    记$b_n = \frac{n}{a_1 + a_2 + \cdots + a_n}$，部分和$S_n = \sum_{k=1}^{n} \frac{1}{a_k}$，$T_n = \sum_{k=1}^{n} b_k$.
+
+    由$\{ a_n \}$单调递增，可知：
+    \begin{eq}
+        b_n = \frac{n}{a_1 + a_2 + \cdots + a_n} \ge \frac{n}{na_n} = \frac{1}{a_n}
+    \end{eq}
+
+    因此：$T_n \ge S_n$. 这就完成了一个方向的放缩.
+    为了证明$T_n$和$S_n$增长速度没有数量级的差异，需要设法说明$S_n$也能控制$T_n$.
+    注意放缩的目标形式仍然是$na_n$.
+
+    \begin{eq}
+        b_{2n} &= \frac{2n}{a_1 + a_2 + \cdots + a_{2n}} \le \frac{2n}{a_n + a_{n+1} + a_{n+2} + \cdots + a_{2n}} \\
+        &\le \frac{2n}{(n+1)a_n} \le \frac{2}{a_n}
+    \end{eq}
+    \begin{eq}
+        b_{2n-1} &= \frac{2n-1}{a_1 + a_2 + \cdots + a_{2n-1}} \le \frac{2n-1}{a_n + a_{n+1} + a_{n+2} + \cdots + a_{2n-1}} \\
+        &\le \frac{2n}{na_n} = \frac{2}{a_n}
+    \end{eq}
+
+    因此：
+    \begin{eq}
+        T_{2n} = \sum_{k=1}^{2n} b_k = \sum_{k=1}^{n} \left( b_{2k-1} + b_{2k} \right) 
+        \le \sum_{k=1}^{n} \left( \frac{2}{a_k} + \frac{2}{a_k} \right) = 4S_n
+    \end{eq}
+
+    综上，$S_{2n} \le T_{2n} \le 4S_n$.
+    $S_n$和$T_n$要么同时有界，要么同时无界，即两个级数同敛散. \qed \par
+
+\end{solution} 
+~\par
+
+\begin{example}
+    {13}{设正项级数$\ss a_n$收敛. 判断以下级数的敛散性：}
+\end{example}
+
+\textit{（1）$\ss \frac{\sqrt{a_n}}{n}$} 
+
+\textit{（2）$\ss \left( n \tan \frac{k}{n} \right) a_{2n}$，其中$0 < k < \frac{\pi}{2}$}\vspace{1em}
+
+\begin{remark}
+    两小问都只需直接分析通项的收敛速度.
+    第一问中，注意到$\ss \frac{1}{n}$是发散的，而$\ss \sqrt{a_n}$无法判断收敛性.
+    不过即使它发散，至少可以说这两个级数是非常接近于收敛的.
+    具体表现在它们的通项平方之后就是收敛级数了.
+    现在要证的级数就是$\frac{1}{n}$和$\sqrt{a_n}$相乘，收敛速度应该大致于它们的平方相当. 
+    通过放缩体现出这一点即可.
+    第二问中，级数带有$\tan$看似复杂，但是等价无穷小代换一下就没了.
+\end{remark}
+
+\begin{solution}
+    (1)~~由基本不等式：
+    \begin{eq}
+        \frac{\sqrt{a_n}}{n} = \frac{1}{n} \cdot \sqrt{a_n} \le \frac{1}{2} \cdot \left( \frac{1}{n^2} + a_n \right)
+    \end{eq}
+    已知级数$\ss \frac{1}{n^2}$与$\ss a_n$收敛，
+    故级数$\ss \left(\frac{1}{n^2} + a_n\right)$.
+    由比较判别法可知原级数收敛. \vspace{0.5em}
+
+    (2)~~该级数也是正项级数. 
+    由比较判别法，因为$n \to \infty$时，$\tan \frac{k}{n} \sim \frac{k}{n}$，
+    故原级数的收敛性与$\ss n \cdot \frac{k}{n} \cdot a_{2n} = \ss k \cdot a_{2n}$一致.
+    只需证明$\ss a_{2n}$的收敛性.
+    设$\ss a_{n}$的部分和序列为$\{ S_n \}$.
+    则$\ss a_{2n}$的部分和序列$\{ S_{2n} \}$是它的子列，因而也收敛，即$\ss a_{2n}$收敛. \qed \par
+\end{solution} 
+~\par
+
+\begin{example}
+    {14}{设序列$\{ a_n\}$和$\{ b_n \}$满足：$0 < a_n < \frac{\pi}{2}$，$0 < b_n < \frac{\pi}{2}$.
+    $\cos a_n - a_n = \cos b_n$. 级数$\ss b_n$收敛.}
+\end{example}
+
+\textit{（1）证明：$\limn a_n = 0$.}
+
+\textit{（2）证明：$\ss \frac{a_n}{b_n}$收敛.}
+
+\begin{remark}
+    对于第二问，题目条件给出了$a_n$与$b_n$的数量关系，本身没有交代$a_n$或$b_n$的收敛速度.
+    要证明级数收敛，必须依靠$\ss b_n$的收敛性.
+    因此用比较判别法.
+    通过代入条件，可以消去$b_n$，极限式中只留下$a_n$一个变量，从而可以计算出来.
+\end{remark}
+
+\begin{solution}
+    (1)~~由条件，$\cos a_n - \cos b_n = a_n > 0$.
+    $a_n$与$b_n$都在函数$\cos x$的递减区间内，
+    因此$0<a_n < b_n$.
+    由级数$\ss b_n$可知，$\limn b_n = 0$.
+    从而由夹逼定理，$\limn a_n = 0$.\vspace{0.5em}
+
+    (2)~~由比较判别法，若能证明$\limn \frac{a_n / b_n}{b_n} = \limn \frac{a_n}{b_n^2}$极限存在，
+    就证明了级数$\ss \frac{a_n}{b_n}$收敛. 
+    现在计算这个极限. 
+    方法是利用等价无穷小代换改变极限式的形式，从而方便代入条件中的关系式.
+    \begin{eq}
+        \limn \frac{a_n}{b_n^2} 
+        &= \limn \frac{a_n}{2(1 - \cos b_n)} \\
+        &= \limn \frac{a_n}{2(1 - \cos a_n + a_n)} \\
+        &= \lim\limits_{a_n \to 0} \frac{a_n}{2(1 - \cos a_n + a_n)} \\
+        &= \lim\limits_{a_n \to 0} \frac{a_n}{2 \left( 1 - 1 + o(a_n) + a_n \right)} 
+        &= \frac{1}{2}
+    \end{eq} \qed 
+\end{solution}

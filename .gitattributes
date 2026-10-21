@@ -1,0 +1,9 @@
+# Keep TeX and documentation diffs consistent across platforms.
+*.tex text eol=lf
+*.md text eol=lf
+.gitignore text eol=lf
+.gitattributes text eol=lf
+*.png binary
+*.jpg binary
+*.pdf binary
+*.pptx binary

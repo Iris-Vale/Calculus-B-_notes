@@ -1,0 +1,914 @@
+\clearpage
+\section{微积分的基本概念}
+
+\subsection{复习要点}
+\subsubsection{导数与微分}
+本节的目的是梳理导数与微分部分的知识框架. 虽然在一元函数微积分中，函数可微和可导是等价的，但是这两个概念建立的基础不同.
+希望同学们能理解二者的区别和联系，为今后学习多元函数微积分打好基础. \par
+函数$f(x)$在某点处$x_{0}$处的\textbf{导数}（在教材中也称“\textbf{微商}”）的定义是一个极限式:
+$$
+\setlength\abovedisplayskip{10pt}
+\setlength\belowdisplayskip{10pt}
+\lim\limits_{\Delta x \to 0}\frac{\Delta y}{\Delta x} = 
+\lim\limits_{\Delta x \to 0}\frac{f(x_{0}+\Delta x)-f(x_{0})}{\Delta x}
+$$
+
+若上述极限存在，
+则说$f(x)$在$x_{0}$处可导. 
+要判断函数是否可导，
+实际上就是判断上述极限是否存在而已，
+这对于刚刚学习过第一章内容的同学们而言，
+应该算不上什么有新意的内容. 
+所谓的\textbf{左导数}和\textbf{右导数}，实际上也就是上述极限对应的左极限和右极限. \par
+从上一章的函数极限存在、连续，到这一章的函数可导，要求是依次变严格的. 总结起来就是两句话：“极限存在不一定连续，连续一定极限存在”和
+“\textbf{连续不一定可导，可导一定连续}”. 
+前一句话可以由定义直接得出. 
+但是对于后一句话，同学们最好稍微花一点时间来理解它
+（参考教材上的证明）.\par
+为了帮助大家建立“什么样的函数不可导”的概念，这里对函数在某点处不可导的情况做一个大致分类：（1）函数在该点为间断点（包括无定义）；
+（2）左右导数都存在但不相等，例如$|x|$在$x=0$处不可导. 这种不可导的点是由于函数发生“尖锐”的转弯而形成的，因此也称为“\textbf{尖点}”或“\textbf{角点}”；
+（3）左右导数趋于无穷，例如$x^{-\frac{1}{3}}$在$x=0$处不可导. 这种不可导的情况容易被忽略，因为函数曲线看起来是“光滑”的；
+（4）左右导数呈现振荡趋势，例如$x\sin \frac{1}{x}$在$x=0$处不可导.\vspace{0.5em}
+
+关于函数\textbf{可微}以及\textbf{微分}的相关推导和概念，教材中已经解释得比较清楚了. 
+就书本上的概念而言，微分$\d y$应理解为$\Delta y +o(\Delta x)$，
+而不是简单地将$\Delta y$改写为了$\d y$. 
+因此，不能说取微分这个操作忽略了高阶无穷小量，只是在$\d y$和$\Delta y$之间存在一个近似的关系. 
+在理解这一点的基础上，
+建议重点记住以下的要点：\vspace{0.5em}
+
+（1）微分$\d y$是函数值改变量$\Delta y$的\text{线性主要部分}（或称\textbf{线性主部}），也就是$A\Delta x$.\par
+（2）$\d f(x)=f'(x) ~\d x$.\par
+（3）一阶微分具有形式不变性. 即：若令（2）中的$x$为另一个变量$t$的函数$x(t)$，不影响（2）中的结论. 我们还可以进一步地写：
+$\d f[x(t)] = f'[x(t)] ~\d x(t) = f'[x(t)]x'(t)~\d t $.事实上，这就是不定积分换元法的原理.不过需要注意，高阶微分是不具有形式不变性的.\par
+（4）在一元函数中，可导与可微等价. \par
+
+\subsubsection{不定积分与定积分}\par 
+不定积分和定积分是来源完全不同的两个概念.
+\textbf{不定积分}可以简单地理解为求导的逆运算. 
+而\textbf{定积分}（在高数范围内指黎曼积分）
+则是通过黎曼和来定义的.
+不要认为有了牛顿莱布尼茨公式可以表示定积分，
+就无需了解黎曼和了.
+即使从考试的角度考虑，
+也建议充分熟悉黎曼和的形式，
+这有助于解决一些类型的极限问题（本讲义2.2.2将会涉及）.
+
+本章学习的重点之一是理解如何在不定积分与定积分之间建立起桥梁. 这个桥梁就是\textbf{变上限定积分}. 
+利用积分中值定理，可以证明连续函数的变上限定积分是该连续函数的一个原函数. 利用变上限定积分，又可以进一步证明\textbf{牛顿莱布尼茨公式}（即\textbf{微积分基本定理}）.
+在这里，同学需要了解变上限定积分的性质，
+尤其是对变上限定积分求导的方法. 
+另外，当然还要熟悉牛顿莱布尼茨公式和它的用法. 
+至于这些概念之间如何推导，
+建议在学有余力的情况下再去掌握它们. 
+在此之前，应该把积分的计算作为复习的重点.
+
+\subsubsection{若干容易混淆的概念}
+
+本节主要分为两部分. 
+第一，
+掌握“函数在某点处的导数”与“导函数在某点处的极限”的关联和区别. 
+第二，掌握“可积”与“存在原函数”的关联和区别.\vspace{0.5em}
+
+关于导函数，
+我们在此强调“函数在某点处的导数”与“导函数在某点处的极限”这两个概念. 
+反应快的同学应该能发现，
+这里谈论的就是导函数是否连续的问题. 
+我们都知道，
+若一个函数可导，
+其导函数未必连续，
+从而“导函数在某点处的极限”未必等于“函数在某点处的导数”. 
+但是，我们平常在做求导计算时，
+几乎碰不上导函数不连续的情况，
+这可能导致同学们对相关问题不够敏感.
+
+以下展示两个例子. 
+第一个例子是比较经典的：\vspace{0.25em}
+\[
+\setstretch{1.25}
+f(x) = 
+\begin{cases}
+x^{2}\sin{\displaystyle\frac{1}{x}} &\quad x \ne 0 \\
+0 &\quad x = 0
+\end{cases}
+\] \setstretch{1.75} 
+
+其导函数如下（计算过程见例题2.3）：\vspace{0.25em}
+\[
+\setstretch{1.25}
+f'(x) = 
+\begin{cases}
+2x\sin{\displaystyle\frac{1}{x}}-\cos{\displaystyle\frac{1}{x}} &\quad x \ne 0 \\
+0 &\quad x = 0
+\end{cases}
+\] \setstretch{1.75}
+
+我们发现，$f'(x)$在$x=0$处为振荡间断点（第二类间断点）.
+因此，$f(x)$就是一个可导但导函数不连续的例子.\vspace{0.5em}
+
+第二个例子是这样的：
+\[
+\setstretch{1.25}
+g(x) = \text{sgn}(x) = 
+\begin{cases}
+-1 &\quad x < 0 \\
+0 &\quad x = 0 \\
+1 &\quad x > 0 
+\end{cases}
+\] \setstretch{1.75}
+\par
+其导函数是$g'(x)=0~(x \ne 0)$.\par
+吗？\par
+教材中指出，
+函数必须在区间内可导（即每一点都可导），
+才能定义导函数. 
+而上述$g(x)$在$x=0$处不可导. 若以$\mathbb{R}$为定义域，则不能定义$g(x)$的导函数.
+但是我们通常会这样想：
+这个函数明明只有一点处不可导，
+其它点都可导，
+凭什么因为$x=0$这一颗“老鼠屎”导致整个区间上的导函数都写不出来呢？
+于是，我们只需挖去不可导的点，
+即以$(-\infty,~0)\cup(0,~+\infty)$为定义域，
+则在该定义域内可以写出$g(x)$的导数了. 
+这也导致了一种看似十分荒谬的情况：
+导函数在$x=0$处的左右极限都存在且相等，
+但是在$x=0$处并不可导. \vspace{1em}
+
+之前已经指出，
+定积分和不定积分是两个来源不同的概念.
+因此，我们有必要区分“可积”和“存在原函数”这两个概念. 
+“可积”在高等数学中是指“黎曼可积”，
+也就是指函数在指定的区间内可以做定积分. 
+而“存在原函数”是指在指定的区间内可以做不定积分. 
+
+我们接下来分别讨论“可积”和“存在原函数”的条件，帮助大家明确二者的区别. 注意，以下结论在教材中若没有提到，则不能直接使用. 
+介绍这些结论只是为了确保同学们遇到一个比较奇怪的函数时，不会连它可不可积或者存不存在原函数都不知道.\par
+首先，教材中已经指出，\textbf{闭区间上的连续函数都是可积函数（开区间未必成立）. }
+然而，函数不连续则未必不可积. 
+由此看来，
+函数可积是比连续更弱的一个限制条件. 我们进一步给出函数可积的一个更严格的充分条件：\vspace{0.5em}
+
+\textbf{定理（函数可积的充分条件）}~~\textit{若函数$f(x)$在指定区间$[a,~b]$内有界且只有有限个间断点（或者说函数$f(x)$是分段连续的），那么$f(x)$在该区间内可积.}
+
+例如，取整函数$[x]$在任何一个区间内都是可积的. \vspace{0.5em}
+
+接下来我们讨论$f(x)$原函数的存在性. 
+考虑取整函数$f(x)=[x]$，虽然它在$[0,~2)$上可积，但是直观上看，它是没有原函数的. 假如我们试图分段地写出
+它的原函数$F(x)$：
+\[
+\setstretch{1.25}
+F(x) = 
+\begin{cases}
+C_{1} &\quad x \in [0,~1) \\
+x+C_{2} &\quad x \in (1,~2) \\
+\end{cases}
+\] \setstretch{1.75}
+
+其中$C_{1}$、$C_{2}$为任意常数. 
+我们发现，无论如何调整任意常数$C_{1}$和$C_{2}$的值，
+以及补充定义$F(x)$在$x=1$处的值，
+都不可能让$F(x)$在$x=1$处可导. 
+显然，我们对于构造取整函数$[x]$的原函数已经无计可施了，
+问题完全出在$x=1$这个间断点上.
+但是，我们不能说不连续的函数都不存在原函数——
+我们刚刚才介绍过
+$x^{2}\sin \displaystyle\frac{1}{x}$这样一个离谱的例子. 
+我们应该怎么下结论才能保证不得罪任何函数呢？\par \vspace{0.5em}
+
+\textbf{定理（原函数存在的充分条件）}~~\textit{若函数$f(x)$在指定区间上连续，则必存在原函数，
+且$f(x)$的变上限定积分就是其中之一.}\vspace{0.5em}
+（注：这是教材中给出的结论.—)\vspace{0.5em}
+
+\textbf{定理（达布中值定理）}~~\textit{设$F(x)$在$[a,~b]$中可导，则其导函数$F'(x)=f(x)$满足介值性，即：若在该区间内存在
+$x_{1}$和$x_{2}$，使得$f(x_{1})<f(x_2)$，则对任意给定的$\eta \in (f(x_{1}),~f(x_{2})) $，都存在一点$\xi $在$a$与$b$之间，
+使得$f(\xi) = \eta$.} \vspace{0.5em}
+
+由此看出，$f(x)$满足介值性是其原函数存在的一个必要条件. 
+进一步推论得到 \vspace{0.5em}
+
+\textbf{定理}~~
+\textit{若$f(x)$在区间$[a,~b]$内不连续，但存在原函数，则它的间断点必为第二类间断点.} \vspace{0.5em}
+
+以上定理分别给出了原函数存在的充分条件和必要条件. 
+直接给出原函数存在的充要条件比较困难. 
+但是有以上的结论，
+应该足够同学们平时做判断了.
+
+
+\subsubsection{其他复习要点梳理}
+
+\textbf{1.~~常用导数和常用不定积分}
+
+(教材2.2节导数表、2.7节基本积分表)\vspace{0.5em}
+
+\textbf{2.~~复合函数求导}
+
+（教材2.2节定理1）
+
+书中也将复合函数求导公式用微分记号来写：$\displaystyle\frac{\d z}{\d x}= \displaystyle\frac{\d z}{\d y}\cdot \displaystyle
+\frac{\d y}{\d x}$. 这个公式可以理解为左侧乘一个$\d y$再除一个$\d y$得到右侧. 按这种理解方法，我们可以随时随地在导数中插入中间变量（即这里的$y$），
+形成复合函数求导的形式.\vspace{0.5em}
+
+\textbf{3.~~反函数求导}
+
+（教材2.2节定理2）\vspace{0.5em}
+
+\textbf{4.~~对数求导法}
+
+（教材2.2节例11、例12）
+
+写对数求导法的过程时，
+最好严格按照书本的方式来写. 
+否则可能最后会忘记乘$y$. 
+另一种方法是用$e$抬起的写法，
+将待求导的函数$f(x)$改写成$e^{\ln f(x)}$再求导.\vspace{0.5em}
+
+\setstretch{2}
+
+\textbf{5.~~常用高阶导数}
+
+（1）$(e^{ax})^{(n)} = a^{n}e^{ax}$ 
+
+（2）$(a^{x})^{(n)} = (\ln a)^{n}a^{x}$ 
+ 
+（3）$\left(\displaystyle\frac{1}{x+a} \right)^{(n)} = \displaystyle\frac{(-1)^{n}n!}{(x+a)^{n+1}}$
+
+（4）$[\ln (x+a)]^{(n)} = \left(\displaystyle\frac{1}{x+a} \right)^{(n-1)} = \displaystyle\frac{(-1)^{n-1}(n-1)!}{(x+a)^{n}}$
+
+（5）$[(x+a)^{m}]^{(n)} = m(m-1)(m-2)\cdots (m-n+1)(x+a)^{m-n}~~~(m \ge n)$
+
+（6）$(\sin x)^{(n)} = \sin (x + \displaystyle\frac{n\pi}{2})$
+
+（7）$(\cos x)^{(n)} = \cos (x + \displaystyle\frac{n\pi}{2})$
+
+（8）莱布尼茨公式 \vspace{0.75em}
+\setstretch{1.75}
+
+ 
+\textbf{6.~~利用微分做一阶近似计算}
+
+（教材2.5节）\vspace{0.5em}
+
+\textbf{7.~~定积分的基本性质}
+
+（教材2.8节第2部分）
+
+这些性质通过定积分的几何意义（函数曲线与坐标轴围成的面积）来理解比较方便. 另外，请注意定积分与积分变量无关这一事实. 这在变量比较多的情况下尤其重要.
+例如，不能误认为变上限定积分$\displaystyle\int_{0}^{x}f(t)~\d t$是关于$x$和$t$的二元函数. 另外，也尽量不要把变上限定积分写成$\displaystyle\int_{0}^{x}f(x)~\d x$，
+避免混淆积分上限与积分变量.\par
+~\par
+
+\subsection{解题方法}
+
+\subsubsection{概念性题目}
+
+虽然期中考试很少直接考概念，但是以防万一，利用两道小题帮助同学们巩固一下刚才所讲的要点.\vspace{1em}
+
+\textbf{例2.1}~~\textit{设$f(x)$在$x=a$的邻域内有定义，在$x=a$的某去心邻域内可导，下述论断正确的是（C）.}\par
+\textit{（A）若$\lim\limits_{x \to a}f'(x)=A$,则$f'(a)=A$~~~（B）若$f'(a)=A$，$\lim\limits_{x \to a}f'(x)=A$}\par
+\textit{（C）若$\lim\limits_{x \to a}f'(x)=\infty$，则$f'(a)$不存在~~（D）若$f'(a)$不存在，则$\lim\limits_{x \to a}f'(x)=\infty$}\par
+\textbf{解答}~~选项（A）（B）（D）的反例在2.1.3中已经给出，请同学们自行对号入座. \qed
+
+\clearpage
+
+\textbf{例2.2}~~\textit{狄利克雷函数$D(x)$在$[0,~1]$上是否可积？请证明你的结论.}\vspace{0.25em}
+
+\textbf{分析}~~同学们应该知道（最好能证明），
+狄利克雷函数处处极限不存在，
+因而处处不连续. 
+而在1.1.3中指出，
+闭区间上可积的函数应当是分段连续的. 
+同学们应当意识到，
+像这种处处不连续的函数一定是不可积的. 
+但是，上述结论不能直接用在考试中，应当怎么证明呢？
+这需要对课本上的定义有较为深刻的理解.
+教材P105$\sim$106叙述定积分的定义时，
+对于黎曼和极限存在有一前置条件：
+“任意的分割$T$及任意选取的中间值$\xi_{i} \in [x_{i-1},~x_{i}]$”.
+反过来说，
+只要证明黎曼和的极限会随着中间值$\xi_{i}$选取方式的不同而变化，
+就能证明函数不可积.\vspace{0.25em}
+
+\textbf{证明}~~由实数系的性质（有理数和无理数的稠密性），
+在实数轴上的任意一个小区间内，总存在无穷多的有理数和无理数. 
+因此，无论分割$T$取得有多细，在任意的分割区间
+$[x_{i-1},~x_{i}]$内，总能取到$\xi_{i}$为有理数，$\eta_{i}$为无理数. 
+从而$D(\xi_{i}) =1 $，$D(\eta_{i}) =0$ . 
+设$T$为均匀分割，则：
+$$
+\lim\limits_{\scriptscriptstyle\lambda(T)\to 0}\sum_{i=1}^{n}D(\xi_{i})\Delta x_{i}
+= \limn \sum_{i=1}^{n} 1\cdot\frac{1}{n}
+=1
+$$
+\setlength\abovedisplayskip{6pt}
+\setlength\belowdisplayskip{6pt}
+另一方面，
+$$
+\lim\limits_{\scriptscriptstyle\lambda(T)\to 0}\sum_{i=1}^{n}D(\eta_{i})\Delta x_{i}
+= \limn \sum_{i=1}^{n} 0\cdot \frac{1}{n}
+=0
+$$
+
+黎曼和的极限与中间值的选取有关，因此狄利克雷函数在$[0,~1]$上不可积. \qed\par
+~\par
+
+\subsubsection{求导方法}\vspace{0.25em}
+
+\textbf{1.~~对数求导法}\vspace{0.25em}
+
+对数求导法有两种应用场景：
+（1）幂指型函数$f(x)^{g(x)}$；
+（2）函数为连乘积，或连乘积分式的形式，可通过取对数
+将乘除转化为加减.
+这部分的例题，掌握教材2.2节的例11和例12就够了.\par \vspace{1em}
+
+\textbf{2.~~定义法}\vspace{0.25em}
+
+如要求分段函数在分段点处的导数，
+则必须用定义法. \par
+~\par
+\textbf{例2.3}~~\textit{计算下列函数的导函数.} 
+\[
+\setstretch{1.25}
+f(x) = 
+\begin{cases}
+x^{2}\sin{\displaystyle\frac{1}{x}} &\quad x \ne 0 \\
+0 &\quad x = 0
+\end{cases}
+\]\setstretch{1.75} \par
+\textbf{解答}~~对于$x \ne 0$，可以直接求导：
+$$
+\setlength\abovedisplayskip{6pt}
+\setlength\belowdisplayskip{6pt}
+f'(x) = 2x\sin{\displaystyle\frac{1}{x}}-\cos{\displaystyle\frac{1}{x}}~~(x \ne 0) 
+$$\par
+在$x=0$处，根据定义有：
+\begin{equation}
+    \begin{aligned}
+        f'(0)
+        &= \limx0 ~\frac{f(x)-f(0)}{x} \\
+        &= \limx0 ~x \sin {\frac{1}{x}} \\
+        &= 0
+        \nonumber
+    \end{aligned}
+\end{equation} \par
+综上，$f(x)$的导函数为：
+\[
+\setstretch{1.25}
+f'(x) = 
+\begin{cases}
+2x\sin{\displaystyle\frac{1}{x}}-\cos{\displaystyle\frac{1}{x}} &\quad x \ne 0 \\
+0 &\quad x = 0
+\end{cases}
+\] \setstretch{1.75} \qed\par
+
+其实，只要掌握好极限的计算，这类问题都不困难. 关于$x^{m}\sin\frac{1}{x}$型函数，下面这道例题是一个不错的总结.\par
+~\par
+\textbf{例2.4(2021)}~~\textit{考虑函数：}
+\[
+\setstretch{1.25}
+f(x) = 
+\begin{cases}
+x^{m}\sin{\displaystyle\frac{1}{x}} &\quad x \ne 0 \\
+0 &\quad x = 0
+\end{cases}
+\] \setstretch{1.75}
+
+\textit{其中$m$为正整数. 在$x \ne 0$处，求$f'(x)$和$f''(x)$. 
+求$m$满足的条件，使得$f(x)$有连续的二阶导函数.}\par
+\textbf{分析}~~解决此题只需利用好连续的概念以及导数的定义式，剩下的交给极限计算.\par
+\textbf{解答}~~当$x \ne 0$时，直接求导，得：
+$$
+\setlength\abovedisplayskip{6pt}
+\setlength\belowdisplayskip{6pt}
+f'(x) = x^{m-1}\sin \frac{1}{x}
+-x^{m-2}\cos\frac{1}{x}
+$$
+$$
+\setlength\abovedisplayskip{6pt}
+\setlength\belowdisplayskip{6pt}
+f''(x) = (x^{m-2}-x^{m-4})\sin\frac{1}{x}- 2x^{m-3} \cos \frac{1}{x}
+$$\par
+ 
+$f''(x)$唯一可能的间断点是$x=0$. 
+要使$f''(x)$在$x=0$处连续，首先要求它在该点极限存在. 
+考虑到当$x \to 0$时，$\sin \frac{1}{x}$和$\cos \frac{1}{x}$在$[-1,~1]$之间剧烈振荡，
+因此必须使
+$(x^{m-2}-x^{m-4}) \to 0$和$x^{m-3} \to 0$同时成立. 由此推出$m>4$是$f''(x)$连续的必要条件.\vspace{0.25em}
+
+接下来，我们证明当$m>4$时，$f''(0)=0$，从而$f''(x)$在$\mathbb{R}$上连续. \par
+ 
+仿照例2.3的方法，易证$m>4$时$f(x)$在$x=0$处可导. 根据定义：
+\begin{equation}
+    \setlength\abovedisplayskip{6pt}
+\setlength\belowdisplayskip{6pt}
+    \begin{aligned}
+        f''(0)
+        &= \limx0 ~\frac{f'(x)-f(0)}{x} \\
+        &= \limx0 ~ x^{m-2}\sin(\frac{1}{x})-x^{m-3}\cos(\frac{1}{x})\\
+        &= 0
+        \nonumber
+    \end{aligned}
+\end{equation}
+
+这说明$m>4$是，$f''(x)$存在且连续的充分条件. 综上，$m$需满足的条件就是$m>4$. \qed\par
+~\par
+对于上一题中的函数$f(x)$，我们有如下的总结：\par
+（1）当$m=0$时，$f(x)$在$x=0$处极限不存在，为振荡间断点;\par
+（2）当$m=1$时，$f(x)$在$\mathbb{R}$上连续，但在$x=0$处不可导；\par
+（3）当$m=2$时，$f(x)$在$\mathbb{R}$上一阶可导，但其导函数在$x=0$处不连续；\par
+（4）当$m=3$时，$f(x)$在$\mathbb{R}$上一阶可导，其导函数在$\mathbb{R}$上连续，但在$x=0$处不可导；\par
+（5）当$m=4$时，$f(x)$在$\mathbb{R}$上二阶可导，但其二阶导在$x=0$处不连续；\par
+……\par
+可见，$m$每增加$1$，$f(x)$在$x=0$处就会多一条高阶可导或者导函数连续的性质，规律性很强. 同学们可以把它作为经典的例子记住.\par
+~\par
+\textbf{3.~~隐函数求导}\vspace{0.25em}
+
+有时$x$与$y$的关系不一定由函数给出，
+而是以一个方程（隐函数）的形式给出. 
+此时不必将方程转化为$y=f(x)$的形式再求导（事实上很多时候做不到这一点）.
+直接对方程两边求导即可. 
+在求导的过程中要注意被求导的变量是谁，
+谁是谁的函数. 
+我们通过一个简单的例子来帮助大家掌握隐函数求导的技巧. \par
+~\par
+\textbf{例2.5}~~\textit{分别按以下的要求，对隐函数$x^2+y^3+x^{2}y^2=1$求导：}\par
+\textit{（1）$y$是$x$的函数，对$x$求导.}\par
+\textit{（2）$x$是$y$的函数，对$y$求导.}\par
+\textbf{解答}~~（1）两边对$x$求导，得：
+$$
+\setlength\abovedisplayskip{6pt}
+\setlength\belowdisplayskip{6pt}
+2x+3y^{2}y'+2xy^{2}+2x^{2}yy'=0
+$$
+
+移项，得：
+$$
+\setlength\abovedisplayskip{6pt}
+\setlength\belowdisplayskip{6pt}
+y'=-\frac{2x+2xy^2}{3y^2+2x^2y}
+$$\par
+（2）两边对$y$求导，得：
+$$
+\setlength\abovedisplayskip{6pt}
+\setlength\belowdisplayskip{6pt}
+2xx'+3y^2+2xx'y^{2}+2x^{2}y=0
+$$
+
+移项，得：
+$$
+\setlength\abovedisplayskip{6pt}
+\setlength\belowdisplayskip{6pt}
+x'=-\frac{3y^2+2x^2y}{2x+2xy^2}
+$$ \qed\par
+~\par
+以第（1）问为例，既然是对$x$求导，而$y$是$x$的函数，那么$y^3$就应当视为复合函数$y^3(x)$，用复合函数求导的办法展开；$x^{2}y^2$也应该视为$x^{2}y^2(x)$，用函数乘积求导的办法展开，而不能将$y$视为常数.\par
+~\par
+ 
+\textbf{例2.6}~~\textit{已知曲率公式$K = \frac{|y''|}{\left( 1+y'^{2}\right)^{\frac{3}{2}}}$. 
+计算曲线$x^2+xy+y^2=1$在点$(1,-1)$处的曲率.}\vspace{0.25em}
+
+\textbf{解答}~~方程左右两侧同时对$x$求导：
+$$
+\setlength\abovedisplayskip{6pt}
+\setlength\belowdisplayskip{6pt}
+2x+y+xy'+2yy'=0~~(*)
+$$
+
+代入$(x,~y)=(1,~-1)$，得$y'(1)=1$.对$(*)$式再求导数，得：
+$$
+\setlength\abovedisplayskip{6pt}
+\setlength\belowdisplayskip{6pt}
+2+y'+xy''+y'+2yy''+2y'y'=0
+$$\par
+ 
+代入$(x,~y)=(1,~-1)$和$y'(1)=1$，得$y''(1)=6$. 最后将$y'(1)=1$和$y''(1)=6$代入曲率公式，得到$K=\frac{3\sqrt{2}}{2}$. \qed\par 
+ 
+~\par
+\textbf{4.~~参数方程求导}\vspace{0.25em}
+
+若$x$与$y$的函数关系由参数方程$x=x(t)$，$y=y(t)$给出，则有：
+$$
+\setlength\abovedisplayskip{10pt}
+\setlength\belowdisplayskip{10pt}
+y'(x)=\frac{\d y}{\d x}=\frac{\d y / \d t}{\d x / \d t} = \frac{y'(t)}{x'(t)}
+$$
+
+即：要求$y$对$x$的导数，
+应当先将$y$和$x$分别对$t$求导，再相除.
+若要求高阶导，可以将$y'(x)$视为新的$y$，再重复上述过程.
+
+~\par
+ 
+\textbf{例2.7}~~\textit{设函数$y=y(x)$由以下的参数方程给出：}
+\[
+\setlength\abovedisplayskip{10pt}
+\setlength\belowdisplayskip{10pt}
+\setstcolor{1.5}
+\begin{cases}
+x = \frac{t^3}{1+t^2} \\
+y = \frac{t^3-2t^2}{1+t^2}
+\end{cases}
+\] \setstcolor{1.75}
+
+求$y(x)$的极值.\par
+\textbf{解答}~~由$y'(t)=t \cdot \frac{3t+t^3-4}{(1+t^2)^2}$，
+$x'(t)=t^2\cdot \frac{3+t^2}{(1+t^2)^2}$，得：
+\begin{equation}
+    \setlength\abovedisplayskip{12pt}
+    \setlength\belowdisplayskip{12pt}
+    \begin{aligned}
+        y'(x)
+        = \frac{y'(t)}{x'(t)}
+        = \frac{~~t\cdot \displaystyle\frac{3t+t^3-4}{(1+t^2)^2}~~}{~~t^2\cdot\displaystyle\frac{3+t^2}{(1+t^2)^2}~~}
+        = \frac{(t-1)(t^2+t+4)}{t(3+t^2)}
+        \nonumber
+    \end{aligned}
+\end{equation}\par
+若$(x,~y)$为极值点,则$y'(x)=0$或$y'(x)$不存在，即$t=1$或$t=0$.检验这两点邻域内的一阶导，可知$t=1$时为极小值点，极小值为$y=-\frac{1}{2}$；$t=0$时为极大值点，极大值为$y=0$. \qed\par
+~\par
+ 
+\textbf{5.~~高阶导数}\vspace{0.25em}
+
+求高阶导数大致有两种思路. 
+第一种是直接求. 此时必须要利用上1.1.4所列出的常用高阶导数，即高阶导规律性比较强的函数.
+许多函数直接求导比较复杂，需通过裂项等方法拆成几个容易求导的函数相加.
+
+~\par
+ 
+\textbf{例2.8}~~\textit{设$h(x)=\frac{1}{x^2-1}$. 计算$h^{(4)}(x)$.}\par \vspace{0.2em}
+\textbf{分析}~~假设这题要求计算$h(x)$的$n$阶导，可能更多同学会想到用裂项的技巧. 但是这里只要求4阶导，一些同学可能
+不以为然，选择直接暴力计算. 
+但是，只要大家稍加尝试就会知道，选择正确的方法能在时间上取得巨大的优势.\vspace{0.5em}
+
+\textbf{解答}~~裂项得$h(x)=\frac{1}{2}\left( \frac{1}{x-1} - \frac{1}{x+1} \right)$，从而：
+ 
+\begin{equation}
+    \setlength\abovedisplayskip{6pt}
+    \setlength\belowdisplayskip{6pt}
+    \begin{aligned}
+        h^{(4)}(x)
+        &= \frac{1}{2}\left( \frac{1}{x-1} \right)^{(4)} - \frac{1}{2}\left( \frac{1}{x+1} \right)^{(4)} \\
+        &= \frac{12}{(x-1)^5} - \frac{12}{(x+1)^5}
+        \nonumber
+    \end{aligned}
+\end{equation}  \qed \par
+~\par
+
+\textbf{例2.9}~~\textit{设$y = (1-x)(2x+1)^2(3x-1)^3$，求$y^{(6)}$.}\par
+\textbf{分析}~~此题看似复杂，其实不过是$x$的6次多项式. 因此完全不必求导，只需关注6次项的系数即可.\par
+\textbf{解答}~~$y^{(6)} = (-1)\cdot 2^{2} \cdot 3^3 \cdot 6! = -77760$. \qed\par
+~\par
+第二种思路是利用莱布尼茨公式. 
+以教材P97的例题为例，
+该题计算了$x^2\sin x$的高阶导. 
+可以发现，
+虽然求$n$阶导的莱布尼茨公式展开有$n+1$项
+（形式类似于二项式展开），
+但是由于$x^2$从3阶导开始就为$0$，
+使得展开式中大部分的项为$0$，
+因此计算量并不大. 
+遇到求高阶导的难题时，
+核心思路就是把函数整理成多项式的形式
+（即使是隐函数也可以），
+然后利用多项式高阶导为$0$的性质，
+简化莱布尼茨公式的计算.\par
+
+\clearpage
+
+
+\textbf{例}~~
+\textit{$f(x) = \arctan x$，求$f^{(n)}(0)$.}
+
+\textbf{解答}~~
+记$y = f(x)$，
+$y' = \frac{1}{1+x^2}$，
+整理得到：
+$$
+(1 + x^2)y' = 1
+$$
+
+等式两边求$n+1$阶导，
+应用莱布尼茨公式，
+得到：
+$$
+C_{n}^{0} \cdot y^{(n+2)} + C_{n}^{1} \cdot 2x \cdot y^{(n+1)} + C_{n}^{2} \cdot 2 y^{(n)} = 0
+$$
+
+即：
+$$
+y^{(n+2)} + 2xy^{(n+1)} + n(n+1)y^{(n)} = 0
+$$
+
+代入$x = 0$，得到：
+$$
+y^{(n+2)}(0) =  -n(n+1)y^{(n)}(0) 
+$$
+
+这样我们得到了$y^{(n)}(0)$的递推公式.
+再由$y^{(1)}(0) = 1$，
+$y^{(2)}(0) = 0$，可以得到：
+$$
+y^{(n)}(0) =
+\begin{cases}
+0 &\quad n \text{是偶数}, \\
+(-1)^{\frac{n-1}{2}} \cdot (n-1)! &\quad n \text{是奇数}.
+\end{cases}
+$$
+
+
+
+\clearpage
+
+\textbf{例}~~
+\textit{$f(x) = \dfrac{e^x}{1-x}$，求$f^{(n)}(0)$.}
+
+\textbf{解答}
+~~
+记$y = f(x)$，
+则有$(1-x)y = e^x$.
+等式两边求$n$阶导，应用莱布尼茨公式，
+得到：
+$$
+(1-x)y^{(n)} - n y^{(n-1)} = e^x
+$$
+
+代入$x = 0$，得到：
+$$
+y^{(n)}(0) - n y^{(n-1)}(0)  = 1
+$$
+
+等式两边除以$n!$：
+$$
+\frac{y^{(n)}(0)}{n!} - \frac{y^{(n-1)}(0)}{(n-1)!} = \frac{1}{n!}
+$$
+
+结合$y^{(0)}(0) = 1$，利用累加法，得到：
+$$
+\frac{y^{(n)}(0)}{n!} = \sum_{k=0}^{n} \frac{1}{k!}
+$$
+
+即：
+$$
+y^{(n)}(0) = n! \cdot \sum_{k=0}^{n} \frac{1}{k!}
+$$
+
+
+\textbf{例2.10}~~
+\textit{设函数$y=(\arcsin x)^2$. 
+求$y^{(n)}(0)$.}\vspace{0.25em}
+
+\textbf{分析}~~对$y$直接求$n$阶导较难，但是注意到对$\arcsin x$求导能消除反三角函数，只留下根号和多项式的形式. 
+我们就以此作为第一步试探性求导的目标. 
+最终的目标是进一步消除根号，只留下多项式，创造使用莱布尼茨公式的条件.\vspace{0.25em}
+
+\textbf{解答}~~对$y$求导，得：
+$$
+y' = \frac{2\arcsin x}{\sqrt{1-x^2}}
+$$\par
+（第一反应是把$\arcsin x$用$\sqrt{y}$来代替，这样就直接把反三角函数消除了.
+ 但是问题在于$\arcsin x$的符号未知，必须要加绝对值，这会带来额外的麻烦. 
+ 好在现在我们知道$\arcsin x$是可以用$y'$来表示的，我们可以再求一次导，
+ 把二阶导里的$\arcsin x$用$y'$来表示，完成一次曲线救国.）\par
+
+对上式再求一次导：
+$$
+y''=\frac{2}{1-x^2}+\frac{2x \arcsin x}{(1-x^2)^{\frac{3}{2}}} = \frac{2+xy'}{1-x^2}
+$$\par
+整理成关于$x$、$y$、$y'$、$y''$的多项式的形式：
+$$
+\setlength\abovedisplayskip{6pt}
+\setlength\belowdisplayskip{6pt}
+y''(1-x^2)-xy'=2
+$$
+
+用莱布尼茨公式对两边求$n$阶导，得：
+$$
+\setlength\abovedisplayskip{6pt}
+\setlength\belowdisplayskip{6pt}
+(1-x^2)y^{(n+2)} + C_{n}^{1}(-2x)y^{(n+1)} + C_{n}^{2}(-2)y^{(n)}
+= xy^{(n+1)} + C_{n}^{1}y^{(n)}
+$$\par
+（我们发现，这里得到了$y$的$n$阶导、$n+1$阶导和$n+2$阶导的递推公式. 
+而我们只关注$x=0$点的导数，因此可以代入$x=0$进行简化，再去解递推公式.）\par
+代入$x=0$，整理，得：
+$$
+\setlength\abovedisplayskip{6pt}
+\setlength\belowdisplayskip{6pt}
+y^{(n+2)}(0) = n^2 y^{(n)}(0)
+$$\par
+当$n$为奇数时，由$y'(0)=0$，得到$y^{(n)}(0) = 0$.\par
+当$n$为偶数时，由$y''(0)=2$，得到$y^{(n)}(0)=[(n-2)!!]^2$. \qed\par
+~\par
+
+\textbf{6.~~变上限定积分求导}\vspace{0.25em}
+
+变上限定积分求导的基本公式是：
+$$
+\setlength\abovedisplayskip{6pt}
+\setlength\belowdisplayskip{6pt}
+\left(  \int_{0}^{x}f(t)~\d t \right)' = f(x)
+$$\par
+ 
+一种拓展的情况是积分上限不是$x$，而是$x$的函数$g(x)$. 此时只需要用复合函数求导法. 
+例如，$f(x)=\int_{0}^{g(x)}f(t)~\d t$可以看成$f(u)=\int_{0}^{u}f(t)~\d t$与$u(x)=g(x)$的复合.\par
+$x$也可以出现在被积函数中. 最简单的情况是被积函数中的$x$和$t$可以实现变量分离，即可以写成两个函数$f(x)$和$g(t)$的乘积. 此时可以这样求导：
+
+\begin{equation}
+    \setlength\abovedisplayskip{4pt}
+    \setlength\belowdisplayskip{6pt}
+    \begin{aligned}
+        \left(  \int_{0}^{x}f(x)g(t)~\d t \right)'
+        &= \left( f(x) \int_{0}^{x}g(t)~\d t \right)' \\
+        &= f'(x)\cdot \int_{0}^{x}g(t)~\d t + f(x)g(x)
+        \nonumber
+    \end{aligned}
+\end{equation}\par
+ 
+注意在第一步中，$x$虽然是函数的自变量，却不是积分的变量. 对定积分而言，$x$可以视为常数. 因此$f(x)$可以提取到积分号外面.\par
+我们用一道题目来练习上述提到的所有方法. \par
+~\par
+\textbf{例2.11}~~\textit{计算以下函数的导函数：$f(x) = \int_{x+1}^{x^2+2} \frac{t+x}{t+1} ~\d t$}
+\par
+\textbf{解答}~~
+\begin{equation}
+    \setlength\abovedisplayskip{2pt}
+    \setlength\belowdisplayskip{2pt}
+    \begin{aligned}
+        f'(x)
+        &= \left( \int_{x+1}^{x^2+2} \frac{t+x}{t+1} ~\d t  \right)' \\
+        &= \left( \int_{x+1}^{x^2+2} \left(\frac{x}{t+1} + \frac{t}{t+1} \right) ~\d t  \right)' \\
+        &= \left( x\int_{x+1}^{x^2+2} \frac{1}{t+1} ~\d t \right)' +\left( \int_{x+1}^{x^2+2}  \frac{t}{t+1} ~\d t \right)  ' \\
+        &= \int_{x+1}^{x^2+2} \frac{1}{t+1} ~\d t~ +~ x\cdot \frac{2x}{x^2+3}~-~x\cdot \frac{1}{x+2}
+        ~+~2x\cdot \frac{x^2+2}{x^2+3} ~-~ \frac{x+1}{x+2} \\
+        &= \int_{x+1}^{x^2+2} \frac{1}{t+1} ~\d t~ +~ \frac{2x^3+2x^2+4x}{x^2+3}~-~\frac{2x+1}{x+2}
+        ~~~~~~~~~~~~~~~~~
+        \nonumber
+    \end{aligned}
+\end{equation} \qed \par
+~\par
+若无法分离变量，则需要用换元法，改写成能分离变量的形式.\par
+~\par
+ 
+\textbf{例2.12}~~\textit{求函数$F(x)=\int_{a}^{x} tf(x^2-t^2)~\d t$的导数.}
+
+\textbf{解答}~~令$u= x^2-t^2$，则$\d u=-2t~\d t$，代入可得：
+\begin{equation}
+    \setlength\abovedisplayskip{8pt}
+    \setlength\belowdisplayskip{8pt}
+    \begin{aligned}
+        F(x) 
+        &= \int_{x^2-a^2}^{0} tf(u)\cdot \frac{\d u}{-2t} \\
+        &= -\frac{1}{2}\int_{x^2-a^2}^{0} f(u)~\d u \\
+        &= \frac{1}{2}\int_{0}^{x^2-a^2} f(u)~\d u
+        \nonumber
+    \end{aligned}
+\end{equation}\par
+再对$F(x)$求导，得到$F'(x) = x\cdot f(x^2-a^2)$. \qed\par
+
+\subsubsection{三种新的极限计算方法}
+\textbf{1.~~凑导数定义}\vspace{0.25em}
+
+当分子分母均出现相减的形式时，
+可以考虑这个极限是否是某个函数的导数. 
+有必要时可以主动去凑导数的定义式.\par
+~\par
+ 
+\textbf{例2.13}~~\textit{已知函数$f(x)$在$x=1$处可导，且$\limx0 \frac{f(\cos x)-3f(1+\sin^{2}x)}{x^2}=2$，求$f'(1)$.}\vspace{0.25em}
+
+\textbf{解答}~~由$\limx0 \frac{f(\cos x)-3f(1+\sin^{2}x)}{x^2}=2$，可知：
+$$
+\setlength\abovedisplayskip{6pt}
+\setlength\belowdisplayskip{6pt}
+\limx0 \left(  f(\cos x)-3f(1+\sin^{2}x) \right)=0
+$$
+
+又由$f(x)$在$x=1$处可导，则$f(x)$在$x=1$处连续，因此$\limx0 f(\cos x)-3f(1+\sin^{2}x) = -2f(1)$，从而$f(1)=0$.\par
+（现有的条件围绕$f(x)$在$x=1$处的性质展开，因此对于极限式，可以尝试去凑$f'(1)$的定义. 由于$f(1)=0$，我们可以自由地
+为$f(\cos x)$和$f(1+\sin^{2} x)$配上$f(1)$，来达成我们的目的.）\par
+对极限式进行拆分，凑出导数的形式，可得：
+\begin{equation}
+    \setlength\abovedisplayskip{12pt}
+    \setlength\belowdisplayskip{12pt}
+    \begin{aligned}
+        &\limx0~\frac{f(\cos x)-3f(1+\sin^{2}x)}{x^2} \\
+        = &\limx0~\left[\frac{f(\cos x)-f(1)}{\cos x -1}\cdot \frac{\cos x-1}{x^2} -
+        3\cdot \frac{f(1+\sin^{2}x)-f(1)}{\sin^{2}x} \cdot \frac{\sin^2{x}}{x^2}
+        \right] \\
+        =&-\frac{1}{2}f'(1)-3f'(1)\\
+        =&~2
+        \nonumber
+    \end{aligned}
+\end{equation}\par
+故$f'(1)=-\frac{4}{7}$. \qed\par
+~\par
+
+
+\textbf{2.~~凑定积分的定义（黎曼和）}\vspace{0.25em}
+
+一些求和式的极限可以通过定积分来解决. 要成功凑出定积分的定义需要同学们对黎曼和的形式比较熟悉.例如，我们现在尝试写出$f(x)$
+在$[0,~1]$中的黎曼和. 
+因为定积分的值无关于分割的取法和中间值的取法，
+为了方便，我们一般采取均匀分割，
+并且把中间值取在分点处.
+此时，考虑黎曼和：
+$$
+I = \lim\limits_{\scriptscriptstyle\lambda(T)\to 0}\sum_{i=1}^{n}f(\xi_{i})\Delta x_{i}
+$$
+
+因为$n$代表分割出的区间数量，因此每个区间长度为$\Delta x_{i}=\frac{1}{n}$，上式中的$\lambda(T)=\frac{1}{n}$.
+而$\xi_{i}$取在分点处，即$\xi_{i}=\frac{i}{n}$. 于是，上面的黎曼和被我们改写为：
+$$
+\setlength\abovedisplayskip{10pt}
+\setlength\belowdisplayskip{10pt}
+I = \lim\limits_{\scriptscriptstyle\lambda(T)\to 0}\sum_{i=1}^{n}f(\xi_{i})\Delta x_{i}
+= \limn \sum_{i=1}^{n} \frac{1}{n}\cdot  f(\frac{i}{n})
+$$\par
+遇到求和式的极限时，可以尝试凑出上面的形式，把问题转化为求解定积分.\par
+~\par
+\textbf{例2.14}~~\textit{计算：}$\limn \sum_{k=1}^{n}\frac{n}{n^2+k^2}$.\par
+\textbf{解答}~~
+\begin{equation}
+    \setlength\abovedisplayskip{6pt}
+    \setlength\belowdisplayskip{6pt}
+    \begin{aligned}
+        \limn \sum_{k=1}^{n}\frac{n}{n^2+k^2}
+        &= \limn \frac{1}{n}\cdot \sum_{k=1}^{n} \frac{n^2}{n^2+k^2} \\
+        &= \limn \frac{1}{n}\cdot \sum_{k=1}^{n} \frac{1}{1+\left(\frac{k}{n} \right)^2}\\
+        &= \int_{0}^{1} \frac{1}{1+x^2} ~\d x \\
+        &= \arctan x ~\bigg|_{x=0}^{x=1} \\
+        &= \frac{\pi}{4}
+        \nonumber
+    \end{aligned}
+\end{equation} \qed
+~\par
+该题型中比较困难的题目，在凑的时候可能需要把小区间内的中间值$\xi_{i}$取在区间内部，而不是分点上.\par
+~\par
+ 
+\textbf{例2.15}~~\textit{计算：}$\limn \frac{1}{n} \sum_{k=1}^{n} \sin \left( \frac{k}{n} - \frac{1}{2n^k} \right)$.\vspace{0.5em}
+
+\textbf{分析}~~若题目中没有$\frac{1}{2n^k}$这一项，则黎曼和的形式得来全不费功夫. 不过也注意到，$\frac{1}{2n^k}$虽然烦人，却是很小的一个量.
+把它与$\frac{k}{n} $合起来看，相当于在我们预期的$\xi_{i}$的基础上稍微偏左了一点点. 只要证明$\frac{k}{n} - \frac{1}{2n^k}$仍然在原来的小区间内，则题目
+中的极限仍然可以改写成定积分.\vspace{0.5em}
+
+\textbf{解答}~~由于：
+$$
+\frac{k}{n} - \frac{1}{2n^k} \ge \frac{k}{n} - \frac{1}{2n} > \frac{k-1}{n}
+$$\par
+ 
+可知$\left(  \frac{k}{n} - \frac{1}{2n^k} \right)  \in \left[ \frac{k-1}{n},~\frac{k}{n} \right]$. 因此，考虑区间$[0,~1]$上的均匀分割，
+分割出的$n$个小区间长度为$\frac{1}{n}$，每个区间内取中间值$\xi_{i} =  \frac{k}{n} - \frac{1}{2n^k} \in \left[ \frac{k-1}{n},~\frac{k}{n} \right]$，
+则有：
+
+\begin{equation}
+    \setlength\abovedisplayskip{10pt}
+    \setlength\belowdisplayskip{10pt}
+    \begin{aligned}
+        \limn \frac{1}{n} \sum_{k=1}^{n} \sin \left( \frac{k}{n} - \frac{1}{2n^k} \right) 
+        &= \limn \frac{1}{n} \sum_{k=1}^{n} \sin \left( \xi_{i} \right) \\
+        &= \int_{0}^{1} \sin x ~\d x \\
+        &= -\cos x ~|_{x=0}^{x=1} \\
+        &= 1-\cos 1 
+        \nonumber
+    \end{aligned}
+\end{equation}\qed \par
+~\par
+
+\textbf{3、积分中值定理}\vspace{0.25em}
+ 
+若极限式中出现了变上限定积分，
+一般用洛必达可以解决. 
+由于洛必达在期中考试中禁用，
+如果真的遇到此类题，
+基本上只有积分中值定理这一条出路.\par
+~\par
+
+\textbf{例2.16}~~\textit{计算：}$\limx0\frac{\displaystyle\int_{sinx}^{tanx}\sqrt{3+t^{2}}\d{t}}{x(e^{x^2}-1)}$ \vspace{0.5em}
+
+\textbf{解答}~~由积分中值定理，存在$\xi \in (\sin x,~\tan x)$，使得
+$$
+\displaystyle\int_{sinx}^{tanx}\sqrt{3+t^{2}}\d{t} = 
+(\tan x- \sin x)\sqrt{3+\xi^{2}}
+$$\par
+ 
+于是：
+\begin{equation}
+    \begin{aligned}
+        \limx0\displaystyle\frac{\displaystyle\int_{sinx}^{tanx}\sqrt{3+t^{2}}\d{t}}{x(e^{x^2}-1)} 
+        &= \limx0\displaystyle\frac{(\tan x- \sin x)\sqrt{3+\xi^{2}}}{x^{3}}\\
+        &= \limx0\displaystyle\frac{\sin x\cdot (1-\cos x)\sqrt{3+\xi^{2}}}{x^{3}\cos x}\\
+        &= \limx0\displaystyle\frac{\sin x\cdot \displaystyle\frac{x^2}{2}\sqrt{3+\xi^{2}}}{x^{3}}\\
+        &= \limx0\frac{\sqrt{3+\xi^{2}}}{2}
+        \nonumber
+    \end{aligned}
+\end{equation} \par
+当$x \to 0$时，$\tan x \sim \sin x \to 0$，因此$\xi \to 0$，从而：
+\begin{equation}
+    \setlength\abovedisplayskip{6pt}
+    \setlength\belowdisplayskip{6pt}
+    \begin{aligned}
+        \limx0\frac{\sqrt{3+\xi^{2}}}{2} = \frac{\sqrt{3}}{2}
+        \nonumber
+    \end{aligned}
+\end{equation}  \qed
+~\par
