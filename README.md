@@ -46,6 +46,7 @@ Complete derivation and conclusion.
 - For alternative methods, use `\begin{solution}[解法一]`, `\begin{solution}[解法二]`, etc. A method name can follow the heading in Chinese parentheses.
 - Put every part of a question inside `example`, and every step and conclusion inside its answer environment. Keep general discussion outside these environments.
 - Cite an example as `例\ref{ex:sample}`. Keep labels stable when inserting or moving exercises; never type the displayed number into a reference or figure caption.
+- Problem statements use italics (KaiTi for Chinese with the Windows ctex fontset); example headings, source metadata, and analysis/answer text use upright fonts.
 - Environment definitions in `preamble.tex` control heading fonts and spacing. Avoid manual vertical padding and forced page breaks around examples.
 
 ## Version control

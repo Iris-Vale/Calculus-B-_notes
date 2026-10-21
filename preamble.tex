@@ -64,9 +64,10 @@
 
 
 % Lecture examples: automatic chapter numbering; optional source metadata.
+% Italic body uses KaiTi for Chinese with the Windows ctex fontset.
 \newtheoremstyle{lectureexample}
   {8pt plus 2pt minus 1pt}{4pt plus 1pt minus 1pt}
-  {\normalfont\setstretch{1.75}}{\parindent}{\bfseries}{}{0.6em}
+  {\normalfont\itshape\setstretch{1.75}}{\parindent}{\normalfont\bfseries}{}{0.6em}
   {\thmname{#1}\thmnumber{~#2}\thmnote{（\normalfont 来源：#3）}}
 \theoremstyle{lectureexample}
 \newtheorem{example}{例}[section]
